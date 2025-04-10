@@ -214,6 +214,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5887197931716414228, guid: d3baa7dd76b9c8b4683d544d1b89ab44, type: 3}
+        m_TargetAssemblyTypeName: PlaceObjects, Assembly-CSharp
+        m_MethodName: SwitchBool
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-6996846059506446806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +239,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
-  placeobj: {fileID: 3293182874649749968, guid: 5dff20bad7fe0fb40aec444a591ec4f8, type: 3}
+  inventoryManager: {fileID: 0}
+  placeObjects: {fileID: 5887197931716414228, guid: d3baa7dd76b9c8b4683d544d1b89ab44, type: 3}
+  checkthis: 0
 --- !u!1 &7823268940867566895
 GameObject:
   m_ObjectHideFlags: 0

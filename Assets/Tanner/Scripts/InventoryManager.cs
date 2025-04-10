@@ -9,6 +9,7 @@ public class InventoryManager : MonoBehaviour
 	public static InventoryManager Instance;
 	public List<Item> Items = new List<Item>();
 
+
     public GameObject player;
     public Transform ItemContent;
     public InventoryItemController[] InventoryItems;
@@ -16,7 +17,8 @@ public class InventoryManager : MonoBehaviour
 
 	[SerializeField] private GameObject inventory;
 	private FPSController fpscontrollerScript;
-	
+    public PlaceObjects placeObjects;
+
 
     private void Awake()
 	{
@@ -138,6 +140,7 @@ public class InventoryManager : MonoBehaviour
             Items.Remove(item);
             Debug.Log("Removed: " + item.itemName);
             ListItems(); // Refresh inventory UI
+            Debug.Log(placeObjects.placeIsExample1);
         }
         else
         {

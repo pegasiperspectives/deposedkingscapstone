@@ -7,9 +7,13 @@ public class InventoryItemController : MonoBehaviour
 {
     public Item item;
     public InventoryManager inventoryManager;
-    //private PlaceObjects placedObjects;
-    public GameObject placeobj;
-   
+    public PlaceObjects placeObjects;
+    public bool checkthis = false;
+    //public GameObject placeobj;
+   void Update()
+   {
+       //Debug.Log(placeobj.GetComponentInChildren<PlaceObjects>().placeIsExample1);
+   }
 
     public void AddItem(Item newItem)
     {
@@ -17,7 +21,7 @@ public class InventoryItemController : MonoBehaviour
        
 
     }
-    public void RemoveItem()
+    public void RemoveItem() //removing from inventory list; not to be accessed again
     {
         InventoryManager.Instance.Remove(item);
         
@@ -51,20 +55,28 @@ public class InventoryItemController : MonoBehaviour
 
         if (item.id == 1)
         {
-            if (placeobj == null)
-            {
-                Debug.LogError("placeobj is not assigned!");
-                return;
-            }
+            //if (placeobj == null)
+            //{
+            //    Debug.LogError("placeobj is not assigned!");
+            //    return;
+            //}
 
-            var placer = placeobj.GetComponentInChildren<PlaceObjects>();
-
+            //var placer = placeobj.GetComponentInChildren<PlaceObjects>();
+            //var placer = placeobj.GetComponent<Camera>().GetComponent<PlaceObjects>();
+            var placer = placeObjects;
             if (placer != null)
             {
                 Debug.Log("Changing placeIsExample1 to TRUE.");
-                placer.placeIsExample1 = true;
+                //placer.placeIsExample1 = true;
+                //placeobj.GetComponentInChildren<PlaceObjects>().switchBool();
+                //placeObjects.SwitchBool();
+                //checkthis = true;
+                Debug.Log(placeObjects.placeIsExample1);
 
-                
+                //Debug.Log(placeobj.GetComponentInChildren<PlaceObjects>().placeIsExample1);
+
+
+
             }
             else
             {
@@ -72,6 +84,6 @@ public class InventoryItemController : MonoBehaviour
             }
         }
 
-        RemoveItem();
+       RemoveItem();
     }
 }
