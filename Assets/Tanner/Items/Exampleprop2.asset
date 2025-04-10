@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Example2
   value: 1
   icon: {fileID: 21300000, guid: 529b2c22baf14004493b1322ab12e503, type: 3}
+  itemType: 1
