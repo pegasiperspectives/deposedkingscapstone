@@ -140,7 +140,7 @@ public class InventoryManager : MonoBehaviour
             Items.Remove(item);
             Debug.Log("Removed: " + item.itemName);
             ListItems(); // Refresh inventory UI
-            Debug.Log(placeObjects.placeIsExample1);
+            //Debug.Log(placeObjects.placeIsExample1);
         }
         else
         {
