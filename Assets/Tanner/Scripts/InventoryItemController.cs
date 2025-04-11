@@ -7,7 +7,7 @@ public class InventoryItemController : MonoBehaviour
 {
     public Item item;
     public InventoryManager inventoryManager;
-    //public GameObject inventoryManagerObj;
+    
     public PlaceObjects placeObjects;
     public bool checkthis = false;
     public GameObject placeobj;
@@ -70,24 +70,25 @@ public class InventoryItemController : MonoBehaviour
         if (item == null)
         {
             Debug.LogWarning("Item is null in UseItem!");
-            //return;
+            
         }
 
-        Debug.Log("Using item with ID: " + item.id);
+        
 
         if (item.id == 1)
         {
             
             var placer = placeObjects;
 
-                Debug.Log(placeObjects.placeIsExample1 + "itemID");
-            placeObjects.placeIsExample1 = true;
-            Debug.Log(placeObjects.placeIsExample1 + "itemID2");
+               
+            PlaceObjects.placeIsExample1 = true;
+           
             
         }
         else if (item.id == 2)
         {
-
+            var placer = placeObjects;
+            PlaceObjects.placeIsExample2 = true;
         }
 
 

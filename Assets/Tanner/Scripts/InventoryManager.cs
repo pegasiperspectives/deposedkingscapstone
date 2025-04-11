@@ -70,25 +70,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    //public void ListItems() //set items in inventory
-    //{
-    //	foreach (Transform item in ItemContent)
-    //	{
-    //		Destroy(item.gameObject);
-    //	}
-
-    //	foreach (var item in Items)
-    //	{
-    //		GameObject obj = Instantiate(InventoryItem, ItemContent);
-    //		var itemName = obj.transform.Find("ItemName").GetComponent<Text>();
-    //		var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
-
-    //		itemName.text = item.itemName;
-    //		itemIcon.sprite = item.icon;
-    //	}
-    //	SetInventoryItems();
-
-    //   }
+    
     public void ListItems()
     {
         foreach (Transform item in ItemContent)
@@ -151,7 +133,7 @@ public class InventoryManager : MonoBehaviour
         if (Items.Contains(item))
         {
             Items.Remove(item);
-            Debug.Log("Removed: " + item.itemName);
+            
             ListItems(); // Refresh inventory UI
 
         }
@@ -179,7 +161,7 @@ public class InventoryManager : MonoBehaviour
     public void ActiveThing()
     {
 
-        placeObjects.placeIsExample1 = true;
+        PlaceObjects.placeIsExample1 = true;
 
     }
 

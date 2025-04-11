@@ -5,22 +5,20 @@ using UnityEngine;
 public class PlaceObjects : MonoBehaviour
 {
     public InventoryItemController inventoryItemController;
-    //public FPSController fpscontrollerScript;
-    //public ItemPickUp itempickupscript;
-    //public GameObject cam;
+    
 
     public GameObject ghostexample1;
     public GameObject placedexaple1;
-    public bool placeIsExample1 = false;
+    public static bool placeIsExample1 = false;
 
     public GameObject ghostexample2;
     public GameObject placedexaple2;
-    public bool placeIsExample2 = false;
+    public static bool placeIsExample2 = false;
 
     public bool canPlace;
     
 
-    //public GameObject theplayer;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -38,12 +36,12 @@ public class PlaceObjects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckBool();
+        
 
         //if (placeIsExample1)
-        if (CheckBool())
+        if (placeIsExample1)
         {
-            Debug.Log("IT IS TRUE");
+            
             
             if (canPlace)
             {
@@ -62,7 +60,7 @@ public class PlaceObjects : MonoBehaviour
                         ghostexample1.SetActive(false); 
                         placeIsExample1 = false;
                         
-                        Debug.Log("HERE");
+                        
                     }
                 }
                 else//dont show the ghost object if cant see where itll be placed
@@ -79,6 +77,7 @@ public class PlaceObjects : MonoBehaviour
 
 
 
+        
         else if (placeIsExample2)
         {
            
@@ -99,7 +98,7 @@ public class PlaceObjects : MonoBehaviour
                         ghostexample2.SetActive(false);
                         placeIsExample2 = false;
 
-                        Debug.Log("HERE");
+                        
                     }
                 }
                 else//dont show the ghost object if cant see where itll be placed
@@ -126,36 +125,7 @@ public class PlaceObjects : MonoBehaviour
 
     }
 
-       public bool CheckBool()
-        {
-            
-        
-
-            if (placeIsExample1)
-            {
-                return true;
-                
-
-            //Debug.Log("ITS HERE BAD");
-            }
-            else
-            {
-                //    placeIsExample1 = true;
-                //Debug.Log("ITS HERE GOOD");
-                //Debug.Log(placeIsExample1);
-                return false;
-                
-
-            }
-            
-        }
-
-    public void SwitchCanPlace()
-    {
-        
-        ghostexample2.SetActive(false);
-       
-    }
+      
 
 
 

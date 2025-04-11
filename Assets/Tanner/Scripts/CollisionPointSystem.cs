@@ -35,7 +35,7 @@ public class CollisionPointSystem : MonoBehaviour
             i++;
             
         }
-        print(i);
+        //print(i);
         points = i; //number of points current
     }
 
