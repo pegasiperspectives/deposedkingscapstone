@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemPickUp : MonoBehaviour
 {
 	public Item Item;
-	public bool canPickUp;
+	//public bool canPickUp;
 	public GameObject player;
     private FPSController fpscontrollerScript;
     
@@ -26,7 +26,7 @@ public class ItemPickUp : MonoBehaviour
 
 	private void OnMouseDown()
 	{
-		if (fpscontrollerScript.canPickUp)
+		if (fpscontrollerScript.canPickUp == true)
 		{
 			Pickup();
 		}

@@ -14,7 +14,7 @@ public class FPSController : MonoBehaviour
 
     public float lookSpeed = 2f;
     public float lookXLimit = 45f;
-    public bool canPickUp = true;
+    public bool canPickUp;
 
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
@@ -32,9 +32,17 @@ public class FPSController : MonoBehaviour
 
     void Update()
     {
+        if(canMove == false)
+        {
+            canPickUp = false;
+        }
+        else
+        {
+            canPickUp = true;
+        }
 
-        #region Handles Movment
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
+            #region Handles Movment
+            Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 
         // Press Left Shift to run

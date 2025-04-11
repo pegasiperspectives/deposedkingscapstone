@@ -70,7 +70,7 @@ public class InventoryItemController : MonoBehaviour
         if (item == null)
         {
             Debug.LogWarning("Item is null in UseItem!");
-            return;
+            //return;
         }
 
         Debug.Log("Using item with ID: " + item.id);

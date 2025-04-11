@@ -19,8 +19,9 @@ public class PlaceObjects : MonoBehaviour
 
     public bool canPlace;
     
+
     //public GameObject theplayer;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,8 +38,10 @@ public class PlaceObjects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (placeIsExample1)
+        CheckBool();
+
+        //if (placeIsExample1)
+        if (CheckBool())
         {
             Debug.Log("IT IS TRUE");
             
@@ -123,22 +126,28 @@ public class PlaceObjects : MonoBehaviour
 
     }
 
-            public void SwitchBool()
+       public bool CheckBool()
         {
-            Debug.Log("done it switch");
-        Debug.Log(placeIsExample1);
+            
         
-            if (placeIsExample1 == true)
+
+            if (placeIsExample1)
             {
-                placeIsExample1 = false;
-            Debug.Log("ITS HERE BAD");
+                return true;
+                
+
+            //Debug.Log("ITS HERE BAD");
             }
             else
             {
-                placeIsExample1 = true;
-            Debug.Log("ITS HERE GOOD");
-            Debug.Log(placeIsExample1);
-        }
+                //    placeIsExample1 = true;
+                //Debug.Log("ITS HERE GOOD");
+                //Debug.Log(placeIsExample1);
+                return false;
+                
+
+            }
+            
         }
 
     public void SwitchCanPlace()
@@ -147,4 +156,17 @@ public class PlaceObjects : MonoBehaviour
         ghostexample2.SetActive(false);
        
     }
+
+
+
+
+    
+
+
+
+
+
+
+
+
 }
