@@ -7,18 +7,52 @@ public class InventoryItemController : MonoBehaviour
 {
     public Item item;
     public InventoryManager inventoryManager;
+    //public GameObject inventoryManagerObj;
     public PlaceObjects placeObjects;
     public bool checkthis = false;
-    //public GameObject placeobj;
-   void Update()
+    public GameObject placeobj;
+    
+
+
+
+    //this is started when inventory is opened on each inventory button
+
+
+
+
+    void Awake()
    {
-       //Debug.Log(placeobj.GetComponentInChildren<PlaceObjects>().placeIsExample1);
-   }
+        
+        
+        
+}
 
     public void AddItem(Item newItem)
     {
         item = newItem;
-       
+
+
+
+
+
+
+        if (placeObjects == null)
+        {
+            GameObject player = GameObject.Find("Player");
+            if (player != null)
+            {
+                Transform camTransform = player.transform.Find("Camera");
+                if (camTransform != null)
+                {
+                    placeObjects = camTransform.GetComponent<PlaceObjects>();
+                }
+            }
+        }
+
+
+
+
+
 
     }
     public void RemoveItem() //removing from inventory list; not to be accessed again
@@ -28,23 +62,11 @@ public class InventoryItemController : MonoBehaviour
         Destroy(gameObject);
     }
 
-    //public void UseItem()
-    //{
-    //    Debug.Log(item.id);
-    //    if (item.id == 1)
-    //    {
-    //        placeobj.GetComponentInChildren<PlaceObjects>().placeIsExample1 = true;
-    //    }
-    //    else if (item.id == 2)
-    //    {
-    //        Debug.Log("hello2");
-    //    }
-    //    RemoveItem();
-
-    //}
     
+
     public void UseItem()
     {
+        
         if (item == null)
         {
             Debug.LogWarning("Item is null in UseItem!");
@@ -55,35 +77,23 @@ public class InventoryItemController : MonoBehaviour
 
         if (item.id == 1)
         {
-            //if (placeobj == null)
-            //{
-            //    Debug.LogError("placeobj is not assigned!");
-            //    return;
-            //}
-
-            //var placer = placeobj.GetComponentInChildren<PlaceObjects>();
-            //var placer = placeobj.GetComponent<Camera>().GetComponent<PlaceObjects>();
+            
             var placer = placeObjects;
-            if (placer != null)
-            {
-                Debug.Log("Changing placeIsExample1 to TRUE.");
-                //placer.placeIsExample1 = true;
-                //placeobj.GetComponentInChildren<PlaceObjects>().switchBool();
-                //placeObjects.SwitchBool();
-                //checkthis = true;
-                Debug.Log(placeObjects.placeIsExample1);
 
-                //Debug.Log(placeobj.GetComponentInChildren<PlaceObjects>().placeIsExample1);
+                Debug.Log(placeObjects.placeIsExample1 + "itemID");
+            placeObjects.placeIsExample1 = true;
+            Debug.Log(placeObjects.placeIsExample1 + "itemID2");
+            
+        }
+        else if (item.id == 2)
+        {
 
-
-
-            }
-            else
-            {
-                Debug.LogError("PlaceObjects component not found in placeobj.");
-            }
         }
 
-       RemoveItem();
+
+        RemoveItem();
+        
     }
+
+   
 }

@@ -106,12 +106,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryItemController: {fileID: -6996846059506446806, guid: 7e6f7d5e426297041832849374c23c9e, type: 3}
-  fpscontrollerScript: {fileID: 0}
-  itempickupscript: {fileID: 0}
   ghostexample1: {fileID: 1195342533548262356, guid: f6cc48d87aece614a9d81e066adbb5de, type: 3}
   placedexaple1: {fileID: 5607173197253113890, guid: f115ac1644c134d4ab5b7fd154923aa3, type: 3}
   placeIsExample1: 0
-  ghostexample2: {fileID: 0}
+  ghostexample2: {fileID: 2300230582184706676, guid: 5f84b453522ce60468d8e448832702b7, type: 3}
   placedexaple2: {fileID: 0}
   canPlace: 0
-  totalPlace: 1

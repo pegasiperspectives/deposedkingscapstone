@@ -5,55 +5,66 @@ using UnityEngine;
 public class PlaceObjects : MonoBehaviour
 {
     public InventoryItemController inventoryItemController;
-    public FPSController fpscontrollerScript;
-    public ItemPickUp itempickupscript;
+    //public FPSController fpscontrollerScript;
+    //public ItemPickUp itempickupscript;
     //public GameObject cam;
 
     public GameObject ghostexample1;
     public GameObject placedexaple1;
-    public bool placeIsExample1;
+    public bool placeIsExample1 = false;
 
     public GameObject ghostexample2;
     public GameObject placedexaple2;
+    public bool placeIsExample2 = false;
 
     public bool canPlace;
-    public int totalPlace = 1;
+    
     //public GameObject theplayer;
     
     // Start is called before the first frame update
     void Start()
     {
-        placeIsExample1 = true;
+        
+        Debug.Log("startplaceobj");
     }
   
 
     void Awake()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(inventoryItemController.checkthis);
-        if (inventoryItemController.checkthis)
+        
+        if (placeIsExample1)
         {
-            Debug.Log("placeIsExample1 is TRUE in PlaceObjects!");
+            Debug.Log("IT IS TRUE");
+            
             if (canPlace)
             {
-                ghostexample1.SetActive(true);
+                
                 RaycastHit hit;
-                //cam.RaycastHit hit;
+                
                 if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
                 {
+                    ghostexample1.SetActive(true);
                     ghostexample1.transform.position = hit.point;
                     if (Input.GetMouseButtonDown(0))
                     {
-                        totalPlace -= 1;
+                        
                         Instantiate(placedexaple1, ghostexample1.transform.position, ghostexample1.transform.rotation);
-                        //theplayer = itempickupscript.player;
-
+                        
+                        ghostexample1.SetActive(false); 
+                        placeIsExample1 = false;
+                        
+                        Debug.Log("HERE");
                     }
+                }
+                else//dont show the ghost object if cant see where itll be placed
+                {
+                    ghostexample1.SetActive(false);
                 }
 
             }
@@ -62,16 +73,53 @@ public class PlaceObjects : MonoBehaviour
                 ghostexample1.SetActive(false);
             }
         }
-        //else
-        //{
 
-        //}
+
+
+        else if (placeIsExample2)
+        {
+           
+            if (canPlace)
+            {
+                
+                RaycastHit hit;
+                
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
+                {
+                    ghostexample2.SetActive(true);
+                    ghostexample2.transform.position = hit.point;
+                    if (Input.GetMouseButtonDown(0))
+                    {
+
+                        Instantiate(placedexaple2, ghostexample2.transform.position, ghostexample2.transform.rotation);
+                        
+                        ghostexample2.SetActive(false);
+                        placeIsExample2 = false;
+
+                        Debug.Log("HERE");
+                    }
+                }
+                else//dont show the ghost object if cant see where itll be placed
+                {
+                    ghostexample2.SetActive(false);
+                }
+
+            }
+            else
+            {
+                ghostexample2.SetActive(false);
+            }
+        }
+
+
+
 
 
         
-            
-            
-        
+
+
+
+
 
     }
 
@@ -92,4 +140,11 @@ public class PlaceObjects : MonoBehaviour
             Debug.Log(placeIsExample1);
         }
         }
+
+    public void SwitchCanPlace()
+    {
+        
+        ghostexample2.SetActive(false);
+       
+    }
 }

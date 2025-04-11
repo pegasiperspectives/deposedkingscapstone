@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
-	
-	public static InventoryManager Instance;
-	public List<Item> Items = new List<Item>();
+
+    public static InventoryManager Instance;
+    public List<Item> Items = new List<Item>();
 
 
     public GameObject player;
@@ -15,47 +15,60 @@ public class InventoryManager : MonoBehaviour
     public InventoryItemController[] InventoryItems;
     public GameObject InventoryItem;
 
-	[SerializeField] private GameObject inventory;
-	private FPSController fpscontrollerScript;
+    [SerializeField] private GameObject inventory;
+   
+    private FPSController fpscontrollerScript;
     public PlaceObjects placeObjects;
 
 
     private void Awake()
-	{
-		Instance = this;
-		fpscontrollerScript = player.GetComponent<FPSController>(); //call other script
-        
+    {
+        Instance = this;
+        fpscontrollerScript = player.GetComponent<FPSController>(); //call other script
+
 
     }
 
-	public void Add(Item item)
-	{
-		Items.Add(item);
-	}
+    public void Add(Item item)
+    {
+        Items.Add(item);
+    }
 
-	//can add delete item here if needed
-	private void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.E)) //Open/close inventory
-		{
-			if(inventory.activeInHierarchy == false)
-			{
-				inventory.SetActive(true);
-				ListItems();
-				ToggleCursor();
+    //can add delete item here if needed
+    private void Update()
+    {
+        if (inventory.activeInHierarchy == false)
+        {
+            placeObjects.canPlace = true;
+        }
+        else
+        {
+            placeObjects.canPlace = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E)) //Open/close inventory
+        {
+            if (inventory.activeInHierarchy == false)
+            {
+                placeObjects.canPlace = true;
+
+                inventory.SetActive(true);
+                ListItems();
+                ToggleCursor();
                 fpscontrollerScript.canMove = false;
-				fpscontrollerScript.canPickUp = false;
+                fpscontrollerScript.canPickUp = false;
             }
-			else if(inventory.activeInHierarchy == true)
-			{
-				inventory.SetActive(false);
-				CleanItems();
-				ToggleCursor();
+            else if (inventory.activeInHierarchy == true)
+            {
+                placeObjects.canPlace = false;
+                inventory.SetActive(false);
+                CleanItems();
+                ToggleCursor();
                 fpscontrollerScript.canMove = true;
-				fpscontrollerScript.canPickUp = true;
+                fpscontrollerScript.canPickUp = true;
             }
-		}
-	}
+        }
+    }
 
     //public void ListItems() //set items in inventory
     //{
@@ -101,15 +114,15 @@ public class InventoryManager : MonoBehaviour
         SetInventoryItems();
     }
     public void CleanItems() //gets rid of duplicates when reopening inventory
-	{
-		foreach (Transform item in ItemContent)
-		{
-			Destroy(item.gameObject);
-		}
-	}
-	public void CloseInventoryButton()
-	{
-		ToggleCursor();
+    {
+        foreach (Transform item in ItemContent)
+        {
+            Destroy(item.gameObject);
+        }
+    }
+    public void CloseInventoryButton()
+    {
+        ToggleCursor();
         fpscontrollerScript.canMove = true;
         fpscontrollerScript.canPickUp = true;
     }
@@ -120,19 +133,19 @@ public class InventoryManager : MonoBehaviour
         fpscontrollerScript.canPickUp = false;
     }
     public void ToggleCursor()
-	{
-		if (Cursor.lockState == CursorLockMode.Locked)
-		{
-			Cursor.lockState = CursorLockMode.None;
-			Cursor.visible = true;
-		}
-		else
-		{
+    {
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
 
-	}
+    }
     public void Remove(Item item)
     {
         if (Items.Contains(item))
@@ -140,7 +153,7 @@ public class InventoryManager : MonoBehaviour
             Items.Remove(item);
             Debug.Log("Removed: " + item.itemName);
             ListItems(); // Refresh inventory UI
-            //Debug.Log(placeObjects.placeIsExample1);
+
         }
         else
         {
@@ -148,13 +161,37 @@ public class InventoryManager : MonoBehaviour
         }
     }
     public void SetInventoryItems()
-	{
-		InventoryItems = ItemContent.GetComponentsInChildren<InventoryItemController>();
+    {
+        InventoryItems = ItemContent.GetComponentsInChildren<InventoryItemController>();
 
-		for(int i = 0; i < Items.Count; i++)
-		{
-			InventoryItems[i].AddItem(Items[i]);
-		}
-	}
+        for (int i = 0; i < Items.Count; i++)
+        {
+            InventoryItems[i].AddItem(Items[i]);
+        }
+    }
+    public void turnoffinventorygorplace()
+    {
+        placeObjects.canPlace = true;
+    }
+
+
+
+    public void ActiveThing()
+    {
+
+        placeObjects.placeIsExample1 = true;
+
+    }
+
+
+    public void TurnoffInv()
+    {
+        inventory.SetActive(false);
+    }
+
 
 }
+
+
+
+
