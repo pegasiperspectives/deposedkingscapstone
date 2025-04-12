@@ -255,6 +255,7 @@ MonoBehaviour:
   placeObjects: {fileID: 5887197931716414228, guid: d3baa7dd76b9c8b4683d544d1b89ab44, type: 3}
   checkthis: 0
   placeobj: {fileID: 0}
+  inventory: {fileID: 7014041543385319168, guid: 3bc10807d987e6b45a325d26261cccf0, type: 3}
 --- !u!1 &7823268940867566895
 GameObject:
   m_ObjectHideFlags: 0

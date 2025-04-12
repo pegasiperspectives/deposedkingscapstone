@@ -45,10 +45,19 @@ public class InventoryManager : MonoBehaviour
         {
             placeObjects.canPlace = false;
         }
+        //if(PlaceObjects.placeIsExample1 == true || PlaceObjects.placeIsExample2 == true)
+        //{
+        //    placeObjects.canPlace = true;
+        //    inventory.SetActive(false);
+        //    CleanItems();
+        //    ToggleCursor();
+        //    fpscontrollerScript.canMove = true;
+        //    fpscontrollerScript.canPickUp = true;
+        //}
 
         if (Input.GetKeyDown(KeyCode.E)) //Open/close inventory
         {
-            if (inventory.activeInHierarchy == false)
+            if (inventory.activeInHierarchy == false && PlaceObjects.placeIsExample1 == false && PlaceObjects.placeIsExample2 == false)
             {
                 placeObjects.canPlace = true;
 

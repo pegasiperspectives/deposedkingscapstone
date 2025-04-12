@@ -11,8 +11,8 @@ public class InventoryItemController : MonoBehaviour
     public PlaceObjects placeObjects;
     public bool checkthis = false;
     public GameObject placeobj;
-    
 
+    [SerializeField] private GameObject inventory;
 
 
     //this is started when inventory is opened on each inventory button
@@ -58,7 +58,14 @@ public class InventoryItemController : MonoBehaviour
     public void RemoveItem() //removing from inventory list; not to be accessed again
     {
         InventoryManager.Instance.Remove(item);
+
+
+
+        CloseInventory();
         
+
+
+
         Destroy(gameObject);
     }
 
@@ -91,10 +98,17 @@ public class InventoryItemController : MonoBehaviour
             PlaceObjects.placeIsExample2 = true;
         }
 
-
+        
         RemoveItem();
         
     }
 
-   
+    void CloseInventory()
+    {
+        if (InventoryManager.Instance != null)
+        {
+            InventoryManager.Instance.CloseInventoryButton();
+            InventoryManager.Instance.TurnoffInv(); // optional if you need that too
+        }
+    }
 }
