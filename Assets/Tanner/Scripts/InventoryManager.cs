@@ -34,7 +34,7 @@ public class InventoryManager : MonoBehaviour
         Items.Add(item);
     }
 
-    //can add delete item here if needed
+    
     private void Update()
     {
         if (inventory.activeInHierarchy == false)
@@ -45,15 +45,7 @@ public class InventoryManager : MonoBehaviour
         {
             placeObjects.canPlace = false;
         }
-        //if(PlaceObjects.placeIsExample1 == true || PlaceObjects.placeIsExample2 == true)
-        //{
-        //    placeObjects.canPlace = true;
-        //    inventory.SetActive(false);
-        //    CleanItems();
-        //    ToggleCursor();
-        //    fpscontrollerScript.canMove = true;
-        //    fpscontrollerScript.canPickUp = true;
-        //}
+      
 
         if (Input.GetKeyDown(KeyCode.E)) //Open/close inventory
         {
@@ -65,7 +57,8 @@ public class InventoryManager : MonoBehaviour
                 ListItems();
                 ToggleCursor();
                 fpscontrollerScript.canMove = false;
-                fpscontrollerScript.canPickUp = false;
+                
+                FPSController.canPickUp = false;
             }
             else if (inventory.activeInHierarchy == true)
             {
@@ -74,7 +67,8 @@ public class InventoryManager : MonoBehaviour
                 CleanItems();
                 ToggleCursor();
                 fpscontrollerScript.canMove = true;
-                fpscontrollerScript.canPickUp = true;
+                
+                FPSController.canPickUp = true;
             }
         }
     }
@@ -115,13 +109,15 @@ public class InventoryManager : MonoBehaviour
     {
         ToggleCursor();
         fpscontrollerScript.canMove = true;
-        fpscontrollerScript.canPickUp = true;
+        FPSController.canPickUp = true;
+        
     }
     public void OpenInventoryButton()
     {
         ToggleCursor();
         fpscontrollerScript.canMove = false;
-        fpscontrollerScript.canPickUp = false;
+       
+        FPSController.canPickUp = false;
     }
     public void ToggleCursor()
     {

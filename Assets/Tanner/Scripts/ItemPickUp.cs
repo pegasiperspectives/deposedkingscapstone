@@ -26,7 +26,7 @@ public class ItemPickUp : MonoBehaviour
 
 	private void OnMouseDown()
 	{
-		if (fpscontrollerScript.canPickUp == true)
+		if (FPSController.canPickUp == true)
 		{
 			Pickup();
 		}
