@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TaliaTesting.unity
     guid: f10fca01d633994408993e7e5390ee01
+  - enabled: 1
+    path: Assets/Scenes/Sprint1.unity
+    guid: ae1f74cc1e06bc14d89e701deb1e24c1
   m_configObjects: {}

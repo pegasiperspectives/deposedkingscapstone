@@ -24,6 +24,6 @@ public class MenuManager : MonoBehaviour
 
     public void BeginGame()
     {
-        SceneManager.LoadScene("TaliaTesting");
+        SceneManager.LoadScene("Sprint1");
     }
 }
