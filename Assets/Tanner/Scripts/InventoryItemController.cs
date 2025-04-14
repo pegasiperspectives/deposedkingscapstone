@@ -97,8 +97,12 @@ public class InventoryItemController : MonoBehaviour
             var placer = placeObjects;
             PlaceObjects.placeIsExample2 = true;
         }
+        else if (item.id == 3)
+        {
+            var placer = placeObjects;
+            PlaceObjects.placeIsExample3 = true;
+        }
 
-        
         RemoveItem();
         
     }

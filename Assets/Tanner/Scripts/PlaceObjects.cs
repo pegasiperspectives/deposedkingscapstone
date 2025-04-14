@@ -15,6 +15,11 @@ public class PlaceObjects : MonoBehaviour
     public GameObject placedexaple2;
     public static bool placeIsExample2 = false;
 
+    public GameObject ghostexample3;
+    public GameObject placedexaple3;
+    public static bool placeIsExample3 = false;
+
+
     public bool canPlace;
     
 
@@ -116,8 +121,41 @@ public class PlaceObjects : MonoBehaviour
 
 
 
+        else if (placeIsExample3)
+        {
 
-        
+            if (canPlace)
+            {
+
+                RaycastHit hit;
+
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
+                {
+                    ghostexample3.SetActive(true);
+                    ghostexample3.transform.position = hit.point;
+                    if (Input.GetMouseButtonDown(0))
+                    {
+
+                        Instantiate(placedexaple3, ghostexample3.transform.position, ghostexample3.transform.rotation);
+
+                        ghostexample3.SetActive(false);
+                        placeIsExample3 = false;
+
+
+                    }
+                }
+                else//dont show the ghost object if cant see where itll be placed
+                {
+                    ghostexample3.SetActive(false);
+                }
+
+            }
+            else
+            {
+                ghostexample3.SetActive(false);
+            }
+        }
+
 
 
 
