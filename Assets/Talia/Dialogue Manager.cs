@@ -44,11 +44,15 @@ public class DialogueUI : MonoBehaviour
             self.SetActive(true);
             SetDialogueText(allDialogue[0], textLabel);
             Debug.Log("triggered dialogue box");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
         else if (Input.GetKey(KeyCode.X))
         {
             closeDialogue();
             Debug.Log("exited dialogue box");
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 
