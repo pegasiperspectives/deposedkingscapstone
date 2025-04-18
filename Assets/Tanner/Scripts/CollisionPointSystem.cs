@@ -24,7 +24,7 @@ public class CollisionPointSystem : MonoBehaviour
     {
         MyCollisions();
         pointstotal = points - pointsneg;
-        print(pointstotal);
+        //print(pointstotal);
         if(pointstotal == 3)
         {
             wincanvas.SetActive(true);

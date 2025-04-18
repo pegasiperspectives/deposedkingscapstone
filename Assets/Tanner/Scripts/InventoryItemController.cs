@@ -115,4 +115,26 @@ public class InventoryItemController : MonoBehaviour
             InventoryManager.Instance.TurnoffInv(); // optional if you need that too
         }
     }
+
+
+    public void InspectItem()
+    {
+        Debug.Log("Clicked item: " + item.itemName + " (ID: " + item.id + ")");
+        if (item.id == 1)
+        {
+
+           //observe script here for exampleobject1
+
+        }
+        else if (item.id == 2)
+        {
+            
+        }
+        else if (item.id == 3)
+        {
+            
+        }
+    }
+
+
 }
