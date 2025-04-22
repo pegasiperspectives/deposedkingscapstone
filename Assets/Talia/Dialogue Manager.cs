@@ -20,6 +20,8 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private float typeSpeed = 50;
     [SerializeField] public GameObject self;
 
+    [SerializeField] public GameObject dialogueOption1;
+
 
     public string[] allDialogue = {
             "Who's there?!",
