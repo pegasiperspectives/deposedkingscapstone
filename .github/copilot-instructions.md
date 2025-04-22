@@ -2,13 +2,13 @@
 - Project name: deposedkingscapstone
 - Unity version: Unity 2022.3.20f1
 - Active scene:
-  - Name: TaliaMenu
+  - Name: Sprint1
   - Tags:
     - Untagged, Respawn, Finish, EditorOnly, MainCamera, Player, GameController, TriggerPointBox, Object1, Object2
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg
 - Active game object:
-  - Name: UIManager
+  - Name: Dialogue Option 3
   - Tag: Untagged
-  - Layer: Default
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
