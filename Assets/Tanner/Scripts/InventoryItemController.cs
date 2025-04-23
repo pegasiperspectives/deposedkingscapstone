@@ -7,13 +7,12 @@ public class InventoryItemController : MonoBehaviour
 {
     public Item item;
     public InventoryManager inventoryManager;
-    
+
     public PlaceObjects placeObjects;
     public bool checkthis = false;
     public GameObject placeobj;
 
     [SerializeField] private GameObject inventory;
-
 
     //this is started when inventory is opened on each inventory button
 
@@ -21,11 +20,11 @@ public class InventoryItemController : MonoBehaviour
 
 
     void Awake()
-   {
-        
-        
-        
-}
+    {
+
+
+
+    }
 
     public void AddItem(Item newItem)
     {
@@ -62,35 +61,35 @@ public class InventoryItemController : MonoBehaviour
 
 
         CloseInventory();
-        
+
 
 
 
         Destroy(gameObject);
     }
 
-    
+
 
     public void UseItem()
     {
-        
+
         if (item == null)
         {
             Debug.LogWarning("Item is null in UseItem!");
-            
+
         }
 
-        
+
 
         if (item.id == 1)
         {
-            
+
             var placer = placeObjects;
 
-               
+
             PlaceObjects.placeIsExample1 = true;
-           
-            
+
+
         }
         else if (item.id == 2)
         {
@@ -104,7 +103,7 @@ public class InventoryItemController : MonoBehaviour
         }
 
         RemoveItem();
-        
+
     }
 
     void CloseInventory()
@@ -123,16 +122,43 @@ public class InventoryItemController : MonoBehaviour
         if (item.id == 1)
         {
 
-           //observe script here for exampleobject1
+            //observe script here for exampleobject1
+            Debug.Log("the observer interact method was successfully accessed");
+            GameObject item = Instantiate(gameObject);
+            item.transform.SetParent(InventoryManager.Instance.obscamera.rig);
+            item.transform.localPosition = Vector3.zero;
+            item.transform.GetChild(0).localPosition = Vector3.zero;
+            InventoryManager.Instance.obscamera.model = item.transform;
+            InventoryManager.Instance.obscamera.gameObject.SetActive(true);
+
+            InventoryManager.Instance.ObservableObject1.SetActive(true);
 
         }
         else if (item.id == 2)
         {
-            
+            //observe script here for exampleobject1
+            Debug.Log("the observer interact method was successfully accessed");
+            GameObject item = Instantiate(gameObject);
+            item.transform.SetParent(InventoryManager.Instance.obscamera.rig);
+            item.transform.localPosition = Vector3.zero;
+            item.transform.GetChild(0).localPosition = Vector3.zero;
+            InventoryManager.Instance.obscamera.model = item.transform;
+            InventoryManager.Instance.obscamera.gameObject.SetActive(true);
+
+            InventoryManager.Instance.ObservableObject2.SetActive(true);
         }
         else if (item.id == 3)
         {
-            
+            //observe script here for exampleobject1
+            Debug.Log("the observer interact method was successfully accessed");
+            GameObject item = Instantiate(gameObject);
+            item.transform.SetParent(InventoryManager.Instance.obscamera.rig);
+            item.transform.localPosition = Vector3.zero;
+            item.transform.GetChild(0).localPosition = Vector3.zero;
+            InventoryManager.Instance.obscamera.model = item.transform;
+            InventoryManager.Instance.obscamera.gameObject.SetActive(true);
+
+            InventoryManager.Instance.ObservableObject3.SetActive(true);
         }
     }
 

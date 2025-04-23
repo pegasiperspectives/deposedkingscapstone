@@ -21,11 +21,20 @@ public class InventoryManager : MonoBehaviour
     private FPSController fpscontrollerScript;
     public PlaceObjects placeObjects;
 
+    public ObsCamera obscamera;
+
+    [SerializeField] public GameObject ObservableObject1;
+
+    [SerializeField] public GameObject ObservableObject2;
+
+    [SerializeField] public GameObject ObservableObject3;
+
 
     private void Awake()
     {
         Instance = this;
         fpscontrollerScript = player.GetComponent<FPSController>(); //call other script
+        obscamera.gameObject.SetActive(false);
 
 
     }
@@ -177,6 +186,13 @@ public class InventoryManager : MonoBehaviour
         inventory.SetActive(false);
     }
 
+    public void ExitInspect() {
+         if (obscamera.gameObject.activeInHierarchy)  {
+                obscamera.Close();
+                Debug.Log("registering exit clickobs");
+                return;
+            }
+    }
 
 }
 
