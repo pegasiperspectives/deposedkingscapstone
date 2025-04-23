@@ -13,6 +13,10 @@ public class DialogueUI : MonoBehaviour
     //Tanner Addition
     public Transform itemButtonContainer;  
     public GameObject itemButtonPrefab;
+    private FPSController fpscontrollerScript;
+    public GameObject player;
+    public PlaceObjects placeObjects;
+    [SerializeField] private GameObject inventory;
     //added
 
 
@@ -44,12 +48,16 @@ public class DialogueUI : MonoBehaviour
     {
         self.SetActive(false);
         Debug.Log("dialogue box is not active yet");
+
+        //Tanner Addition
+        fpscontrollerScript = player.GetComponent<FPSController>();
+        //added
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I) && self.activeInHierarchy == false) //added self chech so multiple objects arent made
+        if (Input.GetKeyDown(KeyCode.I) && self.activeInHierarchy == false && inventory.activeInHierarchy == false) //added self chech so multiple objects arent made
         {
             self.SetActive(true);
             SetDialogueText(allDialogue[0], textLabel);
@@ -59,7 +67,10 @@ public class DialogueUI : MonoBehaviour
 
             //tanner addition
             ShowInventoryItemButtons();
+            placeObjects.canPlace = false;
+            fpscontrollerScript.canMove = false;
             //added
+
         }
         else if (Input.GetKeyDown(KeyCode.X))
         {
@@ -67,6 +78,10 @@ public class DialogueUI : MonoBehaviour
             Debug.Log("exited dialogue box");
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+
+            //Tanner Addition
+            fpscontrollerScript.canMove = true;
+            //added
         }
 
         
@@ -105,20 +120,21 @@ public class DialogueUI : MonoBehaviour
         //added
     }
 
-    public void Option1()
-    {
-        SetDialogueText(allDialogue[1], textLabel);
-    }
+    //dont need this anymore
+    //public void Option1()
+    //{
+    //    SetDialogueText(allDialogue[1], textLabel);
+    //}
 
-    public void Option2()
-    {
-        SetDialogueText(allDialogue[2], textLabel);
-    }
+    //public void Option2()
+    //{
+    //    SetDialogueText(allDialogue[2], textLabel);
+    //}
 
-    public void Option3()
-    {
-        SetDialogueText(allDialogue[3], textLabel);
-    }
+    //public void Option3()
+    //{
+    //    SetDialogueText(allDialogue[3], textLabel);
+    //}
 
 
 
@@ -128,7 +144,7 @@ public class DialogueUI : MonoBehaviour
     public void ShowInventoryItemButtons()
     {
        
-        foreach (var item in InventoryManager.Instance.Items)
+        foreach (var item in InventoryManager.Instance.Items) // make each button
         {
             GameObject button = Instantiate(itemButtonPrefab, itemButtonContainer);
             var label = button.GetComponentInChildren<TMP_Text>();
@@ -143,13 +159,15 @@ public class DialogueUI : MonoBehaviour
         // Call the dialogue options here for the name of the object
         if (item.itemName.Contains("Example1"))
             SetDialogueText(allDialogue[1], textLabel);
+
         else if (item.itemName.Contains("Example2"))
             SetDialogueText(allDialogue[5], textLabel);
+
         else
             SetDialogueText(allDialogue[3], textLabel);
     }
 
-    private void ClearItemButtons()// dont want repeated objects in inventory
+    private void ClearItemButtons()// dont want repeated objects in inventory so they are deleted when closed
     {
         foreach (Transform child in itemButtonContainer)
         {

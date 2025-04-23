@@ -16,7 +16,8 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryItem;
 
     [SerializeField] private GameObject inventory;
-   
+    [SerializeField] private GameObject dialogue;
+
     private FPSController fpscontrollerScript;
     public PlaceObjects placeObjects;
 
@@ -37,11 +38,11 @@ public class InventoryManager : MonoBehaviour
     
     private void Update()
     {
-        if (inventory.activeInHierarchy == false)
+        if (inventory.activeInHierarchy == false && dialogue.activeInHierarchy == false)
         {
             placeObjects.canPlace = true;
         }
-        else
+        else if(inventory.activeInHierarchy == true || dialogue.activeInHierarchy == true)
         {
             placeObjects.canPlace = false;
         }
@@ -49,7 +50,7 @@ public class InventoryManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E)) //Open/close inventory
         {
-            if (inventory.activeInHierarchy == false && PlaceObjects.placeIsExample1 == false && PlaceObjects.placeIsExample2 == false)
+            if (inventory.activeInHierarchy == false && PlaceObjects.placeIsExample1 == false && PlaceObjects.placeIsExample2 == false && dialogue.activeInHierarchy == false)
             {
                 placeObjects.canPlace = true;
 
