@@ -4253,7 +4253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &69433819
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7875,7 +7875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &153467851
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7951,7 +7951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &169152011
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22373,7 +22373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1278601331176822159, guid: d6921ddad2995fe4493fa9d6563a8565, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33580,6 +33580,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1686025980}
+    - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 576083669}
     - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
       propertyPath: inventory
       value: 
@@ -58330,9 +58334,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemButtonContainer: {fileID: 444069582}
   itemButtonPrefab: {fileID: 1278601331176822159, guid: d6921ddad2995fe4493fa9d6563a8565, type: 3}
+  player: {fileID: 1686025980}
+  placeObjects: {fileID: 1686025981}
+  inventory: {fileID: 927926079}
   textLabel: {fileID: 374861174}
   typeSpeed: 50
   self: {fileID: 576083669}
+  dialogueOption1: {fileID: 0}
   allDialogue:
   - Who's there?!
   - My grandma gave that to me. Thanks for finding it!
