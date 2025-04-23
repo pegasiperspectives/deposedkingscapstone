@@ -119,6 +119,9 @@ public class InventoryItemController : MonoBehaviour
     public void InspectItem()
     {
         Debug.Log("Clicked item: " + item.itemName + " (ID: " + item.id + ")");
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         if (item.id == 1)
         {
 
@@ -160,6 +163,14 @@ public class InventoryItemController : MonoBehaviour
 
             InventoryManager.Instance.ObservableObject3.SetActive(true);
         }
+
+        if (Input.GetKey(KeyCode.S))  {
+                InventoryManager.Instance.obscamera.Close();
+                Debug.Log("registering exit clickobs");
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                return;
+            }
     }
 
 

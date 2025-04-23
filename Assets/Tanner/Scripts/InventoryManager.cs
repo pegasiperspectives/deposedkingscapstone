@@ -186,13 +186,6 @@ public class InventoryManager : MonoBehaviour
         inventory.SetActive(false);
     }
 
-    public void ExitInspect() {
-         if (obscamera.gameObject.activeInHierarchy)  {
-                obscamera.Close();
-                Debug.Log("registering exit clickobs");
-                return;
-            }
-    }
 
 }
 
