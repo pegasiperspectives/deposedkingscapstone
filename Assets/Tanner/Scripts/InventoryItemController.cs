@@ -21,6 +21,8 @@ public class InventoryItemController : MonoBehaviour
     public float deltaRotationX;
     public float deltaRotationY;
 
+    public GameObject currentObservable;
+
     [SerializeField] private GameObject inventory;
 
     //this is started when inventory is opened on each inventory button
@@ -42,6 +44,11 @@ public class InventoryItemController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            InspectingWithMouse();
+        }
+
         if (Input.GetKey(KeyCode.S) && currentlyInspecting == true)
         {
             currentlyInspecting = false;
@@ -52,75 +59,6 @@ public class InventoryItemController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             return;
-        }
-
-        if (currentlyInspecting == true && item.id == 1) {
-            //observe script here for exampleobject1
-            Debug.Log("the observer interact method was successfully accessed");
-            GameObject item = Instantiate(gameObject);
-            item.transform.SetParent(InventoryManager.Instance.obscamera.rig);
-            item.transform.localPosition = Vector3.zero;
-            item.transform.GetChild(0).localPosition = Vector3.zero;
-            InventoryManager.Instance.obscamera.model = item.transform;
-            InventoryManager.Instance.obscamera.gameObject.SetActive(true);
-
-            InventoryManager.Instance.ObservableObject1.SetActive(true);
-            if (Input.GetMouseButtonDown(0))
-            {
-                Debug.Log("registering inspect rotation");
-                
-                Quaternion rotationY = Quaternion.AngleAxis(deltaRotationY * objectRotationSpeed * Time.deltaTime, Vector3.up); // Rotate around Y-axis (horizontal)
-                Quaternion rotationX = Quaternion.AngleAxis(deltaRotationX * objectRotationSpeed * Time.deltaTime, Vector3.right); // Rotate around X-axis (vertical)
-
-                // Apply rotation to the object
-                InventoryManager.Instance.ObservableObject1.transform.rotation = rotationX * transform.rotation * rotationY;
-            }
-        }
-
-        if (currentlyInspecting == true && item.id == 2) {
-            //observe script here for exampleobject1
-            Debug.Log("the observer interact method was successfully accessed");
-            GameObject item = Instantiate(gameObject);
-            item.transform.SetParent(InventoryManager.Instance.obscamera.rig);
-            item.transform.localPosition = Vector3.zero;
-            item.transform.GetChild(0).localPosition = Vector3.zero;
-            InventoryManager.Instance.obscamera.model = item.transform;
-            InventoryManager.Instance.obscamera.gameObject.SetActive(true);
-
-            InventoryManager.Instance.ObservableObject2.SetActive(true);
-            if (Input.GetMouseButtonDown(0))
-            {
-                Debug.Log("registering inspect rotation");
-                
-                Quaternion rotationY = Quaternion.AngleAxis(deltaRotationY * objectRotationSpeed * Time.deltaTime, Vector3.up); // Rotate around Y-axis (horizontal)
-                Quaternion rotationX = Quaternion.AngleAxis(deltaRotationX * objectRotationSpeed * Time.deltaTime, Vector3.right); // Rotate around X-axis (vertical)
-
-                // Apply rotation to the object
-                InventoryManager.Instance.ObservableObject2.transform.rotation = rotationX * transform.rotation * rotationY;
-            }
-        }
-
-        if (currentlyInspecting == true && item.id == 3) {
-            //observe script here for exampleobject1
-            Debug.Log("the observer interact method was successfully accessed");
-            GameObject item = Instantiate(gameObject);
-            item.transform.SetParent(InventoryManager.Instance.obscamera.rig);
-            item.transform.localPosition = Vector3.zero;
-            item.transform.GetChild(0).localPosition = Vector3.zero;
-            InventoryManager.Instance.obscamera.model = item.transform;
-            InventoryManager.Instance.obscamera.gameObject.SetActive(true);
-
-            InventoryManager.Instance.ObservableObject3.SetActive(true);
-            if (Input.GetMouseButtonDown(0))
-            {
-                Debug.Log("registering inspect rotation");
-                
-                Quaternion rotationY = Quaternion.AngleAxis(deltaRotationY * objectRotationSpeed * Time.deltaTime, Vector3.up); // Rotate around Y-axis (horizontal)
-                Quaternion rotationX = Quaternion.AngleAxis(deltaRotationX * objectRotationSpeed * Time.deltaTime, Vector3.right); // Rotate around X-axis (vertical)
-
-                // Apply rotation to the object
-                InventoryManager.Instance.ObservableObject3.transform.rotation = rotationX * transform.rotation * rotationY;
-            }
         }
     }
 
@@ -223,84 +161,49 @@ public class InventoryItemController : MonoBehaviour
         Debug.Log("Clicked item: " + item.itemName + " (ID: " + item.id + ")");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
-        deltaRotationX = -Input.GetAxis("Mouse X");
-        deltaRotationY = Input.GetAxis("Mouse Y");
+        InventoryManager.Instance.obscamera.gameObject.SetActive(true);
 
         if (item.id == 1)
         {
-
-            //observe script here for exampleobject1
-            Debug.Log("the observer interact method was successfully accessed");
-            GameObject item = Instantiate(gameObject);
-            item.transform.SetParent(InventoryManager.Instance.obscamera.rig);
-            item.transform.localPosition = Vector3.zero;
-            item.transform.GetChild(0).localPosition = Vector3.zero;
-            InventoryManager.Instance.obscamera.model = item.transform;
-            InventoryManager.Instance.obscamera.gameObject.SetActive(true);
-
             InventoryManager.Instance.ObservableObject1.SetActive(true);
-            if (Input.GetMouseButtonDown(0))
-            {
-                Debug.Log("registering inspect rotation");
-                
-                Quaternion rotationY = Quaternion.AngleAxis(deltaRotationY * objectRotationSpeed * Time.deltaTime, Vector3.up); // Rotate around Y-axis (horizontal)
-                Quaternion rotationX = Quaternion.AngleAxis(deltaRotationX * objectRotationSpeed * Time.deltaTime, Vector3.right); // Rotate around X-axis (vertical)
-
-                // Apply rotation to the object
-                InventoryManager.Instance.ObservableObject1.transform.rotation = rotationX * transform.rotation * rotationY;
-            }
+            currentObservable = InventoryManager.Instance.ObservableObject1;
         }
-        else if (item.id == 2)
-        {
-            //observe script here for exampleobject1
-            Debug.Log("the observer interact method was successfully accessed");
-            GameObject item = Instantiate(gameObject);
-            item.transform.SetParent(InventoryManager.Instance.obscamera.rig);
-            item.transform.localPosition = Vector3.zero;
-            item.transform.GetChild(0).localPosition = Vector3.zero;
-            InventoryManager.Instance.obscamera.model = item.transform;
-            InventoryManager.Instance.obscamera.gameObject.SetActive(true);
 
+        if (item.id == 2)
+        {
             InventoryManager.Instance.ObservableObject2.SetActive(true);
-            if (Input.GetMouseButtonDown(0))
-            {
-                Debug.Log("registering inspect rotation");
-                Quaternion rotationY = Quaternion.AngleAxis(deltaRotationY * objectRotationSpeed * Time.deltaTime, Vector3.up); // Rotate around Y-axis (horizontal)
-                Quaternion rotationX = Quaternion.AngleAxis(deltaRotationX * objectRotationSpeed * Time.deltaTime, Vector3.right); // Rotate around X-axis (vertical)
-
-                // Apply rotation to the object
-                InventoryManager.Instance.ObservableObject2.transform.rotation = rotationX * transform.rotation * rotationY;
-            }
-
+            currentObservable = InventoryManager.Instance.ObservableObject2;
         }
-        else if (item.id == 3)
+
+        if (item.id == 3)
         {
-            //observe script here for exampleobject1
-            Debug.Log("the observer interact method was successfully accessed");
-            GameObject item = Instantiate(gameObject);
-            item.transform.SetParent(InventoryManager.Instance.obscamera.rig);
-            item.transform.localPosition = Vector3.zero;
-            item.transform.GetChild(0).localPosition = Vector3.zero;
-            InventoryManager.Instance.obscamera.model = item.transform;
-            InventoryManager.Instance.obscamera.gameObject.SetActive(true);
-
-            InventoryManager.Instance.ObservableObject3.SetActive(true);
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                Debug.Log("registering inspect rotation");
-
-                Quaternion rotationY = Quaternion.AngleAxis(deltaRotationY * objectRotationSpeed * Time.deltaTime, Vector3.up); // Rotate around Y-axis (horizontal)
-                Quaternion rotationX = Quaternion.AngleAxis(deltaRotationX * objectRotationSpeed * Time.deltaTime, Vector3.right); // Rotate around X-axis (vertical)
-
-                // Apply rotation to the object
-                InventoryManager.Instance.ObservableObject3.transform.rotation = rotationX * transform.rotation * rotationY;
-            }
+            InventoryManager.Instance.ObservableObject1.SetActive(true);
+            currentObservable = InventoryManager.Instance.ObservableObject3;
         }
-
 
     }
 
+    public void InspectingWithMouse()
+    {
+        Debug.Log("Inspectingwithmouse");
+        if (currentlyInspecting == true)
+        {
+            deltaRotationX = -Input.GetAxis("Mouse X");
+            deltaRotationY = Input.GetAxis("Mouse Y");
 
+
+            Debug.Log("registering inspect rotation");
+
+            Quaternion rotationY = Quaternion.AngleAxis(deltaRotationY * objectRotationSpeed * Time.deltaTime, Vector3.up); // Rotate around Y-axis (horizontal)
+            Quaternion rotationX = Quaternion.AngleAxis(deltaRotationX * objectRotationSpeed * Time.deltaTime, Vector3.right); // Rotate around X-axis (vertical)
+
+            // Apply rotation to the object
+            currentObservable.transform.rotation = rotationX * transform.rotation * rotationY;
+        }
+    }
 }
+
+
+
+
+

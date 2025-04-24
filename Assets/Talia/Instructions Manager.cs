@@ -14,11 +14,19 @@ public class InstructionsManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() 
     {
         if (Input.GetKey(KeyCode.X))
         {
             self.SetActive(false);
         }
+
+        if (Input.GetKey(KeyCode.J)) {
+            self.SetActive(true);
+        }
+    }
+
+    void ButtonClick() {
+        self.SetActive(true);
     }
 }
