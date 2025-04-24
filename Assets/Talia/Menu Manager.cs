@@ -24,6 +24,6 @@ public class MenuManager : MonoBehaviour
 
     public void BeginGame()
     {
-        SceneManager.LoadScene("Sprint1");
+        SceneManager.LoadScene("Sprint2");
     }
 }

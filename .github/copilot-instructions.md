@@ -2,13 +2,13 @@
 - Project name: deposedkingscapstone
 - Unity version: Unity 2022.3.20f1
 - Active scene:
-  - Name: Sprint1
+  - Name: Sprint2
   - Tags:
     - Untagged, Respawn, Finish, EditorOnly, MainCamera, Player, GameController, TriggerPointBox, Object1, Object2
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg
 - Active game object:
-  - Name: Instructions Text Gained Info
-  - Tag: Untagged
-  - Layer: UI
+  - Name: Example1 (1)
+  - Tag: Object1
+  - Layer: point
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
