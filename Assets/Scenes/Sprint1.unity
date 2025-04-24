@@ -33937,9 +33937,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4833486426865966196, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
+      - m_Target: {fileID: 184299416}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34906,7 +34906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1619996474565797863, guid: 7e6f7d5e426297041832849374c23c9e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1619996474565797863, guid: 7e6f7d5e426297041832849374c23c9e, type: 3}
       propertyPath: m_AnchorMin.x
@@ -34914,7 +34914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1619996474565797863, guid: 7e6f7d5e426297041832849374c23c9e, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1619996474565797863, guid: 7e6f7d5e426297041832849374c23c9e, type: 3}
       propertyPath: m_SizeDelta.x
@@ -34954,11 +34954,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1619996474565797863, guid: 7e6f7d5e426297041832849374c23c9e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1619996474565797863, guid: 7e6f7d5e426297041832849374c23c9e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 1619996474565797863, guid: 7e6f7d5e426297041832849374c23c9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
