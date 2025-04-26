@@ -26332,6 +26332,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4987792825715255075, guid: 5dff20bad7fe0fb40aec444a591ec4f8, type: 3}
+      propertyPath: gravity
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987792825715255075, guid: 5dff20bad7fe0fb40aec444a591ec4f8, type: 3}
       propertyPath: canPickUp
       value: 1
       objectReference: {fileID: 0}
