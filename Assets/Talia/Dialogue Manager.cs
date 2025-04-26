@@ -72,7 +72,7 @@ public class DialogueUI : MonoBehaviour
             //added
 
         }
-        else if (Input.GetKeyDown(KeyCode.X))
+        else if (Input.GetKeyDown(KeyCode.X) && self.activeInHierarchy)
         {
             closeDialogue();
             Debug.Log("exited dialogue box");

@@ -10,23 +10,27 @@ public class InstructionsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
-    void Update() 
+    void Update()
     {
-        if (Input.GetKey(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            self.SetActive(false);
-        }
-
-        if (Input.GetKey(KeyCode.J)) {
-            self.SetActive(true);
+            if (self.activeInHierarchy == true)
+            {
+                self.SetActive(false);
+            }
+            else if (self.activeInHierarchy == false)
+            {
+                self.SetActive(true);
+            }
         }
     }
 
-    void ButtonClick() {
+    void ButtonClick()
+    {
         self.SetActive(true);
     }
 }
