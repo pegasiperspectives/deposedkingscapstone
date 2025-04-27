@@ -42,10 +42,10 @@ public class ObsCamera : MonoBehaviour
 
      public void Close()
     {
-        model.localScale = originalScale; // Reset to original scale
-        Destroy(model.gameObject);
-        rig.rotation = Quaternion.identity;
-        gameObject.SetActive(false);
+        //model.localScale = originalScale; // Reset to original scale
+        //Destroy(model.gameObject);
+        //rig.rotation = Quaternion.identity;
+        //gameObject.SetActive(false);
         self.SetActive(false);
     }
 

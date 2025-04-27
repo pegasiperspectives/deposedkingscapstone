@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,8 +9,11 @@ public class InventoryItemController : MonoBehaviour
     public Item item;
     public InventoryManager inventoryManager;
 
+    public DialogueUI DialogueManager;
+
     public PlaceObjects placeObjects;
     public bool checkthis = false;
+    public bool invResized = false;
     public GameObject placeobj;
 
     private FPSController fpscontrollerScript;
@@ -22,8 +26,11 @@ public class InventoryItemController : MonoBehaviour
     public float deltaRotationY;
 
     public GameObject currentObservable;
+    public Vector2 originalSize;
 
+    public RectTransform hideInv;
     [SerializeField] private GameObject inventory;
+
 
     //this is started when inventory is opened on each inventory button
 
@@ -39,7 +46,8 @@ public class InventoryItemController : MonoBehaviour
     void Start()
     {
         fpscontrollerScript = InventoryManager.Instance.player.GetComponent<FPSController>(); //call other script
-
+        hideInv = InventoryManager.Instance.inventory.GetComponent<RectTransform>();
+        originalSize = hideInv.sizeDelta;
     }
 
     void Update()
@@ -47,19 +55,18 @@ public class InventoryItemController : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             InspectingWithMouse();
-            
+
         }
 
-        if (Input.GetKey(KeyCode.S) && currentlyInspecting == true)
+        if (Input.GetKeyDown(KeyCode.X) && currentlyInspecting == true)
         {
-        //set canvas size back to normal 
+            //set canvas size back to normal 
             currentlyInspecting = false;
             fpscontrollerScript.canMove = true;
             FPSController.canPickUp = true;
             InventoryManager.Instance.obscamera.Close();
             Debug.Log("registering exit clickobs");
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            ResizeInvCanvas();
             return;
         }
     }
@@ -156,11 +163,7 @@ public class InventoryItemController : MonoBehaviour
 
     public void InspectItem()
     {
-        //CloseInventory();
-
-        //get the canvas ui object from parent and set the width and height to 0, this will hide it without removing the button with code
-
-        
+        ResizeInvCanvas();
         fpscontrollerScript.canMove = false;
         currentlyInspecting = true;
         FPSController.canPickUp = false;
@@ -179,7 +182,7 @@ public class InventoryItemController : MonoBehaviour
         {
             InventoryManager.Instance.ObservableObject2.SetActive(true);
             currentObservable = InventoryManager.Instance.ObservableObject2;
-            
+
         }
 
         if (item.id == 3)
@@ -203,8 +206,8 @@ public class InventoryItemController : MonoBehaviour
 
             if (deltaRotationX != 0 && deltaRotationY != 0)
             {
-                Quaternion rotationY = Quaternion.AngleAxis(deltaRotationY * objectRotationSpeed * Time.deltaTime, Vector3.right); // Rotate around Y-axis (horizontal)
-                Quaternion rotationX = Quaternion.AngleAxis(deltaRotationX * objectRotationSpeed * Time.deltaTime, Vector3.up); // Rotate around X-axis (vertical)
+                Quaternion rotationY = Quaternion.AngleAxis(deltaRotationY * objectRotationSpeed, Vector3.right); // Rotate around Y-axis (horizontal)
+                Quaternion rotationX = Quaternion.AngleAxis(deltaRotationX * objectRotationSpeed, Vector3.up); // Rotate around X-axis (vertical)
                 Debug.Log(deltaRotationY);
 
                 // Apply rotation to the object
@@ -212,6 +215,23 @@ public class InventoryItemController : MonoBehaviour
                 currentObservable.transform.rotation = rotationY * rotationX * currentObservable.transform.rotation;
             }
         }
+    }
+
+
+    public void ResizeInvCanvas()
+    {
+        //get the canvas ui object from parent and set the width and height to 0, this will hide it without removing the button with code
+
+        if (invResized == false)
+        {
+            hideInv.sizeDelta = new Vector2(0, 0);
+            invResized = true;
+        }
+        else
+        {
+            hideInv.sizeDelta = originalSize;
+        }
+
     }
 }
 

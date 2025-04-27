@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg
 - Active game object:
-  - Name: Example3
+  - Name: Instructions Text
   - Tag: Untagged
-  - Layer: pointneg
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

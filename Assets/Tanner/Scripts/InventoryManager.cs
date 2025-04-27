@@ -15,7 +15,7 @@ public class InventoryManager : MonoBehaviour
     public InventoryItemController[] InventoryItems;
     public GameObject InventoryItem;
 
-    [SerializeField] private GameObject inventory;
+    [SerializeField] public GameObject inventory;
     [SerializeField] private GameObject dialogue;
 
     private FPSController fpscontrollerScript;

@@ -1921,11 +1921,12 @@ PrefabInstance:
         ll a proper burial. It\u2019s only been a little more than a week since his
         death, and the dark plot that claimed him still lingers. \r\n\n\n\n> Press
         i/I to interact with characters\n> Press e/E to open inventory\n> Press q/Q
-        to open this journal back up\n> Press x/X to exit out of dialogue boxes\n\n"
+        to open this journal back up\n> Press x/X to exit out of dialogue boxes and
+        inspecting objects\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 2270999758931706802, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2270999758931706802, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
       propertyPath: m_margin.z
@@ -1945,7 +1946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2270999758931706802, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2270999758931706802, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -22158,7 +22159,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1408776312
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26653,7 +26654,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.71027565, z: -0, w: 0.7039237}
   m_LocalPosition: {x: -133.61446, y: 2.2650838, z: 1.4244153}
-  m_LocalScale: {x: 1.5333959, y: 3.6662998, z: 6.102492}
+  m_LocalScale: {x: 3.4050279, y: 3.6662998, z: 11.485499}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1342036884}
