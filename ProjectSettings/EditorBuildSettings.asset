@@ -8,13 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TaliaMenu.unity
     guid: 610e01397f225904788d1b05e536b361
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TannerTesting.unity
     guid: 2e78a629579869545a78e65208e87a78
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TaliaTesting.unity
     guid: f10fca01d633994408993e7e5390ee01
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Sprint1.unity
     guid: ae1f74cc1e06bc14d89e701deb1e24c1
   - enabled: 1

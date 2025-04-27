@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
 
 public class InventoryItemController : MonoBehaviour
@@ -12,6 +13,8 @@ public class InventoryItemController : MonoBehaviour
     public DialogueUI DialogueManager;
 
     public PlaceObjects placeObjects;
+
+    public float sensitivity = 10f;
     public bool checkthis = false;
     public bool invResized = false;
     public GameObject placeobj;
@@ -20,7 +23,7 @@ public class InventoryItemController : MonoBehaviour
 
     public bool currentlyInspecting = false;
 
-    public float objectRotationSpeed = 100f;
+    public float objectRotationSpeed = 5f;
 
     public float deltaRotationX;
     public float deltaRotationY;
@@ -55,12 +58,12 @@ public class InventoryItemController : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             InspectingWithMouse();
-
         }
 
         if (Input.GetKeyDown(KeyCode.X) && currentlyInspecting == true)
         {
             //set canvas size back to normal 
+            currentObservable.SetActive(false);
             currentlyInspecting = false;
             fpscontrollerScript.canMove = true;
             FPSController.canPickUp = true;
@@ -187,8 +190,14 @@ public class InventoryItemController : MonoBehaviour
 
         if (item.id == 3)
         {
-            InventoryManager.Instance.ObservableObject1.SetActive(true);
+            InventoryManager.Instance.ObservableObject3.SetActive(true);
             currentObservable = InventoryManager.Instance.ObservableObject3;
+        }
+
+        if (item.id == 4)
+        {
+            InventoryManager.Instance.ObservableObject4.SetActive(true);
+            currentObservable = InventoryManager.Instance.ObservableObject4;
         }
 
     }
@@ -198,21 +207,31 @@ public class InventoryItemController : MonoBehaviour
         //Debug.Log("Inspectingwithmouse");
         if (currentlyInspecting == true)
         {
-            deltaRotationX = -Input.GetAxis("Mouse X");
-            deltaRotationY = Input.GetAxis("Mouse Y");
+            deltaRotationX = Input.GetAxis("Mouse X") * sensitivity;
+            deltaRotationY = Input.GetAxis("Mouse Y") * sensitivity;
 
 
             Debug.Log("registering inspect rotation");
 
             if (deltaRotationX != 0 && deltaRotationY != 0)
             {
-                Quaternion rotationY = Quaternion.AngleAxis(deltaRotationY * objectRotationSpeed, Vector3.right); // Rotate around Y-axis (horizontal)
-                Quaternion rotationX = Quaternion.AngleAxis(deltaRotationX * objectRotationSpeed, Vector3.up); // Rotate around X-axis (vertical)
+                
+                currentObservable.transform.Rotate(Vector3.up, deltaRotationX, Space.World);
+                currentObservable.transform.Rotate(Vector3.right, -deltaRotationY,  Space.World);
+                
+                // //previous version:
+                // Quaternion rotationY = Quaternion.AngleAxis(deltaRotationY * objectRotationSpeed, Vector3.right); // Rotate around Y-axis (horizontal)
+                // Quaternion rotationX = Quaternion.AngleAxis(deltaRotationX * objectRotationSpeed, Vector3.up); // Rotate around X-axis (vertical)
+                // // Apply rotation to the object
+                // currentObservable.transform.rotation = rotationX * rotationY * currentObservable.transform.rotation;
+
                 Debug.Log(deltaRotationY);
 
-                // Apply rotation to the object
-                //currentObservable.transform.rotation = rotationX * transform.rotation * rotationY;
-                currentObservable.transform.rotation = rotationY * rotationX * currentObservable.transform.rotation;
+                //another try that didn't work:
+                //currentObservable.transform.Rotate(deltaRotationX * Vector3.right * objectRotationSpeed * Time.deltaTime 
+                //   + deltaRotationY * Vector3.up * objectRotationSpeed * Time.deltaTime 
+                //  + Vector3.forward * objectRotationSpeed * Time.deltaTime, Space.Self);
+
             }
         }
     }

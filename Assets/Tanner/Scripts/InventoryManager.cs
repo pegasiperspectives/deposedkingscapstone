@@ -23,11 +23,14 @@ public class InventoryManager : MonoBehaviour
 
     public ObsCamera obscamera;
 
+    public Transform rig;
+
     [SerializeField] public GameObject ObservableObject1;
 
     [SerializeField] public GameObject ObservableObject2;
 
     [SerializeField] public GameObject ObservableObject3;
+    [SerializeField] public GameObject ObservableObject4;
 
 
     private void Awake()
