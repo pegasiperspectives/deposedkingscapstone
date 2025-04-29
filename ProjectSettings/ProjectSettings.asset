@@ -645,7 +645,7 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Standalone: PWB_BIRP
+    Standalone: PWB_BIRP;PWB_URP
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
