@@ -148,7 +148,7 @@ public class DialogueUI : MonoBehaviour
         {
             GameObject button = Instantiate(itemButtonPrefab, itemButtonContainer);
             var label = button.GetComponentInChildren<TMP_Text>();
-            var icon = button.GetComponentInChildren<Image>();
+            var icon = button.transform.Find("Icon").GetComponent<Image>();
             label.text = "Show " + item.itemName;
             icon.sprite = item.icon;
 
