@@ -11,7 +11,6 @@ public class FPSController : MonoBehaviour
     public float jumpPower = 7f;
     public float gravity = 25f;
 
-
     public float lookSpeed = 2f;
     public float lookXLimit = 45f;
     public static bool canPickUp;

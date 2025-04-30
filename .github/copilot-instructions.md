@@ -4,11 +4,11 @@
 - Active scene:
   - Name: Sprint2
   - Tags:
-    - Untagged, Respawn, Finish, EditorOnly, MainCamera, Player, GameController, TriggerPointBox, Object1, Object2
+    - Untagged, Respawn, Finish, EditorOnly, MainCamera, Player, GameController, TriggerPointBox, Object1, Object2, Lady Filigree
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg
 - Active game object:
-  - Name: pivot2
+  - Name: Dialogue Text
   - Tag: Untagged
-  - Layer: Default
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

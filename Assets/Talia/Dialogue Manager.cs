@@ -14,7 +14,10 @@ public class DialogueUI : MonoBehaviour
     public Transform itemButtonContainer;  
     public GameObject itemButtonPrefab;
     private FPSController fpscontrollerScript;
+    private Characters characters;
     public GameObject player;
+
+    public GameObject lady;
     public PlaceObjects placeObjects;
     [SerializeField] private GameObject inventory;
     //added
@@ -28,13 +31,16 @@ public class DialogueUI : MonoBehaviour
 
 
     public string[] allDialogue = {
-            "Who's there?!",
-            "My grandma gave that to me. Thanks for finding it!",
-            "I want that away from me right this second. I never want to see it again.",
-            "I have no idea what that is.",
-            "You need to get out. Right now.",
-            "You're in grave danger! That object is cursed!",
-            "Oh! That belongs to ____"};
+            "What is that you're holding?!",
+            "How decadent, I'm sure Charles would love it.",
+            "Simple, Charles wouldn't be caught dead in that, unless you'd like him to be.",
+            "Fittingly drab for such a worthless king.",
+            "How nice, although I doubt Charles would appreciate their simplicity.",
+            "Red at a funeral? I love it. ",
+            "The same color as the Filigree flag, how royal.",
+            "Orchids for a funeral? Very original.",
+            "I'm surprised you even found this in the first place.",
+            "My dear Arthur, he meant everything to Charles and I."};
 
     public string[] showObjects = {
         "Show object 1 in inventory",
@@ -52,12 +58,18 @@ public class DialogueUI : MonoBehaviour
         //Tanner Addition
         fpscontrollerScript = player.GetComponent<FPSController>();
         //added
+
+        characters = lady.GetComponent<Characters>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I) && self.activeInHierarchy == false && inventory.activeInHierarchy == false) //added self chech so multiple objects arent made
+        if (Input.GetKeyDown(KeyCode.I) && characters.isAtLady != true) {
+            Debug.Log("you're clicking I but it's not registering you're at the lady");
+        }
+
+        if (self.activeInHierarchy == false && inventory.activeInHierarchy == false && characters.isAtLady == true) //added self chech so multiple objects arent made
         {
             self.SetActive(true);
             SetDialogueText(allDialogue[0], textLabel);
@@ -83,7 +95,6 @@ public class DialogueUI : MonoBehaviour
             fpscontrollerScript.canMove = true;
             //added
         }
-
         
     }
 
