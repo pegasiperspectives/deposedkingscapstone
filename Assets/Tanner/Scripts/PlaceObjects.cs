@@ -14,11 +14,20 @@ public class PlaceObjects : MonoBehaviour
     public GameObject ghostexample2;
     public GameObject placedexaple2;
     public static bool placeIsExample2 = false;
-
+    
     public GameObject ghostexample3;
     public GameObject placedexaple3;
     public static bool placeIsExample3 = false;
 
+    public GameObject ghostflowers;
+    public GameObject rosesobj;
+    public static bool placeIsRoses = false;
+
+    public GameObject tulipsobj;
+    public static bool placeIsTulips = false;
+
+    public GameObject orchidsobj;
+    public static bool placeIsOrchids = false;
 
     public bool canPlace;
     
@@ -157,10 +166,91 @@ public class PlaceObjects : MonoBehaviour
         }
 
 
+        else if (placeIsRoses)
+        {
+            if (canPlace)
+            {
+                RaycastHit hit;
 
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
+                {
+                    ghostflowers.SetActive(true);
+                    ghostflowers.transform.position = hit.point;
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        Instantiate(rosesobj, ghostflowers.transform.position, ghostflowers.transform.rotation);
 
+                        ghostflowers.SetActive(false);
+                        placeIsRoses = false;
+                    }
+                }
+                else//dont show the ghost object if cant see where itll be placed
+                {
+                    ghostflowers.SetActive(false);
+                }
+            }
+            else
+            {
+                ghostflowers.SetActive(false);
+            }
+        }
 
+        else if (placeIsTulips)
+        {
+            if (canPlace)
+            {
+                RaycastHit hit;
 
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
+                {
+                    ghostflowers.SetActive(true);
+                    ghostflowers.transform.position = hit.point;
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        Instantiate(tulipsobj, ghostflowers.transform.position, ghostflowers.transform.rotation);
+
+                        ghostflowers.SetActive(false);
+                        placeIsTulips = false;
+                    }
+                }
+                else//dont show the ghost object if cant see where itll be placed
+                {
+                    ghostflowers.SetActive(false);
+                }
+            }
+            else
+            {
+                ghostflowers.SetActive(false);
+            }
+        }
+        else if (placeIsOrchids)
+        {
+            if (canPlace)
+            {
+                RaycastHit hit;
+
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
+                {
+                    ghostflowers.SetActive(true);
+                    ghostflowers.transform.position = hit.point;
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        Instantiate(orchidsobj, ghostflowers.transform.position, ghostflowers.transform.rotation);
+
+                        ghostflowers.SetActive(false);
+                        placeIsOrchids = false;
+                    }
+                }
+                else//dont show the ghost object if cant see where itll be placed
+                {
+                    ghostflowers.SetActive(false);
+                }
+            }
+            else
+            {
+                ghostflowers.SetActive(false);
+            }
+        }
     }
 
       

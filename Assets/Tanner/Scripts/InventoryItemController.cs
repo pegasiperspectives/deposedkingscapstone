@@ -149,7 +149,36 @@ public class InventoryItemController : MonoBehaviour
             var placer = placeObjects;
             PlaceObjects.placeIsExample3 = true;
         }
-
+        else if (item.id == 4)
+        {
+            var placer = placeObjects;
+            PlaceObjects.placeIsExample3 = true;
+        }
+        else if (item.id == 5)
+        {
+            var placer = placeObjects;
+            PlaceObjects.placeIsRoses = true;
+        }
+        else if (item.id == 6)
+        {
+            var placer = placeObjects;
+            PlaceObjects.placeIsTulips = true;
+        }
+        else if (item.id == 7)
+        {
+            var placer = placeObjects;
+            PlaceObjects.placeIsOrchids = true;
+        }
+        else if (item.id == 8)
+        {
+            var placer = placeObjects;
+            PlaceObjects.placeIsExample3 = true;
+        }
+        else if (item.id == 9)
+        {
+            var placer = placeObjects;
+            PlaceObjects.placeIsExample3 = true;
+        }
         RemoveItem();
 
     }
