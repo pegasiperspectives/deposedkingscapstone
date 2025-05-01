@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PortraidLady
   m_EditorClassIdentifier: 
   id: 8
-  itemName: PortraitLady
+  itemName: Lady Portrait
   value: 8
   icon: {fileID: 0}

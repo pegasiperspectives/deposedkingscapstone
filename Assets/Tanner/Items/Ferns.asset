@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Ferns
   m_EditorClassIdentifier: 
   id: 4
-  itemName: FernBoquet
+  itemName: Fern
   value: 4
   icon: {fileID: 0}

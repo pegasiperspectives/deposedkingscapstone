@@ -19,6 +19,9 @@ public class PlaceObjects : MonoBehaviour
     public GameObject placedexaple3;
     public static bool placeIsExample3 = false;
 
+    public GameObject fernobj;
+    public static bool placeIsFern = false;
+
     public GameObject ghostflowers;
     public GameObject rosesobj;
     public static bool placeIsRoses = false;
@@ -29,6 +32,12 @@ public class PlaceObjects : MonoBehaviour
     public GameObject orchidsobj;
     public static bool placeIsOrchids = false;
 
+    public GameObject ghostPort;
+    public GameObject ladyPortObj;
+    public static bool placeIsLadyPort = false;
+
+    public GameObject childPortObj;
+    public static bool placeIsChildPort = false;
     public bool canPlace;
     
 
@@ -165,6 +174,34 @@ public class PlaceObjects : MonoBehaviour
             }
         }
 
+        else if (placeIsFern)
+        {
+            if (canPlace)
+            {
+                RaycastHit hit;
+
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
+                {
+                    ghostflowers.SetActive(true);
+                    ghostflowers.transform.position = hit.point;
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        Instantiate(fernobj, ghostflowers.transform.position, ghostflowers.transform.rotation);
+
+                        ghostflowers.SetActive(false);
+                        placeIsFern = false;
+                    }
+                }
+                else//dont show the ghost object if cant see where itll be placed
+                {
+                    ghostflowers.SetActive(false);
+                }
+            }
+            else
+            {
+                ghostflowers.SetActive(false);
+            }
+        }
 
         else if (placeIsRoses)
         {
@@ -251,6 +288,65 @@ public class PlaceObjects : MonoBehaviour
                 ghostflowers.SetActive(false);
             }
         }
+
+        else if (placeIsLadyPort)
+        {
+            if (canPlace)
+            {
+                RaycastHit hit;
+
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
+                {
+                    ghostPort.SetActive(true);
+                    ghostPort.transform.position = hit.point;
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        Instantiate(ladyPortObj, ghostPort.transform.position, ghostPort.transform.rotation);
+
+                        ghostPort.SetActive(false);
+                        placeIsLadyPort = false;
+                    }
+                }
+                else//dont show the ghost object if cant see where itll be placed
+                {
+                    ghostPort.SetActive(false);
+                }
+            }
+            else
+            {
+                ghostPort.SetActive(false);
+            }
+        }
+
+        else if (placeIsChildPort)
+        {
+            if (canPlace)
+            {
+                RaycastHit hit;
+
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
+                {
+                    ghostPort.SetActive(true);
+                    ghostPort.transform.position = hit.point;
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        Instantiate(childPortObj, ghostPort.transform.position, ghostPort.transform.rotation);
+
+                        ghostPort.SetActive(false);
+                        placeIsLadyPort = false;
+                    }
+                }
+                else//dont show the ghost object if cant see where itll be placed
+                {
+                    ghostPort.SetActive(false);
+                }
+            }
+            else
+            {
+                ghostPort.SetActive(false);
+            }
+        }
+
     }
 
       

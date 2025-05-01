@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Exampleprop3
   m_EditorClassIdentifier: 
   id: 3
-  itemName: Example3
+  itemName: Recycled Coffin
   value: 3
   icon: {fileID: 0}

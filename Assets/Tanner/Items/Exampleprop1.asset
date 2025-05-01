@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Exampleprop1
   m_EditorClassIdentifier: 
   id: 1
-  itemName: Example1
+  itemName: Solid Gold Coffin
   value: 1
   icon: {fileID: 21300000, guid: 110a116bd10aa4e42886d6ef2be5d3b8, type: 3}

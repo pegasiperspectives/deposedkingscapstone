@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PortraitChild
   m_EditorClassIdentifier: 
   id: 9
-  itemName: PortraitChild
+  itemName: Child Portrait
   value: 9
   icon: {fileID: 0}

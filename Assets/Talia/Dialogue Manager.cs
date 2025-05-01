@@ -90,6 +90,7 @@ public class DialogueUI : MonoBehaviour
             Debug.Log("exited dialogue box");
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            characters.isAtLady = false;
 
             //Tanner Addition
             fpscontrollerScript.canMove = true;
@@ -170,14 +171,32 @@ public class DialogueUI : MonoBehaviour
     private void OnItemShown(Item item)
     {
         // Call the dialogue options here for the name of the object
-        if (item.itemName.Contains("Example1"))
+        if (item.itemName.Contains("Solid Gold Coffin"))
             SetDialogueText(allDialogue[1], textLabel);
 
-        else if (item.itemName.Contains("Example2"))
+        else if (item.itemName.Contains("Modern Coffin"))
+            SetDialogueText(allDialogue[2], textLabel);
+
+        else if (item.itemName.Contains("Recycled Coffin"))
+            SetDialogueText(allDialogue[3], textLabel);
+
+        else if (item.itemName.Contains("Fern"))
+            SetDialogueText(allDialogue[4], textLabel);
+
+        else if (item.itemName.Contains("Roses"))
             SetDialogueText(allDialogue[5], textLabel);
 
-        else
-            SetDialogueText(allDialogue[3], textLabel);
+        else if (item.itemName.Contains("Tulips"))
+            SetDialogueText(allDialogue[6], textLabel);
+
+        else if (item.itemName.Contains("Orchids"))
+            SetDialogueText(allDialogue[7], textLabel);
+
+        else if (item.itemName.Contains("Lady Portrait"))
+            SetDialogueText(allDialogue[8], textLabel);
+
+        else if (item.itemName.Contains("Child Portrait"))
+            SetDialogueText(allDialogue[9], textLabel);
     }
 
     private void ClearItemButtons()// dont want repeated objects in inventory so they are deleted when closed

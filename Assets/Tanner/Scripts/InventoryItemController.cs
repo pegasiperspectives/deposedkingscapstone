@@ -152,7 +152,7 @@ public class InventoryItemController : MonoBehaviour
         else if (item.id == 4)
         {
             var placer = placeObjects;
-            PlaceObjects.placeIsExample3 = true;
+            PlaceObjects.placeIsFern = true;
         }
         else if (item.id == 5)
         {
@@ -172,12 +172,12 @@ public class InventoryItemController : MonoBehaviour
         else if (item.id == 8)
         {
             var placer = placeObjects;
-            PlaceObjects.placeIsExample3 = true;
+            PlaceObjects.placeIsLadyPort = true;
         }
         else if (item.id == 9)
         {
             var placer = placeObjects;
-            PlaceObjects.placeIsExample3 = true;
+            PlaceObjects.placeIsChildPort = true;
         }
         RemoveItem();
 

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5
   itemName: Roses
-  value: 0
+  value: 5
   icon: {fileID: 0}
