@@ -6,7 +6,7 @@
   - Tags:
     - Untagged, Respawn, Finish, EditorOnly, MainCamera, Player, GameController, TriggerPointBox, Object1, Object2, Lady Filigree
   - Layers:
-    - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg
+    - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg, pointTwo, pointThree, pointnegTwo, pointnegThree
 - Active game object:
   - Name: InventoryManager
   - Tag: Untagged
