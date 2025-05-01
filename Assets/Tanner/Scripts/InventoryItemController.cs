@@ -236,8 +236,8 @@ public class InventoryItemController : MonoBehaviour
         //Debug.Log("Inspectingwithmouse");
         if (currentlyInspecting == true)
         {
-            deltaRotationX = Input.GetAxis("Mouse X") * sensitivity;
-            deltaRotationY = Input.GetAxis("Mouse Y") * sensitivity;
+            deltaRotationX = -Input.GetAxis("Mouse X") * sensitivity;
+            deltaRotationY = -Input.GetAxis("Mouse Y") * sensitivity;
 
 
             Debug.Log("registering inspect rotation");
