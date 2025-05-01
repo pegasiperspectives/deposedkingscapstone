@@ -30,9 +30,9 @@ public class CollisionPointSystem : MonoBehaviour
     void FixedUpdate()
     {
         MyCollisions();
-        pointstotal = points + pointsTwo - pointsneg - pointsnegTwo;
+        pointstotal = points + pointsTwo + pointsThree - pointsneg - pointsnegTwo - pointsnegThree;
         //print(pointstotal);
-        if(pointstotal == 9)
+        if(pointstotal >= 9)
         {
             wincanvas.SetActive(true);
         }
