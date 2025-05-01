@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8743917029041136074}
   - component: {fileID: 5554765420320383803}
   - component: {fileID: 1451466530777265249}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cubeseen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8314003883441766748}
   - component: {fileID: 8292983412076870369}
   - component: {fileID: 3206221714164961857}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Example2
   m_TagString: Object2
   m_Icon: {fileID: 0}

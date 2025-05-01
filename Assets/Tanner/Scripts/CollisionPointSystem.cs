@@ -6,26 +6,33 @@ using UnityEngine;
 public class CollisionPointSystem : MonoBehaviour
 {
     public int points = 0;
+    public int pointsTwo = 0;
+    public int pointsThree = 0;
     public int pointsneg = 0;
+    public int pointsnegTwo = 0;
+    public int pointsnegThree = 0;
     public int pointstotal = 0;
 
 
     //bool m_Started;
     public LayerMask m_LayerMask;
+    public LayerMask m_LayerMaskTwo;
+    public LayerMask m_LayerMaskThree;
     public LayerMask m_LayerMaskNeg;
+    public LayerMask m_LayerMaskNegTwo;
+    public LayerMask m_LayerMaskNegThree;
     public GameObject wincanvas;
     void Start()
     {
-        //Use this to ensure that the Gizmos are being drawn when in Play Mode.
-        //m_Started = true;
+        
     }
 
     void FixedUpdate()
     {
         MyCollisions();
-        pointstotal = points - pointsneg;
+        pointstotal = points + pointsTwo - pointsneg - pointsnegTwo;
         //print(pointstotal);
-        if(pointstotal == 3)
+        if(pointstotal == 9)
         {
             wincanvas.SetActive(true);
         }
@@ -44,8 +51,7 @@ public class CollisionPointSystem : MonoBehaviour
         //Check when there is a new collider coming into contact with the box
         while (i < hitColliders.Length)
         {
-            //Output all of the collider names
-            //Debug.Log("Hit : " + hitColliders[i].name + i);
+            
             //Increase the number of Colliders in the array
             i++;
             
@@ -53,19 +59,76 @@ public class CollisionPointSystem : MonoBehaviour
         //print(i);
         points = i; //number of points current
 
+        Collider[] hitCollidersTwo = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, m_LayerMaskTwo);
+        int iq = 0;
+        //Check when there is a new collider coming into contact with the box
+        while (iq < hitColliders.Length)
+        {
+
+            //Increase the number of Colliders in the array
+            iq++;
+
+        }
+        //print(i);
+        pointsTwo = iq * 2; //number of points current
+
+
+        Collider[] hitCollidersThree = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, m_LayerMaskThree);
+        int iw = 0;
+        //Check when there is a new collider coming into contact with the box
+        while (iw < hitColliders.Length)
+        {
+
+            //Increase the number of Colliders in the array
+            iw++;
+
+        }
+        //print(i);
+        pointsThree = iw * 3; //number of points current
+
+
+
+
+
         Collider[] hitCollidersneg = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, m_LayerMaskNeg);
         int ia = 0;
         //Check when there is a new collider coming into contact with the box
         while (ia < hitCollidersneg.Length)
         {
-            //Output all of the collider names
-            //Debug.Log("Hit : " + hitColliders[i].name + i);
+            
             //Increase the number of Colliders in the array
             ia++;
 
         }
         //print(i);
         pointsneg = ia; //number of points current
+
+
+        Collider[] hitCollidersnegTwo = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, m_LayerMaskNegTwo);
+        int ie = 0;
+        //Check when there is a new collider coming into contact with the box
+        while (ie < hitCollidersneg.Length)
+        {
+
+            //Increase the number of Colliders in the array
+            ie++;
+
+        }
+        //print(i);
+        pointsnegTwo = ie * 2; //number of points current
+
+        Collider[] hitCollidersnegThree = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, m_LayerMaskNegThree);
+        int ir = 0;
+        //Check when there is a new collider coming into contact with the box
+        while (ir < hitCollidersneg.Length)
+        {
+
+            //Increase the number of Colliders in the array
+            ir++;
+
+        }
+        //print(i);
+        pointsnegThree = ir * 3; //number of points current
     }
 
     
