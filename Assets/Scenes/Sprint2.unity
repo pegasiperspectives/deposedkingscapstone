@@ -20445,19 +20445,19 @@ MonoBehaviour:
     m_Bits: 64
   m_LayerMaskTwo:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerMaskThree:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerMaskNeg:
     serializedVersion: 2
     m_Bits: 128
   m_LayerMaskNegTwo:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerMaskNegThree:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   wincanvas: {fileID: 1850341715}
 --- !u!54 &1646088570
 Rigidbody:
@@ -20567,7 +20567,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -12.3, y: 1.143199, z: 137.2}
-  m_LocalScale: {x: 4.5442257, y: 2.046414, z: 3.8515556}
+  m_LocalScale: {x: 7.388457, y: 3.61233, z: 9.7036085}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 802921974}

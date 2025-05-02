@@ -333,7 +333,7 @@ public class PlaceObjects : MonoBehaviour
                         Instantiate(childPortObj, ghostPort.transform.position, ghostPort.transform.rotation);
 
                         ghostPort.SetActive(false);
-                        placeIsLadyPort = false;
+                        placeIsChildPort = false;
                     }
                 }
                 else//dont show the ghost object if cant see where itll be placed

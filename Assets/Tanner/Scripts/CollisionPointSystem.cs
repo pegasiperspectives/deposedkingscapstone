@@ -62,7 +62,7 @@ public class CollisionPointSystem : MonoBehaviour
         Collider[] hitCollidersTwo = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, m_LayerMaskTwo);
         int iq = 0;
         //Check when there is a new collider coming into contact with the box
-        while (iq < hitColliders.Length)
+        while (iq < hitCollidersTwo.Length)
         {
 
             //Increase the number of Colliders in the array
@@ -76,7 +76,7 @@ public class CollisionPointSystem : MonoBehaviour
         Collider[] hitCollidersThree = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, m_LayerMaskThree);
         int iw = 0;
         //Check when there is a new collider coming into contact with the box
-        while (iw < hitColliders.Length)
+        while (iw < hitCollidersThree.Length)
         {
 
             //Increase the number of Colliders in the array
@@ -107,7 +107,7 @@ public class CollisionPointSystem : MonoBehaviour
         Collider[] hitCollidersnegTwo = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, m_LayerMaskNegTwo);
         int ie = 0;
         //Check when there is a new collider coming into contact with the box
-        while (ie < hitCollidersneg.Length)
+        while (ie < hitCollidersnegTwo.Length)
         {
 
             //Increase the number of Colliders in the array
@@ -120,7 +120,7 @@ public class CollisionPointSystem : MonoBehaviour
         Collider[] hitCollidersnegThree = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, m_LayerMaskNegThree);
         int ir = 0;
         //Check when there is a new collider coming into contact with the box
-        while (ir < hitCollidersneg.Length)
+        while (ir < hitCollidersnegThree.Length)
         {
 
             //Increase the number of Colliders in the array
