@@ -229,6 +229,36 @@ public class InventoryItemController : MonoBehaviour
             currentObservable = InventoryManager.Instance.ObservableObject4;
         }
 
+        if (item.id == 5)
+        {
+            InventoryManager.Instance.ObservableObject5.SetActive(true);
+            currentObservable = InventoryManager.Instance.ObservableObject5;
+        }
+
+        if (item.id == 6)
+        {
+            InventoryManager.Instance.ObservableObject6.SetActive(true);
+            currentObservable = InventoryManager.Instance.ObservableObject6;
+        }
+
+        if (item.id == 7)
+        {
+            InventoryManager.Instance.ObservableObject7.SetActive(true);
+            currentObservable = InventoryManager.Instance.ObservableObject7;
+        }
+
+        if (item.id == 8)
+        {
+            InventoryManager.Instance.ObservableObject8.SetActive(true);
+            currentObservable = InventoryManager.Instance.ObservableObject8;
+        }
+
+        if (item.id == 9)
+        {
+            InventoryManager.Instance.ObservableObject9.SetActive(true);
+            currentObservable = InventoryManager.Instance.ObservableObject9;
+        }
+
     }
 
     public void InspectingWithMouse()
