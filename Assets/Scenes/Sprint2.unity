@@ -16234,6 +16234,26 @@ PrefabInstance:
       propertyPath: ObservableObject4
       value: 
       objectReference: {fileID: 2132783573}
+    - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
+      propertyPath: ObservableObject5
+      value: 
+      objectReference: {fileID: 1958433975}
+    - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
+      propertyPath: ObservableObject6
+      value: 
+      objectReference: {fileID: 1846438775}
+    - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
+      propertyPath: ObservableObject7
+      value: 
+      objectReference: {fileID: 1129781492}
+    - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
+      propertyPath: ObservableObject8
+      value: 
+      objectReference: {fileID: 1539660180}
+    - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
+      propertyPath: ObservableObject9
+      value: 
+      objectReference: {fileID: 882424789}
     - target: {fileID: 7793613752466633663, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
