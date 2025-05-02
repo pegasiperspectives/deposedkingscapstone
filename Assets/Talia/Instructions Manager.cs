@@ -6,11 +6,13 @@ public class InstructionsManager : MonoBehaviour
 {
 
     [SerializeField] public GameObject self;
+    private FPSController fpscontrollerScript;
+    [SerializeField] private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        fpscontrollerScript = player.GetComponent<FPSController>();
     }
 
     // Update is called once per frame
@@ -21,11 +23,18 @@ public class InstructionsManager : MonoBehaviour
             if (self.activeInHierarchy == true)
             {
                 self.SetActive(false);
+                fpscontrollerScript.canMove = true;
             }
             else if (self.activeInHierarchy == false)
             {
                 self.SetActive(true);
+                
+
             }
+        }
+        if (self.activeInHierarchy == true)
+        {
+            fpscontrollerScript.canMove = false;
         }
     }
 
