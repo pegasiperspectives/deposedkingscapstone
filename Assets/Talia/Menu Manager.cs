@@ -7,6 +7,8 @@ public class MenuManager : MonoBehaviour
 {
     public InstructionsManager instructionsManager;
 
+    public GameObject winCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,7 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && instructionsManager.self.activeInHierarchy == true) {
+        if (Input.GetKeyDown(KeyCode.Escape) && instructionsManager.self.activeInHierarchy == true || winCanvas.activeInHierarchy == true) {
             SceneManager.LoadScene("TaliaMenu");
             SceneManager.UnloadSceneAsync("Sprint2");
             Cursor.lockState = CursorLockMode.None;
