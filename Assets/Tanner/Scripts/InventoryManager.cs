@@ -31,6 +31,11 @@ public class InventoryManager : MonoBehaviour
 
     [SerializeField] public GameObject ObservableObject3;
     [SerializeField] public GameObject ObservableObject4;
+    [SerializeField] public GameObject ObservableObject5;
+    [SerializeField] public GameObject ObservableObject6;
+    [SerializeField] public GameObject ObservableObject7;
+    [SerializeField] public GameObject ObservableObject8;
+    [SerializeField] public GameObject ObservableObject9;
 
 
     private void Awake()
