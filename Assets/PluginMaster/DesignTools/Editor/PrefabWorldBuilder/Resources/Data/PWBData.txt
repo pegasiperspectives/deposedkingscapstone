@@ -3509,7 +3509,7 @@
                 "y": false,
                 "z": true
             },
-            "_visibleGrid": false,
+            "_visibleGrid": true,
             "_gridOn": {
                 "x": false,
                 "y": true,
