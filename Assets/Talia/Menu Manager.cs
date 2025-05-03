@@ -18,7 +18,7 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && instructionsManager.self.activeInHierarchy == true || winCanvas.activeInHierarchy == true) {
+        if (Input.GetKeyDown(KeyCode.Escape) && winCanvas.activeInHierarchy == true) {
             SceneManager.LoadScene("TaliaMenu");
             SceneManager.UnloadSceneAsync("Sprint2");
             Cursor.lockState = CursorLockMode.None;

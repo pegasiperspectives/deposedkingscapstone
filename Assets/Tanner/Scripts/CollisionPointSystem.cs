@@ -22,9 +22,12 @@ public class CollisionPointSystem : MonoBehaviour
     public LayerMask m_LayerMaskNegTwo;
     public LayerMask m_LayerMaskNegThree;
     public GameObject wincanvas;
+
+    private FPSController fpscontrollerScript;
+    public GameObject player;
     void Start()
     {
-        
+         fpscontrollerScript = player.GetComponent<FPSController>();
     }
 
     void FixedUpdate()
@@ -35,6 +38,9 @@ public class CollisionPointSystem : MonoBehaviour
         if(pointstotal >= 9)
         {
             wincanvas.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            fpscontrollerScript.canMove = false;
         }
         else
         {
