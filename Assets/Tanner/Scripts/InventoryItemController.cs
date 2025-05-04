@@ -21,7 +21,7 @@ public class InventoryItemController : MonoBehaviour
 
     private FPSController fpscontrollerScript;
 
-    public bool currentlyInspecting = false;
+    
 
     public float objectRotationSpeed = 5f;
 
@@ -51,6 +51,7 @@ public class InventoryItemController : MonoBehaviour
         fpscontrollerScript = InventoryManager.Instance.player.GetComponent<FPSController>(); //call other script
         hideInv = InventoryManager.Instance.inventory.GetComponent<RectTransform>();
         originalSize = hideInv.sizeDelta;
+        inventoryManager = InventoryManager.Instance;
     }
 
     void Update()
@@ -60,17 +61,25 @@ public class InventoryItemController : MonoBehaviour
             InspectingWithMouse();
         }
 
-        if (Input.GetKeyDown(KeyCode.X) && currentlyInspecting == true)
+        if (Input.GetKeyDown(KeyCode.E) && InventoryManager.currentlyInspecting == true)
         {
             //set canvas size back to normal 
             currentObservable.SetActive(false);
             fpscontrollerScript.canMove = true;
-            FPSController.canPickUp = true;
+            //FPSController.canPickUp = true;
             InventoryManager.Instance.obscamera.Close();
             Debug.Log("registering exit clickobs");
             ResizeInvCanvas();
-            currentlyInspecting = false;
-            return;
+            InventoryManager.currentlyInspecting = false;
+            //return;
+            inventoryManager.placeObjects.canPlace = true;
+
+            inventory.SetActive(true);
+            inventoryManager.ListItems();
+            //inventoryManager.ToggleCursor();
+            fpscontrollerScript.canMove = false;
+
+            FPSController.canPickUp = false;
         }
     }
 
@@ -180,7 +189,7 @@ public class InventoryItemController : MonoBehaviour
             PlaceObjects.placeIsChildPort = true;
         }
         RemoveItem();
-
+        
     }
 
     void CloseInventory()
@@ -197,7 +206,7 @@ public class InventoryItemController : MonoBehaviour
     {
         ResizeInvCanvas();
         fpscontrollerScript.canMove = false;
-        currentlyInspecting = true;
+        InventoryManager.currentlyInspecting = true;
         FPSController.canPickUp = false;
         Debug.Log("Clicked item: " + item.itemName + " (ID: " + item.id + ")");
         Cursor.lockState = CursorLockMode.None;
@@ -210,53 +219,57 @@ public class InventoryItemController : MonoBehaviour
             currentObservable = InventoryManager.Instance.ObservableObject1;
         }
 
-        if (item.id == 2)
+        else if (item.id == 2)
         {
             InventoryManager.Instance.ObservableObject2.SetActive(true);
             currentObservable = InventoryManager.Instance.ObservableObject2;
 
         }
 
-        if (item.id == 3)
+        else if (item.id == 3)
         {
             InventoryManager.Instance.ObservableObject3.SetActive(true);
             currentObservable = InventoryManager.Instance.ObservableObject3;
         }
 
-        if (item.id == 4)
+        else if (item.id == 4)
         {
             InventoryManager.Instance.ObservableObject4.SetActive(true);
             currentObservable = InventoryManager.Instance.ObservableObject4;
         }
 
-        if (item.id == 5)
+        else if (item.id == 5)
         {
             InventoryManager.Instance.ObservableObject5.SetActive(true);
             currentObservable = InventoryManager.Instance.ObservableObject5;
         }
 
-        if (item.id == 6)
+        else if (item.id == 6)
         {
             InventoryManager.Instance.ObservableObject6.SetActive(true);
             currentObservable = InventoryManager.Instance.ObservableObject6;
         }
 
-        if (item.id == 7)
+        else if (item.id == 7)
         {
             InventoryManager.Instance.ObservableObject7.SetActive(true);
             currentObservable = InventoryManager.Instance.ObservableObject7;
         }
 
-        if (item.id == 8)
+        else if (item.id == 8)
         {
             InventoryManager.Instance.ObservableObject8.SetActive(true);
             currentObservable = InventoryManager.Instance.ObservableObject8;
         }
 
-        if (item.id == 9)
+        else if (item.id == 9)
         {
             InventoryManager.Instance.ObservableObject9.SetActive(true);
             currentObservable = InventoryManager.Instance.ObservableObject9;
+        }
+        else
+        {
+            currentObservable = null;
         }
 
     }
@@ -264,7 +277,7 @@ public class InventoryItemController : MonoBehaviour
     public void InspectingWithMouse()
     {
         //Debug.Log("Inspectingwithmouse");
-        if (currentlyInspecting == true)
+        if (InventoryManager.currentlyInspecting == true)
         {
             deltaRotationX = -Input.GetAxis("Mouse X") * sensitivity;
             deltaRotationY = -Input.GetAxis("Mouse Y") * sensitivity;

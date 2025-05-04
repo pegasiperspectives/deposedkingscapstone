@@ -11,7 +11,10 @@ public class InventoryManager : MonoBehaviour
 
     public InventoryItemController iic;
 
+    //public static GameObject currentObservable;//heereerereeree
 
+
+    public static bool currentlyInspecting = false;
     public GameObject player;
     public Transform ItemContent;
     public InventoryItemController[] InventoryItems;
@@ -66,7 +69,7 @@ public class InventoryManager : MonoBehaviour
         }
       
 
-        if (Input.GetKeyDown(KeyCode.E) && iic.currentlyInspecting == false) //Open/close inventory
+        if (Input.GetKeyDown(KeyCode.E) && currentlyInspecting == false) //Open/close inventory
         {
             if (inventory.activeInHierarchy == false && PlaceObjects.placeIsExample1 == false && PlaceObjects.placeIsExample2 == false && dialogue.activeInHierarchy == false)
             {

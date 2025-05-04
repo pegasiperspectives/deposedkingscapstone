@@ -8,13 +8,13 @@ public class ItemPickUp : MonoBehaviour
 	//public bool canPickUp;
 	public GameObject player;
     private FPSController fpscontrollerScript;
-    
-
+	public Camera camera;
+    private RaycastHit hit;
     private void Awake()
     {
         
         fpscontrollerScript = player.GetComponent<FPSController>();
-
+		camera = Camera.main;
 
     }
     void Pickup()
@@ -23,12 +23,22 @@ public class ItemPickUp : MonoBehaviour
 		Destroy(gameObject);
 
 	}
-
-	private void OnMouseDown()
+    private void Update()
+    {
+        //Vector3 origin = camera.transform.position;
+        //Vector3 direction
+    }
+    private void OnMouseDown()
 	{
 		if (FPSController.canPickUp == true)
 		{
-			Pickup();
+            //RaycastHit hit;
+
+            if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
+			{
+                Pickup();
+            }
+			
 		}
 	}
 
