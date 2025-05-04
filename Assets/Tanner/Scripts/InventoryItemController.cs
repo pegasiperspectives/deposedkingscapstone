@@ -64,12 +64,12 @@ public class InventoryItemController : MonoBehaviour
         {
             //set canvas size back to normal 
             currentObservable.SetActive(false);
-            currentlyInspecting = false;
             fpscontrollerScript.canMove = true;
             FPSController.canPickUp = true;
             InventoryManager.Instance.obscamera.Close();
             Debug.Log("registering exit clickobs");
             ResizeInvCanvas();
+            currentlyInspecting = false;
             return;
         }
     }

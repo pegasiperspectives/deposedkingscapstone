@@ -7,8 +7,9 @@ public class InventoryManager : MonoBehaviour
 {
 
     public static InventoryManager Instance;
-    public InventoryItemController inventoryItemConroller;
     public List<Item> Items = new List<Item>();
+
+    public InventoryItemController iic;
 
 
     public GameObject player;
@@ -45,7 +46,6 @@ public class InventoryManager : MonoBehaviour
         fpscontrollerScript = player.GetComponent<FPSController>(); //call other script
         obscamera.gameObject.SetActive(false);
 
-
     }
 
     public void Add(Item item)
@@ -66,7 +66,7 @@ public class InventoryManager : MonoBehaviour
         }
       
 
-        if (Input.GetKeyDown(KeyCode.E) && inventoryItemConroller.currentlyInspecting == false) //Open/close inventory
+        if (Input.GetKeyDown(KeyCode.E) && iic.currentlyInspecting == false) //Open/close inventory
         {
             if (inventory.activeInHierarchy == false && PlaceObjects.placeIsExample1 == false && PlaceObjects.placeIsExample2 == false && dialogue.activeInHierarchy == false)
             {
