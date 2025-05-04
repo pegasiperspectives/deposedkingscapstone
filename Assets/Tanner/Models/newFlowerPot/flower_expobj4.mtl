@@ -1,0 +1,66 @@
+# Apple ModelI/O MTL File: flower_expobj4.mtl
+
+newmtl aiStandardSurface3SG
+	map_Kd aiStandardSurface3SG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic aiStandardSurface3SG-metallic.png
+	specularTint 0
+	map_roughness aiStandardSurface3SG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
+newmtl aiStandardSurface4SG
+	map_Kd aiStandardSurface4SG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic aiStandardSurface4SG-metallic.png
+	specularTint 0
+	map_roughness aiStandardSurface4SG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
+newmtl aiStandardSurface2SG
+	map_Kd aiStandardSurface2SG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic aiStandardSurface2SG-metallic.png
+	specularTint 0
+	map_roughness aiStandardSurface2SG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
+newmtl aiStandardSurface1SG
+	map_Kd aiStandardSurface1SG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic aiStandardSurface1SG-metallic.png
+	specularTint 0
+	map_roughness aiStandardSurface1SG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
