@@ -24,7 +24,7 @@
     "_tempCollidersAction": 1,
     "_paletteManager": {
         "_selectedPaletteIdx": 0,
-        "_selectedBrushIdx": -1,
+        "_selectedBrushIdx": 1,
         "_showBrushName": false,
         "_viewList": false,
         "_showTabsInMultipleRows": false,
@@ -3503,17 +3503,17 @@
     },
     "_snapManager": {
         "_settings": {
-            "_snappingEnabled": false,
+            "_snappingEnabled": true,
             "_snappingOn": {
                 "x": true,
-                "y": true,
-                "z": false
-            },
-            "_visibleGrid": false,
-            "_gridOn": {
-                "x": false,
                 "y": false,
                 "z": true
+            },
+            "_visibleGrid": true,
+            "_gridOn": {
+                "x": false,
+                "y": true,
+                "z": false
             },
             "_lockedGrid": true,
             "_step": {

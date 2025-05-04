@@ -20,7 +20,7 @@
                 "y": 0.0,
                 "z": 0.0
             },
-            "_rotateToTheSurface": false,
+            "_rotateToTheSurface": true,
             "_eulerOffset": {
                 "x": 0.0,
                 "y": 90.0,
@@ -476,7 +476,7 @@
                 "y": 0.0,
                 "z": 0.0
             },
-            "_rotateToTheSurface": true,
+            "_rotateToTheSurface": false,
             "_eulerOffset": {
                 "x": 0.0,
                 "y": 0.0,
