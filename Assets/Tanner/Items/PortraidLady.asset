@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 8
   itemName: Lady Portrait
   value: 8
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 789520d78ff10184aa2fb8fb8412dd10, type: 3}

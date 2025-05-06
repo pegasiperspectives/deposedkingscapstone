@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 9
   itemName: Child Portrait
   value: 9
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: f099e325c525a8c4eab210aa90283086, type: 3}
