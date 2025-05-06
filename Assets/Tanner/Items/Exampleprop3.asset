@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 3
   itemName: Recycled Coffin
   value: 3
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 40140f89fa883ee4ca316cc4c180a26e, type: 3}

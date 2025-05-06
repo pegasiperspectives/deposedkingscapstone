@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 7
   itemName: Orchids
   value: 7
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 1933be47db00ef24985f3a9572b46029, type: 3}
