@@ -11,7 +11,7 @@ public class InventoryManager : MonoBehaviour
 
     public InventoryItemController iic;
 
-    //public static GameObject currentObservable;//heereerereeree
+   
 
 
     public static bool currentlyInspecting = false;
@@ -42,13 +42,17 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] public GameObject ObservableObject8;
     [SerializeField] public GameObject ObservableObject9;
 
+    private AudioSource audioSource;
+    public AudioClip pickupsound;
+    [SerializeField] private Camera camobj;
 
     private void Awake()
     {
         Instance = this;
         fpscontrollerScript = player.GetComponent<FPSController>(); //call other script
         obscamera.gameObject.SetActive(false);
-
+        
+        audioSource = camobj.GetComponent<AudioSource>();
     }
 
     public void Add(Item item)
@@ -198,7 +202,10 @@ public class InventoryManager : MonoBehaviour
         inventory.SetActive(false);
     }
 
-
+    public void playpickupsound()
+    {
+        audioSource.PlayOneShot(pickupsound);
+    }
 }
 
 

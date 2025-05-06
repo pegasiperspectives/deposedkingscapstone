@@ -10,16 +10,21 @@ public class ItemPickUp : MonoBehaviour
     private FPSController fpscontrollerScript;
 	public Camera camera;
     private RaycastHit hit;
+
+    //private PlaceObjects placeobjects;
+    //public GameObject cameraobj;
     private void Awake()
     {
         
         fpscontrollerScript = player.GetComponent<FPSController>();
 		camera = Camera.main;
-
+        //placeobjects = cameraobj.GetComponent<PlaceObjects>();
     }
     void Pickup()
 	{
-		InventoryManager.Instance.Add(Item);
+        //play audio from another place
+        InventoryManager.Instance.playpickupsound();
+        InventoryManager.Instance.Add(Item);
 		Destroy(gameObject);
 
 	}

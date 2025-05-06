@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlaceObjects : MonoBehaviour
 {
     public InventoryItemController inventoryItemController;
-    
+
 
     public GameObject ghostexample1;
     public GameObject placedexaple1;
@@ -14,7 +14,7 @@ public class PlaceObjects : MonoBehaviour
     public GameObject ghostexample2;
     public GameObject placedexaple2;
     public static bool placeIsExample2 = false;
-    
+
     public GameObject ghostexample3;
     public GameObject placedexaple3;
     public static bool placeIsExample3 = false;
@@ -39,51 +39,53 @@ public class PlaceObjects : MonoBehaviour
     public GameObject childPortObj;
     public static bool placeIsChildPort = false;
     public bool canPlace;
-    
 
-    
+    private AudioSource audioSource;
+    public AudioClip placesound;
+    public AudioClip pickupsound;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-        Debug.Log("startplaceobj");
+        audioSource = GetComponent<AudioSource>();
+
     }
-  
+
 
     void Awake()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
 
         //if (placeIsExample1)
         if (placeIsExample1)
         {
-            
-            
+
+
             if (canPlace)
             {
-                
+
                 RaycastHit hit;
-                
+
                 if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
                 {
                     ghostexample1.SetActive(true);
                     ghostexample1.transform.position = hit.point;
                     if (Input.GetMouseButtonDown(0))
                     {
-                        
+
                         Instantiate(placedexaple1, ghostexample1.transform.position, ghostexample1.transform.rotation);
-                        
-                        ghostexample1.SetActive(false); 
+
+                        ghostexample1.SetActive(false);
                         placeIsExample1 = false;
-                        
-                        
+                        //sound for place here
+                        audioSource.PlayOneShot(placesound);
+
                     }
                 }
                 else//dont show the ghost object if cant see where itll be placed
@@ -100,15 +102,15 @@ public class PlaceObjects : MonoBehaviour
 
 
 
-        
+
         else if (placeIsExample2)
         {
-           
+
             if (canPlace)
             {
-                
+
                 RaycastHit hit;
-                
+
                 if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
                 {
                     ghostexample2.SetActive(true);
@@ -117,11 +119,11 @@ public class PlaceObjects : MonoBehaviour
                     {
 
                         Instantiate(placedexaple2, ghostexample2.transform.position, ghostexample2.transform.rotation);
-                        
+
                         ghostexample2.SetActive(false);
                         placeIsExample2 = false;
+                        audioSource.PlayOneShot(placesound);
 
-                        
                     }
                 }
                 else//dont show the ghost object if cant see where itll be placed
@@ -158,7 +160,7 @@ public class PlaceObjects : MonoBehaviour
 
                         ghostexample3.SetActive(false);
                         placeIsExample3 = false;
-
+                        audioSource.PlayOneShot(placesound);
 
                     }
                 }
@@ -190,6 +192,7 @@ public class PlaceObjects : MonoBehaviour
 
                         ghostflowers.SetActive(false);
                         placeIsFern = false;
+                        audioSource.PlayOneShot(placesound);
                     }
                 }
                 else//dont show the ghost object if cant see where itll be placed
@@ -219,6 +222,7 @@ public class PlaceObjects : MonoBehaviour
 
                         ghostflowers.SetActive(false);
                         placeIsRoses = false;
+                        audioSource.PlayOneShot(placesound);
                     }
                 }
                 else//dont show the ghost object if cant see where itll be placed
@@ -248,6 +252,7 @@ public class PlaceObjects : MonoBehaviour
 
                         ghostflowers.SetActive(false);
                         placeIsTulips = false;
+                        audioSource.PlayOneShot(placesound);
                     }
                 }
                 else//dont show the ghost object if cant see where itll be placed
@@ -276,6 +281,7 @@ public class PlaceObjects : MonoBehaviour
 
                         ghostflowers.SetActive(false);
                         placeIsOrchids = false;
+                        audioSource.PlayOneShot(placesound);
                     }
                 }
                 else//dont show the ghost object if cant see where itll be placed
@@ -305,6 +311,7 @@ public class PlaceObjects : MonoBehaviour
 
                         ghostPort.SetActive(false);
                         placeIsLadyPort = false;
+                        audioSource.PlayOneShot(placesound);
                     }
                 }
                 else//dont show the ghost object if cant see where itll be placed
@@ -334,6 +341,7 @@ public class PlaceObjects : MonoBehaviour
 
                         ghostPort.SetActive(false);
                         placeIsChildPort = false;
+                        audioSource.PlayOneShot(placesound);
                     }
                 }
                 else//dont show the ghost object if cant see where itll be placed
@@ -349,8 +357,11 @@ public class PlaceObjects : MonoBehaviour
 
     }
 
-      
 
+    public void playpickupsound()
+    {
+        audioSource.PlayOneShot(pickupsound);
+    }
 
 
 
