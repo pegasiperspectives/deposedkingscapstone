@@ -307,6 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 1037582483}
+  player: {fileID: 0}
 --- !u!1 &147094341
 GameObject:
   m_ObjectHideFlags: 0
@@ -2530,24 +2531,60 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 133901895}
     m_Modifications:
+    - target: {fileID: 1304009484170884992, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
+      propertyPath: m_text
+      value: 'Q: opens and closes this journal
+
+
+        E: opens and closes your
+        inventory + exits inspect
+
+
+        X: exits out of dialogue interactions
+
+
+        Esc:
+        brings you to main menu
+
+
+        Walk up to characters to interact with
+        them
+
+
+        Click on objects to pick them up and add to your inventory
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304009484170884992, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e2904a43465a3747bb7c34db546e28a, type: 2}
+    - target: {fileID: 1304009484170884992, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1594845300371955137, guid: 6e2904a43465a3747bb7c34db546e28a, type: 2}
+    - target: {fileID: 1304009484170884992, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2270999758931706802, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
       propertyPath: m_text
       value: "You\u2019ve been tasked with giving the deposed King Charles Filigree
         ll a proper burial. It\u2019s only been a little more than a week since his
-        death, and the dark plot that claimed him still lingers. \r\n\n\n\n> Press
-        q/Q to open & close this journal\n> Press e/E to open & close inventory\n>
-        Press x/X to exit out of character interactions and inspecting objects\n>
-        Walk up to characters to interact with them\n> Click on objects to pick them
-        up and add to your inventory\n> Press Esc to leave game\n\n"
+        death, and the dark plot that claimed him still lingers. \r"
       objectReference: {fileID: 0}
     - target: {fileID: 2270999758931706802, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
       propertyPath: m_fontSize
-      value: 25
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2270999758931706802, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
       propertyPath: m_margin.z
       value: 190.89035
       objectReference: {fileID: 0}
+    - target: {fileID: 2270999758931706802, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e2904a43465a3747bb7c34db546e28a, type: 2}
     - target: {fileID: 2270999758931706802, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
       propertyPath: m_fontColor.b
       value: 0
@@ -2562,11 +2599,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2270999758931706802, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
       propertyPath: m_fontSizeBase
-      value: 25
+      value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 2270999758931706802, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1594845300371955137, guid: 6e2904a43465a3747bb7c34db546e28a, type: 2}
     - target: {fileID: 2270999758931706802, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 2270999758931706802, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2713888625865755905, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
       propertyPath: m_Pivot.x
@@ -2671,6 +2716,14 @@ PrefabInstance:
     - target: {fileID: 8043005025097103981, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8604864608885058535, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 409.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8604864608885058535, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 8999848808373881391, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
       propertyPath: m_Name
@@ -3329,7 +3382,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 394, y: 177}
+  m_AnchoredPosition: {x: 409.9, y: 170}
   m_SizeDelta: {x: 218.72, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1270891062
@@ -3352,11 +3405,30 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '*You currently have not talked to anyone and thus this information is
-    currently blank'
+  m_text: 'Q: opens and closes this journal
+
+
+    E: opens and closes your inventory
+    + exits inspect
+
+
+    X: exits out of dialogue interactions
+
+
+    Esc: brings
+    you to main menu
+
+
+    Walk up to characters to interact with them
+
+
+    Click
+    on objects to pick them up and add to your inventory
+
+'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6e2904a43465a3747bb7c34db546e28a, type: 2}
+  m_sharedMaterial: {fileID: 1594845300371955137, guid: 6e2904a43465a3747bb7c34db546e28a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3982,7 +4054,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1664117354
 Transform:
   m_ObjectHideFlags: 0
@@ -4266,7 +4338,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 61, y: -53}
-  m_SizeDelta: {x: 0, y: 500}
+  m_SizeDelta: {x: 100, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1766646675
 MonoBehaviour:
@@ -4608,7 +4680,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
