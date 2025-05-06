@@ -3503,7 +3503,7 @@
     },
     "_snapManager": {
         "_settings": {
-            "_snappingEnabled": true,
+            "_snappingEnabled": false,
             "_snappingOn": {
                 "x": true,
                 "y": false,
