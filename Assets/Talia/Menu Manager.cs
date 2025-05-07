@@ -11,16 +11,24 @@ public class MenuManager : MonoBehaviour
 
     public GameObject journal;
 
+    public bool escapePressed;
+
+    public GameObject self;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        escapePressed = false;
+        if (self.activeInHierarchy) {
+            journal.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && winCanvas.activeInHierarchy == true) {
+            escapePressed = true;
             journal.SetActive(false);
             SceneManager.LoadScene("TaliaMenu");
             SceneManager.UnloadSceneAsync("Sprint2");
@@ -29,6 +37,7 @@ public class MenuManager : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && journal.activeInHierarchy == true) {
+            escapePressed = true;
             journal.SetActive(false);
             SceneManager.LoadScene("TaliaMenu");
             SceneManager.UnloadSceneAsync("Sprint2");

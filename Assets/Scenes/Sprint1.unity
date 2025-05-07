@@ -11451,6 +11451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 313887943}
   - component: {fileID: 313887942}
+  - component: {fileID: 313887944}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -11535,6 +11536,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &313887944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313887941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &314351350
 GameObject:
   m_ObjectHideFlags: 0
@@ -16175,7 +16199,7 @@ GameObject:
   - component: {fileID: 452915434}
   - component: {fileID: 452915433}
   m_Layer: 0
-  m_Name: Text
+  m_Name: Place Here Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49681,6 +49705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 184299416}
+  player: {fileID: 0}
 --- !u!43 &1345035770
 Mesh:
   m_ObjectHideFlags: 0
@@ -59229,6 +59254,7 @@ MonoBehaviour:
   itemButtonContainer: {fileID: 444069582}
   itemButtonPrefab: {fileID: 1278601331176822159, guid: d6921ddad2995fe4493fa9d6563a8565, type: 3}
   player: {fileID: 1686025980}
+  lady: {fileID: 0}
   placeObjects: {fileID: 1686025981}
   inventory: {fileID: 927926079}
   textLabel: {fileID: 374861174}
@@ -67230,15 +67256,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
+  pointsTwo: 0
+  pointsThree: 0
   pointsneg: 0
+  pointsnegTwo: 0
+  pointsnegThree: 0
   pointstotal: 0
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 64
+  m_LayerMaskTwo:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerMaskThree:
+    serializedVersion: 2
+    m_Bits: 0
   m_LayerMaskNeg:
     serializedVersion: 2
     m_Bits: 128
+  m_LayerMaskNegTwo:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerMaskNegThree:
+    serializedVersion: 2
+    m_Bits: 0
   wincanvas: {fileID: 1836319515}
+  player: {fileID: 0}
 --- !u!54 &1887922608
 Rigidbody:
   m_ObjectHideFlags: 0
