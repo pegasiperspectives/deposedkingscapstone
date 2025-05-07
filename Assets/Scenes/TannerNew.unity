@@ -25775,6 +25775,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Instructions Box
       objectReference: {fileID: 0}
+    - target: {fileID: 3988649649535250463, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7331543701949269585, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
