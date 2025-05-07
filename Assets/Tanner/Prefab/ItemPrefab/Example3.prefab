@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 11400000, guid: 305b5816b6d30f74898275921a5bc416, type: 2}
-  player: {fileID: 0}
+  player: {fileID: 3293182874649749968, guid: 5dff20bad7fe0fb40aec444a591ec4f8, type: 3}
   camera: {fileID: 0}
 --- !u!65 &8511988689100388516
 BoxCollider:
