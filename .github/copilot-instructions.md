@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg, pointTwo, pointThree, pointnegTwo, pointnegThree
 - Active game object:
-  - Name: ObserverCamera
-  - Tag: Untagged
-  - Layer: Default
+  - Name: ObservableObject9
+  - Tag: Object2
+  - Layer: pointnegTwo
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

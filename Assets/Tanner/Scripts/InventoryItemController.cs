@@ -260,12 +260,16 @@ public class InventoryItemController : MonoBehaviour
         {
             InventoryManager.Instance.ObservableObject8.SetActive(true);
             currentObservable = InventoryManager.Instance.ObservableObject8;
+            Debug.LogError("currentObservable is NULL on " + gameObject.name);
+            return;
         }
 
         else if (item.id == 9)
         {
             InventoryManager.Instance.ObservableObject9.SetActive(true);
             currentObservable = InventoryManager.Instance.ObservableObject9;
+            Debug.LogError("currentObservable is NULL on " + gameObject.name);
+            return;
         }
         else
         {
