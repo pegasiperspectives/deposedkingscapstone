@@ -22,14 +22,16 @@ public class MenuManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && winCanvas.activeInHierarchy == true) {
             SceneManager.LoadScene("TaliaMenu");
-            SceneManager.UnloadSceneAsync("Sprint2");
+            SceneManager.UnloadSceneAsync("TannerNew");
+            journal.SetActive(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && journal.activeInHierarchy == true) {
             SceneManager.LoadScene("TaliaMenu");
-            SceneManager.UnloadSceneAsync("Sprint2");
+            SceneManager.UnloadSceneAsync("TannerNew");
+            journal.SetActive(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
@@ -42,6 +44,6 @@ public class MenuManager : MonoBehaviour
 
     public void BeginGame()
     {
-        SceneManager.LoadScene("Sprint2");
+        SceneManager.LoadScene("TannerNew");
     }
 }
