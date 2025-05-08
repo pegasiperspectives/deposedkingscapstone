@@ -24,7 +24,7 @@
     "_tempCollidersAction": 1,
     "_paletteManager": {
         "_selectedPaletteIdx": 0,
-        "_selectedBrushIdx": 2,
+        "_selectedBrushIdx": -1,
         "_showBrushName": false,
         "_viewList": false,
         "_showTabsInMultipleRows": false,
@@ -500,9 +500,9 @@
         "_unsavedProfile": {
             "_moduleSizeType": 1,
             "_moduleSize": {
-                "x": 5.0,
-                "y": 6.0,
-                "z": 1.0000009536743165
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
             },
             "_spacing": {
                 "x": 0.0,
@@ -795,7 +795,7 @@
             "_paintOnPalettePrefabs": false,
             "_mode": 0,
             "_paralellToTheSurface": true,
-            "_repeat": true,
+            "_repeat": false,
             "_flatteningSettings": {
                 "_hardness": 0.0,
                 "_padding": 0.0,
@@ -3503,28 +3503,28 @@
     },
     "_snapManager": {
         "_settings": {
-            "_snappingEnabled": false,
+            "_snappingEnabled": true,
             "_snappingOn": {
                 "x": true,
-                "y": true,
-                "z": false
+                "y": false,
+                "z": true
             },
             "_visibleGrid": true,
             "_gridOn": {
                 "x": false,
-                "y": false,
-                "z": true
+                "y": true,
+                "z": false
             },
             "_lockedGrid": true,
             "_step": {
-                "x": 5.0,
-                "y": 6.0,
-                "z": 5.0
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
             },
             "_origin": {
-                "x": 5.0,
+                "x": 0.0,
                 "y": 0.0,
-                "z": -3.819223403930664
+                "z": 58.708702087402347
             },
             "_rotation": {
                 "x": 0.0,
