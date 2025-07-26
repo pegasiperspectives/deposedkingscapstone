@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlaceObjects : MonoBehaviour
 {
-    public InventoryItemController inventoryItemController;
+    public InventoryItemController inventoryItemController; // Reference back to the inventory item controller (not actively used here)
 
-
-    public GameObject ghostexample1;
-    public GameObject placedexaple1;
-    public static bool placeIsExample1 = false;
+    // ==== Coffins ====
+    public GameObject ghostexample1;            // Preview/ghost object for placement
+    public GameObject placedexaple1;            // Final prefab to place
+    public static bool placeIsExample1 = false; // Flag: are we placing this?   // This is a static bool, static means it belongs to the class itself, not a specific instance(not tied to an object in the scene) and there is only 1 shared value
+                                                                                // If it was a regular bool each copy of the script would have its own copy of this bool, we only want one shared value thats why it needs to be static. 
 
     public GameObject ghostexample2;
     public GameObject placedexaple2;
@@ -19,6 +21,8 @@ public class PlaceObjects : MonoBehaviour
     public GameObject placedexaple3;
     public static bool placeIsExample3 = false;
 
+
+    // ==== Flowers (share same ghost) ====
     public GameObject fernobj;
     public static bool placeIsFern = false;
 
@@ -32,14 +36,19 @@ public class PlaceObjects : MonoBehaviour
     public GameObject orchidsobj;
     public static bool placeIsOrchids = false;
 
+    // ==== Portraits ====
     public GameObject ghostPort;
     public GameObject ladyPortObj;
     public static bool placeIsLadyPort = false;
 
     public GameObject childPortObj;
     public static bool placeIsChildPort = false;
-    public bool canPlace;
 
+
+
+    public bool canPlace;   // Global flag: can we currently place?
+
+    // Audio
     private AudioSource audioSource;
     public AudioClip placesound;
     public AudioClip pickupsound;
@@ -47,7 +56,7 @@ public class PlaceObjects : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();  // Grab AudioSource on this object
 
     }
 
@@ -60,7 +69,8 @@ public class PlaceObjects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        // Each block checks one "placeIs" flag, shows a ghost preview if we can place,
+        // raycasts forward, and on click instantiates the final object.
 
         //if (placeIsExample1)
         if (placeIsExample1)
@@ -72,24 +82,28 @@ public class PlaceObjects : MonoBehaviour
 
                 RaycastHit hit;
 
+                // Raycast forward from this object
                 if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
                 {
-                    ghostexample1.SetActive(true);
-                    ghostexample1.transform.position = hit.point;
+                    ghostexample1.SetActive(true);                  // Show ghost
+                    ghostexample1.transform.position = hit.point;   // Position it where ray hit
+
+
                     if (Input.GetMouseButtonDown(0))
                     {
 
-                        Instantiate(placedexaple1, ghostexample1.transform.position, ghostexample1.transform.rotation);
+                        Instantiate(placedexaple1, ghostexample1.transform.position, ghostexample1.transform.rotation); // Place the actual object
 
                         ghostexample1.SetActive(false);
-                        placeIsExample1 = false;
-                        //sound for place here
-                        audioSource.PlayOneShot(placesound);
+                        placeIsExample1 = false;    // Done placing
+                        
+                        audioSource.PlayOneShot(placesound);    // Play place sound
 
                     }
                 }
-                else//dont show the ghost object if cant see where itll be placed
+                else
                 {
+                    // Hide ghost when not aiming at valid surface
                     ghostexample1.SetActive(false);
                 }
 
@@ -358,19 +372,11 @@ public class PlaceObjects : MonoBehaviour
     }
 
 
+    // Play pickup sound (can be called externally)
     public void playpickupsound()
     {
         audioSource.PlayOneShot(pickupsound);
     }
-
-
-
-    
-
-
-
-
-
 
 
 

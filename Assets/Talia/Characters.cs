@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Characters : MonoBehaviour
 {
-    public bool isAtLady = false;
-    [SerializeField] private GameObject player;
+    public bool isAtLady = false;                   // Flag to indicate if the player is currently in range of this character (the lady)
+    [SerializeField] private GameObject player;     // Reference to player (not used in final logic here, but serialized for flexibility)
     //private float raycastDistance = 1f;
 
     //public Transform playerTransform; // Assign in the inspector
@@ -40,8 +40,11 @@ public class Characters : MonoBehaviour
         //    isAtLady = false;
         //}
     }
+
+    // When something enters this character’s trigger collider
     private void OnTriggerEnter(Collider other)
     {
+        // If the object entering has the Player tag, mark that we’re at the lady
         if (other.CompareTag("Player"))
         {
             isAtLady = true;

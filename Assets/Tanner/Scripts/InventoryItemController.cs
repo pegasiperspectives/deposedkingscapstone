@@ -7,32 +7,34 @@ using UnityEngine.UI;
 
 public class InventoryItemController : MonoBehaviour
 {
-    public Item item;
-    public InventoryManager inventoryManager;
+    public Item item;                                   // Reference to the actual item this controller represents
+    public InventoryManager inventoryManager;           // Reference to the InventoryManager
 
-    public DialogueUI DialogueManager;
+    public DialogueUI DialogueManager;                  // Reference to a Dialogue UI (not actively used in this script)
 
-    public PlaceObjects placeObjects;
+    public PlaceObjects placeObjects;                   // Reference to the PlaceObjects script (handles placing objects in world)
 
-    public float sensitivity = 10f;
-    public bool checkthis = false;
+    public float sensitivity = 10f;                     // Sensitivity for rotating objects during inspection
+
+    public bool checkthis = false;                      // Flags used for internal checks
     public bool invResized = false;
-    public GameObject placeobj;
 
-    private FPSController fpscontrollerScript;
+    public GameObject placeobj;                         // Placeholder for an object that might be placed
 
-    
+    private FPSController fpscontrollerScript;          // Reference to the player’s movement controller
 
-    public float objectRotationSpeed = 5f;
 
-    public float deltaRotationX;
+
+    public float objectRotationSpeed = 5f;              // Rotation speed for inspection
+
+    public float deltaRotationX;                        // Mouse delta rotation values
     public float deltaRotationY;
 
-    public GameObject currentObservable;
-    public Vector2 originalSize;
+    public GameObject currentObservable;                // Reference to the currently observable object being inspected
+    public Vector2 originalSize;                        // Original size of the inventory UI (used to restore after resizing)
 
-    public RectTransform hideInv;
-    [SerializeField] private GameObject inventory;
+    public RectTransform hideInv;                       // Reference to RectTransform of the inventory panel
+    [SerializeField] private GameObject inventory;      // Reference to the inventory UI GameObject
 
 
     //this is started when inventory is opened on each inventory button
@@ -48,50 +50,55 @@ public class InventoryItemController : MonoBehaviour
 
     void Start()
     {
-        fpscontrollerScript = InventoryManager.Instance.player.GetComponent<FPSController>(); //call other script
-        hideInv = InventoryManager.Instance.inventory.GetComponent<RectTransform>();
-        originalSize = hideInv.sizeDelta;
-        inventoryManager = InventoryManager.Instance;
+        fpscontrollerScript = InventoryManager.Instance.player.GetComponent<FPSController>();       // Get the FPSController script from the player
+        hideInv = InventoryManager.Instance.inventory.GetComponent<RectTransform>();                // Get RectTransform of the inventory panel for resizing
+        originalSize = hideInv.sizeDelta;                                                           // Store original size of inventory panel
+        inventoryManager = InventoryManager.Instance;                                               // Cache reference to the InventoryManager
     }
 
     void Update()
     {
+        // If left mouse button is held down while inspecting, rotate object
         if (Input.GetMouseButton(0))
         {
             InspectingWithMouse();
         }
 
+        // If pressing E while inspecting, exit inspection mode
         if (Input.GetKeyDown(KeyCode.E) && InventoryManager.currentlyInspecting == true)
         {
             //set canvas size back to normal 
-            currentObservable.SetActive(false);
-            fpscontrollerScript.canMove = true;
-            //FPSController.canPickUp = true;
-            InventoryManager.Instance.obscamera.Close();
-            Debug.Log("registering exit clickobs");
-            ResizeInvCanvas();
+
+            currentObservable.SetActive(false);                                                     // Hide the currently observable object 
+            fpscontrollerScript.canMove = true;                                                     // Allow player movement again
+
+
+            InventoryManager.Instance.obscamera.Close();                                            // Close observation camera
+            //Debug.Log("registering exit clickobs");
+
+            ResizeInvCanvas();                                                                      // Restore inventory canvas size
             InventoryManager.currentlyInspecting = false;
             //return;
-            inventoryManager.placeObjects.canPlace = true;
 
-            inventory.SetActive(true);
+            inventoryManager.placeObjects.canPlace = true;                                          // Re-enable placement functionality
+
+            inventory.SetActive(true);                                                              // Reactivate inventory UI and refresh list
             inventoryManager.ListItems();
             //inventoryManager.ToggleCursor();
-            fpscontrollerScript.canMove = false;
 
-            FPSController.canPickUp = false;
+            fpscontrollerScript.canMove = false;                                                    // Lock player movement during inventory
+
+            FPSController.canPickUp = false;                                                        // Prevent picking up objects while inventory is open
         }
     }
 
+
+    // Assign an item to this slot
     public void AddItem(Item newItem)
     {
         item = newItem;
 
-
-
-
-
-
+        // If placeObjects isn’t set, try to find it from player’s camera
         if (placeObjects == null)
         {
             GameObject player = GameObject.Find("Player");
@@ -113,20 +120,15 @@ public class InventoryItemController : MonoBehaviour
     }
     public void RemoveItem() //removing from inventory list; not to be accessed again
     {
-        InventoryManager.Instance.Remove(item);
+        InventoryManager.Instance.Remove(item);     // Remove from manager
 
+        CloseInventory();                           // Close inventory UI
 
-
-        CloseInventory();
-
-
-
-
-        Destroy(gameObject);
+        Destroy(gameObject);                        // Destroy this item button
     }
 
 
-
+    // Use the item and trigger placement flags
     public void UseItem()
     {
 
@@ -137,16 +139,11 @@ public class InventoryItemController : MonoBehaviour
         }
 
 
-
+        // Set a flag in PlaceObjects depending on item ID
         if (item.id == 1)
         {
-
             var placer = placeObjects;
-
-
             PlaceObjects.placeIsExample1 = true;
-
-
         }
         else if (item.id == 2)
         {
@@ -188,10 +185,12 @@ public class InventoryItemController : MonoBehaviour
             var placer = placeObjects;
             PlaceObjects.placeIsChildPort = true;
         }
-        RemoveItem();
-        
+        RemoveItem();   // Remove item after using
+
     }
 
+
+    // Close inventory UI safely
     void CloseInventory()
     {
         if (InventoryManager.Instance != null)
@@ -201,18 +200,24 @@ public class InventoryItemController : MonoBehaviour
         }
     }
 
-
+    // Start inspecting an item
     public void InspectItem()
     {
         ResizeInvCanvas();
-        fpscontrollerScript.canMove = false;
+        fpscontrollerScript.canMove = false;    // stop player movement
         InventoryManager.currentlyInspecting = true;
         FPSController.canPickUp = false;
+
         Debug.Log("Clicked item: " + item.itemName + " (ID: " + item.id + ")");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        InventoryManager.Instance.obscamera.gameObject.SetActive(true);
 
+
+        InventoryManager.Instance.obscamera.gameObject.SetActive(true);     // Enable the observation camera
+
+
+
+        // Activate the corresponding observable object based on item ID
         if (item.id == 1)
         {
             InventoryManager.Instance.ObservableObject1.SetActive(true);
@@ -278,12 +283,14 @@ public class InventoryItemController : MonoBehaviour
 
     }
 
+
+    // Rotate the inspected object based on mouse movement
     public void InspectingWithMouse()
     {
         //Debug.Log("Inspectingwithmouse");
         if (InventoryManager.currentlyInspecting == true)
         {
-            deltaRotationX = -Input.GetAxis("Mouse X") * sensitivity;
+            deltaRotationX = -Input.GetAxis("Mouse X") * sensitivity;           // Get mouse movement deltas
             deltaRotationY = -Input.GetAxis("Mouse Y") * sensitivity;
 
 
@@ -291,7 +298,7 @@ public class InventoryItemController : MonoBehaviour
 
             if (deltaRotationX != 0 && deltaRotationY != 0)
             {
-                
+                // Rotate the object in world space
                 currentObservable.transform.Rotate(Vector3.up, deltaRotationX, Space.World);
                 currentObservable.transform.Rotate(Vector3.right, -deltaRotationY,  Space.World);
                 
@@ -313,6 +320,7 @@ public class InventoryItemController : MonoBehaviour
     }
 
 
+    // Resize or restore the inventory canvas to hide/show
     public void ResizeInvCanvas()
     {
         //get the canvas ui object from parent and set the width and height to 0, this will hide it without removing the button with code

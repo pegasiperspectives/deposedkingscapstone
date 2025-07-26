@@ -5,38 +5,49 @@ using UnityEngine;
 
 public class CollisionPointSystem : MonoBehaviour
 {
+    // Individual point counters for each layer type
     public int points = 0;
     public int pointsTwo = 0;
     public int pointsThree = 0;
     public int pointsneg = 0;
     public int pointsnegTwo = 0;
     public int pointsnegThree = 0;
-    public int pointstotal = 0;
+    
+
+    public int pointstotal = 0; // Combined total
 
 
-    //bool m_Started;
+    // Layer masks to detect different types of objects
     public LayerMask m_LayerMask;
     public LayerMask m_LayerMaskTwo;
     public LayerMask m_LayerMaskThree;
     public LayerMask m_LayerMaskNeg;
     public LayerMask m_LayerMaskNegTwo;
     public LayerMask m_LayerMaskNegThree;
-    public GameObject wincanvas;
 
+
+    public GameObject wincanvas;    // Win screen canvas
+
+    // Reference to player movement control
     private FPSController fpscontrollerScript;
     public GameObject player;
     void Start()
     {
-         fpscontrollerScript = player.GetComponent<FPSController>();
+        // Get FPSController from player
+        fpscontrollerScript = player.GetComponent<FPSController>();
     }
 
     void FixedUpdate()
     {
-        MyCollisions();
-        pointstotal = points + pointsTwo + pointsThree - pointsneg - pointsnegTwo - pointsnegThree;
+
+        MyCollisions(); // Run collision checks each physics update
+        pointstotal = points + pointsTwo + pointsThree - pointsneg - pointsnegTwo - pointsnegThree; // Calculate total points (positive layers minus negative layers)
         //print(pointstotal);
-        if(pointstotal >= 9)
+
+        // Check for win condition
+        if (pointstotal >= 9)
         {
+            // Show win canvas and freeze player movement
             wincanvas.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -44,7 +55,7 @@ public class CollisionPointSystem : MonoBehaviour
         }
         else
         {
-            wincanvas.SetActive(false);
+            wincanvas.SetActive(false); // Hide win canvas if not enough points
         }
     }
 

@@ -6,34 +6,39 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
 
-    public static InventoryManager Instance;
-    public List<Item> Items = new List<Item>();
+    public static InventoryManager Instance;                        // instance so other scripts can easily access the inventory
+    public List<Item> Items = new List<Item>();                     // Master list of all items currently in the inventory
 
-    public InventoryItemController iic;
-
-   
+    public InventoryItemController iic;                             // Reference to individual item controllers (used when listing items)
 
 
-    public static bool currentlyInspecting = false;
+
+
+    public static bool currentlyInspecting = false;                 // Flag used when inspecting an item (to disable certain controls)
+
+    // References to important scene objects
     public GameObject player;
-    public Transform ItemContent;
-    public InventoryItemController[] InventoryItems;
-    public GameObject InventoryItem;
+    public Transform ItemContent;                                   // UI container for item entries
+    public InventoryItemController[] InventoryItems;                // Items array
+    public GameObject InventoryItem;                                // Prefab for a single item UI element
 
-    [SerializeField] public GameObject inventory;
-    [SerializeField] private GameObject dialogue;
 
+
+    [SerializeField] public GameObject inventory;                   // Inventory UI panel
+    [SerializeField] private GameObject dialogue;                   // Dialogue UI panel
+
+    // Player control and placement references
     private FPSController fpscontrollerScript;
     public PlaceObjects placeObjects;
 
-    public ObsCamera obscamera;
 
-    public Transform rig;
+    public ObsCamera obscamera;                                     // Reference to camera used for inspecting objects
 
+    public Transform rig;                                           // Unused here but may reference camera rig
+
+    // References to observable 3D objects for inspection
     [SerializeField] public GameObject ObservableObject1;
-
     [SerializeField] public GameObject ObservableObject2;
-
     [SerializeField] public GameObject ObservableObject3;
     [SerializeField] public GameObject ObservableObject4;
     [SerializeField] public GameObject ObservableObject5;
@@ -42,19 +47,23 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] public GameObject ObservableObject8;
     [SerializeField] public GameObject ObservableObject9;
 
+
+    // Audio for item pickup
     private AudioSource audioSource;
     public AudioClip pickupsound;
-    [SerializeField] private Camera camobj;
+    [SerializeField] private Camera camobj;     // Camera that holds the audio source
 
     private void Awake()
     {
-        Instance = this;
-        fpscontrollerScript = player.GetComponent<FPSController>(); //call other script
-        obscamera.gameObject.SetActive(false);
-        
-        audioSource = camobj.GetComponent<AudioSource>();
+        Instance = this;                                                // Set up singleton instance
+        fpscontrollerScript = player.GetComponent<FPSController>();     // Grab reference to FPSController script on player
+        obscamera.gameObject.SetActive(false);                          // Make sure inspection camera starts off
+
+        audioSource = camobj.GetComponent<AudioSource>();               // Get audio source from the specified camera
     }
 
+
+    // Add an item to the inventory list
     public void Add(Item item)
     {
         Items.Add(item);
@@ -63,67 +72,77 @@ public class InventoryManager : MonoBehaviour
     
     private void Update()
     {
+        // If neither inventory nor dialogue are open, allow placing objects
         if (inventory.activeInHierarchy == false && dialogue.activeInHierarchy == false)
         {
             placeObjects.canPlace = true;
         }
-        else if(inventory.activeInHierarchy == true || dialogue.activeInHierarchy == true)
+        // If either inventory or dialogue is open, prevent placing objects
+        else if (inventory.activeInHierarchy == true || dialogue.activeInHierarchy == true)
         {
             placeObjects.canPlace = false;
         }
-      
 
+        // Open or close the inventory with the E key (when not inspecting)
         if (Input.GetKeyDown(KeyCode.E) && currentlyInspecting == false) //Open/close inventory
         {
+
+            // If inventory is closed and no special placement modes are active
             if (inventory.activeInHierarchy == false && PlaceObjects.placeIsExample1 == false && PlaceObjects.placeIsExample2 == false && dialogue.activeInHierarchy == false)
             {
+                // Open inventory
                 placeObjects.canPlace = true;
 
                 inventory.SetActive(true);
-                ListItems();
-                ToggleCursor();
-                fpscontrollerScript.canMove = false;
-                
-                FPSController.canPickUp = false;
+                ListItems();                            // Refresh list
+                ToggleCursor();                         // Unlock cursor
+                fpscontrollerScript.canMove = false;    // Freeze player
+                FPSController.canPickUp = false;        // Disable pickup
             }
+
+            // If inventory is already open, close it
             else if (inventory.activeInHierarchy == true)
             {
                 placeObjects.canPlace = false;
                 inventory.SetActive(false);
-                CleanItems();
-                ToggleCursor();
-                fpscontrollerScript.canMove = true;
-                
-                FPSController.canPickUp = true;
+                CleanItems();                           // Clear UI objects
+                ToggleCursor();                         // Lock cursor back
+                fpscontrollerScript.canMove = true;     // Allow movement
+                FPSController.canPickUp = true;         // Re-enable pickup
             }
         }
     }
 
-    
+    // Rebuild inventory UI list based on Items list
     public void ListItems()
     {
+        // Clear any existing UI entries
         foreach (Transform item in ItemContent)
         {
             Destroy(item.gameObject);
         }
 
+        // Create a UI entry for each item in Items
         foreach (var item in Items)
         {
             GameObject obj = Instantiate(InventoryItem, ItemContent);
 
-            // Set text/icon
+            // Fill in UI fields (name and icon)
             var itemName = obj.transform.Find("ItemName").GetComponent<Text>();
             var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
             itemName.text = item.itemName;
             itemIcon.sprite = item.icon;
 
             //  IMPORTANT: Set the item on the button
+            // Assign the item to the UI controller
             var itemController = obj.GetComponent<InventoryItemController>();
             itemController.AddItem(item);
         }
-
+        // Refresh array of InventoryItemControllers
         SetInventoryItems();
     }
+
+    // Clean up UI entries (called when closing inventory)
     public void CleanItems() //gets rid of duplicates when reopening inventory
     {
         foreach (Transform item in ItemContent)
@@ -131,6 +150,8 @@ public class InventoryManager : MonoBehaviour
             Destroy(item.gameObject);
         }
     }
+
+    // When pressing the close inventory button in UI
     public void CloseInventoryButton()
     {
         ToggleCursor();
@@ -138,13 +159,16 @@ public class InventoryManager : MonoBehaviour
         FPSController.canPickUp = true;
         
     }
+
+    // When pressing the open inventory button in UI
     public void OpenInventoryButton()
     {
         ToggleCursor();
-        fpscontrollerScript.canMove = false;
-       
+        fpscontrollerScript.canMove = false; 
         FPSController.canPickUp = false;
     }
+
+    // Toggles mouse cursor lock/visibility
     public void ToggleCursor()
     {
         if (Cursor.lockState == CursorLockMode.Locked)
@@ -159,6 +183,8 @@ public class InventoryManager : MonoBehaviour
         }
 
     }
+
+    // Remove an item from the inventory
     public void Remove(Item item)
     {
         if (Items.Contains(item))
@@ -173,6 +199,8 @@ public class InventoryManager : MonoBehaviour
             Debug.LogWarning("Tried to remove item not in inventory: " + item.itemName);
         }
     }
+
+    // Updates InventoryItems array and rebinds data
     public void SetInventoryItems()
     {
         InventoryItems = ItemContent.GetComponentsInChildren<InventoryItemController>();
@@ -182,13 +210,15 @@ public class InventoryManager : MonoBehaviour
             InventoryItems[i].AddItem(Items[i]);
         }
     }
+
+    // Turns off inventory in case you need to switch to placement mode
     public void turnoffinventorygorplace()
     {
         placeObjects.canPlace = true;
     }
 
 
-
+    // Sets placement mode active for a specific object
     public void ActiveThing()
     {
 
@@ -197,11 +227,14 @@ public class InventoryManager : MonoBehaviour
     }
 
 
+    // Closes the inventory UI (used by other scripts)
     public void TurnoffInv()
     {
         inventory.SetActive(false);
     }
 
+
+    // Plays a pickup sound effect
     public void playpickupsound()
     {
         audioSource.PlayOneShot(pickupsound);
