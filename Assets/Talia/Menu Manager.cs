@@ -44,22 +44,26 @@ public class MenuManager : MonoBehaviour
     public void TriggerExitScreenSure()
     {
         sureExit.SetActive(true);
+        journal.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void KeepPlaying()
     {
         Debug.Log("no don't exit was selected");
         sureExit.SetActive(false);
+        journal.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
     }
     public void TriggerMenu()
     {
         Debug.Log("yes to exit was selected");
         escapePressed = true;
-        journal.SetActive(false);
         SceneManager.LoadScene("TaliaMenu");
         SceneManager.UnloadSceneAsync("Sprint2");
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
     }
 
     public void QuitGame()
