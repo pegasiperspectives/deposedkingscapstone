@@ -11,7 +11,10 @@ public class MenuManager : MonoBehaviour
 
     public GameObject journal;
 
+    public GameObject sureExit;
+
     public bool escapePressed;
+    public bool exit = false;
 
     public GameObject self;
 
@@ -19,7 +22,9 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         escapePressed = false;
-        if (self.activeInHierarchy) {
+        sureExit.SetActive(false);
+        if (self.activeInHierarchy)
+        {
             journal.SetActive(false);
         }
     }
@@ -28,25 +33,37 @@ public class MenuManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && winCanvas.activeInHierarchy == true) {
-            escapePressed = true;
-            journal.SetActive(false);
-            SceneManager.LoadScene("TaliaMenu");
-            SceneManager.UnloadSceneAsync("Sprint2");
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            TriggerExitScreenSure();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && journal.activeInHierarchy == true) {
-            escapePressed = true;
-            journal.SetActive(false);
-            SceneManager.LoadScene("TaliaMenu");
-            SceneManager.UnloadSceneAsync("Sprint2");
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            TriggerExitScreenSure();
         }
     }
 
-    public void QuitGame() {
+    public void TriggerExitScreenSure()
+    {
+        sureExit.SetActive(true);
+    }
+
+    public void KeepPlaying()
+    {
+        Debug.Log("no don't exit was selected");
+        sureExit.SetActive(false);
+    }
+    public void TriggerMenu()
+    {
+        Debug.Log("yes to exit was selected");
+        escapePressed = true;
+        journal.SetActive(false);
+        SceneManager.LoadScene("TaliaMenu");
+        SceneManager.UnloadSceneAsync("Sprint2");
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void QuitGame()
+    {
         Application.Quit();
         //UnityEditor.EditorApplication.isPlaying = false;
     }
