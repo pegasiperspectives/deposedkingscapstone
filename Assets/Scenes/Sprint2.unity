@@ -35905,6 +35905,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7660943196971808738, guid: 7f50e01326ef71845b04db46cbacfada, type: 3}
   m_PrefabInstance: {fileID: 2006804592}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1297312628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297312622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc127fc6b30c354395efcede7e78e8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 3293182873052022284}
 --- !u!1001 &1298906070
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56991,7 +57004,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7660943196971808738, guid: 7f50e01326ef71845b04db46cbacfada, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1297312628}
   m_SourcePrefab: {fileID: 100100000, guid: 7f50e01326ef71845b04db46cbacfada, type: 3}
 --- !u!4 &2007131293 stripped
 Transform:
@@ -62037,6 +62053,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4804562069283523973, guid: b16f93c40fe827d4285afcd0f633eb34, type: 3}
   m_PrefabInstance: {fileID: 5337997430559360160}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &3293182873052022284 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8722259248459333207, guid: b16f93c40fe827d4285afcd0f633eb34, type: 3}
+  m_PrefabInstance: {fileID: 5337997430559360160}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4538963267077296217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62247,6 +62268,18 @@ PrefabInstance:
       propertyPath: placeObjects
       value: 
       objectReference: {fileID: 1599041500}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: allDialogue.Array.data[5]
+      value: Red at a funeral? I love it. Nevermind what Charles would think.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: allDialogue.Array.data[7]
+      value: Orchids for a funeral? Not terribly original, is it?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: allDialogue.Array.data[8]
+      value: Hm. I figured this would've been tucked into a hole somewhere.
+      objectReference: {fileID: 0}
     - target: {fileID: 2495581607835980143, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.6

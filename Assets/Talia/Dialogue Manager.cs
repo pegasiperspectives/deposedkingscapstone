@@ -38,10 +38,10 @@ public class DialogueUI : MonoBehaviour
             "Simple, Charles wouldn't be caught dead in that, unless you'd like him to be.",
             "Fittingly drab for such a worthless king.",
             "How nice, although I doubt Charles would appreciate their simplicity.",
-            "Red at a funeral? I love it. ",
+            "Red at a funeral? I love it. Nevermind what Charles would think.",
             "The same color as the Filigree flag, how royal.",
-            "Orchids for a funeral? Very original.",
-            "I'm surprised you even found this in the first place.",
+            "Orchids for a funeral? Not terribly original, is it? ",
+            "Hm. I figured this would've been tucked into a hole somewhere.",
             "My dear Arthur, he meant everything to Charles and I."};
 
     // (Not used in current logic but example placeholders)
