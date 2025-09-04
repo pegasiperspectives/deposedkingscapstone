@@ -62015,6 +62015,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SureExit
       objectReference: {fileID: 0}
+    - target: {fileID: 5269536083787520838, guid: 13877c8737703d442991499e8626728b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7964794063145659588, guid: 13877c8737703d442991499e8626728b, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -94.39

@@ -22,10 +22,10 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         escapePressed = false;
-        sureExit.SetActive(false);
         if (self.activeInHierarchy)
         {
             journal.SetActive(false);
+            sureExit.SetActive(false);
         }
     }
 
