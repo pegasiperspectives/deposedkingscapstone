@@ -88,7 +88,7 @@ public class InventoryManager : MonoBehaviour
         {
 
             // If inventory is closed and no special placement modes are active
-            if (inventory.activeInHierarchy == false && PlaceObjects.placeIsExample1 == false && PlaceObjects.placeIsExample2 == false && dialogue.activeInHierarchy == false)
+            if (inventory.activeInHierarchy == false && PlaceObjects.placeIsExample1 == false && PlaceObjects.placeIsExample2 == false && dialogue.activeInHierarchy == false && PlaceObjects.placeIsExample3 == false && PlaceObjects.placeIsFern == false && PlaceObjects.placeIsRoses == false && PlaceObjects.placeIsTulips == false && PlaceObjects.placeIsOrchids == false && PlaceObjects.placeIsLadyPort == false && PlaceObjects.placeIsChildPort == false)
             {
                 // Open inventory
                 placeObjects.canPlace = true;
