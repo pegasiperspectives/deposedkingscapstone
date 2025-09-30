@@ -7,6 +7,10 @@ public class InventoryManager : MonoBehaviour
 {
 
     public static InventoryManager Instance;                        // instance so other scripts can easily access the inventory
+
+    [SerializeField]
+    public MenuManager mm;
+
     public List<Item> Items = new List<Item>();                     // Master list of all items currently in the inventory
 
     public InventoryItemController iic;                             // Reference to individual item controllers (used when listing items)
@@ -47,6 +51,8 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] public GameObject ObservableObject8;
     [SerializeField] public GameObject ObservableObject9;
 
+
+    public bool inventoryOpen = false;
 
     // Audio for item pickup
     private AudioSource audioSource;
@@ -92,10 +98,11 @@ public class InventoryManager : MonoBehaviour
             {
                 // Open inventory
                 placeObjects.canPlace = true;
+                inventoryOpen = true;
 
                 inventory.SetActive(true);
-                ListItems();                            // Refresh list
-                ToggleCursor();                         // Unlock cursor
+                ListItems();
+                CursorOn();                        // Unlock cursor                           // Refresh list
                 fpscontrollerScript.canMove = false;    // Freeze player
                 FPSController.canPickUp = false;        // Disable pickup
             }
@@ -104,9 +111,10 @@ public class InventoryManager : MonoBehaviour
             else if (inventory.activeInHierarchy == true)
             {
                 placeObjects.canPlace = false;
+                inventoryOpen = false;
                 inventory.SetActive(false);
                 CleanItems();                           // Clear UI objects
-                ToggleCursor();                         // Lock cursor back
+                CursorOff();                         // Unlock cursor  
                 fpscontrollerScript.canMove = true;     // Allow movement
                 FPSController.canPickUp = true;         // Re-enable pickup
             }
@@ -154,7 +162,7 @@ public class InventoryManager : MonoBehaviour
     // When pressing the close inventory button in UI
     public void CloseInventoryButton()
     {
-        ToggleCursor();
+        CursorOff();
         fpscontrollerScript.canMove = true;
         FPSController.canPickUp = true;
         
@@ -163,25 +171,21 @@ public class InventoryManager : MonoBehaviour
     // When pressing the open inventory button in UI
     public void OpenInventoryButton()
     {
-        ToggleCursor();
+        CursorOn();
         fpscontrollerScript.canMove = false; 
         FPSController.canPickUp = false;
     }
 
-    // Toggles mouse cursor lock/visibility
-    public void ToggleCursor()
+    public void CursorOff()
     {
-        if (Cursor.lockState == CursorLockMode.Locked)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 
+    public void CursorOn()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     // Remove an item from the inventory
@@ -190,7 +194,7 @@ public class InventoryManager : MonoBehaviour
         if (Items.Contains(item))
         {
             Items.Remove(item);
-            
+
             ListItems(); // Refresh inventory UI
 
         }

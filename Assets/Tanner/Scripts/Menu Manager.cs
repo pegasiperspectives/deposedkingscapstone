@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
+    [SerializeField]
     public InstructionsManager instructionsManager;
+
+    public InventoryManager Instance;
 
     public GameObject winCanvas;
 
@@ -14,6 +17,8 @@ public class MenuManager : MonoBehaviour
     public GameObject sureExit;
 
     public bool escapePressed;
+
+    public bool escapeClosed = false;
     public bool exit = false;
 
     public GameObject self;
@@ -45,8 +50,7 @@ public class MenuManager : MonoBehaviour
     {
         sureExit.SetActive(true);
         journal.SetActive(false);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        Instance.CursorOn();
     }
 
     public void KeepPlaying()
@@ -54,9 +58,11 @@ public class MenuManager : MonoBehaviour
         Debug.Log("no don't exit was selected");
         sureExit.SetActive(false);
         journal.SetActive(true);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
+        if (Instance.inventoryOpen != true)
+        {
+           Instance.CursorOff();  
+        }
+        escapeClosed = true;
     }
     public void TriggerMenu()
     {

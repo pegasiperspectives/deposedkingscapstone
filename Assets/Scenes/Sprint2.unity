@@ -37452,6 +37452,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
+      propertyPath: mm
+      value: 
+      objectReference: {fileID: 1656782772}
+    - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
       propertyPath: iic
       value: 
       objectReference: {fileID: -6996846059506446806, guid: 7e6f7d5e426297041832849374c23c9e, type: 3}
@@ -47475,6 +47479,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2017092132}
     m_Modifications:
     - target: {fileID: 778691576816025192, guid: 38df920ec4049354e82d32e9c942abd6, type: 3}
+      propertyPath: exit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 778691576816025192, guid: 38df920ec4049354e82d32e9c942abd6, type: 3}
       propertyPath: self
       value: 
       objectReference: {fileID: 935218007}
@@ -47486,6 +47494,10 @@ PrefabInstance:
       propertyPath: journal
       value: 
       objectReference: {fileID: 1120821053}
+    - target: {fileID: 778691576816025192, guid: 38df920ec4049354e82d32e9c942abd6, type: 3}
+      propertyPath: Instance
+      value: 
+      objectReference: {fileID: 1338756044}
     - target: {fileID: 778691576816025192, guid: 38df920ec4049354e82d32e9c942abd6, type: 3}
       propertyPath: sureExit
       value: 
