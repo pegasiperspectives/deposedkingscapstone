@@ -1,6 +1,6 @@
 <!-- UNITY CODE ASSIST INSTRUCTIONS START -->
 - Project name: deposedkingscapstone
-- Unity version: Unity 2022.3.20f1
+- Unity version: Unity 6000.2.6f2
 - Active scene:
   - Name: Sprint2
   - Tags:
@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg, pointTwo, pointThree, pointnegTwo, pointnegThree
 - Active game object:
-  - Name: InventoryManager
+  - Name: All UI
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
