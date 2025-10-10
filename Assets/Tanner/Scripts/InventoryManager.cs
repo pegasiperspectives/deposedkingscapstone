@@ -90,7 +90,7 @@ public class InventoryManager : MonoBehaviour
         }
 
         // Open or close the inventory with the E key (when not inspecting)
-        if (Input.GetKeyDown(KeyCode.E) && currentlyInspecting == false) //Open/close inventory
+        if (Input.GetKeyDown(KeyCode.Tab) && currentlyInspecting == false) //Open/close inventory
         {
 
             // If inventory is closed and no special placement modes are active

@@ -13,6 +13,11 @@ public class DialogueUI : MonoBehaviour
     //Tanner Addition
     // References and fields for dynamic UI
     public Transform itemButtonContainer;           // Where dynamically created buttons will go
+
+    public Transform playerView;
+
+    [SerializeField]
+    public Transform centerOnQueen;
     public GameObject itemButtonPrefab;             // Prefab for an inventory item button in dialogue
     private FPSController fpscontrollerScript;      // Reference to player controller
     private Characters characters;                  // Reference to Characters script on the lady NPC
@@ -59,6 +64,8 @@ public class DialogueUI : MonoBehaviour
         self.SetActive(false);
         Debug.Log("dialogue box is not active yet");
 
+        playerView = player.transform;
+
         //Tanner Addition
         // Cache references
         fpscontrollerScript = player.GetComponent<FPSController>();
@@ -68,13 +75,13 @@ public class DialogueUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Debug log when pressing I away from lady
-        if (Input.GetKeyDown(KeyCode.I) && characters.isAtLady != true) {
-            Debug.Log("you're clicking I but it's not registering you're at the lady");
+        // Debug log when pressing E away from lady
+        if (Input.GetKeyDown(KeyCode.E) && characters.isAtLady != true) {
+            Debug.Log("you're clicking E but it's not registering you're at the lady");
         }
 
         // Open dialogue automatically when player is at lady and both dialogue & inventory are closed
-        if (self.activeInHierarchy == false && inventory.activeInHierarchy == false && characters.isAtLady == true) //added self chech so multiple objects arent made
+        if (self.activeInHierarchy == false && inventory.activeInHierarchy == false && characters.isAtLady == true && Input.GetKeyDown(KeyCode.E)) //added self check so multiple objects arent made
         {
             self.SetActive(true);                               // Show dialogue UI
             SetDialogueText(allDialogue[0], textLabel);         // Show first line
@@ -82,6 +89,8 @@ public class DialogueUI : MonoBehaviour
 
             Cursor.lockState = CursorLockMode.None;             // Unlock mouse cursor for UI interaction
             Cursor.visible = true;
+
+            Camera.main.transform.SetPositionAndRotation(centerOnQueen.transform.position, centerOnQueen.transform.rotation);
 
             //tanner addition
             ShowInventoryItemButtons();                         // Show item buttons based on inventory
@@ -93,8 +102,8 @@ public class DialogueUI : MonoBehaviour
 
         }
 
-        // Close dialogue when pressing X
-        else if (Input.GetKeyDown(KeyCode.X) && self.activeInHierarchy)
+        // toggle and close dialogue when pressing E --> right now this works, but if you stay at the queen it'll make you walk away again before interacting again
+        else if (Input.GetKeyDown(KeyCode.E) && self.activeInHierarchy)
         {
             closeDialogue();
             Debug.Log("exited dialogue box");
@@ -103,6 +112,8 @@ public class DialogueUI : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             characters.isAtLady = false;
+
+            Camera.main.transform.SetPositionAndRotation(playerView.transform.position, playerView.transform.rotation);
 
             //Tanner Addition
             // Allow player movement again
@@ -225,7 +236,7 @@ public class DialogueUI : MonoBehaviour
     }
 
 
-    // Destroy all buttons when dialogue closes so they don’t stack up next time
+    // Destroy all buttons when dialogue closes so they donï¿½t stack up next time
     private void ClearItemButtons()// dont want repeated objects in inventory so they are deleted when closed
     {
         foreach (Transform child in itemButtonContainer)

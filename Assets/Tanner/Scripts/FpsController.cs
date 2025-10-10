@@ -31,7 +31,7 @@ public class FPSController : MonoBehaviour
 
     void Update()
     {
-        if(canMove == false)
+        if (canMove == false)
         {
             canPickUp = false;
         }
@@ -40,9 +40,9 @@ public class FPSController : MonoBehaviour
             canPickUp = true;
         }
 
-            #region Handles Movment
-            Vector3 forward = transform.TransformDirection(Vector3.forward);
-        Vector3 right = transform.TransformDirection(Vector3.right);
+        #region Handles Movement
+        Vector3 forward = transform.TransformDirection(Vector3.forward).normalized;
+        Vector3 right = transform.TransformDirection(Vector3.right).normalized;
 
         // Press Left Shift to run
         bool isRunning = Input.GetKey(KeyCode.LeftShift);

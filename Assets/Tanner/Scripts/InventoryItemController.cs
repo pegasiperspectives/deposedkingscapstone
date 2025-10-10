@@ -21,7 +21,7 @@ public class InventoryItemController : MonoBehaviour
 
     public GameObject placeobj;                         // Placeholder for an object that might be placed
 
-    private FPSController fpscontrollerScript;          // Reference to the player’s movement controller
+    private FPSController fpscontrollerScript;          // Reference to the playerï¿½s movement controller
 
 
 
@@ -64,8 +64,8 @@ public class InventoryItemController : MonoBehaviour
             InspectingWithMouse();
         }
 
-        // If pressing E while inspecting, exit inspection mode
-        if (Input.GetKeyDown(KeyCode.E) && InventoryManager.currentlyInspecting == true)
+        // If pressing Tab while inspecting, exit inspection mode
+        if (Input.GetKeyDown(KeyCode.Tab) && InventoryManager.currentlyInspecting == true)
         {
             //set canvas size back to normal 
 
@@ -98,7 +98,7 @@ public class InventoryItemController : MonoBehaviour
     {
         item = newItem;
 
-        // If placeObjects isn’t set, try to find it from player’s camera
+        // If placeObjects isnï¿½t set, try to find it from playerï¿½s camera
         if (placeObjects == null)
         {
             GameObject player = GameObject.Find("Player");

@@ -41,10 +41,10 @@ public class Characters : MonoBehaviour
         //}
     }
 
-    // When something enters this character’s trigger collider
+    // When something enters this characterï¿½s trigger collider
     private void OnTriggerEnter(Collider other)
     {
-        // If the object entering has the Player tag, mark that we’re at the lady
+        // If the object entering has the Player tag, mark that weï¿½re at the lady
         if (other.CompareTag("Player"))
         {
             isAtLady = true;

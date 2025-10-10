@@ -24242,6 +24242,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f9e4f9a624816346853855ae37cfd9f, type: 3}
+--- !u!1 &889980133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 889980134}
+  m_Layer: 0
+  m_Name: CenterOnQueenTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &889980134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889980133}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.70090926, z: 0, w: 0.7132505}
+  m_LocalPosition: {x: -20, y: 1.08, z: -30.627}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -89, z: 0}
 --- !u!4 &895516662 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2067903582786832940, guid: a2357b35bdac56e43a80958766528aac, type: 3}
@@ -59862,7 +59893,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2072582894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62450,6 +62481,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2017092132}
     m_Modifications:
+    - target: {fileID: 459538411008871307, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
+      propertyPath: m_text
+      value: 'Q: opens and closes this journal
+
+
+        Tab: opens and closes your
+        inventory + exits inspect
+
+
+        X: exits out of dialogue interactions
+
+
+        Esc:
+        brings you to main menu
+
+
+        E: press after walking up to characters
+        to interact with them
+
+
+        Click on objects to pick them up and add
+        to your inventory
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 3988649649535250463, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
       propertyPath: m_Name
       value: Instructions Box
@@ -62657,6 +62713,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1599041500}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: centerOnQueen
+      value: 
+      objectReference: {fileID: 889980134}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'allDialogue.Array.data[5]'
       value: Red at a funeral? I love it. Nevermind what Charles would think.
       objectReference: {fileID: 0}
@@ -62725,6 +62785,7 @@ SceneRoots:
   - {fileID: 2017092132}
   - {fileID: 5337997430559360160}
   - {fileID: 1338756043}
+  - {fileID: 889980134}
   - {fileID: 2006804592}
   - {fileID: 1012703512}
   - {fileID: 1189204451}
