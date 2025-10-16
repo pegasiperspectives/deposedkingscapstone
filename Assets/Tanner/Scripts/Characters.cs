@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Characters : MonoBehaviour
 {
-    public bool isAtLady = false;                   // Flag to indicate if the player is currently in range of this character (the lady)
+    public bool isAtCharacter = false;                   // Flag to indicate if the player is currently in range of this character (the lady)
+
+    public bool isAtGardener = false;
+
+    public bool isAtLady = false;
     [SerializeField] private GameObject player;     // Reference to player (not used in final logic here, but serialized for flexibility)
     //private float raycastDistance = 1f;
 
@@ -47,7 +51,16 @@ public class Characters : MonoBehaviour
         // If the object entering has the Player tag, mark that we�re at the lady
         if (other.CompareTag("Player"))
         {
-            isAtLady = true;
+            if (this.gameObject.name.ToString() == "LadyFiligree")
+            {
+                isAtLady = true;
+                Debug.Log("is now at lady?" + isAtLady);
+            } else if (this.gameObject.name.ToString() == "Gardener")
+            {
+                isAtGardener = true; 
+                Debug.Log("is now at gardener?" + isAtGardener);
+            }
+            
         }
     }
 }

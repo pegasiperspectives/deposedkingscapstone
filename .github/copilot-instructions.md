@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg, pointTwo, pointThree, pointnegTwo, pointnegThree, interact
 - Active game object:
-  - Name: InventoryManager
+  - Name: Gardener
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

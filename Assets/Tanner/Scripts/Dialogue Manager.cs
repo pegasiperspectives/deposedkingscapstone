@@ -18,15 +18,20 @@ public class DialogueUI : MonoBehaviour
 
     [SerializeField]
     public Transform centerOnQueen;
+
+    public Transform centerOnGardener;
     public GameObject itemButtonPrefab;             // Prefab for an inventory item button in dialogue
     private FPSController fpscontrollerScript;      // Reference to player controller
-    private Characters characters;                  // Reference to Characters script on the lady NPC
+    private Characters characters1;                  // Reference to Characters script on the lady NPC
+     private Characters characters2; 
     public GameObject player;
 
     public Int32 objNum = 0;
     public Int32 onNext = 0;
 
     public GameObject lady;                         // Lady NPC
+
+    public GameObject gardener;
     public PlaceObjects placeObjects;               // Controls placement state
     [SerializeField] private GameObject inventory;  // Inventory UI (to check if open)
 
@@ -40,20 +45,9 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] public GameObject dialogueOption1; // (Not used here but can be used for options)
 
     // All possible dialogue lines that can be shown based on items
-    public string[] allDialogue = {
-            "What is that you're holding?!",
-            "How decadent, I'm sure Charles would love it.",
-            "Simple, Charles wouldn't be caught dead in that, unless you'd like him to be.",
-            "Fittingly drab for such a worthless king.",
-            "How nice, although I doubt Charles would appreciate their simplicity.",
-            "Red at a funeral? I love it. Nevermind what Charles would think.",
-            "The same color as the Filigree flag, how royal.",
-            "Orchids for a funeral? Not terribly original, is it? ",
-            "Hm. I figured this would've been tucked into a hole somewhere.",
-            "My dear Arthur, he meant everything to Charles and I.",
-            "Wow.",
-            "This thing is incredible.",
-            "Definitely fit for his Majesty"};
+
+    [SerializeField]
+    public string[] allDialogue = {};
 
     // (Not used in current logic but example placeholders)
     public string[] showObjects = {
@@ -75,20 +69,21 @@ public class DialogueUI : MonoBehaviour
         //Tanner Addition
         // Cache references
         fpscontrollerScript = player.GetComponent<FPSController>();
-        characters = lady.GetComponent<Characters>();
+        characters1 = lady.GetComponent<Characters>();
+        characters2 = gardener.GetComponent<Characters>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // Debug log when pressing E away from lady
-        if (Input.GetKeyDown(KeyCode.E) && characters.isAtLady != true)
+        if (Input.GetKeyDown(KeyCode.E) && characters1.isAtLady != true && characters2.isAtGardener != true)
         {
-            Debug.Log("you're clicking E but it's not registering you're at the lady");
+            Debug.Log("you're clicking E but it's not registering you're at the any character");
         }
 
         // Open dialogue automatically when player is at lady and both dialogue & inventory are closed
-        if (self.activeInHierarchy == false && inventory.activeInHierarchy == false && characters.isAtLady == true && Input.GetKeyDown(KeyCode.E)) //added self check so multiple objects arent made
+        if (self.activeInHierarchy == false && inventory.activeInHierarchy == false && Input.GetKeyDown(KeyCode.E) && characters1.isAtLady == true || characters2.isAtGardener == true) //added self check so multiple objects arent made
         {
             self.SetActive(true);                               // Show dialogue UI
             SetDialogueText(allDialogue[0], textLabel);         // Show first line
@@ -97,8 +92,17 @@ public class DialogueUI : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;             // Unlock mouse cursor for UI interaction
             Cursor.visible = true;
 
-            Camera.main.transform.SetPositionAndRotation(centerOnQueen.transform.position, centerOnQueen.transform.rotation);
 
+            if (characters1.isAtLady == true)
+            {
+                Camera.main.transform.SetPositionAndRotation(centerOnQueen.transform.position, centerOnQueen.transform.rotation);
+            }
+
+            if (characters2.isAtGardener == true)
+            {
+                Camera.main.transform.SetPositionAndRotation(centerOnGardener.transform.position, centerOnGardener.transform.rotation);
+            }
+            
             //tanner addition
             ShowInventoryItemButtons();                         // Show item buttons based on inventory
 
@@ -118,7 +122,8 @@ public class DialogueUI : MonoBehaviour
             // Re-lock mouse cursor
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            characters.isAtLady = false;
+            characters1.isAtLady = false;
+            characters2.isAtLady = false;
 
             Camera.main.transform.SetPositionAndRotation(playerView.transform.position, playerView.transform.rotation);
 
@@ -214,51 +219,65 @@ public class DialogueUI : MonoBehaviour
     private void OnItemShown(Item item)
     {
         onNext = 0;
-        // Call the dialogue options here for the name of the object
-        if (item.itemName.Contains("Solid Gold Coffin"))
+
+        if (characters2.isAtGardener == true)
         {
-            SetDialogueText(allDialogue[1], textLabel);
-            objNum = 1;
+            // Call the dialogue options here for the name of the object
+            if (item.itemName.Contains("Solid Gold Coffin"))
+            {
+                SetDialogueText(allDialogue[1], textLabel);
+                objNum = 1;
+            }
+            else if (item.itemName.Contains("Modern Coffin"))
+            {
+                SetDialogueText(allDialogue[2], textLabel);
+                objNum = 2;
+            }
+            else if (item.itemName.Contains("Recycled Coffin"))
+            {
+                SetDialogueText(allDialogue[3], textLabel);
+                objNum = 3;
+            }
+            else if (item.itemName.Contains("Fern"))
+            {
+                SetDialogueText(allDialogue[4], textLabel);
+                objNum = 4;
+            }
+            else if (item.itemName.Contains("Roses"))
+            {
+                SetDialogueText(allDialogue[5], textLabel);
+                objNum = 5;
+            }
+            else if (item.itemName.Contains("Tulips"))
+            {
+                SetDialogueText(allDialogue[6], textLabel);
+                objNum = 6;
+            }
+            else if (item.itemName.Contains("Orchids"))
+            {
+                SetDialogueText(allDialogue[7], textLabel);
+                objNum = 7;
+            }
+            else if (item.itemName.Contains("Lady Portrait"))
+            {
+                SetDialogueText(allDialogue[8], textLabel);
+                objNum = 8;
+            }
+            else if (item.itemName.Contains("Child Portrait"))
+            {
+                SetDialogueText(allDialogue[9], textLabel);
+                objNum = 9;
+            }
         }
-        else if (item.itemName.Contains("Modern Coffin"))
+
+        if (characters1.isAtLady == true)
         {
-            SetDialogueText(allDialogue[2], textLabel);
-            objNum = 2;
-        }
-        else if (item.itemName.Contains("Recycled Coffin"))
-        {
-            SetDialogueText(allDialogue[3], textLabel);
-            objNum = 3;
-        }
-        else if (item.itemName.Contains("Fern"))
-        {
-            SetDialogueText(allDialogue[4], textLabel);
-            objNum = 4;
-        }
-        else if (item.itemName.Contains("Roses"))
-        {
-            SetDialogueText(allDialogue[5], textLabel);
-            objNum = 5;
-        }
-        else if (item.itemName.Contains("Tulips"))
-        {
-            SetDialogueText(allDialogue[6], textLabel);
-            objNum = 6;
-        }
-        else if (item.itemName.Contains("Orchids"))
-        {
-            SetDialogueText(allDialogue[7], textLabel);
-            objNum = 7;
-        }
-        else if (item.itemName.Contains("Lady Portrait"))
-        {
-            SetDialogueText(allDialogue[8], textLabel);
-            objNum = 8;
-        }
-        else if (item.itemName.Contains("Child Portrait"))
-        {
-            SetDialogueText(allDialogue[9], textLabel);
-            objNum = 9;
+            // Call the dialogue options here for the name of the object
+            if (item.itemName.Contains("Solid Gold Coffin"))
+            {
+                SetDialogueText(allDialogue[30], textLabel);
+                objNum = 1;
+            }
         }
     }
 
@@ -275,193 +294,210 @@ public class DialogueUI : MonoBehaviour
 
     public void Next()
     {
-        if (objNum == 1)
+        if (characters2.isAtLady != true)
         {
-            if (onNext == 0)
+            if (objNum == 1)
             {
-                SetDialogueText(allDialogue[10], textLabel);
-                onNext++;
+                if (onNext == 0)
+                {
+                    SetDialogueText(allDialogue[2], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 1)
+                {
+                    SetDialogueText(allDialogue[3], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(allDialogue[4], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    onNext = 0;
+                }
             }
-            else if (onNext == 1)
+
+            if (objNum == 2)
             {
-                SetDialogueText(allDialogue[11], textLabel);
-                onNext++;
+                if (onNext == 0)
+                {
+                    SetDialogueText(allDialogue[5], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 1)
+                {
+                    onNext = 0;
+                }
             }
-            else if (onNext == 2)
+            else if (objNum == 3)
             {
-                SetDialogueText(allDialogue[12], textLabel);
-                onNext++;
+                if (onNext == 0)
+                {
+                    SetDialogueText(allDialogue[14], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 1)
+                {
+                    SetDialogueText(allDialogue[17], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(allDialogue[18], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 3)
+                {
+                    onNext = 0;
+                }
             }
-            else if (onNext == 3)
+            else if (objNum == 4)
             {
-                onNext = 0;
+                if (onNext == 0)
+                {
+                    SetDialogueText(allDialogue[19], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 1)
+                {
+                    SetDialogueText(allDialogue[20], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(allDialogue[21], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 3)
+                {
+                    onNext = 0;
+                }
             }
-        }
-        
-        if (objNum == 2)
+            else if (objNum == 5)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(allDialogue[22], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 1)
+                {
+                    SetDialogueText(allDialogue[23], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(allDialogue[24], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 3)
+                {
+                    onNext = 0;
+                }
+            }
+            else if (objNum == 6)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(allDialogue[25], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 1)
+                {
+                    SetDialogueText(allDialogue[26], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(allDialogue[27], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 3)
+                {
+                    onNext = 0;
+                }
+            }
+            else if (objNum == 7)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(allDialogue[28], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 1)
+                {
+                    SetDialogueText(allDialogue[29], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(allDialogue[30], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 3)
+                {
+                    onNext = 0;
+                }
+            }
+            else if (objNum == 8)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(allDialogue[31], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 1)
+                {
+                    SetDialogueText(allDialogue[32], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(allDialogue[33], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 3)
+                {
+                    onNext = 0;
+                }
+            }
+            else if (objNum == 9)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(allDialogue[34], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 1)
+                {
+                    SetDialogueText(allDialogue[35], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(allDialogue[36], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 3)
+                {
+                    onNext = 0;
+                }
+            }
+        } else if (characters2.isAtGardener != true)
         {
-            if (onNext == 0)
+            if (objNum == 2)
             {
-                SetDialogueText(allDialogue[13], textLabel);
-                onNext++;
-            }
-            else if (onNext == 1)
-            {
-                onNext = 0;
-            }
-        }
-        else if (objNum == 3)
-        {
-            if (onNext == 0)
-            {
-                SetDialogueText(allDialogue[14], textLabel);
-                onNext++;
-            }
-            else if (onNext == 1)
-            {
-                SetDialogueText(allDialogue[17], textLabel);
-                onNext++;
-            }
-            else if (onNext == 2)
-            {
-                SetDialogueText(allDialogue[18], textLabel);
-                onNext++;
-            }
-            else if (onNext == 3)
-            {
-                onNext = 0;
-            }
-        }
-        else if (objNum == 4)
-        {
-            if (onNext == 0)
-            {
-                SetDialogueText(allDialogue[19], textLabel);
-                onNext++;
-            }
-            else if (onNext == 1)
-            {
-                SetDialogueText(allDialogue[20], textLabel);
-                onNext++;
-            }
-            else if (onNext == 2)
-            {
-                SetDialogueText(allDialogue[21], textLabel);
-                onNext++;
-            }
-            else if (onNext == 3)
-            {
-                onNext = 0;
-            }
-        }
-        else if (objNum == 5)
-        {
-            if (onNext == 0)
-            {
-                SetDialogueText(allDialogue[22], textLabel);
-                onNext++;
-            }
-            else if (onNext == 1)
-            {
-                SetDialogueText(allDialogue[23], textLabel);
-                onNext++;
-            }
-            else if (onNext == 2)
-            {
-                SetDialogueText(allDialogue[24], textLabel);
-                onNext++;
-            }
-            else if (onNext == 3)
-            {
-                onNext = 0;
-            }
-        }
-        else if (objNum == 6)
-        {
-            if (onNext == 0)
-            {
-                SetDialogueText(allDialogue[25], textLabel);
-                onNext++;
-            }
-            else if (onNext == 1)
-            {
-                SetDialogueText(allDialogue[26], textLabel);
-                onNext++;
-            }
-            else if (onNext == 2)
-            {
-                SetDialogueText(allDialogue[27], textLabel);
-                onNext++;
-            }
-            else if (onNext == 3)
-            {
-                onNext = 0;
-            }
-        }
-        else if (objNum == 7)
-        {
-            if (onNext == 0)
-            {
-                SetDialogueText(allDialogue[28], textLabel);
-                onNext++;
-            }
-            else if (onNext == 1)
-            {
-                SetDialogueText(allDialogue[29], textLabel);
-                onNext++;
-            }
-            else if (onNext == 2)
-            {
-                SetDialogueText(allDialogue[30], textLabel);
-                onNext++;
-            }
-            else if (onNext == 3)
-            {
-                onNext = 0;
-            }
-        }
-        else if (objNum == 8)
-        {
-            if (onNext == 0)
-            {
-                SetDialogueText(allDialogue[31], textLabel);
-                onNext++;
-            }
-            else if (onNext == 1)
-            {
-                SetDialogueText(allDialogue[32], textLabel);
-                onNext++;
-            }
-            else if (onNext == 2)
-            {
-                SetDialogueText(allDialogue[33], textLabel);
-                onNext++;
-            }
-            else if (onNext == 3)
-            {
-                onNext = 0;
-            }
-        }
-        else if (objNum == 9)
-        {
-            if (onNext == 0)
-            {
-                SetDialogueText(allDialogue[34], textLabel);
-                onNext++;
-            }
-            else if (onNext == 1)
-            {
-                SetDialogueText(allDialogue[35], textLabel);
-                onNext++;
-            }
-            else if (onNext == 2)
-            {
-                SetDialogueText(allDialogue[36], textLabel);
-                onNext++;
-            }
-            else if (onNext == 3)
-            {
-                onNext = 0;
+                if (onNext == 0)
+                {
+                    SetDialogueText(allDialogue[30], textLabel);
+                    onNext++;
+                }
+                else if (onNext == 1)
+                {
+                    onNext = 0;
+                }
             }
         }
     }
