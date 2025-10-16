@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.23, z: 0}
-  m_LocalScale: {x: 0.113910735, y: 0.15188098, z: 0.113910735}
+  m_LocalScale: {x: 0.06477761, y: 0.086370155, z: 0.06477761}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -106,6 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334e8202bd00b2f488fd767ac9c0c534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAtCharacter: 0
+  isAtGardener: 0
   isAtLady: 0
   player: {fileID: 0}
 --- !u!54 &2155010638430937946
