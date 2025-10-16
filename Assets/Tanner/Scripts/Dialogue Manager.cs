@@ -213,6 +213,7 @@ public class DialogueUI : MonoBehaviour
     // Called when a button is clicked to show dialogue related to that item
     private void OnItemShown(Item item)
     {
+        onNext = 0;
         // Call the dialogue options here for the name of the object
         if (item.itemName.Contains("Solid Gold Coffin"))
         {
