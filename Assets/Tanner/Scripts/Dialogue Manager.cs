@@ -86,7 +86,7 @@ public class DialogueUI : MonoBehaviour
         if (self.activeInHierarchy == false && inventory.activeInHierarchy == false && Input.GetKeyDown(KeyCode.E) && (characters1.isAtLady == true || characters2.isAtGardener == true)) //added self check so multiple objects arent made
         {
             self.SetActive(true);                               // Show dialogue UI
-            SetDialogueText(allDialogue[0], textLabel, 0);         // Show first line
+            SetDialogueText(allDialogue[60], textLabel, 60);         // Show first line
             //Debug.Log("triggered dialogue box");
 
             Cursor.lockState = CursorLockMode.None;             // Unlock mouse cursor for UI interaction
@@ -279,7 +279,7 @@ public class DialogueUI : MonoBehaviour
             }
         }
 
-        if (characters1.isAtLady == true)
+        else if (characters1.isAtLady == true)
         {
             // Call the dialogue options here for the name of the object
             if (item.itemName.Contains("Solid Gold Coffin"))
@@ -626,215 +626,214 @@ public class DialogueUI : MonoBehaviour
         //queen's dialogue
         else if (characters2.isAtGardener != true)
         {
-            if (characters2.isAtLady != true)
+
+            //gold coffin
+            if (objNum == 1)
             {
-                //gold coffin
-                if (objNum == 1)
+                if (onNext == 0)
                 {
-                    if (onNext == 0)
-                    {
-                        SetDialogueText(allDialogue[31], textLabel, 31);
-                        onNext++;
-                    }
-                    else if (onNext == 1)
-                    {
-                        onNext = 0;
-                    }
+                    SetDialogueText(allDialogue[31], textLabel, 31);
+                    onNext++;
                 }
-
-                //modern coffin
-                if (objNum == 2)
+                else if (onNext == 1)
                 {
-                    if (onNext == 0)
-                    {
-                        SetDialogueText(allDialogue[32], textLabel, 32);
-                        onNext++;
-                    }
-                    else if (onNext == 1)
-                    {
-                        SetDialogueText(allDialogue[33], textLabel, 33);
-                        onNext++;
-                    }
-                    else if (onNext == 2)
-                    {
-                        SetDialogueText(allDialogue[34], textLabel, 34);
-                        onNext++;
-                    }
-                    else if (onNext == 3)
-                    {
-                        SetDialogueText(allDialogue[35], textLabel, 35);
-                        onNext++;
-                    }
-                    else if (onNext == 4)
-                    {
-                        SetDialogueText(allDialogue[36], textLabel, 36);
-                        onNext++;
-                    }
-                    else if (onNext == 5)
-                    {
-                        onNext = 0;
-                    }
+                    onNext = 0;
                 }
+            }
 
-                //recycled coffin
-                else if (objNum == 3)
+            //modern coffin
+            if (objNum == 2)
+            {
+                if (onNext == 0)
                 {
-                    if (onNext == 0)
-                    {
-                        SetDialogueText(allDialogue[37], textLabel, 37);
-                        onNext++;
-                    }
-                    else if (onNext == 1)
-                    {
-                        onNext = 0;
-                    }
+                    SetDialogueText(allDialogue[32], textLabel, 32);
+                    onNext++;
                 }
-
-                //fern
-                else if (objNum == 4)
+                else if (onNext == 1)
                 {
-                    if (onNext == 0)
-                    {
-                        SetDialogueText(allDialogue[39], textLabel, 39);
-                        onNext++;
-                    }
-                    else if (onNext == 1)
-                    {
-                        SetDialogueText(allDialogue[40], textLabel, 40);
-                        onNext++;
-                    }
-                    else if (onNext == 2)
-                    {
-                        onNext = 0;
-                    }
+                    SetDialogueText(allDialogue[33], textLabel, 33);
+                    onNext++;
                 }
-
-                //roses
-                else if (objNum == 5)
+                else if (onNext == 2)
                 {
-                    if (onNext == 0)
-                    {
-                        SetDialogueText(allDialogue[42], textLabel, 42);
-                        onNext++;
-                    }
-                    else if (onNext == 1)
-                    {
-                        SetDialogueText(allDialogue[43], textLabel, 43);
-                        onNext++;
-                    }
-                    else if (onNext == 2)
-                    {
-                        onNext = 0;
-                    }
+                    SetDialogueText(allDialogue[34], textLabel, 34);
+                    onNext++;
                 }
-
-                //tulip
-                else if (objNum == 6)
+                else if (onNext == 3)
                 {
-                    if (onNext == 0)
-                    {
-                        SetDialogueText(allDialogue[45], textLabel, 45);
-                        onNext++;
-                    }
-                    else if (onNext == 1)
-                    {
-                        SetDialogueText(allDialogue[46], textLabel, 46);
-                        onNext++;
-                    }
-                    else if (onNext == 2)
-                    {
-                        onNext = 0;
-                    }
+                    SetDialogueText(allDialogue[35], textLabel, 35);
+                    onNext++;
                 }
-
-                //orchid
-                else if (objNum == 7)
+                else if (onNext == 4)
                 {
-                    if (onNext == 0)
-                    {
-                        SetDialogueText(allDialogue[47], textLabel, 47);
-                        onNext++;
-                    }
-                    else if (onNext == 1)
-                    {
-                        onNext = 0;
-                    }
+                    SetDialogueText(allDialogue[36], textLabel, 36);
+                    onNext++;
                 }
-
-                //queen portrait
-                else if (objNum == 8)
+                else if (onNext == 5)
                 {
-                    if (onNext == 0)
-                    {
-                        SetDialogueText(allDialogue[59], textLabel, 59);
-                        onNext++;
-                    }
-                    else if (onNext == 1)
-                    {
-                        onNext = 0;
-                    }
+                    onNext = 0;
                 }
+            }
 
-                //child portrait
-                else if (objNum == 9)
+            //recycled coffin
+            else if (objNum == 3)
+            {
+                if (onNext == 0)
                 {
-                    if (onNext == 0)
-                    {
-                        SetDialogueText(allDialogue[49], textLabel, 49);
-                        onNext++;
-                    }
-                    if (onNext == 1)
-                    {
-                        SetDialogueText(allDialogue[50], textLabel, 50);
-                        onNext++;
-                    }
-                    if (onNext == 2)
-                    {
-                        SetDialogueText(allDialogue[51], textLabel, 51);
-                        onNext++;
-                    }
-                    if (onNext == 3)
-                    {
-                        SetDialogueText(allDialogue[52], textLabel, 52);
-                        onNext++;
-                    }
-                    if (onNext == 4)
-                    {
-                        SetDialogueText(allDialogue[53], textLabel, 53);
-                        onNext++;
-                    }
-                    if (onNext == 5)
-                    {
-                        SetDialogueText(allDialogue[54], textLabel, 54);
-                        onNext++;
-                    }
-                    if (onNext == 6)
-                    {
-                        SetDialogueText(allDialogue[55], textLabel, 55);
-                        onNext++;
-                    }
-                    if (onNext == 7)
-                    {
-                        SetDialogueText(allDialogue[56], textLabel, 56);
-                        onNext++;
-                    }
-                    if (onNext == 8)
-                    {
-                        SetDialogueText(allDialogue[57], textLabel, 57);
-                        onNext++;
-                    }
-                    if (onNext == 9)
-                    {
-                        SetDialogueText(allDialogue[58], textLabel, 58);
-                        onNext++;
-                    }
-                    else if (onNext == 10)
-                    {
-                        onNext = 0;
-                    }
+                    SetDialogueText(allDialogue[37], textLabel, 37);
+                    onNext++;
+                }
+                else if (onNext == 1)
+                {
+                    onNext = 0;
+                }
+            }
+
+            //fern
+            else if (objNum == 4)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(allDialogue[39], textLabel, 39);
+                    onNext++;
+                }
+                else if (onNext == 1)
+                {
+                    SetDialogueText(allDialogue[40], textLabel, 40);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    onNext = 0;
+                }
+            }
+
+            //roses
+            else if (objNum == 5)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(allDialogue[42], textLabel, 42);
+                    onNext++;
+                }
+                else if (onNext == 1)
+                {
+                    SetDialogueText(allDialogue[43], textLabel, 43);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    onNext = 0;
+                }
+            }
+
+            //tulip
+            else if (objNum == 6)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(allDialogue[45], textLabel, 45);
+                    onNext++;
+                }
+                else if (onNext == 1)
+                {
+                    SetDialogueText(allDialogue[46], textLabel, 46);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    onNext = 0;
+                }
+            }
+
+            //orchid
+            else if (objNum == 7)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(allDialogue[47], textLabel, 47);
+                    onNext++;
+                }
+                else if (onNext == 1)
+                {
+                    onNext = 0;
+                }
+            }
+
+            //queen portrait
+            else if (objNum == 8)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(allDialogue[59], textLabel, 59);
+                    onNext++;
+                }
+                else if (onNext == 1)
+                {
+                    onNext = 0;
+                }
+            }
+
+            //child portrait
+            else if (objNum == 9)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(allDialogue[49], textLabel, 49);
+                    onNext++;
+                }
+                if (onNext == 1)
+                {
+                    SetDialogueText(allDialogue[50], textLabel, 50);
+                    onNext++;
+                }
+                if (onNext == 2)
+                {
+                    SetDialogueText(allDialogue[51], textLabel, 51);
+                    onNext++;
+                }
+                if (onNext == 3)
+                {
+                    SetDialogueText(allDialogue[52], textLabel, 52);
+                    onNext++;
+                }
+                if (onNext == 4)
+                {
+                    SetDialogueText(allDialogue[53], textLabel, 53);
+                    onNext++;
+                }
+                if (onNext == 5)
+                {
+                    SetDialogueText(allDialogue[54], textLabel, 54);
+                    onNext++;
+                }
+                if (onNext == 6)
+                {
+                    SetDialogueText(allDialogue[55], textLabel, 55);
+                    onNext++;
+                }
+                if (onNext == 7)
+                {
+                    SetDialogueText(allDialogue[56], textLabel, 56);
+                    onNext++;
+                }
+                if (onNext == 8)
+                {
+                    SetDialogueText(allDialogue[57], textLabel, 57);
+                    onNext++;
+                }
+                if (onNext == 9)
+                {
+                    SetDialogueText(allDialogue[58], textLabel, 58);
+                    onNext++;
+                }
+                else if (onNext == 10)
+                {
+                    onNext = 0;
                 }
             }
         }
+
     }
 }
 

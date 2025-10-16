@@ -62799,7 +62799,19 @@ PrefabInstance:
       objectReference: {fileID: 233486325}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: allDialogue.Array.size
-      value: 60
+      value: 61
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[9]'
+      value: Outside.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[11]'
+      value: Yep. Where else?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[24]'
+      value: He was a strong guy, huh?
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'allDialogue.Array.data[30]'
@@ -62811,7 +62823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'allDialogue.Array.data[32]'
-      value: Brought it with me, miss (player)
+      value: Brought it with me, miss.
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'allDialogue.Array.data[33]'
@@ -62820,7 +62832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'allDialogue.Array.data[34]'
-      value: I don't source the supplies. I really couldn't tell you. (player)
+      value: I don't source the supplies. I really couldn't tell you.
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'allDialogue.Array.data[35]'
@@ -62880,7 +62892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'allDialogue.Array.data[49]'
-      value: Well, do you think the king would like this? (player)
+      value: Well, do you think the king would like this?
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'allDialogue.Array.data[50]'
@@ -62923,6 +62935,10 @@ PrefabInstance:
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'allDialogue.Array.data[59]'
       value: Hm. Surprised Charles never lit fire to this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[60]'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2495581607835980143, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: m_LocalPosition.x
