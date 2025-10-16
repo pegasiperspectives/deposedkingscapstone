@@ -23,7 +23,7 @@ public class DialogueUI : MonoBehaviour
     public GameObject itemButtonPrefab;             // Prefab for an inventory item button in dialogue
     private FPSController fpscontrollerScript;      // Reference to player controller
     private Characters characters1;                  // Reference to Characters script on the lady NPC
-     private Characters characters2; 
+    private Characters characters2; 
     public GameObject player;
 
     public Int32 objNum = 0;
@@ -83,11 +83,11 @@ public class DialogueUI : MonoBehaviour
         }
 
         // Open dialogue automatically when player is at lady and both dialogue & inventory are closed
-        if (self.activeInHierarchy == false && inventory.activeInHierarchy == false && Input.GetKeyDown(KeyCode.E) && characters1.isAtLady == true || characters2.isAtGardener == true) //added self check so multiple objects arent made
+        if (self.activeInHierarchy == false && inventory.activeInHierarchy == false && Input.GetKeyDown(KeyCode.E) && (characters1.isAtLady == true || characters2.isAtGardener == true)) //added self check so multiple objects arent made
         {
             self.SetActive(true);                               // Show dialogue UI
             SetDialogueText(allDialogue[0], textLabel);         // Show first line
-            Debug.Log("triggered dialogue box");
+            //Debug.Log("triggered dialogue box");
 
             Cursor.lockState = CursorLockMode.None;             // Unlock mouse cursor for UI interaction
             Cursor.visible = true;
@@ -105,7 +105,7 @@ public class DialogueUI : MonoBehaviour
             
             //tanner addition
             ShowInventoryItemButtons();                         // Show item buttons based on inventory
-
+            
             // Stop player movement and placement
             placeObjects.canPlace = false;
             fpscontrollerScript.canMove = false;

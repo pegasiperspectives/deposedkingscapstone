@@ -48,7 +48,7 @@ public class Characters : MonoBehaviour
     // When something enters this character�s trigger collider
     private void OnTriggerEnter(Collider other)
     {
-        // If the object entering has the Player tag, mark that we�re at the lady
+        // If the object entering has the Player tag, mark that were at the lady
         if (other.CompareTag("Player"))
         {
             if (this.gameObject.name.ToString() == "LadyFiligree")
