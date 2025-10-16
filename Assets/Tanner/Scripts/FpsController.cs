@@ -51,6 +51,11 @@ public class FPSController : MonoBehaviour
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
+        if (moveDirection.magnitude > walkSpeed) 
+        {
+            moveDirection = moveDirection.normalized * walkSpeed;
+        }
+           
         #endregion
 
         #region Handles Jumping

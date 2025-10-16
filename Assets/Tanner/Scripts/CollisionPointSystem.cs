@@ -28,14 +28,32 @@ public class CollisionPointSystem : MonoBehaviour
 
     public GameObject wincanvas;    // Win screen canvas
 
+    public GameObject losecanvas;
+
+
     // Reference to player movement control
     private FPSController fpscontrollerScript;
     public GameObject player;
+
+    //newwwwwwwwwwwwwwwwwwwwww
+    public LayerMask playerMask;          //Player layer
+    public Vector3 halfExtents = new Vector3(0.5f, 1f, 0.5f);
+    public int requiredPoints = 9;        // threshold to win
+    private bool playerInZone = false;
+
+    public GameObject interactPrompt;  //UI NEEDED
+    public BoxCollider interactBox;
+    //newwwwwwwwwwwwwwwwwwwwwwwww
+
+
     void Start()
     {
         // Get FPSController from player
         fpscontrollerScript = player.GetComponent<FPSController>();
     }
+
+
+
 
     void FixedUpdate()
     {
@@ -44,22 +62,72 @@ public class CollisionPointSystem : MonoBehaviour
         pointstotal = points + pointsTwo + pointsThree - pointsneg - pointsnegTwo - pointsnegThree; // Calculate total points (positive layers minus negative layers)
         //print(pointstotal);
 
-        // Check for win condition
-        if (pointstotal >= 9)
+        //neeeeeeewwwwwwwwwwwwwwwwwwwwwww
+        if (interactBox != null)
         {
-            // Show win canvas and freeze player movement
-            wincanvas.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            fpscontrollerScript.canMove = false;
+            // Use the other box's center/size/rotation
+            playerInZone = Physics.CheckBox(
+                interactBox.bounds.center,
+                interactBox.bounds.extents,              // half-size
+                interactBox.transform.rotation,
+                playerMask
+            );
         }
         else
         {
-            wincanvas.SetActive(false); // Hide win canvas if not enough points
+            playerInZone = false; // safety fallback
         }
+        if (interactPrompt != null) 
+        { 
+            interactPrompt.SetActive(playerInZone);
+        }
+    //nwwweeeeeeeeeeewwwww
+
+
+    //// Check for win condition
+    //if (pointstotal >= 9)
+    //{
+    //    // Show win canvas and freeze player movement
+    //    wincanvas.SetActive(true);
+    //    Cursor.lockState = CursorLockMode.None;
+    //    Cursor.visible = true;
+    //    fpscontrollerScript.canMove = false;
+    //}
+    //else
+    //{
+    //    wincanvas.SetActive(false); // Hide win canvas if not enough points
+    //}
+}
+
+
+
+
+    //neeeeewwwwwwwwwww
+    void Update()
+    {
+        // Interact
+        if (playerInZone && Input.GetKeyDown(KeyCode.E))
+        {
+            if (pointstotal >= requiredPoints)
+            {
+                wincanvas.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                fpscontrollerScript.canMove = false;
+            }
+            else
+            {
+                losecanvas.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                fpscontrollerScript.canMove = false;
+            }
+        }
+
     }
 
-    void MyCollisions()
+
+        void MyCollisions()
     {
         //Use the OverlapBox to detect if there are any other colliders within this box area.
         //Use the GameObject's centre, half the size (as a radius) and rotation. This creates an invisible box around your GameObject.
