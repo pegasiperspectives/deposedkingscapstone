@@ -157,6 +157,9 @@ public class DialogueUI : MonoBehaviour
             if (index == 9 || index == 11 || index == 25)
             {
                 textLabel.color = Color.purple;
+            } else
+            {
+                textLabel.color = Color.white;
             }
 
             textLabel.text = textToType.Substring(0, charIndex);
@@ -265,12 +268,12 @@ public class DialogueUI : MonoBehaviour
             }
             else if (item.itemName.Contains("Lady Portrait"))
             {
-                SetDialogueText(allDialogue[28], textLabel, 8);
+                SetDialogueText(allDialogue[28], textLabel, 28);
                 objNum = 8;
             }
             else if (item.itemName.Contains("Child Portrait"))
             {
-                SetDialogueText(allDialogue[26], textLabel, 8);
+                SetDialogueText(allDialogue[26], textLabel, 26);
                 objNum = 9;
             }
         }

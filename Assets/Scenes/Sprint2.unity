@@ -62797,6 +62797,133 @@ PrefabInstance:
       propertyPath: centerOnGardener
       value: 
       objectReference: {fileID: 233486325}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: allDialogue.Array.size
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[30]'
+      value: Well isn't that gaudy.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[31]'
+      value: Charles would love it. He always had a taste for ostentatious trash.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[32]'
+      value: Brought it with me, miss (player)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[33]'
+      value: No. I mean, where did it originally come from. The metalworking is remarkably
+        precise.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[34]'
+      value: I don't source the supplies. I really couldn't tell you. (player)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[35]'
+      value: Mhm.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[36]'
+      value: Well it's... fine. Uninspiring, perhaps.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[37]'
+      value: Fitting.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[38]'
+      value: What? A goddamn fern?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[39]'
+      value: You know what, I love it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[40]'
+      value: Decorate Charles' funeral with a fern.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[41]'
+      value: 'The Boulsheas would love for a Filigree funeral to be painted red. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[42]'
+      value: Can't blame the roses, though.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[43]'
+      value: Precious little things.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[44]'
+      value: I'm sick of purple.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[45]'
+      value: Charles loved it. Brought him pride, bearing the bloodline's color.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[46]'
+      value: Guess that was for nothing, huh?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[47]'
+      value: A bit bland, don't you think?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[48]'
+      value: You're showing me this for what reason, exactly?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[49]'
+      value: Well, do you think the king would like this? (player)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[50]'
+      value: '*The Lady huffs*.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[51]'
+      value: Well, I would goddamn hope he would.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[52]'
+      value: No. *She shakes her head.*
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[53]'
+      value: I don't care what Charles' would like.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[54]'
+      value: This portrait is of my son, Arthur.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[55]'
+      value: Words cannot describe how my heart shattered when his sickness took
+        him.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[56]'
+      value: I know God has a place for him.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[57]'
+      value: And then our gracious king told me I had killed him. Black magicks,
+        that sort of thing.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[58]'
+      value: I hope Charles never finds rest.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'allDialogue.Array.data[59]'
+      value: Hm. Surprised Charles never lit fire to this.
+      objectReference: {fileID: 0}
     - target: {fileID: 2495581607835980143, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.6
