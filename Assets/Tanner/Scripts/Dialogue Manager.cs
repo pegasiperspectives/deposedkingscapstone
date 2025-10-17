@@ -347,6 +347,8 @@ public class DialogueUI : MonoBehaviour
         //gardener dialogue
         if (character1.isAtLady != true)
         {
+            Debug.Log("Next while on gardener was clicked");
+
             //gold coffin
             if (objNum == 1)
             {
@@ -783,47 +785,47 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(allDialogue[49], textLabel, 49);
                     onNext++;
                 }
-                if (onNext == 1)
+                else if (onNext == 1)
                 {
                     SetDialogueText(allDialogue[50], textLabel, 50);
                     onNext++;
                 }
-                if (onNext == 2)
+                else if (onNext == 2)
                 {
                     SetDialogueText(allDialogue[51], textLabel, 51);
                     onNext++;
                 }
-                if (onNext == 3)
+                else if (onNext == 3)
                 {
                     SetDialogueText(allDialogue[52], textLabel, 52);
                     onNext++;
                 }
-                if (onNext == 4)
+                else if (onNext == 4)
                 {
                     SetDialogueText(allDialogue[53], textLabel, 53);
                     onNext++;
                 }
-                if (onNext == 5)
+                else if (onNext == 5)
                 {
                     SetDialogueText(allDialogue[54], textLabel, 54);
                     onNext++;
                 }
-                if (onNext == 6)
+                else if (onNext == 6)
                 {
                     SetDialogueText(allDialogue[55], textLabel, 55);
                     onNext++;
                 }
-                if (onNext == 7)
+                else if (onNext == 7)
                 {
                     SetDialogueText(allDialogue[56], textLabel, 56);
                     onNext++;
                 }
-                if (onNext == 8)
+                else if (onNext == 8)
                 {
                     SetDialogueText(allDialogue[57], textLabel, 57);
                     onNext++;
                 }
-                if (onNext == 9)
+                else if (onNext == 9)
                 {
                     SetDialogueText(allDialogue[58], textLabel, 58);
                     onNext++;
