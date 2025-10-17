@@ -96,12 +96,25 @@ public class DialogueUI : MonoBehaviour
 
             if (character1.isAtLady == true && character2.isAtGardener == false)
             {
-                Camera.main.transform.SetPositionAndRotation(centerOnQueen.transform.position, centerOnQueen.transform.rotation);
+                //player.transform.SetPositionAndRotation(centerOnQueen.transform.position, centerOnQueen.transform.rotation);
+                var controller = player.GetComponent<CharacterController>();
+                if (controller) controller.enabled = false;
+
+                //player.transform.SetPositionAndRotation(centerOnQueen.position, centerOnQueen.rotation);
+                player.transform.SetPositionAndRotation(centerOnQueen.transform.position, centerOnQueen.transform.rotation);
+
+                if (controller) controller.enabled = true;
             }
 
             if (character2.isAtGardener == true && character1.isAtLady == false)
             {
-                Camera.main.transform.SetPositionAndRotation(centerOnGardener.transform.position, centerOnGardener.transform.rotation);
+                var controller = player.GetComponent<CharacterController>();
+                if (controller) controller.enabled = false;
+
+
+                player.transform.SetPositionAndRotation(centerOnGardener.transform.position, centerOnGardener.transform.rotation);
+
+                if (controller) controller.enabled = true;
             }
 
             //tanner addition
@@ -126,7 +139,7 @@ public class DialogueUI : MonoBehaviour
             character1.isAtLady = false;
             character2.isAtGardener = false;
 
-            Camera.main.transform.SetPositionAndRotation(playerView.transform.position, playerView.transform.rotation);
+            
 
             //Tanner Addition
             // Allow player movement again
