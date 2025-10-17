@@ -89,4 +89,9 @@ public class FPSController : MonoBehaviour
         #endregion
 
     }
+    public void ForceCameraLevel()
+    {
+        rotationX = 0f; // reset the internal pitch
+        if (playerCamera) playerCamera.transform.localRotation = Quaternion.identity;
+    }
 }

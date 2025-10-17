@@ -37,13 +37,15 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private GameObject inventory;  // Inventory UI (to check if open)
 
     //added
-
+    private CharacterController controller;
 
     [SerializeField] public TMP_Text textLabel;         // Label to show dialogue text
     [SerializeField] private float typeSpeed = 50;      // Characters per second when typing
     [SerializeField] public GameObject self;            // Dialogue UI panel itself
 
     [SerializeField] public GameObject dialogueOption1; // (Not used here but can be used for options)
+
+    [SerializeField] private float focusDuration = 0.5f;
 
     // All possible dialogue lines that can be shown based on items
 
@@ -71,7 +73,8 @@ public class DialogueUI : MonoBehaviour
         // Cache references
         fpscontrollerScript = player.GetComponent<FPSController>();
         character1 = lady.GetComponent<Characters>();
-        character2 = gardener.GetComponent<Characters>(); 
+        character2 = gardener.GetComponent<Characters>();
+        controller = player.GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -96,23 +99,23 @@ public class DialogueUI : MonoBehaviour
 
             if (character1.isAtLady == true && character2.isAtGardener == false)
             {
-                //player.transform.SetPositionAndRotation(centerOnQueen.transform.position, centerOnQueen.transform.rotation);
-                var controller = player.GetComponent<CharacterController>();
-                if (controller) controller.enabled = false;
+                
+                //if (controller) controller.enabled = false;
 
-                //player.transform.SetPositionAndRotation(centerOnQueen.position, centerOnQueen.rotation);
-                player.transform.SetPositionAndRotation(centerOnQueen.transform.position, centerOnQueen.transform.rotation);
+                StartCoroutine(SmoothMovePlayer(centerOnQueen, focusDuration));
+                //player.transform.SetPositionAndRotation(centerOnQueen.transform.position, centerOnQueen.transform.rotation);
 
                 if (controller) controller.enabled = true;
             }
 
             if (character2.isAtGardener == true && character1.isAtLady == false)
             {
-                var controller = player.GetComponent<CharacterController>();
-                if (controller) controller.enabled = false;
+                
+                //if (controller) controller.enabled = false;
 
-
-                player.transform.SetPositionAndRotation(centerOnGardener.transform.position, centerOnGardener.transform.rotation);
+                StartCoroutine(SmoothMovePlayer(centerOnGardener, focusDuration));
+                //player.transform.SetPositionAndRotation(centerOnGardener.transform.position, centerOnGardener.transform.rotation);
+                
 
                 if (controller) controller.enabled = true;
             }
@@ -136,14 +139,15 @@ public class DialogueUI : MonoBehaviour
             // Re-lock mouse cursor
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            character1.isAtLady = false;
-            character2.isAtGardener = false;
+            //character1.isAtLady = false;
+            //character2.isAtGardener = false;
 
-            
+            fpscontrollerScript.ForceCameraLevel();
 
             //Tanner Addition
             // Allow player movement again
             fpscontrollerScript.canMove = true;
+            
 
         }
 
@@ -238,6 +242,44 @@ public class DialogueUI : MonoBehaviour
     }
 
 
+    private IEnumerator SmoothMovePlayer(Transform target, float duration)
+    {
+        if (!target) yield break;
+        Vector3 startPos = player.transform.position;
+        Quaternion startRot = player.transform.rotation;
+        Vector3 endPos = target.transform.position;
+        Quaternion endRot = target.transform.rotation;
+
+        if (controller) controller.enabled = false;
+
+        float t = 0f;
+        float Ease(float x) => x * x * (3f - 2f * x);
+        Transform cam = Camera.main.transform;
+        Quaternion camStartRot = cam.localRotation;
+
+        
+        Quaternion camEndRot = Quaternion.identity;
+        while (t < duration)
+        {
+            t += Time.unscaledDeltaTime;
+            float u = Ease(Mathf.Clamp01(t / duration));
+            player.transform.position = Vector3.Lerp(startPos, endPos, u);
+            player.transform.rotation = Quaternion.Slerp(startRot, endRot, u);
+
+
+            Vector3 currentCamEuler = cam.localEulerAngles;
+            
+            cam.localRotation = Quaternion.Slerp(camStartRot, camEndRot, u);
+
+
+            yield return null;
+        }
+        player.transform.SetPositionAndRotation(endPos, endRot);
+        
+        Camera.main.transform.localRotation = Quaternion.identity;
+        //if (controller) controller.enabled = true;
+
+    }
     // Called when a button is clicked to show dialogue related to that item
     private void OnItemShown(Item item)
     {
