@@ -22,6 +22,7 @@ public class KeyItemController : MonoBehaviour
         if (oneDoor)
         {
             doorObject.PlayAnimation();
+            Debug.Log("wdawdwadawdww");
         }
         else if (oneKey)
         {

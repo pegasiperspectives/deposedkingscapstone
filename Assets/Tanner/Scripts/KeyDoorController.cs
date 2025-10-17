@@ -33,18 +33,23 @@ public class KeyDoorController : MonoBehaviour
     {
         if (_keyInventory.hasKeyOne)
         {
-            if(!doorOpen && !pauseInteraction)
+            if (!doorOpen && !pauseInteraction)
             {
-                doorAnim.Play(openAnimationName, 0, 0.0f);
+                //doorAnim.Play(openAnimationName, 0, 0.0f);
+                //transform.Rotate(0, 90, 0);
+                StartCoroutine(RotateDoor(-136, 1f));
                 doorOpen = true;
                 StartCoroutine(PauseDoorInteraction());
             }
-            else if(doorOpen && !pauseInteraction)
+            else if (doorOpen && !pauseInteraction)
             {
-                doorAnim.Play(closeAnimationName, 0, 0.0f);
+                //doorAnim.Play(closeAnimationName, 0, 0.0f);
+                //transform.Rotate(0, -90, 0);
+                StartCoroutine(RotateDoor(-46, 1f));
                 doorOpen = false;
                 StartCoroutine(PauseDoorInteraction());
             }
+            Debug.Log("www");
         }
         else
         {
@@ -57,6 +62,23 @@ public class KeyDoorController : MonoBehaviour
         showDoorLockedUI.SetActive(true);
         yield return new WaitForSeconds(timeToShowUI);
         showDoorLockedUI.SetActive(false);
+    }
+
+
+
+    private IEnumerator RotateDoor(float targetAngle, float duration)
+    {
+        Quaternion startRotation = transform.rotation;
+        Quaternion endRotation = Quaternion.Euler(0, targetAngle, 0);
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            transform.rotation = Quaternion.Slerp(startRotation, endRotation, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        transform.rotation = endRotation;
     }
 
 }

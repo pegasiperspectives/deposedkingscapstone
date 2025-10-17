@@ -62,26 +62,7 @@ public class CollisionPointSystem : MonoBehaviour
         pointstotal = points + pointsTwo + pointsThree - pointsneg - pointsnegTwo - pointsnegThree; // Calculate total points (positive layers minus negative layers)
         //print(pointstotal);
 
-        //neeeeeeewwwwwwwwwwwwwwwwwwwwwww
-        if (interactBox != null)
-        {
-            // Use the other box's center/size/rotation
-            playerInZone = Physics.CheckBox(
-                interactBox.bounds.center,
-                interactBox.bounds.extents,              // half-size
-                interactBox.transform.rotation,
-                playerMask
-            );
-        }
-        else
-        {
-            playerInZone = false; // safety fallback
-        }
-        if (interactPrompt != null) 
-        { 
-            interactPrompt.SetActive(playerInZone);
-        }
-    //nwwweeeeeeeeeeewwwww
+        
 
 
     //// Check for win condition
@@ -105,6 +86,30 @@ public class CollisionPointSystem : MonoBehaviour
     //neeeeewwwwwwwwwww
     void Update()
     {
+        //neeeeeeewwwwwwwwwwwwwwwwwwwwwww
+        if (interactBox != null)
+        {
+            // Use the other box's center/size/rotation
+            playerInZone = Physics.CheckBox(
+            interactBox.transform.TransformPoint(interactBox.center),
+            Vector3.Scale(interactBox.size * 0.5f, interactBox.transform.lossyScale),
+            interactBox.transform.rotation,
+            playerMask
+            );
+
+            Debug.DrawLine(interactBox.transform.position, interactBox.transform.position + Vector3.up * 2f, Color.green, 0.1f);
+            if (playerInZone) Debug.Log("Player is in interaction zone!");
+
+        }
+        else
+        {
+            playerInZone = false; // safety fallback
+        }
+        if (interactPrompt != null)
+        {
+            interactPrompt.SetActive(playerInZone);
+        }
+        //nwwweeeeeeeeeeewwwww
         // Interact
         if (playerInZone && Input.GetKeyDown(KeyCode.E))
         {
@@ -117,7 +122,7 @@ public class CollisionPointSystem : MonoBehaviour
             }
             else
             {
-                losecanvas.SetActive(true);
+                wincanvas.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 fpscontrollerScript.canMove = false;
