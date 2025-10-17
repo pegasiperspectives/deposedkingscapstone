@@ -122,7 +122,7 @@ public class CollisionPointSystem : MonoBehaviour
             }
             else
             {
-                wincanvas.SetActive(true);
+                losecanvas.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 fpscontrollerScript.canMove = false;

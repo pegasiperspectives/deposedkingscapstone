@@ -22,7 +22,8 @@ public class DialogueUI : MonoBehaviour
     public Transform centerOnGardener;
     public GameObject itemButtonPrefab;             // Prefab for an inventory item button in dialogue
     private FPSController fpscontrollerScript;      // Reference to player controller
-    private Characters character;                  // Reference to Characters script on the lady NPC
+    private Characters character1;                  // Reference to Characters script on the lady NPC
+    private Characters character2;
     public GameObject player;
 
     public Int32 objNum = 0;
@@ -31,6 +32,7 @@ public class DialogueUI : MonoBehaviour
     public GameObject lady;                         // Lady NPC
 
     public GameObject gardener;
+
     public PlaceObjects placeObjects;               // Controls placement state
     [SerializeField] private GameObject inventory;  // Inventory UI (to check if open)
 
@@ -68,21 +70,21 @@ public class DialogueUI : MonoBehaviour
         //Tanner Addition
         // Cache references
         fpscontrollerScript = player.GetComponent<FPSController>();
-        character = lady.GetComponent<Characters>();
-        //characters2 = gardener.GetComponent<Characters>();
+        character1 = lady.GetComponent<Characters>();
+        character2 = gardener.GetComponent<Characters>(); 
     }
 
     // Update is called once per frame
     void Update()
     {
         // Debug log when pressing E away from lady
-        if (Input.GetKeyDown(KeyCode.E) && character.isAtLady != true && character.isAtGardener != true)
+        if (Input.GetKeyDown(KeyCode.E) && character1.isAtLady != true && character2.isAtGardener != true)
         {
             Debug.Log("you're clicking E but it's not registering you're at the any character");
         }
 
         // Open dialogue automatically when player is at lady and both dialogue & inventory are closed
-        if (self.activeInHierarchy == false && inventory.activeInHierarchy == false && Input.GetKeyDown(KeyCode.E) && (character.isAtLady == true || character.isAtGardener == true)) //added self check so multiple objects arent made
+        if (self.activeInHierarchy == false && inventory.activeInHierarchy == false && Input.GetKeyDown(KeyCode.E) && (character1.isAtLady == true || character2.isAtGardener == true)) //added self check so multiple objects arent made
         {
             self.SetActive(true);                               // Show dialogue UI
             SetDialogueText(allDialogue[60], textLabel, 60);         // Show first line
@@ -92,12 +94,12 @@ public class DialogueUI : MonoBehaviour
             Cursor.visible = true;
 
 
-            if (character.isAtLady == true && character.isAtGardener == false)
+            if (character1.isAtLady == true && character2.isAtGardener == false)
             {
                 Camera.main.transform.SetPositionAndRotation(centerOnQueen.transform.position, centerOnQueen.transform.rotation);
             }
 
-            if (character.isAtGardener == true && character.isAtLady == false)
+            if (character2.isAtGardener == true && character1.isAtLady == false)
             {
                 Camera.main.transform.SetPositionAndRotation(centerOnGardener.transform.position, centerOnGardener.transform.rotation);
             }
@@ -121,8 +123,8 @@ public class DialogueUI : MonoBehaviour
             // Re-lock mouse cursor
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            character.isAtLady = false;
-            character.isAtGardener = false;
+            character1.isAtLady = false;
+            character2.isAtGardener = false;
 
             Camera.main.transform.SetPositionAndRotation(playerView.transform.position, playerView.transform.rotation);
 
@@ -228,7 +230,7 @@ public class DialogueUI : MonoBehaviour
     {
         onNext = 0;
 
-        if (character.isAtGardener == true)
+        if (character2.isAtGardener == true)
         {
             // Call the dialogue options here for the name of the object
             if (item.itemName.Contains("Solid Gold Coffin"))
@@ -278,7 +280,7 @@ public class DialogueUI : MonoBehaviour
             }
         }
 
-        else if (character.isAtLady == true)
+        else if (character1.isAtLady == true)
         {
             // Call the dialogue options here for the name of the object
             if (item.itemName.Contains("Solid Gold Coffin"))
@@ -343,7 +345,7 @@ public class DialogueUI : MonoBehaviour
     public void Next()
     {
         //gardener dialogue
-        if (character.isAtLady != true)
+        if (character1.isAtLady != true)
         {
             //gold coffin
             if (objNum == 1)
@@ -623,7 +625,7 @@ public class DialogueUI : MonoBehaviour
         }
 
         //queen's dialogue
-        else if (character.isAtGardener != true && character.isAtLady == true)
+        else if (character2.isAtGardener != true && character1.isAtLady == true)
         {
             Debug.Log("Next while on queen was clicked");
             //gold coffin
