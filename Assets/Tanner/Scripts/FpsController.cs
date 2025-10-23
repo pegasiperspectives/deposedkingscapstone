@@ -12,7 +12,7 @@ public class FPSController : MonoBehaviour
     public float gravity = 25f;
 
     public float lookSpeed = 2f;
-    public float lookXLimit = 45f;
+    public float lookXLimit = 90f;
     public static bool canPickUp;
 
     Vector3 moveDirection = Vector3.zero;

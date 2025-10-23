@@ -41,6 +41,10 @@ public class CollisionPointSystem : MonoBehaviour
     public int requiredPoints = 9;        // threshold to win
     private bool playerInZone = false;
 
+
+    [SerializeField] private Keyinv _keyInventory = null;
+
+
     public GameObject interactPrompt;  //UI NEEDED
     public BoxCollider interactBox;
     //newwwwwwwwwwwwwwwwwwwwwwwww
@@ -111,7 +115,7 @@ public class CollisionPointSystem : MonoBehaviour
         }
         //nwwweeeeeeeeeeewwwww
         // Interact
-        if (playerInZone && Input.GetKeyDown(KeyCode.E))
+        if (playerInZone && Input.GetKeyDown(KeyCode.E) && _keyInventory.hasKing)
         {
             if (pointstotal >= requiredPoints)
             {
