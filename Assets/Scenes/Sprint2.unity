@@ -63689,67 +63689,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2017092132}
     m_Modifications:
-    - target: {fileID: 459538411008871307, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
-      propertyPath: m_text
-      value: 'Q: opens and closes this journal
-
-
-        Tab: opens and closes your
-        inventory + exits inspect
-
-
-        Esc: brings you to main menu
-
-
-        E:
-        press after walking up to characters to interact with them, and then press
-        it again to escape interactions
-
-
-        Click on objects to pick them up
-        and add to your inventory
-
-'
-      objectReference: {fileID: 0}
-    - target: {fileID: 459538411008871307, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
-      propertyPath: m_fontSize
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 459538411008871307, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 459538411008871307, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
-      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
-      value: 1801810542
-      objectReference: {fileID: 0}
-    - target: {fileID: 863679887523020729, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
-      propertyPath: m_fontSize
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 863679887523020729, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 863679887523020729, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
-      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
-      value: 1801810542
-      objectReference: {fileID: 0}
     - target: {fileID: 3988649649535250463, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
       propertyPath: m_Name
       value: Instructions Box
-      objectReference: {fileID: 0}
-    - target: {fileID: 4774901612508734896, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
-      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
-      value: 1801810542
-      objectReference: {fileID: 0}
-    - target: {fileID: 7138980234158053356, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 408
-      objectReference: {fileID: 0}
-    - target: {fileID: 7138980234158053356, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 118
       objectReference: {fileID: 0}
     - target: {fileID: 7331543701949269585, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
       propertyPath: m_Pivot.x
@@ -63831,18 +63773,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7538388855455692324, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8556185096674265624, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8556185096674265624, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 112
-      objectReference: {fileID: 0}
     - target: {fileID: 8823798076164403904, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
       propertyPath: player
       value: 
@@ -63851,13 +63781,8 @@ PrefabInstance:
       propertyPath: menuManager
       value: 
       objectReference: {fileID: 66351147}
-    - target: {fileID: 8823798076164403904, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
-      propertyPath: menumanager
-      value: 
-      objectReference: {fileID: 66351147}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 211708312594343139, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d30f490f73e8da54eaddb35f06cabecc, type: 3}
