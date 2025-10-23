@@ -82,4 +82,9 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("Sprint2");
     }
+
+    public void ShowJournal()
+    {
+        journal.SetActive(true);
+    }
 }
