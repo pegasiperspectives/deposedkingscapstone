@@ -59,6 +59,8 @@ public class DialogueUI : MonoBehaviour
         "Show object 3 in inventory"
     };
 
+    public bool wantstoexit = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -99,7 +101,7 @@ public class DialogueUI : MonoBehaviour
 
             if (character1.isAtLady == true && character2.isAtGardener == false)
             {
-                
+
                 //if (controller) controller.enabled = false;
 
                 StartCoroutine(SmoothMovePlayer(centerOnQueen, focusDuration));
@@ -110,12 +112,12 @@ public class DialogueUI : MonoBehaviour
 
             if (character2.isAtGardener == true && character1.isAtLady == false)
             {
-                
+
                 //if (controller) controller.enabled = false;
 
                 StartCoroutine(SmoothMovePlayer(centerOnGardener, focusDuration));
                 //player.transform.SetPositionAndRotation(centerOnGardener.transform.position, centerOnGardener.transform.rotation);
-                
+
 
                 if (controller) controller.enabled = true;
             }
@@ -129,9 +131,14 @@ public class DialogueUI : MonoBehaviour
 
 
         }
+        
+        if (Input.GetMouseButtonDown(0) && self.activeInHierarchy)
+        {
+            Next();
+            Debug.Log("Registering mouse click; should change line now");
+        }
 
-        // toggle and close dialogue when pressing E --> right now this works, but if you stay at the queen it'll make you walk away again before interacting again
-        else if (Input.GetKeyDown(KeyCode.E) && self.activeInHierarchy)
+        else if (wantstoexit == true && self.activeInHierarchy)
         {
             closeDialogue();
             Debug.Log("exited dialogue box");
@@ -147,7 +154,7 @@ public class DialogueUI : MonoBehaviour
             //Tanner Addition
             // Allow player movement again
             fpscontrollerScript.canMove = true;
-            
+
 
         }
 
@@ -195,7 +202,7 @@ public class DialogueUI : MonoBehaviour
     private void closeDialogue()
     {
         self.SetActive(false);
-
+        wantstoexit = false;
         //tanner addition
         ClearItemButtons();
         //added
@@ -257,7 +264,7 @@ public class DialogueUI : MonoBehaviour
         Transform cam = Camera.main.transform;
         Quaternion camStartRot = cam.localRotation;
 
-        
+
         Quaternion camEndRot = Quaternion.identity;
         while (t < duration)
         {
@@ -268,14 +275,14 @@ public class DialogueUI : MonoBehaviour
 
 
             Vector3 currentCamEuler = cam.localEulerAngles;
-            
+
             cam.localRotation = Quaternion.Slerp(camStartRot, camEndRot, u);
 
 
             yield return null;
         }
         player.transform.SetPositionAndRotation(endPos, endRot);
-        
+
         Camera.main.transform.localRotation = Quaternion.identity;
         //if (controller) controller.enabled = true;
 
@@ -892,6 +899,11 @@ public class DialogueUI : MonoBehaviour
             }
         }
 
+    }
+
+    public void CheckForExit()
+    {
+        wantstoexit = true;
     }
 }
 

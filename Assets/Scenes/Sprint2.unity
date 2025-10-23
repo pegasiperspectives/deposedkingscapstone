@@ -63873,10 +63873,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6167215778140739614, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: m_text
+      value: Exit
+      objectReference: {fileID: 0}
     - target: {fileID: 6266472223120318796, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 1086515002}
+    - target: {fileID: 6266472223120318796, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CheckForExit
+      objectReference: {fileID: 0}
     - target: {fileID: 9141253252777440032, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: m_Name
       value: Dialogue Box
