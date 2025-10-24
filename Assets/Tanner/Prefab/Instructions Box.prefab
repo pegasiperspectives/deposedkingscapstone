@@ -52,6 +52,7 @@ MonoBehaviour:
   self: {fileID: 7538388855455692324}
   player: {fileID: 0}
   menuManager: {fileID: 0}
+  Exit: {fileID: 0}
 --- !u!1 &5981954205798239584
 GameObject:
   m_ObjectHideFlags: 0

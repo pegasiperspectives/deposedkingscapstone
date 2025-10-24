@@ -44,3 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f107279ba8aae46bd91fb461f02a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instructionsManager: {fileID: 0}
+  Instance: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
+  winCanvas: {fileID: 2035421817042904570, guid: 07b6ac63c9a89f0439d1b485508d50b6, type: 3}
+  journal: {fileID: 8999848808373881391, guid: 03d5526e46600ba4a94eea2f18738cd1, type: 3}
+  sureExit: {fileID: 5269536083787520838, guid: 13877c8737703d442991499e8626728b, type: 3}
+  escapePressed: 0
+  escapeClosed: 0
+  exit: 0
+  self: {fileID: 0}
+  player: {fileID: 4804562069283523973, guid: b16f93c40fe827d4285afcd0f633eb34, type: 3}

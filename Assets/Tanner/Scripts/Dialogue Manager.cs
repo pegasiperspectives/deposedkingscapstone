@@ -83,13 +83,13 @@ public class DialogueUI : MonoBehaviour
     void Update()
     {
         // Debug log when pressing E away from lady
-        if (Input.GetKeyDown(KeyCode.E) && character1.isAtLady != true && character2.isAtGardener != true)
+        if (Input.GetMouseButtonDown(0) && character1.isAtLady != true && character2.isAtGardener != true)
         {
             Debug.Log("you're clicking E but it's not registering you're at the any character");
         }
 
         // Open dialogue automatically when player is at lady and both dialogue & inventory are closed
-        if (self.activeInHierarchy == false && inventory.activeInHierarchy == false && Input.GetKeyDown(KeyCode.E) && (character1.isAtLady == true || character2.isAtGardener == true)) //added self check so multiple objects arent made
+        if (self.activeInHierarchy == false && inventory.activeInHierarchy == false && Input.GetMouseButtonDown(0) && (character1.isAtLady == true || character2.isAtGardener == true)) //added self check so multiple objects arent made
         {
             self.SetActive(true);                               // Show dialogue UI
             SetDialogueText(allDialogue[60], textLabel, 60);         // Show first line
@@ -146,8 +146,8 @@ public class DialogueUI : MonoBehaviour
             // Re-lock mouse cursor
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            //character1.isAtLady = false;
-            //character2.isAtGardener = false;
+            character1.isAtLady = false;
+            character2.isAtGardener = false;
 
             fpscontrollerScript.ForceCameraLevel();
 

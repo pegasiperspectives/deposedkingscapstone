@@ -106,6 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334e8202bd00b2f488fd767ac9c0c534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAtCharacter: 0
+  isAtGardener: 0
   isAtLady: 0
   player: {fileID: 0}
 --- !u!54 &3596888230934583624
@@ -167,5 +169,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 32.863194, y: 21.600021, z: 22.487894}
-  m_Center: {x: 1.9810623, y: 0, z: -2.2127786}
+  m_Size: {x: 69.65097, y: 21.600021, z: 46.68972}
+  m_Center: {x: 2.1641755, y: 0, z: -14.313703}

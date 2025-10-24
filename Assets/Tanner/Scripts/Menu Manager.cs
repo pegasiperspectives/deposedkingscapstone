@@ -23,9 +23,14 @@ public class MenuManager : MonoBehaviour
 
     public GameObject self;
 
+    private FPSController fpscontrollerScript;
+
+    public GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
+        fpscontrollerScript = player.GetComponent<FPSController>();
         escapePressed = false;
         if (self.activeInHierarchy)
         {
@@ -37,11 +42,15 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && winCanvas.activeInHierarchy == true) {
+        if (Input.GetKeyDown(KeyCode.Escape) && winCanvas.activeInHierarchy == true)
+        {
+            fpscontrollerScript.canMove = false;
             TriggerExitScreenSure();
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && journal.activeInHierarchy == true) {
+        if (Input.GetKeyDown(KeyCode.Escape) && journal.activeInHierarchy == true)
+        {
+            fpscontrollerScript.canMove = false;
             TriggerExitScreenSure();
         }
     }
@@ -49,7 +58,7 @@ public class MenuManager : MonoBehaviour
     public void TriggerExitScreenSure()
     {
         sureExit.SetActive(true);
-        journal.SetActive(false);
+        //journal.SetActive(false);
         Instance.CursorOn();
     }
 
@@ -60,16 +69,17 @@ public class MenuManager : MonoBehaviour
         journal.SetActive(true);
         if (Instance.inventoryOpen != true)
         {
-           Instance.CursorOff();  
+            Instance.CursorOff();
         }
         escapeClosed = true;
+        fpscontrollerScript.canMove = true;
     }
     public void TriggerMenu()
     {
         Debug.Log("yes to exit was selected");
         escapePressed = true;
         SceneManager.LoadScene("TaliaMenu");
-        SceneManager.UnloadSceneAsync("Sprint2");
+        SceneManager.UnloadSceneAsync("TannerNewWhiteBox");
     }
 
     public void QuitGame()
@@ -80,11 +90,7 @@ public class MenuManager : MonoBehaviour
 
     public void BeginGame()
     {
-        SceneManager.LoadScene("Sprint2");
+        SceneManager.LoadScene("TannerNewWhiteBox");
     }
 
-    public void ShowJournal()
-    {
-        journal.SetActive(true);
-    }
 }

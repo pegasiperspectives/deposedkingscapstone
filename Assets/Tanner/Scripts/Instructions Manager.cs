@@ -13,6 +13,7 @@ public class InstructionsManager : MonoBehaviour
 
     // Reference to menu manager (to check if menu/escape is active)
     public GameObject menuManager;
+    public GameObject Exit;
     private MenuManager menu;
 
     // Start is called before the first frame update
@@ -35,13 +36,16 @@ public class InstructionsManager : MonoBehaviour
                 {
                     // If instructions are open, close them and allow movement
                     self.SetActive(false);
-                    fpscontrollerScript.canMove = true;
+                    if (Exit.activeInHierarchy == false)
+                    {
+                        fpscontrollerScript.canMove = true;
+                    }
                 }
                 else if (self.activeInHierarchy == false)
                 {
                     // If instructions are closed, open them
                     self.SetActive(true);
-
+                    fpscontrollerScript.canMove = false;
 
                 }
             }
@@ -54,8 +58,9 @@ public class InstructionsManager : MonoBehaviour
     }
 
     // Can be called by a UI button to open instructions
-    void ButtonClick()
+    public void ShowJournal()
     {
         self.SetActive(true);
+        Debug.Log("registering click to show journal");
     }
 }
