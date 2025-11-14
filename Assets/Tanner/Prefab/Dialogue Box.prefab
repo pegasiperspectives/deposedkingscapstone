@@ -226,7 +226,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1676594812203147298}
         m_TargetAssemblyTypeName: DialogueUI, Assembly-CSharp
-        m_MethodName: Next
+        m_MethodName: CheckForExit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1022,7 +1022,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: next
+  m_text: Exit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -1245,20 +1245,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f686bfe99c6e9f34e99b6ed7b9a5c0b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: a975fe6764516a747b2246e7ff612f17, type: 3}
   itemButtonContainer: {fileID: 1101492773912284047}
   playerView: {fileID: 0}
   centerOnQueen: {fileID: 0}
+  centerOnGardener: {fileID: 0}
   itemButtonPrefab: {fileID: 1278601331176822159, guid: d6921ddad2995fe4493fa9d6563a8565, type: 3}
   player: {fileID: 0}
   objNum: -19
   onNext: 0
   lady: {fileID: 0}
+  gardener: {fileID: 0}
   placeObjects: {fileID: 0}
   inventory: {fileID: 0}
   textLabel: {fileID: 4908681840381153951}
   typeSpeed: 50
   self: {fileID: 8611919052160536054}
   dialogueOption1: {fileID: 0}
+  focusDuration: 0.5
   allDialogue:
   - Oh. Hm.
   - I cannot read.
@@ -1269,9 +1273,9 @@ MonoBehaviour:
   - Hm. Respectable.
   - Maybe... not for His Majesty, though.
   - Where did you get this?
-  - Outside. (player)
+  - Outside.
   - You just took her out of the ground?
-  - Yep. Where else? (Player)
+  - Yep. Where else?
   - I guess... it's okay if it's for His Majesty.
   - Anyway. My flowers.
   - Aren't those leaves beautiful?
@@ -1285,14 +1289,47 @@ MonoBehaviour:
   - Took me a few seasons to get the purple just right.
   - Delicate little things.
   - Nothing like His Majesty.
-  - He was a strong guy, huh? (player)
+  - He was a strong guy, huh?
   - Like no one else!
   - Oh... the prince.
   - It feels like quite a while since his passing. May his memory be a blessing.
   - The Lady.
   - I always felt a bit sorely for her...
-  - Placeholder for Queen Objects
+  - Well isn't that gaudy.
+  - Charles would love it. He always had a taste for ostentatious trash.
+  - Brought it with me, miss.
+  - No. I mean, where did it originally come from. The metalworking is remarkably
+    precise.
+  - I don't source the supplies. I really couldn't tell you.
+  - Mhm.
+  - Well it's... fine. Uninspiring, perhaps.
+  - Fitting.
+  - What? A goddamn fern?
+  - You know what, I love it.
+  - Decorate Charles' funeral with a fern.
+  - 'The Boulsheas would love for a Filigree funeral to be painted red. '
+  - Can't blame the roses, though.
+  - Precious little things.
+  - I'm sick of purple.
+  - Charles loved it. Brought him pride, bearing the bloodline's color.
+  - Guess that was for nothing, huh?
+  - A bit bland, don't you think?
+  - You're showing me this for what reason, exactly?
+  - Well, do you think the king would like this?
+  - '*The Lady huffs*.'
+  - Well, I would goddamn hope he would.
+  - No. *She shakes her head*.
+  - I don't care what Charles' would like.
+  - This portrait is of my son, Arthur.
+  - Words cannot describe how my heart shattered when his sickness took him.
+  - I know God has a place for him.
+  - And then our gracious king told me I had killed him. Black magicks, that sort
+    of thing.
+  - I hope Charles never finds rest.
+  - Hm. Surprised Charles never lit fire to this.
+  - 
   showObjects:
   - Show object 1 in inventory
   - Show Object 2 in inventory
   - Show object 3 in inventory
+  wantstoexit: 0

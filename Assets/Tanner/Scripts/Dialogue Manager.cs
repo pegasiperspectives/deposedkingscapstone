@@ -10,6 +10,7 @@ public class DialogueUI : MonoBehaviour
 {
 
 
+    public Texture2D cursorTexture;
     //Tanner Addition
     // References and fields for dynamic UI
     public Transform itemButtonContainer;           // Where dynamically created buttons will go
@@ -93,8 +94,9 @@ public class DialogueUI : MonoBehaviour
         {
             self.SetActive(true);                               // Show dialogue UI
             SetDialogueText(allDialogue[60], textLabel, 60);         // Show first line
-            //Debug.Log("triggered dialogue box");
+                                                                     //Debug.Log("triggered dialogue box");
 
+            Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
             Cursor.lockState = CursorLockMode.None;             // Unlock mouse cursor for UI interaction
             Cursor.visible = true;
 
@@ -144,6 +146,7 @@ public class DialogueUI : MonoBehaviour
             Debug.Log("exited dialogue box");
 
             // Re-lock mouse cursor
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             character1.isAtLady = false;
