@@ -106,6 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334e8202bd00b2f488fd767ac9c0c534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorTextureDefault: {fileID: 21300000, guid: 02879745ef53e9e4c8503632ae995fbd, type: 3}
+  speechTexture: {fileID: 21300000, guid: a975fe6764516a747b2246e7ff612f17, type: 3}
+  crosshair: {fileID: 1860819497707478034, guid: 74c64945a6303804982f718f5150b36d, type: 3}
   isAtCharacter: 0
   isAtGardener: 0
   isAtLady: 0

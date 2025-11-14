@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 public class Characters : MonoBehaviour
 {
+    public Sprite cursorTextureDefault;
+
+    public Sprite speechTexture;
+    public GameObject crosshair;
     public bool isAtCharacter = false;                   // Flag to indicate if the player is currently in range of this character (the lady)
 
     public bool isAtGardener = false;
@@ -11,6 +16,7 @@ public class Characters : MonoBehaviour
     public bool isAtLady = false;
     [SerializeField] private GameObject player;     // Reference to player (not used in final logic here, but serialized for flexibility)
     //private float raycastDistance = 1f;
+    public Image crosshairMouse;
 
     //public Transform playerTransform; // Assign in the inspector
     //public Transform targetTransform;
@@ -20,12 +26,13 @@ public class Characters : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(crosshairMouse);
         //if (playerTransform == null || targetTransform == null) return; // Check for valid transforms
 
         //float distance = Vector3.Distance(playerTransform.position, targetTransform.position);
@@ -48,6 +55,7 @@ public class Characters : MonoBehaviour
     // When something enters this character�s trigger collider
     private void OnTriggerEnter(Collider other)
     {
+        crosshair.GetComponent<UnityEngine.UI.Image>().sprite = speechTexture;
         // If the object entering has the Player tag, mark that were at the lady
         if (other.CompareTag("Player"))
         {
@@ -55,12 +63,13 @@ public class Characters : MonoBehaviour
             {
                 isAtLady = true;
                 Debug.Log("is now at lady?" + isAtLady);
-            } else if (this.gameObject.name.ToString() == "Gardener")
+            }
+            else if (this.gameObject.name.ToString() == "Gardener")
             {
-                isAtGardener = true; 
+                isAtGardener = true;
                 Debug.Log("is now at gardener?" + isAtGardener);
             }
-            
+
         }
     }
 }
