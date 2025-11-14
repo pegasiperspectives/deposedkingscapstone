@@ -9,7 +9,8 @@ using UnityEngine.UI;
 public class DialogueUI : MonoBehaviour
 {
 
-
+    public GameObject defaultCrosshair;
+    public GameObject speechCrosshair;
     public Texture2D cursorTexture;
     //Tanner Addition
     // References and fields for dynamic UI
@@ -92,11 +93,14 @@ public class DialogueUI : MonoBehaviour
         // Open dialogue automatically when player is at lady and both dialogue & inventory are closed
         if (self.activeInHierarchy == false && inventory.activeInHierarchy == false && Input.GetMouseButtonDown(0) && (character1.isAtLady == true || character2.isAtGardener == true)) //added self check so multiple objects arent made
         {
-            self.SetActive(true);                               // Show dialogue UI
+            self.SetActive(true);
+            speechCrosshair.SetActive(false);                             // Show dialogue UI
             SetDialogueText(allDialogue[60], textLabel, 60);         // Show first line
                                                                      //Debug.Log("triggered dialogue box");
 
-            Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
+            //Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
+            speechCrosshair.SetActive(false);
+            defaultCrosshair.SetActive(false);
             Cursor.lockState = CursorLockMode.None;             // Unlock mouse cursor for UI interaction
             Cursor.visible = true;
 
@@ -143,6 +147,8 @@ public class DialogueUI : MonoBehaviour
         else if (wantstoexit == true && self.activeInHierarchy)
         {
             closeDialogue();
+            speechCrosshair.SetActive(false);
+            defaultCrosshair.SetActive(true);
             Debug.Log("exited dialogue box");
 
             // Re-lock mouse cursor
@@ -167,6 +173,7 @@ public class DialogueUI : MonoBehaviour
     public void SetDialogueText(string textToType, TMP_Text textLabel, int index)
     {
         StartCoroutine(routine: TypeText(textToType, textLabel, index));
+        speechCrosshair.SetActive(false);
     }
 
     // Coroutine that simulates typing effect
@@ -254,6 +261,7 @@ public class DialogueUI : MonoBehaviour
 
     private IEnumerator SmoothMovePlayer(Transform target, float duration)
     {
+        speechCrosshair.SetActive(false);
         if (!target) yield break;
         Vector3 startPos = player.transform.position;
         Quaternion startRot = player.transform.rotation;

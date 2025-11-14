@@ -2,21 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Characters : MonoBehaviour
 {
-    public Sprite cursorTextureDefault;
 
-    public Sprite speechTexture;
-    public GameObject crosshair;
+    public GameObject defaultCrosshair;
+
+    public GameObject speechCrosshair;
     public bool isAtCharacter = false;                   // Flag to indicate if the player is currently in range of this character (the lady)
 
     public bool isAtGardener = false;
+    public Sprite speechTexture;
 
     public bool isAtLady = false;
     [SerializeField] private GameObject player;     // Reference to player (not used in final logic here, but serialized for flexibility)
     //private float raycastDistance = 1f;
-    public Image crosshairMouse;
+    public Sprite crosshairMouse;
 
     //public Transform playerTransform; // Assign in the inspector
     //public Transform targetTransform;
@@ -26,7 +28,8 @@ public class Characters : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        defaultCrosshair.SetActive(true);
+        speechCrosshair.SetActive(false);
     }
 
     // Update is called once per frame
@@ -55,7 +58,8 @@ public class Characters : MonoBehaviour
     // When something enters this character�s trigger collider
     private void OnTriggerEnter(Collider other)
     {
-        crosshair.GetComponent<UnityEngine.UI.Image>().sprite = speechTexture;
+        speechCrosshair.SetActive(true);
+        defaultCrosshair.SetActive(false);
         // If the object entering has the Player tag, mark that were at the lady
         if (other.CompareTag("Player"))
         {
@@ -72,4 +76,13 @@ public class Characters : MonoBehaviour
 
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        speechCrosshair.SetActive(false);
+        defaultCrosshair.SetActive(true);
+        // If the object entering has the Player tag, mark that were at the lady
+
+    }
+
 }
