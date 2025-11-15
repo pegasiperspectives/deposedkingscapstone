@@ -1245,6 +1245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f686bfe99c6e9f34e99b6ed7b9a5c0b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasCrosshair: {fileID: 2121772809152973942, guid: 49d2cd2a9102e794084cd4e0fea830da, type: 3}
+  defaultCrosshair: {fileID: 0}
+  speechCrosshair: {fileID: 0}
   cursorTexture: {fileID: 2800000, guid: a975fe6764516a747b2246e7ff612f17, type: 3}
   itemButtonContainer: {fileID: 1101492773912284047}
   playerView: {fileID: 0}
