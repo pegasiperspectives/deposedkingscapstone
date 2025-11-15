@@ -9,7 +9,6 @@ using UnityEngine.UI;
 public class DialogueUI : MonoBehaviour
 {
 
-    public GameObject canvasCrosshair;
     public GameObject defaultCrosshair;
     public GameObject speechCrosshair;
     public Texture2D cursorTexture;
@@ -123,7 +122,6 @@ public class DialogueUI : MonoBehaviour
                 //if (controller) controller.enabled = false;
 
                 StartCoroutine(SmoothMovePlayer(centerOnGardener, focusDuration));
-                canvasCrosshair.SetActive(false);
                 //player.transform.SetPositionAndRotation(centerOnGardener.transform.position, centerOnGardener.transform.rotation);
 
 

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Characters : MonoBehaviour
 {
 
+    public GameObject canvasCrosshair;
     public GameObject defaultCrosshair;
 
     public GameObject speechCrosshair;
@@ -66,11 +67,13 @@ public class Characters : MonoBehaviour
             if (this.gameObject.name.ToString() == "LadyFiligree")
             {
                 isAtLady = true;
+                //canvasCrosshair.SetActive(false);
                 Debug.Log("is now at lady?" + isAtLady);
             }
             else if (this.gameObject.name.ToString() == "Gardener")
             {
                 isAtGardener = true;
+               // canvasCrosshair.SetActive(false);
                 Debug.Log("is now at gardener?" + isAtGardener);
             }
 

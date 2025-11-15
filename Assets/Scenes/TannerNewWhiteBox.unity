@@ -9319,6 +9319,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1740180375}
     - target: {fileID: 1457205623367284271, guid: 54b1daddd263c8c4485d32653500bf40, type: 3}
+      propertyPath: canvasCrosshair
+      value: 
+      objectReference: {fileID: 1288998643}
+    - target: {fileID: 1457205623367284271, guid: 54b1daddd263c8c4485d32653500bf40, type: 3}
       propertyPath: speechCrosshair
       value: 
       objectReference: {fileID: 354522521}
@@ -15847,6 +15851,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1905830368}
   m_LocalEulerAnglesHint: {x: 0, y: -28.758, z: 0}
+--- !u!1 &1288998643 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2121772809152973942, guid: 49d2cd2a9102e794084cd4e0fea830da, type: 3}
+  m_PrefabInstance: {fileID: 6637168056498891418}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1293309071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16965,6 +16974,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1740180375}
+    - target: {fileID: 2520573193002310300, guid: 7f50e01326ef71845b04db46cbacfada, type: 3}
+      propertyPath: canvasCrosshair
+      value: 
+      objectReference: {fileID: 1288998643}
     - target: {fileID: 2520573193002310300, guid: 7f50e01326ef71845b04db46cbacfada, type: 3}
       propertyPath: speechCrosshair
       value: 
