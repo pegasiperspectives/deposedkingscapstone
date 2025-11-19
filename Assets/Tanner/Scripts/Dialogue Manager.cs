@@ -85,13 +85,13 @@ public class DialogueUI : MonoBehaviour
     void Update()
     {
         // Debug log when pressing E away from lady
-        if (Input.GetMouseButtonDown(0) && character1.isAtLady != true && character2.isAtGardener != true)
+        if (Input.GetMouseButtonDown(0) && Characters.isAtLady != true && Characters.isAtGardener != true)
         {
             Debug.Log("you're clicking E but it's not registering you're at the any character");
         }
 
         // Open dialogue automatically when player is at lady and both dialogue & inventory are closed
-        if (self.activeInHierarchy == false && inventory.activeInHierarchy == false && Input.GetMouseButtonDown(0) && (character1.isAtLady == true || character2.isAtGardener == true)) //added self check so multiple objects arent made
+        if (self.activeInHierarchy == false && inventory.activeInHierarchy == false && Input.GetMouseButtonDown(0) && (Characters.isAtLady == true || Characters.isAtGardener == true)) //added self check so multiple objects arent made
         {
             self.SetActive(true);
             speechCrosshair.SetActive(false);                             // Show dialogue UI
@@ -105,7 +105,7 @@ public class DialogueUI : MonoBehaviour
             Cursor.visible = true;
 
 
-            if (character1.isAtLady == true && character2.isAtGardener == false)
+            if (Characters.isAtLady == true && Characters.isAtGardener == false)
             {
 
                 //if (controller) controller.enabled = false;
@@ -116,7 +116,7 @@ public class DialogueUI : MonoBehaviour
                 if (controller) controller.enabled = true;
             }
 
-            if (character2.isAtGardener == true && character1.isAtLady == false)
+            if (Characters.isAtGardener == true && Characters.isAtLady == false)
             {
 
                 //if (controller) controller.enabled = false;
@@ -155,8 +155,8 @@ public class DialogueUI : MonoBehaviour
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            character1.isAtLady = false;
-            character2.isAtGardener = false;
+            Characters.isAtLady = false;
+            Characters.isAtGardener = false;
 
             fpscontrollerScript.ForceCameraLevel();
 
@@ -303,7 +303,7 @@ public class DialogueUI : MonoBehaviour
     {
         onNext = 0;
 
-        if (character2.isAtGardener == true)
+        if (Characters.isAtGardener == true)
         {
             // Call the dialogue options here for the name of the object
             if (item.itemName.Contains("Solid Gold Coffin"))
@@ -353,7 +353,7 @@ public class DialogueUI : MonoBehaviour
             }
         }
 
-        else if (character1.isAtLady == true)
+        else if (Characters.isAtLady == true)
         {
             // Call the dialogue options here for the name of the object
             if (item.itemName.Contains("Solid Gold Coffin"))
@@ -418,7 +418,7 @@ public class DialogueUI : MonoBehaviour
     public void Next()
     {
         //gardener dialogue
-        if (character1.isAtLady != true)
+        if (Characters.isAtLady != true)
         {
             Debug.Log("Next while on gardener was clicked");
 
@@ -700,7 +700,7 @@ public class DialogueUI : MonoBehaviour
         }
 
         //queen's dialogue
-        else if (character2.isAtGardener != true && character1.isAtLady == true)
+        else if (Characters.isAtGardener != true && Characters.isAtLady == true)
         {
             Debug.Log("Next while on queen was clicked");
             //gold coffin

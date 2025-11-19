@@ -13,10 +13,10 @@ public class Characters : MonoBehaviour
     public GameObject speechCrosshair;
     public bool isAtCharacter = false;                   // Flag to indicate if the player is currently in range of this character (the lady)
 
-    public bool isAtGardener = false;
+    public static bool isAtGardener = false;
     public Sprite speechTexture;
 
-    public bool isAtLady = false;
+    public static bool isAtLady = false;
     [SerializeField] private GameObject player;     // Reference to player (not used in final logic here, but serialized for flexibility)
     //private float raycastDistance = 1f;
     public Sprite crosshairMouse;
@@ -67,13 +67,13 @@ public class Characters : MonoBehaviour
             if (this.gameObject.name.ToString() == "LadyFiligree")
             {
                 isAtLady = true;
-                //canvasCrosshair.SetActive(false);
+                canvasCrosshair.SetActive(false);
                 Debug.Log("is now at lady?" + isAtLady);
             }
             else if (this.gameObject.name.ToString() == "Gardener")
             {
                 isAtGardener = true;
-               // canvasCrosshair.SetActive(false);
+               canvasCrosshair.SetActive(false);
                 Debug.Log("is now at gardener?" + isAtGardener);
             }
 
