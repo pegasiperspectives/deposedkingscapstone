@@ -36,7 +36,7 @@ public class Characters : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(crosshairMouse);
+//        Debug.Log(crosshairMouse);
         //if (playerTransform == null || targetTransform == null) return; // Check for valid transforms
 
         //float distance = Vector3.Distance(playerTransform.position, targetTransform.position);
