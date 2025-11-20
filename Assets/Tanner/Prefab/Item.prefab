@@ -115,7 +115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -2.2}
+  m_AnchoredPosition: {x: 38, y: -193}
   m_SizeDelta: {x: 60, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3051639017536635176
@@ -330,8 +330,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: -20}
-  m_SizeDelta: {x: 120, y: 120}
+  m_AnchoredPosition: {x: 68, y: -61}
+  m_SizeDelta: {x: 139.18, y: 165.5}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &9117436943255882587
 CanvasRenderer:
@@ -465,9 +465,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   inventoryManager: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
+  DialogueManager: {fileID: 0}
   placeObjects: {fileID: 5887197931716414228, guid: d3baa7dd76b9c8b4683d544d1b89ab44, type: 3}
+  sensitivity: 10
   checkthis: 0
+  invResized: 0
   placeobj: {fileID: 0}
+  objectRotationSpeed: 5
+  deltaRotationX: 0
+  deltaRotationY: 0
+  currentObservable: {fileID: 0}
+  originalSize: {x: 0, y: 0}
+  hideInv: {fileID: 0}
   inventory: {fileID: 7014041543385319168, guid: 3bc10807d987e6b45a325d26261cccf0, type: 3}
 --- !u!1 &7823268940867566895
 GameObject:
@@ -496,7 +505,7 @@ RectTransform:
   m_GameObject: {fileID: 7823268940867566895}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.707, y: 1.707, z: 1.707}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1619996474565797863}
