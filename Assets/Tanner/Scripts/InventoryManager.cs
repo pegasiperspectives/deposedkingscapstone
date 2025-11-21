@@ -170,21 +170,58 @@ public class InventoryManager : MonoBehaviour
     public void ListItems()
     {
         // Clear any existing UI entries
-     //   foreach (Transform item in ItemContent)
-      //  {
-      //      Destroy(item.gameObject);
-      //  }
+        //   foreach (Transform item in ItemContent)
+        //  {
+        //      Destroy(item.gameObject);
+        //  }
 
         // Create a UI entry for each item in Items
         foreach (var item in Items)
         {
-            if (item.id == 1)
+            if (item.id == 1) //gold coffin
             {
                 Item2.SetActive(true);
                 var itemController = Item2.GetComponentInChildren<InventoryItemController>();
                 itemController.AddItem(item);
             }
-        //    GameObject obj = Instantiate(InventoryItem, ItemContent);
+            else if (item.id == 2) //modern coffin
+            {
+                Item3.SetActive(true);
+                var itemController = Item3.GetComponentInChildren<InventoryItemController>();
+                itemController.AddItem(item);
+            }
+            else if (item.id == 3) //recycled coffin
+            {
+                Item4.SetActive(true);
+                var itemController = Item4.GetComponentInChildren<InventoryItemController>();
+                itemController.AddItem(item);
+            }
+            else if (item.id == 4)
+            {
+                Item5.SetActive(true);
+                var itemController = Item5.GetComponentInChildren<InventoryItemController>();
+                itemController.AddItem(item);
+            }
+            else if (item.id == 5)
+            {
+                Item6.SetActive(true);
+                var itemController = Item6.GetComponentInChildren<InventoryItemController>();
+                itemController.AddItem(item);
+            }
+            else if (item.id == 6)
+            {
+                Item7.SetActive(true);
+                var itemController = Item7.GetComponentInChildren<InventoryItemController>();
+                itemController.AddItem(item);
+            }
+            else if (item.id == 7)
+            {
+                Item8.SetActive(true);
+                var itemController = Item8.GetComponentInChildren<InventoryItemController>();
+                itemController.AddItem(item);
+            }
+
+            //    GameObject obj = Instantiate(InventoryItem, ItemContent);
 
             // Fill in UI fields (name and icon)
             //var itemName = obj.transform.Find("ItemName").GetComponent<Text>();
@@ -202,13 +239,13 @@ public class InventoryManager : MonoBehaviour
     }
 
     // Clean up UI entries (called when closing inventory)
-  /*  public void CleanItems() //gets rid of duplicates when reopening inventory
-    {
-        foreach (Transform item in ItemContent)
-        {
-            Destroy(item.gameObject);
-        }
-    }*/
+    /*  public void CleanItems() //gets rid of duplicates when reopening inventory
+      {
+          foreach (Transform item in ItemContent)
+          {
+              Destroy(item.gameObject);
+          }
+      }*/
 
     // When pressing the close inventory button in UI
     public void CloseInventoryButton()
