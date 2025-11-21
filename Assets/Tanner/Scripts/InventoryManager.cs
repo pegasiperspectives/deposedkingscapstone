@@ -90,7 +90,7 @@ public class InventoryManager : MonoBehaviour
 
         audioSource = camobj.GetComponent<AudioSource>();               // Get audio source from the specified camera
 
-        Item1.SetActive(false);
+        Item1.SetActive(true);
         Item2.SetActive(false);
         Item3.SetActive(false);
         Item4.SetActive(false);
@@ -178,6 +178,7 @@ public class InventoryManager : MonoBehaviour
         // Create a UI entry for each item in Items
         foreach (var item in Items)
         {
+            
             if (item.id == 1) //gold coffin
             {
                 Item2.SetActive(true);
