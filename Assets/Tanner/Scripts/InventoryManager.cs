@@ -53,6 +53,7 @@ public class InventoryManager : MonoBehaviour
 
 
 
+    [SerializeField] public GameObject note;
     [SerializeField] public GameObject Item1;
     [SerializeField] public GameObject Item2;
     [SerializeField] public GameObject Item3;
@@ -75,6 +76,8 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] public GameObject Item20;
     [SerializeField] public GameObject Item21;
 
+    public bool noteOpen = false;
+
     public bool inventoryOpen = false;
 
     // Audio for item pickup
@@ -84,6 +87,9 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.lockState = CursorLockMode.None;             // Unlock mouse cursor for UI interaction
+        Cursor.visible = true;
+        note.SetActive(false);
         Instance = this;                                                // Set up singleton instance
         fpscontrollerScript = player.GetComponent<FPSController>();     // Grab reference to FPSController script on player
         obscamera.gameObject.SetActive(false);                          // Make sure inspection camera starts off
@@ -178,7 +184,7 @@ public class InventoryManager : MonoBehaviour
         // Create a UI entry for each item in Items
         foreach (var item in Items)
         {
-            
+
             if (item.id == 1) //gold coffin
             {
                 Item2.SetActive(true);
@@ -331,6 +337,12 @@ public class InventoryManager : MonoBehaviour
     public void playpickupsound()
     {
         audioSource.PlayOneShot(pickupsound);
+    }
+
+    public void ShowNote()
+    {
+        noteOpen = !noteOpen;
+        note.SetActive(noteOpen);
     }
 }
 
