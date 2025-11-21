@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg, pointTwo, pointThree, pointnegTwo, pointnegThree, interact, player
 - Active game object:
-  - Name: Directional Light
+  - Name: Background
   - Tag: Untagged
-  - Layer: Default
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

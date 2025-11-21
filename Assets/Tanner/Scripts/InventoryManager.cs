@@ -196,13 +196,13 @@ public class InventoryManager : MonoBehaviour
                 var itemController = Item4.GetComponentInChildren<InventoryItemController>();
                 itemController.AddItem(item);
             }
-            else if (item.id == 4)
+            else if (item.id == 4) //fern
             {
                 Item5.SetActive(true);
                 var itemController = Item5.GetComponentInChildren<InventoryItemController>();
                 itemController.AddItem(item);
             }
-            else if (item.id == 5)
+            else if (item.id == 5) //roses
             {
                 Item6.SetActive(true);
                 var itemController = Item6.GetComponentInChildren<InventoryItemController>();
@@ -210,14 +210,14 @@ public class InventoryManager : MonoBehaviour
             }
             else if (item.id == 6)
             {
-                Item7.SetActive(true);
-                var itemController = Item7.GetComponentInChildren<InventoryItemController>();
+                Item8.SetActive(true);
+                var itemController = Item8.GetComponentInChildren<InventoryItemController>();
                 itemController.AddItem(item);
             }
             else if (item.id == 7)
             {
-                Item8.SetActive(true);
-                var itemController = Item8.GetComponentInChildren<InventoryItemController>();
+                Item7.SetActive(true);
+                var itemController = Item7.GetComponentInChildren<InventoryItemController>();
                 itemController.AddItem(item);
             }
 

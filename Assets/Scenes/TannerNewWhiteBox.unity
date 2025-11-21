@@ -22435,7 +22435,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.094
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -31365,11 +31365,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 385148816287687214, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 104.17
+      value: 60.74
       objectReference: {fileID: 0}
     - target: {fileID: 1101492773912284047, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101492773912284047, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 60.74
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: lady
@@ -31425,7 +31429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2495581607835980143, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.686
+      value: -7.52
       objectReference: {fileID: 0}
     - target: {fileID: 2495581607835980143, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -31463,10 +31467,26 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6b8c5754623b2374f80c427da7451eb6, type: 3}
+    - target: {fileID: 4568718136382763264, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568718136382763264, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568718136382763264, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6266472223120318796, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 1655459491}
+    - target: {fileID: 7724452783573920157, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 60.74
+      objectReference: {fileID: 0}
     - target: {fileID: 9141253252777440032, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: m_Name
       value: Dialogue Box
