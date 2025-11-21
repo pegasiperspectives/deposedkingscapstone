@@ -89,7 +89,7 @@ public class InventoryManager : MonoBehaviour
         obscamera.gameObject.SetActive(false);                          // Make sure inspection camera starts off
 
         audioSource = camobj.GetComponent<AudioSource>();               // Get audio source from the specified camera
-    
+
         Item1.SetActive(false);
         Item2.SetActive(false);
         Item3.SetActive(false);
@@ -120,7 +120,7 @@ public class InventoryManager : MonoBehaviour
         Items.Add(item);
     }
 
-    
+
     private void Update()
     {
         // If neither inventory nor dialogue are open, allow placing objects
@@ -158,7 +158,7 @@ public class InventoryManager : MonoBehaviour
                 placeObjects.canPlace = false;
                 inventoryOpen = false;
                 inventory.SetActive(false);
-                CleanItems();                           // Clear UI objects
+                //CleanItems();                           // Clear UI objects
                 CursorOff();                         // Unlock cursor  
                 fpscontrollerScript.canMove = true;     // Allow movement
                 FPSController.canPickUp = true;         // Re-enable pickup
@@ -170,10 +170,10 @@ public class InventoryManager : MonoBehaviour
     public void ListItems()
     {
         // Clear any existing UI entries
-        foreach (Transform item in ItemContent)
-        {
-            Destroy(item.gameObject);
-        }
+     //   foreach (Transform item in ItemContent)
+      //  {
+      //      Destroy(item.gameObject);
+      //  }
 
         // Create a UI entry for each item in Items
         foreach (var item in Items)
@@ -181,32 +181,34 @@ public class InventoryManager : MonoBehaviour
             if (item.id == 1)
             {
                 Item2.SetActive(true);
+                var itemController = Item2.GetComponentInChildren<InventoryItemController>();
+                itemController.AddItem(item);
             }
-            GameObject obj = Instantiate(InventoryItem, ItemContent);
+        //    GameObject obj = Instantiate(InventoryItem, ItemContent);
 
             // Fill in UI fields (name and icon)
-            var itemName = obj.transform.Find("ItemName").GetComponent<Text>();
-            var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
-            itemName.text = item.itemName;
-            itemIcon.sprite = item.icon;
+            //var itemName = obj.transform.Find("ItemName").GetComponent<Text>();
+            //var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
+            //itemName.text = item.itemName;
+            //itemIcon.sprite = item.icon;
 
             //  IMPORTANT: Set the item on the button
             // Assign the item to the UI controller
-            var itemController = obj.GetComponent<InventoryItemController>();
-            itemController.AddItem(item);
+            //var itemController = obj.GetComponent<InventoryItemController>();
+            //itemController.AddItem(item);
         }
         // Refresh array of InventoryItemControllers
         SetInventoryItems();
     }
 
     // Clean up UI entries (called when closing inventory)
-    public void CleanItems() //gets rid of duplicates when reopening inventory
+  /*  public void CleanItems() //gets rid of duplicates when reopening inventory
     {
         foreach (Transform item in ItemContent)
         {
             Destroy(item.gameObject);
         }
-    }
+    }*/
 
     // When pressing the close inventory button in UI
     public void CloseInventoryButton()
@@ -214,14 +216,14 @@ public class InventoryManager : MonoBehaviour
         CursorOff();
         fpscontrollerScript.canMove = true;
         FPSController.canPickUp = true;
-        
+
     }
 
     // When pressing the open inventory button in UI
     public void OpenInventoryButton()
     {
         CursorOn();
-        fpscontrollerScript.canMove = false; 
+        fpscontrollerScript.canMove = false;
         FPSController.canPickUp = false;
     }
 
