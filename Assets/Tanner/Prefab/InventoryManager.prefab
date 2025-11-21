@@ -44,10 +44,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ff5bb00d17efa44d92b912057491566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mm: {fileID: 0}
   Items: []
+  iic: {fileID: -6996846059506446806, guid: 7e6f7d5e426297041832849374c23c9e, type: 3}
   player: {fileID: 0}
   ItemContent: {fileID: 0}
   InventoryItems: []
   InventoryItem: {fileID: 6690137275861472055, guid: 7e6f7d5e426297041832849374c23c9e, type: 3}
   inventory: {fileID: 0}
+  dialogue: {fileID: 0}
   placeObjects: {fileID: 0}
+  obscamera: {fileID: 0}
+  rig: {fileID: 0}
+  ObservableObject1: {fileID: 0}
+  ObservableObject2: {fileID: 0}
+  ObservableObject3: {fileID: 0}
+  ObservableObject4: {fileID: 0}
+  ObservableObject5: {fileID: 0}
+  ObservableObject6: {fileID: 0}
+  ObservableObject7: {fileID: 0}
+  ObservableObject8: {fileID: 0}
+  ObservableObject9: {fileID: 0}
+  Item1: {fileID: 0}
+  Item2: {fileID: 0}
+  Item3: {fileID: 0}
+  Item4: {fileID: 0}
+  Item5: {fileID: 0}
+  Item6: {fileID: 0}
+  Item7: {fileID: 0}
+  Item8: {fileID: 0}
+  Item9: {fileID: 0}
+  Item10: {fileID: 0}
+  Item11: {fileID: 0}
+  Item12: {fileID: 0}
+  Item13: {fileID: 0}
+  Item14: {fileID: 0}
+  Item15: {fileID: 0}
+  Item16: {fileID: 0}
+  Item17: {fileID: 0}
+  Item18: {fileID: 0}
+  Item19: {fileID: 0}
+  Item20: {fileID: 0}
+  Item21: {fileID: 0}
+  inventoryOpen: 0
+  pickupsound: {fileID: 8300000, guid: 272f04901c6bc564bb81042b870672af, type: 3}
+  camobj: {fileID: 0}

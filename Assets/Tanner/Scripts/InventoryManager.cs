@@ -52,6 +52,29 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] public GameObject ObservableObject9;
 
 
+
+    [SerializeField] public GameObject Item1;
+    [SerializeField] public GameObject Item2;
+    [SerializeField] public GameObject Item3;
+    [SerializeField] public GameObject Item4;
+    [SerializeField] public GameObject Item5;
+    [SerializeField] public GameObject Item6;
+    [SerializeField] public GameObject Item7;
+    [SerializeField] public GameObject Item8;
+    [SerializeField] public GameObject Item9;
+    [SerializeField] public GameObject Item10;
+    [SerializeField] public GameObject Item11;
+    [SerializeField] public GameObject Item12;
+    [SerializeField] public GameObject Item13;
+    [SerializeField] public GameObject Item14;
+    [SerializeField] public GameObject Item15;
+    [SerializeField] public GameObject Item16;
+    [SerializeField] public GameObject Item17;
+    [SerializeField] public GameObject Item18;
+    [SerializeField] public GameObject Item19;
+    [SerializeField] public GameObject Item20;
+    [SerializeField] public GameObject Item21;
+
     public bool inventoryOpen = false;
 
     // Audio for item pickup
@@ -66,6 +89,28 @@ public class InventoryManager : MonoBehaviour
         obscamera.gameObject.SetActive(false);                          // Make sure inspection camera starts off
 
         audioSource = camobj.GetComponent<AudioSource>();               // Get audio source from the specified camera
+    
+        Item1.SetActive(false);
+        Item2.SetActive(false);
+        Item3.SetActive(false);
+        Item4.SetActive(false);
+        Item5.SetActive(false);
+        Item6.SetActive(false);
+        Item7.SetActive(false);
+        Item8.SetActive(false);
+        Item9.SetActive(false);
+        Item10.SetActive(false);
+        Item11.SetActive(false);
+        Item12.SetActive(false);
+        Item13.SetActive(false);
+        Item14.SetActive(false);
+        Item15.SetActive(false);
+        Item16.SetActive(false);
+        Item17.SetActive(false);
+        Item18.SetActive(false);
+        Item19.SetActive(false);
+        Item20.SetActive(false);
+        Item21.SetActive(false);
     }
 
 
@@ -133,6 +178,10 @@ public class InventoryManager : MonoBehaviour
         // Create a UI entry for each item in Items
         foreach (var item in Items)
         {
+            if (item.id == 1)
+            {
+                Item2.SetActive(true);
+            }
             GameObject obj = Instantiate(InventoryItem, ItemContent);
 
             // Fill in UI fields (name and icon)
