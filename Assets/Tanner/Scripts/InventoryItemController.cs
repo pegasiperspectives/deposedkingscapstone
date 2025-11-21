@@ -124,7 +124,7 @@ public class InventoryItemController : MonoBehaviour
 
         CloseInventory();                           // Close inventory UI
 
-        Destroy(gameObject);                        // Destroy this item button
+        gameObject.SetActive(false);                        // Destroy this item button
     }
 
 
