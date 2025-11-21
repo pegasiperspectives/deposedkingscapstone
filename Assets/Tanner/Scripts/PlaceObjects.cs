@@ -91,7 +91,6 @@ public class PlaceObjects : MonoBehaviour
 
                     if (Input.GetMouseButtonDown(0))
                     {
-
                         Instantiate(placedexaple1, ghostexample1.transform.position, ghostexample1.transform.rotation); // Place the actual object
 
                         ghostexample1.SetActive(false);
