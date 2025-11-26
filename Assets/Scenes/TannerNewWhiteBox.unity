@@ -31597,6 +31597,400 @@ PrefabInstance:
       propertyPath: defaultCrosshair
       value: 
       objectReference: {fileID: 2099608734}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: memoDialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: memoDialogueG.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: memoDialogueL.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'memoDialogue.Array.data[0]'
+      value: Gamer!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'memoDialogueG.Array.data[0]'
+      value: '"Oh. Hm."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'memoDialogueG.Array.data[1]'
+      value: '"I can''t read."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'memoDialogueL.Array.data[0]'
+      value: '"What in the world?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: boxofBugsDialogueG.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: fernBoquetDialogueG.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: fernBoquetDialogueL.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: roseBoquetDialogueG.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: roseBoquetDialogueL.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: tulipBoquetDialogueG.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: tulipBoquetDialogueL.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'boxofBugsDialogueG.Array.data[0]'
+      value: my bugs
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: modernCasketDialogueG.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: modernCasketDialogueL.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: orchidBoquetDialogueG.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: orchidBoquetDialogueL.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'fernBoquetDialogueG.Array.data[0]'
+      value: '"Aren''t those leaves beautiful?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'fernBoquetDialogueG.Array.data[1]'
+      value: '"Ferns don''t need much attention, but they grow quite large all the
+        same."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'fernBoquetDialogueG.Array.data[2]'
+      value: '"Um. His Majesty never commented on them, though. They, uh, play a
+        supporting role in the garden. And that''s alright!"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'fernBoquetDialogueL.Array.data[0]'
+      value: '"What? A goddamn fern?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'fernBoquetDialogueL.Array.data[1]'
+      value: '"You know what, I love it."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'fernBoquetDialogueL.Array.data[2]'
+      value: '"Decorate Charles''s funeral with a fern."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'roseBoquetDialogueG.Array.data[0]'
+      value: '"Hm."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'roseBoquetDialogueG.Array.data[1]'
+      value: '"Red seems a bit crass, considering."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'roseBoquetDialogueL.Array.data[0]'
+      value: '"The Boulsheas would love for a Filigree funeral to be painted red."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'roseBoquetDialogueL.Array.data[1]'
+      value: '"Can''t blame the roses, though."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'roseBoquetDialogueL.Array.data[2]'
+      value: '"Precious little things."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: portraitofKingDialogueG.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: portraitofKingDialogueL.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: portraitofLadyDialogueG.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: portraitofLadyDialogueL.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: recycledCoffinDialogueG.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: recycledCoffinDialogueL.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: solidGoldCasketDialogue.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'tulipBoquetDialogueG.Array.data[0]'
+      value: '"A bit out of season. Can''t say she''ll last for much longer."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'tulipBoquetDialogueG.Array.data[1]'
+      value: '"Anyway! She''s still lovely."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'tulipBoquetDialogueG.Array.data[2]'
+      value: '"Bred to His Majesty''s specifications, too."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'tulipBoquetDialogueG.Array.data[3]'
+      value: '"Took me a few seasons to get the purple just right."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'tulipBoquetDialogueL.Array.data[0]'
+      value: '"I''m sick of purple."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'tulipBoquetDialogueL.Array.data[1]'
+      value: '"Charles loved it. Brought him pride, bearing the bloodline''s color."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'tulipBoquetDialogueL.Array.data[2]'
+      value: '"Guess that was for nothing, huh?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'modernCasketDialogueG.Array.data[0]'
+      value: '"It''s a bit funny looking, isn''t it?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'modernCasketDialogueL.Array.data[0]'
+      value: '"Where did you get this?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'modernCasketDialogueL.Array.data[1]'
+      value: '"Brought it with me."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'modernCasketDialogueL.Array.data[2]'
+      value: '"No. I mean, where did it originally come from. The metalworking is
+        remarkably precise."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'modernCasketDialogueL.Array.data[3]'
+      value: '"I don''t source the supplies. I really couldn''t tell you."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'modernCasketDialogueL.Array.data[4]'
+      value: '"Mhm."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'modernCasketDialogueL.Array.data[5]'
+      value: '"Well it''s... fine. Uninspiring, perhaps."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'orchidBoquetDialogueG.Array.data[0]'
+      value: '"Delicate little things."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'orchidBoquetDialogueG.Array.data[1]'
+      value: '"Nothing like His Majesty."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'orchidBoquetDialogueG.Array.data[2]'
+      value: '"He was a strong guy, huh?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'orchidBoquetDialogueG.Array.data[3]'
+      value: '"Like no one else!"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'orchidBoquetDialogueL.Array.data[0]'
+      value: '"A bit bland, don''t you think?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: portraitofChildDialogueG.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: portraitofChildDialogueL.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: solidGoldCasketDialogueG.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: solidGoldCasketDialogueL.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofKingDialogueG.Array.data[0]'
+      value: sad!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofKingDialogueL.Array.data[0]'
+      value: '"I remember this one."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofKingDialogueL.Array.data[1]'
+      value: '"Looks a lot better this way."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofLadyDialogueG.Array.data[0]'
+      value: '"The Lady."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofLadyDialogueG.Array.data[1]'
+      value: '"I always felt a bit sorely for her..."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofLadyDialogueL.Array.data[0]'
+      value: '"Hm. Surprised Charles never lit fire to this."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'recycledCoffinDialogueG.Array.data[0]'
+      value: '"Hm. Respectable."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'recycledCoffinDialogueG.Array.data[1]'
+      value: '"Maybe... not for His Majesty, though."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'recycledCoffinDialogueG.Array.data[2]'
+      value: I don't source the supplies. I really couldn't tell you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'recycledCoffinDialogueG.Array.data[3]'
+      value: I don't source the supplies. I really couldn't tell you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'recycledCoffinDialogueG.Array.data[4]'
+      value: Mhm.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'recycledCoffinDialogueG.Array.data[5]'
+      value: Well it's... fine. Uninspiring, perhaps.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'recycledCoffinDialogueL.Array.data[0]'
+      value: '"Fitting."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'solidGoldCasketDialogue.Array.data[0]'
+      value: Wow.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'solidGoldCasketDialogue.Array.data[1]'
+      value: This thing is incredible!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'solidGoldCasketDialogue.Array.data[2]'
+      value: Definitely fit for His Majesty.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'solidGoldCasketDialogue.Array.data[3]'
+      value: Well isn't that gaudy.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'solidGoldCasketDialogue.Array.data[4]'
+      value: Charles would love it. He always had a taste for ostentatious trash.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofChildDialogueG.Array.data[0]'
+      value: '"Oh... the prince."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofChildDialogueG.Array.data[1]'
+      value: '"It feels like quite a while since his passing. May his memory be a
+        blessing."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofChildDialogueL.Array.data[0]'
+      value: '"You''re showing me this for what reason, exactly?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofChildDialogueL.Array.data[1]'
+      value: '"Well, do you think the king would like this?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofChildDialogueL.Array.data[2]'
+      value: The Lady huffs.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofChildDialogueL.Array.data[3]'
+      value: '"Well, I would goddamn hope he would."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofChildDialogueL.Array.data[4]'
+      value: She shakes her head.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofChildDialogueL.Array.data[5]'
+      value: '"No."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofChildDialogueL.Array.data[6]'
+      value: '"I don''t care what Charles would like."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofChildDialogueL.Array.data[7]'
+      value: '"This portrait is of my son, Arthur."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofChildDialogueL.Array.data[8]'
+      value: '"Words cannot describe how my heart shattered when his sickness took
+        him."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofChildDialogueL.Array.data[9]'
+      value: '"I know God has a place for him."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'solidGoldCasketDialogueG.Array.data[0]'
+      value: '"Wow."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'solidGoldCasketDialogueG.Array.data[1]'
+      value: '"This thing is incredible."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'solidGoldCasketDialogueG.Array.data[2]'
+      value: '"Definitely fit for His Majesty."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'solidGoldCasketDialogueL.Array.data[0]'
+      value: '"Well isn''t that gaudy."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'solidGoldCasketDialogueL.Array.data[1]'
+      value: '"Charles would love it. He always had a taste for ostentatious trash."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofChildDialogueL.Array.data[10]'
+      value: '"And then our gracious king told me I had killed him. Black magicks,
+        that sort of thing."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofChildDialogueL.Array.data[11]'
+      value: '"I hope Charles never finds rest."'
+      objectReference: {fileID: 0}
     - target: {fileID: 1948824343752832282, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 113

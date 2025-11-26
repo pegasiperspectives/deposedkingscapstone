@@ -28,7 +28,7 @@ public class DialogueUI : MonoBehaviour
     private Characters character2;
     public GameObject player;
 
-    public Int32 objNum = 0;
+    public Int32 objNum = -1;
     public Int32 onNext = 0;
 
     public GameObject lady;                         // Lady NPC
@@ -49,10 +49,58 @@ public class DialogueUI : MonoBehaviour
 
     [SerializeField] private float focusDuration = 0.5f;
 
+    #region Dialogue Arrays - Topher Code
     // All possible dialogue lines that can be shown based on items
 
-    [SerializeField]
-    public string[] allDialogue = { };
+    [Header("Dialogue Arrays")] // header to split the dialogue in the inspector
+    // Separate item dialogue arrays - organized in the same order as the Item Sheet google sheet / Inventory page
+    [SerializeField] string[] memoDialogueG = { };                   //Memo
+    [SerializeField] string[] memoDialogueL = { };
+    [SerializeField] string[] solidGoldCasketDialogueG = { };        //Solid Gold Casket
+    [SerializeField] string[] solidGoldCasketDialogueL = { };
+    [SerializeField] string[] modernCasketDialogueG = { };           //Modern Casket
+    [SerializeField] string[] modernCasketDialogueL = { };
+    [SerializeField] string[] recycledCoffinDialogueG = { };         //Recycled Coffin
+    [SerializeField] string[] recycledCoffinDialogueL = { };
+    [SerializeField] string[] fernBoquetDialogueG = { };             //Fern Boquet
+    [SerializeField] string[] fernBoquetDialogueL = { };
+    [SerializeField] string[] roseBoquetDialogueG = { };             //Rose Boquet
+    [SerializeField] string[] roseBoquetDialogueL = { };
+    [SerializeField] string[] orchidBoquetDialogueG = { };           //Orchid Boquet
+    [SerializeField] string[] orchidBoquetDialogueL = { };
+    [SerializeField] string[] tulipBoquetDialogueG = { };             //Tulip Boquet
+    [SerializeField] string[] tulipBoquetDialogueL = { };
+    [SerializeField] string[] brokenFiligreeCrestDialogueG = { };    //Broken Filigree Crest
+    [SerializeField] string[] brokenFiligreeCrestDialogueL = { };
+    [SerializeField] string[] boxofBugsDialogueG = { };              //Box of Bugs
+    [SerializeField] string[] boxofBugsDialogueL = { };
+    [SerializeField] string[] wovenShawlDialogueG = { };             //Woven Shawl
+    [SerializeField] string[] wovenShawlDialogueL = { };
+    [SerializeField] string[] halfKnitQuiltDialogueG = { };          //Half-Knit Quilt
+    [SerializeField] string[] halfKnitQuiltDialogueL = { };
+    [SerializeField] string[] filigreeKeepLedgerDialogueG = { };     //Filigree Keep Ledger
+    [SerializeField] string[] filigreeKeepLedgerDialogueL = { };
+    [SerializeField] string[] strippedGobletDialogueG = { };         //Stripped Goblet
+    [SerializeField] string[] strippedGobletDialogueL = { };
+    [SerializeField] string[] portraitofLadyDialogueG = { };         //Portrait of Lady
+    [SerializeField] string[] portraitofLadyDialogueL = { };
+    [SerializeField] string[] portraitofKingDialogueG = { };         //Portrait of King
+    [SerializeField] string[] portraitofKingDialogueL = { };
+    [SerializeField] string[] portraitofChildDialogueG = { };        //Portrait of Child
+    [SerializeField] string[] portraitofChildDialogueL = { };
+    [SerializeField] string[] rustyKeyDialogueG = { };               //Rusty Key
+    [SerializeField] string[] rustyKeyDialogueL = { };
+    [SerializeField] string[] quartersKeyDialogueG = { };            //Quarter's Key
+    [SerializeField] string[] quartersKeyDialogueL = { };
+    [SerializeField] string[] woodenPlankDialogueG = { };            //Suspiciously Long Wooden Plank
+    [SerializeField] string[] woodenPlankDialogueL = { };
+    [SerializeField] string[] hisMajestyDialogueG = { };             //His Majesty
+    [SerializeField] string[] hisMajestyDialogueL = { };
+
+
+    [SerializeField] public string[] allDialogue = { };
+
+    #endregion
 
     // (Not used in current logic but example placeholders)
     public string[] showObjects = {
@@ -90,13 +138,15 @@ public class DialogueUI : MonoBehaviour
             Debug.Log("you're clicking E but it's not registering you're at the any character");
         }
 
-        // Open dialogue automatically when player is at lady and both dialogue & inventory are closed
+        // Open dialogue on click when player is at lady and both dialogue & inventory are closed
         if (self.activeInHierarchy == false && inventory.activeInHierarchy == false && Input.GetMouseButtonDown(0) && (Characters.isAtLady == true || Characters.isAtGardener == true)) //added self check so multiple objects arent made
         {
             self.SetActive(true);
             speechCrosshair.SetActive(false);                             // Show dialogue UI
             SetDialogueText(allDialogue[60], textLabel, 60);         // Show first line
-                                                                     //Debug.Log("triggered dialogue box");
+            objNum = -1;                                             // Resets objNum so no dialogue is activated from Next() 
+
+            //Debug.Log("triggered dialogue box");
 
             //Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
             speechCrosshair.SetActive(false);
@@ -137,8 +187,8 @@ public class DialogueUI : MonoBehaviour
 
 
         }
-        
-        if (Input.GetMouseButtonDown(0) && self.activeInHierarchy)
+
+        if (Input.GetMouseButtonDown(0) && self.activeInHierarchy)   // this activates when clicking on a new item, displaying the Next() dialogue of the previous item first.
         {
             Next();
             Debug.Log("Registering mouse click; should change line now");
@@ -301,105 +351,225 @@ public class DialogueUI : MonoBehaviour
     // Called when a button is clicked to show dialogue related to that item
     private void OnItemShown(Item item)
     {
-        onNext = 0;
+        onNext = 1; // ensures that activating Next() will play the 2nd line of dialogue
 
         if (Characters.isAtGardener == true)
         {
             // Call the dialogue options here for the name of the object
-            if (item.itemName.Contains("Solid Gold Coffin"))
+            if (item.itemName.Contains("Memo"))                              //ITEMS 0, 8-13, 15, and 17-20 NEED IMPLEMENTED
             {
-                SetDialogueText(allDialogue[2], textLabel, 2);
+                SetDialogueText(memoDialogueG[0], textLabel, 0);
+                objNum = 0;
+            }
+            else if (item.itemName.Contains("Solid Gold Coffin"))
+            {
+                SetDialogueText(solidGoldCasketDialogueG[0], textLabel, 0);
                 objNum = 1;
             }
             else if (item.itemName.Contains("Modern Coffin"))
             {
-                SetDialogueText(allDialogue[5], textLabel, 5);
+                SetDialogueText(modernCasketDialogueG[0], textLabel, 0);
                 objNum = 2;
             }
             else if (item.itemName.Contains("Recycled Coffin"))
             {
-                SetDialogueText(allDialogue[6], textLabel, 6);
+                SetDialogueText(recycledCoffinDialogueG[0], textLabel, 0);
                 objNum = 3;
             }
             else if (item.itemName.Contains("Fern"))
             {
-                SetDialogueText(allDialogue[8], textLabel, 8);
+                SetDialogueText(fernBoquetDialogueG[0], textLabel, 0);
                 objNum = 4;
             }
             else if (item.itemName.Contains("Roses"))
             {
-                SetDialogueText(allDialogue[8], textLabel, 8);
+                SetDialogueText(roseBoquetDialogueG[0], textLabel, 0);
                 objNum = 5;
-            }
-            else if (item.itemName.Contains("Tulips"))
-            {
-                SetDialogueText(allDialogue[8], textLabel, 8);
-                objNum = 6;
             }
             else if (item.itemName.Contains("Orchids"))
             {
-                SetDialogueText(allDialogue[8], textLabel, 8);
+                SetDialogueText(orchidBoquetDialogueG[0], textLabel, 0);
+                objNum = 6;
+            }
+            else if (item.itemName.Contains("Tulips"))
+            {
+                SetDialogueText(tulipBoquetDialogueG[0], textLabel, 0);
                 objNum = 7;
+            }
+            else if (item.itemName.Contains("Broken Filigree Crest"))
+            {
+                SetDialogueText(brokenFiligreeCrestDialogueG[0], textLabel, 0);
+                objNum = 8;
+            }
+            else if (item.itemName.Contains("Box of Bugs"))
+            {
+                SetDialogueText(boxofBugsDialogueG[0], textLabel, 0);
+                objNum = 9;
+            }
+            else if (item.itemName.Contains("Woven Shawl"))
+            {
+                SetDialogueText(wovenShawlDialogueG[0], textLabel, 0);
+                objNum = 10;
+            }
+            else if (item.itemName.Contains("Half-Knit Quilt"))
+            {
+                SetDialogueText(halfKnitQuiltDialogueG[0], textLabel, 0);
+                objNum = 11;
+            }
+            else if (item.itemName.Contains("Filigree Keep Ledger"))
+            {
+                SetDialogueText(filigreeKeepLedgerDialogueG[0], textLabel, 0);
+                objNum = 12;
+            }
+            else if (item.itemName.Contains("Stripped Goblet"))
+            {
+                SetDialogueText(strippedGobletDialogueG[0], textLabel, 0);
+                objNum = 13;
             }
             else if (item.itemName.Contains("Lady Portrait"))
             {
-                SetDialogueText(allDialogue[28], textLabel, 28);
-                objNum = 8;
+                SetDialogueText(portraitofLadyDialogueG[0], textLabel, 0);
+                objNum = 14;
+            }
+            else if (item.itemName.Contains("King Portrait"))
+            {
+                SetDialogueText(portraitofKingDialogueG[0], textLabel, 0);
+                objNum = 15;
             }
             else if (item.itemName.Contains("Child Portrait"))
             {
-                SetDialogueText(allDialogue[26], textLabel, 26);
-                objNum = 9;
+                SetDialogueText(portraitofChildDialogueG[0], textLabel, 0);
+                objNum = 16;
+            }
+            else if (item.itemName.Contains("Rusty Key"))
+            {
+                SetDialogueText(rustyKeyDialogueG[0], textLabel, 0);
+                objNum = 17;
+            }
+            else if (item.itemName.Contains("Quarter's Key"))
+            {
+                SetDialogueText(quartersKeyDialogueG[0], textLabel, 0);
+                objNum = 18;
+            }
+            else if (item.itemName.Contains("Wooden Plank"))
+            {
+                SetDialogueText(woodenPlankDialogueG[0], textLabel, 0);
+                objNum = 19;
+            }
+            else if (item.itemName.Contains("His Majesty"))
+            {
+                SetDialogueText(hisMajestyDialogueG[0], textLabel, 0);
+                objNum = 20;
             }
         }
 
         else if (Characters.isAtLady == true)
         {
             // Call the dialogue options here for the name of the object
-            if (item.itemName.Contains("Solid Gold Coffin"))
+            if (item.itemName.Contains("Memo"))                              //ITEMS 0, 8-13, 15, and 17-20 NEED IMPLEMENTED
             {
-                SetDialogueText(allDialogue[30], textLabel, 30);
+                SetDialogueText(memoDialogueL[0], textLabel, 0);
+                objNum = 0;
+            }
+            else if (item.itemName.Contains("Solid Gold Coffin"))
+            {
+                SetDialogueText(solidGoldCasketDialogueL[0], textLabel, 0);
                 objNum = 1;
             }
             else if (item.itemName.Contains("Modern Coffin"))
             {
-                SetDialogueText(allDialogue[8], textLabel, 8);
+                SetDialogueText(modernCasketDialogueL[0], textLabel, 0);
                 objNum = 2;
             }
             else if (item.itemName.Contains("Recycled Coffin"))
             {
-                SetDialogueText(allDialogue[37], textLabel, 37);
+                SetDialogueText(recycledCoffinDialogueL[0], textLabel, 0);
                 objNum = 3;
             }
             else if (item.itemName.Contains("Fern"))
             {
-                SetDialogueText(allDialogue[38], textLabel, 38);
+                SetDialogueText(fernBoquetDialogueL[0], textLabel, 0);
                 objNum = 4;
             }
             else if (item.itemName.Contains("Roses"))
             {
-                SetDialogueText(allDialogue[41], textLabel, 41);
+                SetDialogueText(roseBoquetDialogueL[0], textLabel, 0);
                 objNum = 5;
-            }
-            else if (item.itemName.Contains("Tulips"))
-            {
-                SetDialogueText(allDialogue[44], textLabel, 44);
-                objNum = 6;
             }
             else if (item.itemName.Contains("Orchids"))
             {
-                SetDialogueText(allDialogue[47], textLabel, 47);
+                SetDialogueText(orchidBoquetDialogueL[0], textLabel, 0);
+                objNum = 6;
+            }
+            else if (item.itemName.Contains("Tulips"))
+            {
+                SetDialogueText(tulipBoquetDialogueL[0], textLabel, 0);
                 objNum = 7;
+            }
+            else if (item.itemName.Contains("Broken Filigree Crest"))
+            {
+                SetDialogueText(brokenFiligreeCrestDialogueL[0], textLabel, 0);
+                objNum = 8;
+            }
+            else if (item.itemName.Contains("Box of Bugs"))
+            {
+                SetDialogueText(boxofBugsDialogueL[0], textLabel, 0);
+                objNum = 9;
+            }
+            else if (item.itemName.Contains("Woven Shawl"))
+            {
+                SetDialogueText(wovenShawlDialogueL[0], textLabel, 0);
+                objNum = 10;
+            }
+            else if (item.itemName.Contains("Half-Knit Quilt"))
+            {
+                SetDialogueText(halfKnitQuiltDialogueL[0], textLabel, 0);
+                objNum = 11;
+            }
+            else if (item.itemName.Contains("Filigree Keep Ledger"))
+            {
+                SetDialogueText(filigreeKeepLedgerDialogueL[0], textLabel, 0);
+                objNum = 12;
+            }
+            else if (item.itemName.Contains("Stripped Goblet"))
+            {
+                SetDialogueText(strippedGobletDialogueL[0], textLabel, 0);
+                objNum = 13;
             }
             else if (item.itemName.Contains("Lady Portrait"))
             {
-                SetDialogueText(allDialogue[59], textLabel, 59);
-                objNum = 8;
+                SetDialogueText(portraitofLadyDialogueL[0], textLabel, 0);
+                objNum = 14;
+            }
+            else if (item.itemName.Contains("King Portrait"))
+            {
+                SetDialogueText(portraitofKingDialogueL[0], textLabel, 0);
+                objNum = 15;
             }
             else if (item.itemName.Contains("Child Portrait"))
             {
-                SetDialogueText(allDialogue[48], textLabel, 48);
-                objNum = 9;
+                SetDialogueText(portraitofChildDialogueL[0], textLabel, 0);
+                objNum = 16;
+            }
+            else if (item.itemName.Contains("Rusty Key"))
+            {
+                SetDialogueText(rustyKeyDialogueL[0], textLabel, 0);
+                objNum = 17;
+            }
+            else if (item.itemName.Contains("Quarter's Key"))
+            {
+                SetDialogueText(quartersKeyDialogueL[0], textLabel, 0);
+                objNum = 18;
+            }
+            else if (item.itemName.Contains("Wooden Plank"))
+            {
+                SetDialogueText(woodenPlankDialogueL[0], textLabel, 0);
+                objNum = 19;
+            }
+            else if (item.itemName.Contains("His Majesty"))
+            {
+                SetDialogueText(hisMajestyDialogueL[0], textLabel, 0);
+                objNum = 20;
             }
         }
     }
@@ -422,27 +592,47 @@ public class DialogueUI : MonoBehaviour
         {
             Debug.Log("Next while on gardener was clicked");
 
-            //gold coffin
-            if (objNum == 1)
+            // memo
+            if (objNum == 0)
             {
                 if (onNext == 0)
                 {
-                    SetDialogueText(allDialogue[2], textLabel, 2);
+                    SetDialogueText(memoDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 1)
                 {
-                    SetDialogueText(allDialogue[3], textLabel, 3);
+                    SetDialogueText(memoDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 2)
+                {
+                    DialogueComplete();
+                }
+
+            }
+
+            // gold coffin
+            if (objNum == 1)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(solidGoldCasketDialogueG[onNext], textLabel, onNext); // plays line number of dialogue equal to onNext
+                    onNext++;
+                }
+                else if (onNext == 1)
+                {
+                    SetDialogueText(solidGoldCasketDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 2)
                 {
-                    SetDialogueText(allDialogue[4], textLabel, 4);
+                    SetDialogueText(solidGoldCasketDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext == 2)
+                else if (onNext >= 3)
                 {
-                    onNext = 0;
+                    DialogueComplete();
                 }
             }
 
@@ -451,250 +641,324 @@ public class DialogueUI : MonoBehaviour
             {
                 if (onNext == 0)
                 {
-                    SetDialogueText(allDialogue[5], textLabel, 5);
+                    SetDialogueText(modernCasketDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext == 1)
+                else if (onNext >= 1)
                 {
-                    onNext = 0;
+                    DialogueComplete();
                 }
             }
 
             //recycled coffin
-            else if (objNum == 3)
+            if (objNum == 3)
             {
                 if (onNext == 0)
                 {
-                    SetDialogueText(allDialogue[7], textLabel, 7);
+                    SetDialogueText(recycledCoffinDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 1)
                 {
-                    SetDialogueText(allDialogue[8], textLabel, 8);
+                    SetDialogueText(recycledCoffinDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext == 2)
+                else if (onNext >= 2)
                 {
-                    onNext = 0;
+                    DialogueComplete();
                 }
             }
 
-            //fern
-            else if (objNum == 4)
+            //fern boquet
+            if (objNum == 4)
             {
                 if (onNext == 0)
                 {
-                    SetDialogueText(allDialogue[9], textLabel, 9);
+                    SetDialogueText(fernBoquetDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 1)
                 {
-                    SetDialogueText(allDialogue[10], textLabel, 10);
+                    SetDialogueText(fernBoquetDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 2)
                 {
-                    SetDialogueText(allDialogue[11], textLabel, 11);
+                    SetDialogueText(fernBoquetDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 3)
+                {
+                    DialogueComplete();
+                }
+            }
+
+            //rose boquet
+            if (objNum == 5)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(roseBoquetDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 1)
+                {
+                    SetDialogueText(roseBoquetDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 2)
+                {
+                    DialogueComplete();
+                }
+            }
+
+            //orchid boquet
+            if (objNum == 6)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(orchidBoquetDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 1)
+                {
+                    SetDialogueText(orchidBoquetDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(orchidBoquetDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 3)
                 {
-                    SetDialogueText(allDialogue[12], textLabel, 12);
+                    SetDialogueText(orchidBoquetDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext == 4)
+                else if (onNext >= 4)
                 {
-                    SetDialogueText(allDialogue[13], textLabel, 13);
-                    onNext++;
-                }
-                else if (onNext == 5)
-                {
-                    SetDialogueText(allDialogue[14], textLabel, 14);
-                    onNext++;
-                }
-                else if (onNext == 6)
-                {
-                    SetDialogueText(allDialogue[15], textLabel, 15);
-                    onNext++;
-                }
-                else if (onNext == 7)
-                {
-                    SetDialogueText(allDialogue[16], textLabel, 16);
-                    onNext++;
-                }
-                else if (onNext == 8)
-                {
-                    onNext = 0;
+                    DialogueComplete();
                 }
             }
 
-            //roses
-            else if (objNum == 5)
+            //tulip boquet
+            if (objNum == 7)
             {
                 if (onNext == 0)
                 {
-                    SetDialogueText(allDialogue[9], textLabel, 9);
+                    SetDialogueText(tulipBoquetDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 1)
                 {
-                    SetDialogueText(allDialogue[10], textLabel, 10);
+                    SetDialogueText(tulipBoquetDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 2)
                 {
-                    SetDialogueText(allDialogue[11], textLabel, 11);
+                    SetDialogueText(tulipBoquetDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 3)
                 {
-                    SetDialogueText(allDialogue[12], textLabel, 12);
+                    SetDialogueText(tulipBoquetDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext == 4)
+                else if (onNext >= 4)
                 {
-                    SetDialogueText(allDialogue[13], textLabel, 13);
-                    onNext++;
-                }
-                else if (onNext == 5)
-                {
-                    SetDialogueText(allDialogue[17], textLabel, 17);
-                    onNext++;
-                }
-                else if (onNext == 6)
-                {
-                    SetDialogueText(allDialogue[18], textLabel, 18);
-                    onNext++;
-                }
-                else if (onNext == 7)
-                {
-                    onNext = 0;
+                    DialogueComplete();
                 }
             }
 
-            //tulip
-            else if (objNum == 6)
+            // broken filigree crest
+            if (objNum == 8)
             {
                 if (onNext == 0)
                 {
-                    SetDialogueText(allDialogue[9], textLabel, 9);
+                    SetDialogueText(brokenFiligreeCrestDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext == 1)
+                else if (onNext >= 1)
                 {
-                    SetDialogueText(allDialogue[10], textLabel, 10);
-                    onNext++;
-                }
-                else if (onNext == 2)
-                {
-                    SetDialogueText(allDialogue[11], textLabel, 11);
-                    onNext++;
-                }
-                else if (onNext == 3)
-                {
-                    SetDialogueText(allDialogue[12], textLabel, 12);
-                    onNext++;
-                }
-                else if (onNext == 4)
-                {
-                    SetDialogueText(allDialogue[13], textLabel, 13);
-                    onNext++;
-                }
-                else if (onNext == 5)
-                {
-                    SetDialogueText(allDialogue[19], textLabel, 19);
-                    onNext++;
-                }
-                else if (onNext == 6)
-                {
-                    SetDialogueText(allDialogue[20], textLabel, 20);
-                    onNext++;
-                }
-                else if (onNext == 7)
-                {
-                    SetDialogueText(allDialogue[21], textLabel, 21);
-                    onNext++;
-                }
-                else if (onNext == 8)
-                {
-                    onNext = 0;
+                    DialogueComplete();
                 }
             }
 
-            //orchid
-            else if (objNum == 7)
+            // box of bugs
+            if (objNum == 9)
             {
                 if (onNext == 0)
                 {
-                    SetDialogueText(allDialogue[9], textLabel, 9);
+                    SetDialogueText(boxofBugsDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext == 1)
+                else if (onNext >= 1)
                 {
-                    SetDialogueText(allDialogue[10], textLabel, 10);
+                    DialogueComplete();
+                }
+            }
+
+            // woven shawl
+            if (objNum == 10)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(wovenShawlDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext == 2)
+                else if (onNext >= 1)
                 {
-                    SetDialogueText(allDialogue[11], textLabel, 11);
+                    DialogueComplete();
+                }
+            }
+
+            // half-knit quilt
+            if (objNum == 11)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(halfKnitQuiltDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext == 3)
+                else if (onNext >= 1)
                 {
-                    SetDialogueText(allDialogue[12], textLabel, 12);
+                    DialogueComplete();
+                }
+            }
+
+            // filigree keep ledger
+            if (objNum == 12)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(filigreeKeepLedgerDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext == 4)
+                else if (onNext >= 1)
                 {
-                    SetDialogueText(allDialogue[22], textLabel, 22);
+                    DialogueComplete();
+                }
+            }
+
+            // stripped goblet
+            if (objNum == 13)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(strippedGobletDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext == 5)
+                else if (onNext >= 1)
                 {
-                    SetDialogueText(allDialogue[23], textLabel, 23);
-                    onNext++;
-                }
-                else if (onNext == 6)
-                {
-                    SetDialogueText(allDialogue[24], textLabel, 24);
-                    onNext++;
-                }
-                else if (onNext == 7)
-                {
-                    SetDialogueText(allDialogue[25], textLabel, 25);
-                    onNext++;
-                }
-                else if (onNext == 8)
-                {
-                    onNext = 0;
+                    DialogueComplete();
                 }
             }
 
             //queen portrait
-            else if (objNum == 8)
+            if (objNum == 14)
             {
                 if (onNext == 0)
                 {
-                    SetDialogueText(allDialogue[29], textLabel, 29);
+                    SetDialogueText(portraitofLadyDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 1)
                 {
-                    onNext = 0;
+                    SetDialogueText(portraitofLadyDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 2)
+                {
+                    DialogueComplete();
+                }
+            }
+
+            // portrait of king
+            if (objNum == 15)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(portraitofKingDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 1)
+                {
+                    DialogueComplete();
                 }
             }
 
             //child portrait
-            else if (objNum == 9)
+            if (objNum == 16)
             {
                 if (onNext == 0)
                 {
-                    SetDialogueText(allDialogue[27], textLabel, 27);
+                    SetDialogueText(portraitofChildDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 1)
                 {
-                    onNext = 0;
+                    SetDialogueText(portraitofChildDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 2)
+                {
+                    DialogueComplete();
+                }
+            }
+
+            // rusty key
+            if (objNum == 17)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(rustyKeyDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 1)
+                {
+                    DialogueComplete();
+                }
+            }
+
+            // quarter's key
+            if (objNum == 18)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(quartersKeyDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 1)
+                {
+                    DialogueComplete();
+                }
+            }
+
+            // suspiciously long wooden plank
+            if (objNum == 19)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(woodenPlankDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 1)
+                {
+                    DialogueComplete();
+                }
+            }
+
+            // His Majesty
+            if (objNum == 20)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(hisMajestyDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 1)
+                {
+                    DialogueComplete();
                 }
             }
         }
@@ -703,17 +967,38 @@ public class DialogueUI : MonoBehaviour
         else if (Characters.isAtGardener != true && Characters.isAtLady == true)
         {
             Debug.Log("Next while on queen was clicked");
-            //gold coffin
+
+            // memo
+            if (objNum == 0)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(memoDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 1)
+                {
+                    DialogueComplete();
+                }
+
+            }
+
+            // gold coffin
             if (objNum == 1)
             {
                 if (onNext == 0)
                 {
-                    SetDialogueText(allDialogue[31], textLabel, 31);
+                    SetDialogueText(solidGoldCasketDialogueL[onNext], textLabel, onNext); // plays line number of dialogue equal to onNext
                     onNext++;
                 }
                 else if (onNext == 1)
                 {
-                    onNext = 0;
+                    SetDialogueText(solidGoldCasketDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 2)
+                {
+                    DialogueComplete();
                 }
             }
 
@@ -722,201 +1007,396 @@ public class DialogueUI : MonoBehaviour
             {
                 if (onNext == 0)
                 {
-                    SetDialogueText(allDialogue[32], textLabel, 32);
+                    SetDialogueText(modernCasketDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 1)
                 {
-                    SetDialogueText(allDialogue[33], textLabel, 33);
+                    SetDialogueText(modernCasketDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 2)
                 {
-                    SetDialogueText(allDialogue[34], textLabel, 34);
+                    SetDialogueText(modernCasketDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 3)
                 {
-                    SetDialogueText(allDialogue[35], textLabel, 35);
+                    SetDialogueText(modernCasketDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 4)
                 {
-                    SetDialogueText(allDialogue[36], textLabel, 36);
+                    SetDialogueText(modernCasketDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 5)
                 {
-                    onNext = 0;
+                    SetDialogueText(modernCasketDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 6)
+                {
+                    DialogueComplete();
                 }
             }
 
             //recycled coffin
-            else if (objNum == 3)
+            if (objNum == 3)
             {
                 if (onNext == 0)
                 {
-                    SetDialogueText(allDialogue[37], textLabel, 37);
+                    SetDialogueText(recycledCoffinDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext == 1)
+                else if (onNext >= 1)
                 {
-                    onNext = 0;
+                    DialogueComplete();
                 }
             }
 
-            //fern
-            else if (objNum == 4)
+            //fern boquet
+            if (objNum == 4)
             {
                 if (onNext == 0)
                 {
-                    SetDialogueText(allDialogue[39], textLabel, 39);
+                    SetDialogueText(fernBoquetDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 1)
                 {
-                    SetDialogueText(allDialogue[40], textLabel, 40);
+                    SetDialogueText(fernBoquetDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 2)
                 {
-                    onNext = 0;
+                    SetDialogueText(fernBoquetDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 3)
+                {
+                    DialogueComplete();
                 }
             }
 
-            //roses
-            else if (objNum == 5)
+            //rose boquet
+            if (objNum == 5)
             {
                 if (onNext == 0)
                 {
-                    SetDialogueText(allDialogue[42], textLabel, 42);
+                    SetDialogueText(roseBoquetDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 1)
                 {
-                    SetDialogueText(allDialogue[43], textLabel, 43);
+                    SetDialogueText(roseBoquetDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 2)
                 {
-                    onNext = 0;
+                    SetDialogueText(roseBoquetDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 3)
+                {
+                    DialogueComplete();
                 }
             }
 
-            //tulip
-            else if (objNum == 6)
+            //orchid boquet
+            if (objNum == 6)
             {
                 if (onNext == 0)
                 {
-                    SetDialogueText(allDialogue[45], textLabel, 45);
+                    SetDialogueText(orchidBoquetDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 1)
+                {
+                    DialogueComplete();
+                }
+            }
+
+            //tulip boquet
+            if (objNum == 7)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(tulipBoquetDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 1)
                 {
-                    SetDialogueText(allDialogue[46], textLabel, 46);
+                    SetDialogueText(tulipBoquetDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 2)
                 {
-                    onNext = 0;
+                    SetDialogueText(tulipBoquetDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 3)
+                {
+                    DialogueComplete();
                 }
             }
 
-            //orchid
-            else if (objNum == 7)
+            // broken filigree crest
+            if (objNum == 8)
             {
                 if (onNext == 0)
                 {
-                    SetDialogueText(allDialogue[47], textLabel, 47);
+                    SetDialogueText(brokenFiligreeCrestDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext == 1)
+                else if (onNext >= 1)
                 {
-                    onNext = 0;
+                    DialogueComplete();
+                }
+            }
+
+            // box of bugs
+            if (objNum == 9)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(boxofBugsDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 1)
+                {
+                    DialogueComplete();
+                }
+            }
+
+            // woven shawl
+            if (objNum == 10)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(wovenShawlDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 1)
+                {
+                    DialogueComplete();
+                }
+            }
+
+            // half-knit quilt
+            if (objNum == 11)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(halfKnitQuiltDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 1)
+                {
+                    DialogueComplete();
+                }
+            }
+
+            // filigree keep ledger
+            if (objNum == 12)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(filigreeKeepLedgerDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 1)
+                {
+                    DialogueComplete();
+                }
+            }
+
+            // stripped goblet
+            if (objNum == 13)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(strippedGobletDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 1)
+                {
+                    DialogueComplete();
                 }
             }
 
             //queen portrait
-            else if (objNum == 8)
+            if (objNum == 14)
             {
                 if (onNext == 0)
                 {
-                    SetDialogueText(allDialogue[59], textLabel, 59);
+                    SetDialogueText(portraitofLadyDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 1)
+                {
+                    DialogueComplete();
+                }
+            }
+
+            // portrait of king
+            if (objNum == 15)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(portraitofKingDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 1)
                 {
-                    onNext = 0;
+                    SetDialogueText(portraitofKingDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 2)
+                {
+                    DialogueComplete();
                 }
             }
 
             //child portrait
-            else if (objNum == 9)
+            if (objNum == 16)
             {
                 if (onNext == 0)
                 {
-                    SetDialogueText(allDialogue[49], textLabel, 49);
+                    SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 1)
                 {
-                    SetDialogueText(allDialogue[50], textLabel, 50);
+                    SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 2)
                 {
-                    SetDialogueText(allDialogue[51], textLabel, 51);
+                    SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 3)
                 {
-                    SetDialogueText(allDialogue[52], textLabel, 52);
+                    SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 4)
                 {
-                    SetDialogueText(allDialogue[53], textLabel, 53);
+                    SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 5)
                 {
-                    SetDialogueText(allDialogue[54], textLabel, 54);
+                    SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 6)
                 {
-                    SetDialogueText(allDialogue[55], textLabel, 55);
+                    SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 7)
                 {
-                    SetDialogueText(allDialogue[56], textLabel, 56);
+                    SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 8)
                 {
-                    SetDialogueText(allDialogue[57], textLabel, 57);
+                    SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 9)
                 {
-                    SetDialogueText(allDialogue[58], textLabel, 58);
+                    SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 10)
                 {
-                    onNext = 0;
+                    SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 11)
+                {
+                    SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 12)
+                {
+                    DialogueComplete();
                 }
             }
+
+            // rusty key
+            if (objNum == 17)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(rustyKeyDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 1)
+                {
+                    DialogueComplete();
+                }
+            }
+
+            // quarter's key
+            if (objNum == 18)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(quartersKeyDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 1)
+                {
+                    DialogueComplete();
+                }
+            }
+
+            // suspiciously long wooden plank
+            if (objNum == 19)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(woodenPlankDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 1)
+                {
+                    DialogueComplete();
+                }
+            }
+
+            // His Majesty
+            if (objNum == 20)
+            {
+                if (onNext == 0)
+                {
+                    SetDialogueText(hisMajestyDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 1)
+                {
+                    DialogueComplete();
+                }
+            }
+
+        }
+    }
+
+        private void DialogueComplete() // currently just resets onNext to zero; can be used to bring the inventory menu back up once dialogue finishes.
+        {
+            onNext = 0;
+            SetDialogueText(allDialogue[60], textLabel, 60); // sets the textbox to blank
         }
 
+        public void CheckForExit()
+        {
+            wantstoexit = true;
+        }
     }
-
-    public void CheckForExit()
-    {
-        wantstoexit = true;
-    }
-}
 
 
 
