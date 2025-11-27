@@ -13,6 +13,7 @@ public class InventoryItemController : MonoBehaviour
     public DialogueUI DialogueManager;                  // Reference to a Dialogue UI (not actively used in this script)
 
     public PlaceObjects placeObjects;                   // Reference to the PlaceObjects script (handles placing objects in world)
+    private Vector3 lastMousePos;
 
     public float sensitivity = 10f;                     // Sensitivity for rotating objects during inspection
 
@@ -59,9 +60,10 @@ public class InventoryItemController : MonoBehaviour
     void Update()
     {
         // If left mouse button is held down while inspecting, rotate object
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             InspectingWithMouse();
+
             //Debug.Log("it should be calling inspecting with mouse rn");
         }
 
@@ -211,8 +213,8 @@ public class InventoryItemController : MonoBehaviour
         //        Debug.Log("Clicked item: " + item.itemName + " (ID: " + item.id + ")");
         inventory.SetActive(false);
         inventoryManager.crosshairCanvas.SetActive(false);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        // Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
 
 
         InventoryManager.Instance.obscamera.gameObject.SetActive(true);     // Enable the observation camera
@@ -222,8 +224,10 @@ public class InventoryItemController : MonoBehaviour
         {
             InventoryManager.Instance.ObservableObject1.SetActive(true);
             currentObservable = InventoryManager.Instance.ObservableObject1;
-            InventoryManager.currentlyInspecting = true;
+            //InventoryManager.currentlyInspecting = true;
             Debug.Log(currentObservable);
+            //Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
         }
 
         else if (item.id == 2)
@@ -299,14 +303,19 @@ public class InventoryItemController : MonoBehaviour
         }
 
         Debug.Log("inspecting currently is" + InventoryManager.currentlyInspecting);
-        //InventoryManager.currentlyInspecting = true;
+        InventoryManager.currentlyInspecting = true;
 
         //Debug.Log("Inspectingwithmouse");
         if (InventoryManager.currentlyInspecting == true)
         {
             Debug.Log(sensitivity);
-            deltaRotationX = Input.GetAxis("Mouse X") * sensitivity;           // Get mouse movement delta
-            deltaRotationY = Input.GetAxis("Mouse Y") * sensitivity;
+
+            var delta = Input.mousePosition;
+            deltaRotationX = delta.x * sensitivity;
+            deltaRotationY = delta.y * sensitivity;
+
+            //deltaRotationX = Input.GetAxis("Mouse X") * sensitivity;           // Get mouse movement delta
+            //deltaRotationY = Input.GetAxis("Mouse Y") * sensitivity;
 
 
             Debug.Log("registering inspect rotation and rotation x and y are " + deltaRotationX.ToString() + " " + deltaRotationY.ToString());
@@ -315,6 +324,7 @@ public class InventoryItemController : MonoBehaviour
 
             if (deltaRotationX != 0 || deltaRotationY != 0)
             {
+
 
                 // Rotate the object in world space
                 currentObservable.transform.Rotate(Vector3.up, deltaRotationX, Space.World);
