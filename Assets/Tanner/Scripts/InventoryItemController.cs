@@ -62,7 +62,7 @@ public class InventoryItemController : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             InspectingWithMouse();
-            Debug.Log("it should be calling inspecting with mouse rn");
+            //Debug.Log("it should be calling inspecting with mouse rn");
         }
 
         // If pressing Tab while inspecting, exit inspection mode
@@ -206,12 +206,11 @@ public class InventoryItemController : MonoBehaviour
     {
         ResizeInvCanvas();
         fpscontrollerScript.canMove = false;    // stop player movement
-        InventoryManager.currentlyInspecting = true;
         FPSController.canPickUp = false;
 
-//        Debug.Log("Clicked item: " + item.itemName + " (ID: " + item.id + ")");
+        //        Debug.Log("Clicked item: " + item.itemName + " (ID: " + item.id + ")");
         inventory.SetActive(false);
-        //InventoryManager.crosshairCanvas.SetActive(false);
+        inventoryManager.crosshairCanvas.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
@@ -288,21 +287,24 @@ public class InventoryItemController : MonoBehaviour
     // Rotate the inspected object based on mouse movement
     public void InspectingWithMouse()
     {
+        Debug.Log("inspecting currently is" + InventoryManager.currentlyInspecting);
+        InventoryManager.currentlyInspecting = true;
+
         //Debug.Log("Inspectingwithmouse");
         if (InventoryManager.currentlyInspecting == true)
         {
-            deltaRotationX = -Input.GetAxis("Mouse X") * sensitivity;           // Get mouse movement deltas
+            deltaRotationX = -Input.GetAxis("Mouse X") * sensitivity;           // Get mouse movement delta
             deltaRotationY = -Input.GetAxis("Mouse Y") * sensitivity;
 
 
             Debug.Log("registering inspect rotation");
 
-            if (deltaRotationX != 0 && deltaRotationY != 0)
-            {
+            //if (deltaRotationX != 0 && deltaRotationY != 0)
+            //{
                 // Rotate the object in world space
                 currentObservable.transform.Rotate(Vector3.up, deltaRotationX, Space.World);
-                currentObservable.transform.Rotate(Vector3.right, -deltaRotationY,  Space.World);
-                
+                currentObservable.transform.Rotate(Vector3.right, -deltaRotationY, Space.World);
+
                 // //previous version:
                 // Quaternion rotationY = Quaternion.AngleAxis(deltaRotationY * objectRotationSpeed, Vector3.right); // Rotate around Y-axis (horizontal)
                 // Quaternion rotationX = Quaternion.AngleAxis(deltaRotationX * objectRotationSpeed, Vector3.up); // Rotate around X-axis (vertical)
@@ -316,7 +318,7 @@ public class InventoryItemController : MonoBehaviour
                 //   + deltaRotationY * Vector3.up * objectRotationSpeed * Time.deltaTime 
                 //  + Vector3.forward * objectRotationSpeed * Time.deltaTime, Space.Self);
 
-            }
+            //}
         }
     }
 
