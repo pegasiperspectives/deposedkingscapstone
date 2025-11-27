@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg, pointTwo, pointThree, pointnegTwo, pointnegThree, interact, player
 - Active game object:
-  - Name: Item2
+  - Name: pCube4
   - Tag: Untagged
-  - Layer: UI
+  - Layer: pointThree
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

@@ -1218,6 +1218,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1069914007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &90230537 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5607173197253113890, guid: 4e90db9eb828a7a47b01cfb2243f2216, type: 3}
+  m_PrefabInstance: {fileID: 1851426822}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &96683636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,11 +1281,11 @@ MonoBehaviour:
   sensitivity: 10
   checkthis: 0
   invResized: 0
-  placeobj: {fileID: 0}
+  placeobj: {fileID: 1360071748}
   objectRotationSpeed: 5
   deltaRotationX: 0
   deltaRotationY: 0
-  currentObservable: {fileID: 980129016}
+  currentObservable: {fileID: 90230537}
   originalSize: {x: 0, y: 0}
   hideInv: {fileID: 0}
   inventory: {fileID: 434830228}
@@ -1330,7 +1335,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 96683638}
         m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
-        m_MethodName: InspectItem
+        m_MethodName: InspectingWithMouse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14350,11 +14355,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963523599}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &980129016 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1070298367280690359, guid: 263a953c4d2fb9f43a11c7554e2a9d30, type: 3}
-  m_PrefabInstance: {fileID: 963346613}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &982790079
 GameObject:
   m_ObjectHideFlags: 0
@@ -20824,6 +20824,11 @@ PrefabInstance:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7660943196971808738, guid: 7f50e01326ef71845b04db46cbacfada, type: 3}
   m_PrefabInstance: {fileID: 1353411165}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1360071748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5607173197253113890, guid: f115ac1644c134d4ab5b7fd154923aa3, type: 3}
+  m_PrefabInstance: {fileID: 1530557544}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1360603094
 GameObject:

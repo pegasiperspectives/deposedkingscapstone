@@ -40,7 +40,7 @@ public class ObsCamera : MonoBehaviour
 
         model.rotation = modelRot;
         rig.rotation = rigRot;
-    }
+    } 
 
      public void Close()
     {
