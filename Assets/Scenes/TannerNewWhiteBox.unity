@@ -1269,9 +1269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9fea98ce98cc8c479f289fd7a866941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryItemController
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: 3170e67bd7ac9bc4f8b3a3465146f514, type: 2}
   inventoryManager: {fileID: 391597838}
-  DialogueManager: {fileID: 0}
+  DialogueManager: {fileID: 2051402351}
   placeObjects: {fileID: 1740180374}
   sensitivity: 10
   checkthis: 0
@@ -1280,7 +1280,7 @@ MonoBehaviour:
   objectRotationSpeed: 5
   deltaRotationX: 0
   deltaRotationY: 0
-  currentObservable: {fileID: 0}
+  currentObservable: {fileID: 980129016}
   originalSize: {x: 0, y: 0}
   hideInv: {fileID: 0}
   inventory: {fileID: 7014041543385319168, guid: 3bc10807d987e6b45a325d26261cccf0, type: 3}
@@ -5534,7 +5534,7 @@ PrefabInstance:
     - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 1320286120}
+      objectReference: {fileID: 434830228}
     - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
       propertyPath: obscamera
       value: 
@@ -14346,6 +14346,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963523599}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &980129016 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1070298367280690359, guid: 263a953c4d2fb9f43a11c7554e2a9d30, type: 3}
+  m_PrefabInstance: {fileID: 963346613}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &982790079
 GameObject:
   m_ObjectHideFlags: 0
@@ -25682,7 +25687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1683666771
 Transform:
   m_ObjectHideFlags: 0

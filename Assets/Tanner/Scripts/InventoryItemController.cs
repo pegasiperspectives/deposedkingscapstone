@@ -208,7 +208,8 @@ public class InventoryItemController : MonoBehaviour
         InventoryManager.currentlyInspecting = true;
         FPSController.canPickUp = false;
 
-        Debug.Log("Clicked item: " + item.itemName + " (ID: " + item.id + ")");
+//        Debug.Log("Clicked item: " + item.itemName + " (ID: " + item.id + ")");
+        inventory.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
