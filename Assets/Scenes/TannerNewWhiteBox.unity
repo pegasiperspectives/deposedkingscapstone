@@ -1281,7 +1281,7 @@ MonoBehaviour:
   sensitivity: 10
   checkthis: 0
   invResized: 0
-  placeobj: {fileID: 90230537}
+  placeobj: {fileID: 2080768334}
   objectRotationSpeed: 5
   deltaRotationX: 0
   deltaRotationY: 0
@@ -1333,6 +1333,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 96683638}
+        m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
+        m_MethodName: AddItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 3170e67bd7ac9bc4f8b3a3465146f514, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 96683638}
         m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
         m_MethodName: InspectItem
