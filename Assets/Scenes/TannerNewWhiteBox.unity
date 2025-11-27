@@ -1335,18 +1335,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 96683638}
         m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
-        m_MethodName: AddItem
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 3170e67bd7ac9bc4f8b3a3465146f514, type: 2}
-          m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 96683638}
-        m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
         m_MethodName: InspectItem
         m_Mode: 1
         m_Arguments:
@@ -24189,11 +24177,11 @@ MonoBehaviour:
   sensitivity: 10
   checkthis: 0
   invResized: 0
-  placeobj: {fileID: 5607173197253113890, guid: 4e90db9eb828a7a47b01cfb2243f2216, type: 3}
+  placeobj: {fileID: 5607173197253113890, guid: f115ac1644c134d4ab5b7fd154923aa3, type: 3}
   objectRotationSpeed: 5
   deltaRotationX: 0
   deltaRotationY: 0
-  currentObservable: {fileID: 5607173197253113890, guid: 4e90db9eb828a7a47b01cfb2243f2216, type: 3}
+  currentObservable: {fileID: 1683666770}
   originalSize: {x: 0, y: 0}
   hideInv: {fileID: 434830229}
   inventory: {fileID: 7014041543385319168, guid: 3bc10807d987e6b45a325d26261cccf0, type: 3}
@@ -24848,7 +24836,7 @@ MonoBehaviour:
   objectRotationSpeed: 5
   deltaRotationX: 0
   deltaRotationY: 0
-  currentObservable: {fileID: 0}
+  currentObservable: {fileID: 1683666770}
   originalSize: {x: 0, y: 0}
   hideInv: {fileID: 0}
   inventory: {fileID: 1320286120}
