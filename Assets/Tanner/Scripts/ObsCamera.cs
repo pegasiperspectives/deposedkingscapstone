@@ -15,6 +15,7 @@ public class ObsCamera : MonoBehaviour
     private Vector3 originalScale; // To store the original scale of the model
 
     [SerializeField] public GameObject self;
+    public GameObject crosshairCanvas;
 
     void Update()
     {
@@ -26,6 +27,7 @@ public class ObsCamera : MonoBehaviour
             modelRot = model.rotation;
             rigRot = rig.rotation;
             ObjectRotation();
+            crosshairCanvas.SetActive(false);
         } 
     }
 

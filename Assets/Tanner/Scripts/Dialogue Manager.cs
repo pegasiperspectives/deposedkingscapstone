@@ -133,7 +133,7 @@ public class DialogueUI : MonoBehaviour
     void Update()
     {
         // Debug log when pressing E away from lady
-        if (Input.GetMouseButtonDown(0) && Characters.isAtLady != true && Characters.isAtGardener != true)
+        if (Input.GetMouseButtonDown(0) && Characters.isAtLady != true && Characters.isAtGardener != true && InventoryManager.currentlyInspecting != true)
         {
             Debug.Log("you're clicking E but it's not registering you're at the any character");
         }

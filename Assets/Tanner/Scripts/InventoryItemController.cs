@@ -62,6 +62,7 @@ public class InventoryItemController : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             InspectingWithMouse();
+            Debug.Log("it should be calling inspecting with mouse rn");
         }
 
         // If pressing Tab while inspecting, exit inspection mode
@@ -215,9 +216,7 @@ public class InventoryItemController : MonoBehaviour
 
 
         InventoryManager.Instance.obscamera.gameObject.SetActive(true);     // Enable the observation camera
-
-
-
+        InventoryManager.currentlyInspecting = true;
         // Activate the corresponding observable object based on item ID
         if (item.id == 1)
         {
