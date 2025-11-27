@@ -70,7 +70,7 @@ public class InventoryItemController : MonoBehaviour
         {
             //set canvas size back to normal 
 
-            currentObservable.SetActive(false);                                                     // Hide the currently observable object 
+           // currentObservable.SetActive(false);                                                     // Hide the currently observable object 
             fpscontrollerScript.canMove = true;                                                     // Allow player movement again
 
 
@@ -216,12 +216,13 @@ public class InventoryItemController : MonoBehaviour
 
 
         InventoryManager.Instance.obscamera.gameObject.SetActive(true);     // Enable the observation camera
-        InventoryManager.currentlyInspecting = true;
+        
         // Activate the corresponding observable object based on item ID
         if (item.id == 1)
         {
             InventoryManager.Instance.ObservableObject1.SetActive(true);
             currentObservable = InventoryManager.Instance.ObservableObject1;
+            InventoryManager.currentlyInspecting = true;
         }
 
         else if (item.id == 2)

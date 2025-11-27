@@ -38441,6 +38441,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1599041500}
     - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
+      propertyPath: crosshairCanvas
+      value: 
+      objectReference: {fileID: 769827158}
+    - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
       propertyPath: ObservableObject1
       value: 
       objectReference: {fileID: 947660921}
@@ -43380,6 +43384,7 @@ MonoBehaviour:
   sensitivity: 3
   modelScaleFactor: 5.5
   self: {fileID: 1528844626}
+  crosshairCanvas: {fileID: 0}
 --- !u!4 &1528844628
 Transform:
   m_ObjectHideFlags: 0

@@ -1281,7 +1281,7 @@ MonoBehaviour:
   sensitivity: 10
   checkthis: 0
   invResized: 0
-  placeobj: {fileID: 1360071748}
+  placeobj: {fileID: 90230537}
   objectRotationSpeed: 5
   deltaRotationX: 0
   deltaRotationY: 0
@@ -1335,7 +1335,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 96683638}
         m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
-        m_MethodName: InspectingWithMouse
+        m_MethodName: InspectItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20824,11 +20824,6 @@ PrefabInstance:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7660943196971808738, guid: 7f50e01326ef71845b04db46cbacfada, type: 3}
   m_PrefabInstance: {fileID: 1353411165}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1360071748 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5607173197253113890, guid: f115ac1644c134d4ab5b7fd154923aa3, type: 3}
-  m_PrefabInstance: {fileID: 1530557544}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1360603094
 GameObject:
