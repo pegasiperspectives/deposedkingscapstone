@@ -59,11 +59,11 @@ public class InventoryItemController : MonoBehaviour
     void Update()
     {
         // If left mouse button is held down while inspecting, rotate object
-        if (Input.GetMouseButton(0))
-        {
+       // if (Input.GetMouseButton(0))
+        //{
             InspectingWithMouse();
             //Debug.Log("it should be calling inspecting with mouse rn");
-        }
+       // }
 
         // If pressing Tab while inspecting, exit inspection mode
         if (Input.GetKeyDown(KeyCode.Tab) && InventoryManager.currentlyInspecting == true)
@@ -280,7 +280,7 @@ public class InventoryItemController : MonoBehaviour
         }
         else
         {
-            currentObservable = null;
+            currentObservable = InventoryManager.Instance.ObservableObject1;
         }
 
     }
@@ -296,15 +296,15 @@ public class InventoryItemController : MonoBehaviour
         if (InventoryManager.currentlyInspecting == true)
         {
             Debug.Log(sensitivity);
-            deltaRotationX = Input.GetAxis("Mouse X") * sensitivity;           // Get mouse movement delta
-            deltaRotationY = Input.GetAxis("Mouse Y") * sensitivity;
+            deltaRotationX = Input.GetAxisRaw("Mouse X") * sensitivity;           // Get mouse movement delta
+            deltaRotationY = Input.GetAxisRaw("Mouse Y") * sensitivity;
 
 
             Debug.Log("registering inspect rotation and rotation x and y are " + deltaRotationX.ToString() + " " + deltaRotationY.ToString());
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
-            if (deltaRotationX != 0 && deltaRotationY != 0)
+            if (deltaRotationX != 0 || deltaRotationY != 0)
             {
 
                 // Rotate the object in world space
