@@ -211,6 +211,7 @@ public class InventoryItemController : MonoBehaviour
 
 //        Debug.Log("Clicked item: " + item.itemName + " (ID: " + item.id + ")");
         inventory.SetActive(false);
+        //InventoryManager.crosshairCanvas.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 

@@ -5548,6 +5548,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1740180374}
     - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
+      propertyPath: crosshairCanvas
+      value: 
+      objectReference: {fileID: 1288998643}
+    - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
       propertyPath: ObservableObject1
       value: 
       objectReference: {fileID: 1683666770}

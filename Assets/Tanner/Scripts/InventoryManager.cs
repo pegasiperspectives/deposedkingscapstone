@@ -26,7 +26,7 @@ public class InventoryManager : MonoBehaviour
     public InventoryItemController[] InventoryItems;                // Items array
     public GameObject InventoryItem;                                // Prefab for a single item UI element
 
-
+    public GameObject crosshairCanvas;
 
     [SerializeField] public GameObject inventory;                   // Inventory UI panel
     [SerializeField] private GameObject dialogue;                   // Dialogue UI panel
