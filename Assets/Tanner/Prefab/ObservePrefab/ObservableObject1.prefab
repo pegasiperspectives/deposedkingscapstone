@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1757119784710515062
 Transform:
   m_ObjectHideFlags: 0
@@ -25,14 +25,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5607173197253113890}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.70411617, y: -0.5342321, z: -0.13840923, w: -0.4468327}
+  m_LocalRotation: {x: -0.70411646, y: 0.5342295, z: 0.13841271, w: 0.4468342}
   m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6355691935526285321}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -129.001, y: -26.673004, z: 87.279}
 --- !u!65 &5662109087588386751
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -202,6 +202,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: a3e1cf7d8e5e20c4f8d7c97d1f569938, type: 2}
+    - target: {fileID: 3115167694080189783, guid: 7d3f0ea1b2aff5f42bd1b9068c4d12b0, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3115167694080189783, guid: 7d3f0ea1b2aff5f42bd1b9068c4d12b0, type: 3}
+      propertyPath: m_LightmapParameters
+      value: 
+      objectReference: {fileID: 15200, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 3115167694080189783, guid: 7d3f0ea1b2aff5f42bd1b9068c4d12b0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3115167694080189783, guid: 7d3f0ea1b2aff5f42bd1b9068c4d12b0, type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
@@ -501,6 +513,10 @@ PrefabInstance:
     - target: {fileID: 9061112557753347127, guid: 7d3f0ea1b2aff5f42bd1b9068c4d12b0, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061112557753347127, guid: 7d3f0ea1b2aff5f42bd1b9068c4d12b0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9104980566187612424, guid: 7d3f0ea1b2aff5f42bd1b9068c4d12b0, type: 3}
       propertyPath: m_Materials.Array.size

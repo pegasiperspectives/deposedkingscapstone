@@ -70,7 +70,7 @@ public class InventoryItemController : MonoBehaviour
         {
             //set canvas size back to normal 
 
-           // currentObservable.SetActive(false);                                                     // Hide the currently observable object 
+            // currentObservable.SetActive(false);                                                     // Hide the currently observable object 
             fpscontrollerScript.canMove = true;                                                     // Allow player movement again
 
 
@@ -216,13 +216,14 @@ public class InventoryItemController : MonoBehaviour
 
 
         InventoryManager.Instance.obscamera.gameObject.SetActive(true);     // Enable the observation camera
-        
+
         // Activate the corresponding observable object based on item ID
         if (item.id == 1)
         {
             InventoryManager.Instance.ObservableObject1.SetActive(true);
             currentObservable = InventoryManager.Instance.ObservableObject1;
             InventoryManager.currentlyInspecting = true;
+            Debug.Log(currentObservable);
         }
 
         else if (item.id == 2)
@@ -294,14 +295,18 @@ public class InventoryItemController : MonoBehaviour
         //Debug.Log("Inspectingwithmouse");
         if (InventoryManager.currentlyInspecting == true)
         {
-            deltaRotationX = -Input.GetAxis("Mouse X") * sensitivity;           // Get mouse movement delta
-            deltaRotationY = -Input.GetAxis("Mouse Y") * sensitivity;
+            Debug.Log(sensitivity);
+            deltaRotationX = Input.GetAxis("Mouse X") * sensitivity;           // Get mouse movement delta
+            deltaRotationY = Input.GetAxis("Mouse Y") * sensitivity;
 
 
-            Debug.Log("registering inspect rotation");
+            Debug.Log("registering inspect rotation and rotation x and y are " + deltaRotationX.ToString() + " " + deltaRotationY.ToString());
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
 
-            //if (deltaRotationX != 0 && deltaRotationY != 0)
-            //{
+            if (deltaRotationX != 0 && deltaRotationY != 0)
+            {
+
                 // Rotate the object in world space
                 currentObservable.transform.Rotate(Vector3.up, deltaRotationX, Space.World);
                 currentObservable.transform.Rotate(Vector3.right, -deltaRotationY, Space.World);
@@ -319,7 +324,7 @@ public class InventoryItemController : MonoBehaviour
                 //   + deltaRotationY * Vector3.up * objectRotationSpeed * Time.deltaTime 
                 //  + Vector3.forward * objectRotationSpeed * Time.deltaTime, Space.Self);
 
-            //}
+            }
         }
     }
 
