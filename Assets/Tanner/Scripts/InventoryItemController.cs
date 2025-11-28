@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class InventoryItemController : MonoBehaviour
 {
@@ -59,6 +60,11 @@ public class InventoryItemController : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("Main Camera: " + Camera.main.name);
+
+        Debug.Log("MousePos=" + Input.mousePosition +
+             " AxisX=" + Input.GetAxis("Mouse X") +
+             " AxisY=" + Input.GetAxis("Mouse Y"));
         // If left mouse button is held down while inspecting, rotate object
         if (Input.GetMouseButtonDown(0))
         {
@@ -293,6 +299,7 @@ public class InventoryItemController : MonoBehaviour
     // Rotate the inspected object based on mouse movement
     public void InspectingWithMouse()
     {
+
         if (currentObservable == null)
         {
             Debug.LogError("currentObservable IS NULL on object: " + gameObject.name);
@@ -310,17 +317,17 @@ public class InventoryItemController : MonoBehaviour
         {
             Debug.Log(sensitivity);
 
-            var delta = Input.mousePosition;
-            deltaRotationX = delta.x * sensitivity;
-            deltaRotationY = delta.y * sensitivity;
+            //var delta = Input.mousePosition;
+            //deltaRotationX = delta.x * sensitivity;
+            //deltaRotationY = delta.y * sensitivity;
 
-            //deltaRotationX = Input.GetAxis("Mouse X") * sensitivity;           // Get mouse movement delta
-            //deltaRotationY = Input.GetAxis("Mouse Y") * sensitivity;
+            deltaRotationX = -Input.GetAxis("Mouse X") * sensitivity;           // Get mouse movement delta
+            deltaRotationY = -Input.GetAxis("Mouse Y") * sensitivity;
 
 
             Debug.Log("registering inspect rotation and rotation x and y are " + deltaRotationX.ToString() + " " + deltaRotationY.ToString());
-            //Cursor.lockState = CursorLockMode.None;
-            //Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
 
             if (deltaRotationX != 0 || deltaRotationY != 0)
             {
