@@ -222,7 +222,9 @@ public class InventoryItemController : MonoBehaviour
         {
             InventoryManager.Instance.ObservableObject2.SetActive(true);
             currentObservable = InventoryManager.Instance.ObservableObject2;
-
+            InventoryManager.currentlyInspecting = true;
+            Debug.Log(currentObservable);
+            rotateNow = true;
         }
 
         else if (item.id == 3)
