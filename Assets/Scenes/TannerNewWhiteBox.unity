@@ -795,6 +795,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &64710194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1343,6 +1344,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &96683639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2804,6 +2806,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &185443384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3118,6 +3121,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &215739276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3730,6 +3734,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &233275621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6439,6 +6444,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &412628496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7940,6 +7946,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &541490047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9229,6 +9236,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &652394081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9463,6 +9471,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &664626010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10975,6 +10984,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &755067135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15304,6 +15314,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &991899172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16994,6 +17005,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &1076927107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20072,6 +20084,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &1299759758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21090,6 +21103,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &1338442473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23594,10 +23608,10 @@ MonoBehaviour:
   sensitivity: 10
   checkthis: 0
   invResized: 0
-  placeobj: {fileID: 5607173197253113890, guid: 4e90db9eb828a7a47b01cfb2243f2216, type: 3}
+  placeobj: {fileID: 812678567}
   deltaRotationX: 0
   deltaRotationY: 0
-  currentObservable: {fileID: 5607173197253113890, guid: 4e90db9eb828a7a47b01cfb2243f2216, type: 3}
+  currentObservable: {fileID: 1823690111}
   originalSize: {x: 0, y: 0}
   inventory: {fileID: 7014041543385319168, guid: 3bc10807d987e6b45a325d26261cccf0, type: 3}
   pressed:
@@ -23621,6 +23635,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &1503672635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24688,6 +24703,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &1613815741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25022,6 +25038,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &1634541826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25381,6 +25398,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!1 &1643103499
 GameObject:
   m_ObjectHideFlags: 0
@@ -26424,12 +26442,12 @@ MonoBehaviour:
       m_Action: Axis
       m_Flags: 0
     m_Flags: 0
-  rotateNow: 0
   rotation: {x: 0, y: 0}
   objectRotationSpeed: 0.5
   inventoryManager: {fileID: 391597838}
   journalOverlay: {fileID: 163274179}
   iic: {fileID: 96683638}
+  currentPivot: {fileID: 90230537}
 --- !u!1 &1697888338
 GameObject:
   m_ObjectHideFlags: 0
@@ -27068,6 +27086,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &1750616812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27493,6 +27512,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &1767661820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28159,12 +28179,12 @@ MonoBehaviour:
       m_Action: Axis
       m_Flags: 0
     m_Flags: 0
-  rotateNow: 0
   rotation: {x: 0, y: 0}
   objectRotationSpeed: 0.5
   inventoryManager: {fileID: 391597838}
   journalOverlay: {fileID: 163274179}
-  iic: {fileID: 96683638}
+  iic: {fileID: 1969438852}
+  currentPivot: {fileID: 812678567}
 --- !u!1 &1824774324
 GameObject:
   m_ObjectHideFlags: 0
@@ -29378,6 +29398,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &1879822776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30879,6 +30900,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &1938400672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31463,6 +31485,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
+  currentPivot: 1
 --- !u!114 &1969438853
 MonoBehaviour:
   m_ObjectHideFlags: 0

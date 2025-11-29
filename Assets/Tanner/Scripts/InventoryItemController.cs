@@ -42,6 +42,7 @@ public class InventoryItemController : MonoBehaviour
     public Vector2 rotation;
     public GameObject journalOverlay;
 
+    public int currentPivot = 1;
     //this is started when inventory is opened on each inventory button
 
 
@@ -49,12 +50,7 @@ public class InventoryItemController : MonoBehaviour
 
     void Awake()
     {
-        pressed.Enable();
-        axis.Enable();
-        //pressed.performed += _ => { StartCoroutine(Rotate()); };
-        pressed.canceled += _ => { rotateNow = false; };
-        axis.performed += context => { rotation = context.ReadValue<Vector2>(); };
-        journalOverlay.SetActive(false);
+
     }
 
 
@@ -64,6 +60,19 @@ public class InventoryItemController : MonoBehaviour
         hideInv = InventoryManager.Instance.inventory.GetComponent<RectTransform>();                // Get RectTransform of the inventory panel for resizing
         originalSize = hideInv.sizeDelta;                                                           // Store original size of inventory panel
         inventoryManager = InventoryManager.Instance;                                               // Cache reference to the InventoryManager
+        journalOverlay.SetActive(false);
+
+        InventoryManager.Instance.ObservableObject1.SetActive(false);
+        InventoryManager.Instance.ObservableObject2.SetActive(false);
+        InventoryManager.Instance.ObservableObject3.SetActive(false);
+        InventoryManager.Instance.ObservableObject4.SetActive(false);
+        InventoryManager.Instance.ObservableObject5.SetActive(false);
+        InventoryManager.Instance.ObservableObject6.SetActive(false);
+        InventoryManager.Instance.ObservableObject7.SetActive(false);
+        InventoryManager.Instance.ObservableObject8.SetActive(false);
+        InventoryManager.Instance.ObservableObject9.SetActive(false);
+
+
     }
 
     void Update()
@@ -212,19 +221,26 @@ public class InventoryItemController : MonoBehaviour
         if (item.id == 1)
         {
             InventoryManager.Instance.ObservableObject1.SetActive(true);
+            InventoryManager.Instance.ObservableObject2.SetActive(false);
             currentObservable = InventoryManager.Instance.ObservableObject1;
             InventoryManager.currentlyInspecting = true;
-            Debug.Log(currentObservable);
+            Debug.Log("object 1 is " + currentObservable + "and is active");
             rotateNow = true;
+            currentObservable.SetActive(true);
+            currentPivot = 1;
+
         }
 
         else if (item.id == 2)
         {
             InventoryManager.Instance.ObservableObject2.SetActive(true);
+            InventoryManager.Instance.ObservableObject1.SetActive(false);
             currentObservable = InventoryManager.Instance.ObservableObject2;
             InventoryManager.currentlyInspecting = true;
-            Debug.Log(currentObservable);
+            Debug.Log("object 1 is " + currentObservable + "and is active");
             rotateNow = true;
+            currentObservable.SetActive(true);
+            currentPivot = 2;
         }
 
         else if (item.id == 3)
@@ -274,7 +290,8 @@ public class InventoryItemController : MonoBehaviour
         }
         else
         {
-            currentObservable = null;
+            //currentObservable = null;
+            currentObservable = InventoryManager.Instance.ObservableObject1;
         }
 
     }
@@ -332,8 +349,10 @@ public class InventoryItemController : MonoBehaviour
 
         inventoryManager.crosshairCanvas.SetActive(true);
 
-        currentObservable.SetActive(false);                                                     // Hide the currently observable object 
+        //currentObservable.SetActive(false);                                                     // Hide the currently observable object 
         fpscontrollerScript.canMove = true;                                                     // Allow player movement again
+
+        rotateNow = false;
 
         journalOverlay.SetActive(false);
         InventoryManager.Instance.obscamera.Close();
@@ -356,6 +375,7 @@ public class InventoryItemController : MonoBehaviour
         FPSController.canPickUp = false;                                                        // Prevent picking up objects while inventory is open
 
     }
+
 }
 
 
