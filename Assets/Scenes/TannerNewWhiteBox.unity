@@ -26423,6 +26423,7 @@ MonoBehaviour:
   objectRotationSpeed: 0.5
   inventoryManager: {fileID: 391597838}
   journalOverlay: {fileID: 163274179}
+  iic: {fileID: 96683638}
 --- !u!1 &1697888338
 GameObject:
   m_ObjectHideFlags: 0

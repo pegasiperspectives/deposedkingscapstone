@@ -15,6 +15,7 @@ public class Rotatable : MonoBehaviour
     public float objectRotationSpeed = .5f;              // Rotation speed for inspection
     public InventoryManager inventoryManager;
     public GameObject journalOverlay;
+    public InventoryItemController iic;
 
 
     void Awake()
@@ -37,9 +38,14 @@ public class Rotatable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // Debug.Log("rotatable script is running"); this runs, so why isn't the other stuff running?
-       Debug.Log("rotateNow is " + rotateNow);
-       Debug.Log("currently inspecting equals " + InventoryManager.currentlyInspecting.ToString());
+        // Debug.Log("rotatable script is running"); this runs, so why isn't the other stuff running?
+        Debug.Log("rotateNow is " + rotateNow);
+        Debug.Log("currently inspecting equals " + InventoryManager.currentlyInspecting.ToString());
+
+        if (Input.GetKeyDown(KeyCode.Tab) && InventoryManager.currentlyInspecting == true)
+        {
+            iic.CloseInspect();
+        }
     }
 
     private IEnumerator Rotate()

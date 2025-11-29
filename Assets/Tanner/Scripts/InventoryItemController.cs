@@ -68,44 +68,17 @@ public class InventoryItemController : MonoBehaviour
 
     void Update()
     {
-       
-        // If left mouse button is held down while inspecting, rotate object
-     /*   if (Input.GetMouseButtonDown(0))
-        {
-            InspectingWithMouse();
 
-            //Debug.Log("it should be calling inspecting with mouse rn");
-        } */
+        // If left mouse button is held down while inspecting, rotate object
+        /*   if (Input.GetMouseButtonDown(0))
+           {
+               InspectingWithMouse();
+
+               //Debug.Log("it should be calling inspecting with mouse rn");
+           } */
 
         // If pressing Tab while inspecting, exit inspection mode
-        if (Input.GetKeyDown(KeyCode.Tab) && InventoryManager.currentlyInspecting == true)
-        {
-            Debug.Log("it's trying to close the inspect journal");
-            //set canvas size back to normal 
 
-            currentObservable.SetActive(false);                                                     // Hide the currently observable object 
-            fpscontrollerScript.canMove = true;                                                     // Allow player movement again
-
-            journalOverlay.SetActive(false);
-            InventoryManager.Instance.obscamera.Close();
-            InventoryManager.Instance.obscamera.gameObject.SetActive(false);     // Enable the observation camera
-                                            // Close observation camera
-                                                                                                    //Debug.Log("registering exit clickobs");
-
-            ResizeInvCanvas();                                                                      // Restore inventory canvas size
-            InventoryManager.currentlyInspecting = false;
-            //return;
-
-            inventoryManager.placeObjects.canPlace = true;                                          // Re-enable placement functionality
-
-            inventory.SetActive(true);                                                              // Reactivate inventory UI and refresh list
-            inventoryManager.ListItems();
-            //inventoryManager.ToggleCursor();
-
-            fpscontrollerScript.canMove = false;                                                    // Lock player movement during inventory
-
-            FPSController.canPickUp = false;                                                        // Prevent picking up objects while inventory is open
-        }
     }
 
 
@@ -306,31 +279,31 @@ public class InventoryItemController : MonoBehaviour
 
 
     // Rotate the inspected object based on mouse movement
-  /*  public void InspectingWithMouse()
-    {
+    /*  public void InspectingWithMouse()
+      {
 
-        if (currentObservable == null)
-        {
-            Debug.LogError("currentObservable IS NULL on object: " + gameObject.name);
-        }
-        else
-        {
-            Debug.Log("currentObservable IS VALID: " + currentObservable.name);
-        }
+          if (currentObservable == null)
+          {
+              Debug.LogError("currentObservable IS NULL on object: " + gameObject.name);
+          }
+          else
+          {
+              Debug.Log("currentObservable IS VALID: " + currentObservable.name);
+          }
 
-        Debug.Log("inspecting currently is" + InventoryManager.currentlyInspecting);
-        InventoryManager.currentlyInspecting = true;
+          Debug.Log("inspecting currently is" + InventoryManager.currentlyInspecting);
+          InventoryManager.currentlyInspecting = true;
 
-        //Debug.Log("Inspectingwithmouse");
-        if (InventoryManager.currentlyInspecting == true)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-    } */
+          //Debug.Log("Inspectingwithmouse");
+          if (InventoryManager.currentlyInspecting == true)
+          {
+              Cursor.lockState = CursorLockMode.None;
+              Cursor.visible = true;
+          }
+      } */
 
 
-   
+
 
 
     // Resize or restore the inventory canvas to hide/show
@@ -347,6 +320,38 @@ public class InventoryItemController : MonoBehaviour
         {
             hideInv.sizeDelta = originalSize;
         }
+
+    }
+
+    public void CloseInspect()
+    {
+        Debug.Log("it's trying to close the inspect journal");
+        //set canvas size back to normal 
+
+        inventoryManager.crosshairCanvas.SetActive(true);
+
+        currentObservable.SetActive(false);                                                     // Hide the currently observable object 
+        fpscontrollerScript.canMove = true;                                                     // Allow player movement again
+
+        journalOverlay.SetActive(false);
+        InventoryManager.Instance.obscamera.Close();
+        InventoryManager.Instance.obscamera.gameObject.SetActive(false);     // Enable the observation camera
+                                                                             // Close observation camera
+                                                                             //Debug.Log("registering exit clickobs");
+
+        ResizeInvCanvas();                                                                      // Restore inventory canvas size
+        InventoryManager.currentlyInspecting = false;
+        //return;
+
+        inventoryManager.placeObjects.canPlace = true;                                          // Re-enable placement functionality
+
+        inventory.SetActive(true);                                                              // Reactivate inventory UI and refresh list
+        inventoryManager.ListItems();
+        //inventoryManager.ToggleCursor();
+
+        fpscontrollerScript.canMove = false;                                                    // Lock player movement during inventory
+
+        FPSController.canPickUp = false;                                                        // Prevent picking up objects while inventory is open
 
     }
 }
