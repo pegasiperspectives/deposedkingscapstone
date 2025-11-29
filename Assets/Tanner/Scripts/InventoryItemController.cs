@@ -27,7 +27,6 @@ public class InventoryItemController : MonoBehaviour
 
 
 
-    public float objectRotationSpeed = 5f;              // Rotation speed for inspection
 
     public float deltaRotationX;                        // Mouse delta rotation values
     public float deltaRotationY;
@@ -35,9 +34,12 @@ public class InventoryItemController : MonoBehaviour
     public GameObject currentObservable;                // Reference to the currently observable object being inspected
     public Vector2 originalSize;                        // Original size of the inventory UI (used to restore after resizing)
 
-    public RectTransform hideInv;                       // Reference to RectTransform of the inventory panel
+    private RectTransform hideInv;                       // Reference to RectTransform of the inventory panel
     [SerializeField] private GameObject inventory;      // Reference to the inventory UI GameObject
 
+    [SerializeField] private InputAction pressed, axis;
+    public bool rotateNow = false;
+    public Vector2 rotation;
 
     //this is started when inventory is opened on each inventory button
 
@@ -46,9 +48,13 @@ public class InventoryItemController : MonoBehaviour
 
     void Awake()
     {
-
-
+        pressed.Enable();
+        axis.Enable();
+        //pressed.performed += _ => { StartCoroutine(Rotate()); };
+        pressed.canceled += _ => { rotateNow = false; };
+        axis.performed += context => { rotation = context.ReadValue<Vector2>(); };
     }
+
 
     void Start()
     {
@@ -83,7 +89,7 @@ public class InventoryItemController : MonoBehaviour
 
 
             InventoryManager.Instance.obscamera.Close();                                            // Close observation camera
-            //Debug.Log("registering exit clickobs");
+                                                                                                    //Debug.Log("registering exit clickobs");
 
             ResizeInvCanvas();                                                                      // Restore inventory canvas size
             InventoryManager.currentlyInspecting = false;
@@ -100,6 +106,7 @@ public class InventoryItemController : MonoBehaviour
             FPSController.canPickUp = false;                                                        // Prevent picking up objects while inventory is open
         }
     }
+
 
 
     // Assign an item to this slot
@@ -232,6 +239,7 @@ public class InventoryItemController : MonoBehaviour
             currentObservable = InventoryManager.Instance.ObservableObject1;
             //InventoryManager.currentlyInspecting = true;
             Debug.Log(currentObservable);
+
             //Cursor.lockState = CursorLockMode.Locked;
             //Cursor.visible = false;
         }
@@ -311,48 +319,18 @@ public class InventoryItemController : MonoBehaviour
 
         Debug.Log("inspecting currently is" + InventoryManager.currentlyInspecting);
         InventoryManager.currentlyInspecting = true;
+        rotateNow = true;
 
         //Debug.Log("Inspectingwithmouse");
         if (InventoryManager.currentlyInspecting == true)
         {
-            Debug.Log(sensitivity);
-
-            //var delta = Input.mousePosition;
-            //deltaRotationX = delta.x * sensitivity;
-            //deltaRotationY = delta.y * sensitivity;
-
-            deltaRotationX = -Input.GetAxis("Mouse X") * sensitivity;           // Get mouse movement delta
-            deltaRotationY = -Input.GetAxis("Mouse Y") * sensitivity;
-
-
-            Debug.Log("registering inspect rotation and rotation x and y are " + deltaRotationX.ToString() + " " + deltaRotationY.ToString());
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-
-            if (deltaRotationX != 0 || deltaRotationY != 0)
-            {
-
-
-                // Rotate the object in world space
-                currentObservable.transform.Rotate(Vector3.up, deltaRotationX, Space.World);
-                currentObservable.transform.Rotate(Vector3.right, -deltaRotationY, Space.World);
-
-                // //previous version:
-                // Quaternion rotationY = Quaternion.AngleAxis(deltaRotationY * objectRotationSpeed, Vector3.right); // Rotate around Y-axis (horizontal)
-                // Quaternion rotationX = Quaternion.AngleAxis(deltaRotationX * objectRotationSpeed, Vector3.up); // Rotate around X-axis (vertical)
-                // // Apply rotation to the object
-                // currentObservable.transform.rotation = rotationX * rotationY * currentObservable.transform.rotation;
-
-                Debug.Log(deltaRotationY);
-
-                //another try that didn't work:
-                //currentObservable.transform.Rotate(deltaRotationX * Vector3.right * objectRotationSpeed * Time.deltaTime 
-                //   + deltaRotationY * Vector3.up * objectRotationSpeed * Time.deltaTime 
-                //  + Vector3.forward * objectRotationSpeed * Time.deltaTime, Space.Self);
-
-            }
         }
     }
+
+
+   
 
 
     // Resize or restore the inventory canvas to hide/show
@@ -362,7 +340,7 @@ public class InventoryItemController : MonoBehaviour
 
         if (invResized == false)
         {
-            hideInv.sizeDelta = new Vector2(0, 0);
+            //            hideInv.sizeDelta = new Vector2(0, 0);
             invResized = true;
         }
         else
@@ -372,6 +350,7 @@ public class InventoryItemController : MonoBehaviour
 
     }
 }
+
 
 
 

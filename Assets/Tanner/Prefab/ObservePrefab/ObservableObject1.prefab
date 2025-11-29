@@ -25,14 +25,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5607173197253113890}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0037409964, y: 0.7480406, z: 0.18027236, w: -0.6386886}
+  m_LocalRotation: {x: -0.003743112, y: 0.7480388, z: 0.18027017, w: -0.63869137}
   m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6355691935526285321}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -129.001, y: -26.673004, z: 87.279}
+  m_LocalEulerAnglesHint: {x: -164.638, y: 82.902, z: 165.841}
 --- !u!65 &5662109087588386751
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -529,8 +529,65 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9061112557753347127, guid: 7d3f0ea1b2aff5f42bd1b9068c4d12b0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5475852420511355329}
   m_SourcePrefab: {fileID: 100100000, guid: 7d3f0ea1b2aff5f42bd1b9068c4d12b0, type: 3}
+--- !u!1 &3043278572250564986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9061112557753347127, guid: 7d3f0ea1b2aff5f42bd1b9068c4d12b0, type: 3}
+  m_PrefabInstance: {fileID: 6306284545334682957}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5475852420511355329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3043278572250564986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e6b5e20998e6c409a301b3f7b4b301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Rotatable
+  pressed:
+    m_Name: Pressed
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 7d2efa58-a209-447a-bcd8-2704e85f5124
+    m_Processors: 
+    m_Interactions: Press
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 00e6c250-ab8e-4af6-9c04-1055ad7ae227
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pressed
+      m_Flags: 0
+    m_Flags: 0
+  axis:
+    m_Name: Axis
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f04b9d76-c8fa-4f0e-ba20-694614b8003d
+    m_Processors: 
+    m_Interactions: Press
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: ce1fad2d-62e9-4cbb-98f6-65fea82a03f6
+      m_Path: <Mouse>/delta
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Axis
+      m_Flags: 0
+    m_Flags: 0
+  rotateNow: 0
+  rotation: {x: 0, y: 0}
+  objectRotationSpeed: 5
 --- !u!4 &6355691935526285321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1132541257586726212, guid: 7d3f0ea1b2aff5f42bd1b9068c4d12b0, type: 3}
