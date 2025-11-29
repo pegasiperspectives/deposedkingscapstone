@@ -40,6 +40,7 @@ public class InventoryItemController : MonoBehaviour
     [SerializeField] private InputAction pressed, axis;
     public bool rotateNow = false;
     public Vector2 rotation;
+    public GameObject journalOverlay;
 
     //this is started when inventory is opened on each inventory button
 
@@ -53,6 +54,7 @@ public class InventoryItemController : MonoBehaviour
         //pressed.performed += _ => { StartCoroutine(Rotate()); };
         pressed.canceled += _ => { rotateNow = false; };
         axis.performed += context => { rotation = context.ReadValue<Vector2>(); };
+        journalOverlay.SetActive(false);
     }
 
 
@@ -78,13 +80,16 @@ public class InventoryItemController : MonoBehaviour
         // If pressing Tab while inspecting, exit inspection mode
         if (Input.GetKeyDown(KeyCode.Tab) && InventoryManager.currentlyInspecting == true)
         {
+            Debug.Log("it's trying to close the inspect journal");
             //set canvas size back to normal 
 
-            // currentObservable.SetActive(false);                                                     // Hide the currently observable object 
+            currentObservable.SetActive(false);                                                     // Hide the currently observable object 
             fpscontrollerScript.canMove = true;                                                     // Allow player movement again
 
-
-            InventoryManager.Instance.obscamera.Close();                                            // Close observation camera
+            journalOverlay.SetActive(false);
+            InventoryManager.Instance.obscamera.Close();
+            InventoryManager.Instance.obscamera.gameObject.SetActive(false);     // Enable the observation camera
+                                            // Close observation camera
                                                                                                     //Debug.Log("registering exit clickobs");
 
             ResizeInvCanvas();                                                                      // Restore inventory canvas size
@@ -218,6 +223,8 @@ public class InventoryItemController : MonoBehaviour
         ResizeInvCanvas();
         fpscontrollerScript.canMove = false;    // stop player movement
         FPSController.canPickUp = false;
+        journalOverlay.SetActive(true);
+
 
         //        Debug.Log("Clicked item: " + item.itemName + " (ID: " + item.id + ")");
         inventory.SetActive(false);

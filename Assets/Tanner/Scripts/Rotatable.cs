@@ -14,6 +14,7 @@ public class Rotatable : MonoBehaviour
     public Vector2 rotation;
     public float objectRotationSpeed = .5f;              // Rotation speed for inspection
     public InventoryManager inventoryManager;
+    public GameObject journalOverlay;
 
 
     void Awake()
