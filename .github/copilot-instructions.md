@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg, pointTwo, pointThree, pointnegTwo, pointnegThree, interact, player
 - Active game object:
-  - Name: MainCoffin
+  - Name: pivot1
   - Tag: Untagged
-  - Layer: pointThree
+  - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

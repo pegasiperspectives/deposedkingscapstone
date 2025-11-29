@@ -12,12 +12,20 @@ public class Rotatable : MonoBehaviour
     [SerializeField] private InputAction pressed, axis;
     public bool rotateNow = false;
     public Vector2 rotation;
-    public float objectRotationSpeed = 5f;              // Rotation speed for inspection
+    public float objectRotationSpeed = .5f;              // Rotation speed for inspection
     public InventoryManager inventoryManager;
 
 
     void Awake()
     {
+
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        inventoryManager = InventoryManager.Instance;                                               // Cache reference to the InventoryManager
+        Debug.Log("it should be setting up rotation stuff rn");
         pressed.Enable();
         axis.Enable();
         pressed.performed += _ => { StartCoroutine(Rotate()); };
@@ -25,23 +33,20 @@ public class Rotatable : MonoBehaviour
         axis.performed += context => { rotation = context.ReadValue<Vector2>(); };
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        inventoryManager = InventoryManager.Instance;                                               // Cache reference to the InventoryManager
-
-    }
-
     // Update is called once per frame
     void Update()
     {
-
+       // Debug.Log("rotatable script is running"); this runs, so why isn't the other stuff running?
+       Debug.Log("rotateNow is " + rotateNow);
+       Debug.Log("currently inspecting equals " + InventoryManager.currentlyInspecting.ToString());
     }
 
     private IEnumerator Rotate()
     {
+        rotateNow = true;
         while (rotateNow && InventoryManager.currentlyInspecting == true)
         {
+            Debug.Log("it should be rotating the gold coffin rn");
             rotation *= objectRotationSpeed;
             transform.Rotate(Vector3.up, rotation.x, Space.World);
             transform.Rotate(Vector3.right, rotation.y, Space.World);
@@ -49,4 +54,6 @@ public class Rotatable : MonoBehaviour
 
         }
     }
+
+
 }

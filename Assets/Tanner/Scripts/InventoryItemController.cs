@@ -66,18 +66,14 @@ public class InventoryItemController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Main Camera: " + Camera.main.name);
-
-        Debug.Log("MousePos=" + Input.mousePosition +
-             " AxisX=" + Input.GetAxis("Mouse X") +
-             " AxisY=" + Input.GetAxis("Mouse Y"));
+       
         // If left mouse button is held down while inspecting, rotate object
-        if (Input.GetMouseButtonDown(0))
+     /*   if (Input.GetMouseButtonDown(0))
         {
             InspectingWithMouse();
 
             //Debug.Log("it should be calling inspecting with mouse rn");
-        }
+        } */
 
         // If pressing Tab while inspecting, exit inspection mode
         if (Input.GetKeyDown(KeyCode.Tab) && InventoryManager.currentlyInspecting == true)
@@ -226,7 +222,7 @@ public class InventoryItemController : MonoBehaviour
         //        Debug.Log("Clicked item: " + item.itemName + " (ID: " + item.id + ")");
         inventory.SetActive(false);
         inventoryManager.crosshairCanvas.SetActive(false);
-        // Cursor.lockState = CursorLockMode.None;
+        //Cursor.lockState = CursorLockMode.None;
         //Cursor.visible = true;
 
 
@@ -237,11 +233,9 @@ public class InventoryItemController : MonoBehaviour
         {
             InventoryManager.Instance.ObservableObject1.SetActive(true);
             currentObservable = InventoryManager.Instance.ObservableObject1;
-            //InventoryManager.currentlyInspecting = true;
+            InventoryManager.currentlyInspecting = true;
             Debug.Log(currentObservable);
-
-            //Cursor.lockState = CursorLockMode.Locked;
-            //Cursor.visible = false;
+            rotateNow = true;
         }
 
         else if (item.id == 2)
@@ -305,7 +299,7 @@ public class InventoryItemController : MonoBehaviour
 
 
     // Rotate the inspected object based on mouse movement
-    public void InspectingWithMouse()
+  /*  public void InspectingWithMouse()
     {
 
         if (currentObservable == null)
@@ -319,7 +313,6 @@ public class InventoryItemController : MonoBehaviour
 
         Debug.Log("inspecting currently is" + InventoryManager.currentlyInspecting);
         InventoryManager.currentlyInspecting = true;
-        rotateNow = true;
 
         //Debug.Log("Inspectingwithmouse");
         if (InventoryManager.currentlyInspecting == true)
@@ -327,7 +320,7 @@ public class InventoryItemController : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
-    }
+    } */
 
 
    
