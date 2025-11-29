@@ -42,7 +42,6 @@ public class InventoryItemController : MonoBehaviour
     public Vector2 rotation;
     public GameObject journalOverlay;
 
-    public int currentPivot = 1;
     //this is started when inventory is opened on each inventory button
 
 
@@ -221,26 +220,24 @@ public class InventoryItemController : MonoBehaviour
         if (item.id == 1)
         {
             InventoryManager.Instance.ObservableObject1.SetActive(true);
-            InventoryManager.Instance.ObservableObject2.SetActive(false);
+           // InventoryManager.Instance.ObservableObject2.SetActive(false);
             currentObservable = InventoryManager.Instance.ObservableObject1;
             InventoryManager.currentlyInspecting = true;
             Debug.Log("object 1 is " + currentObservable + "and is active");
             rotateNow = true;
-            currentObservable.SetActive(true);
-            currentPivot = 1;
+           // currentObservable.SetActive(true);
 
         }
 
         else if (item.id == 2)
         {
             InventoryManager.Instance.ObservableObject2.SetActive(true);
-            InventoryManager.Instance.ObservableObject1.SetActive(false);
+           // InventoryManager.Instance.ObservableObject1.SetActive(false);
             currentObservable = InventoryManager.Instance.ObservableObject2;
             InventoryManager.currentlyInspecting = true;
             Debug.Log("object 1 is " + currentObservable + "and is active");
             rotateNow = true;
-            currentObservable.SetActive(true);
-            currentPivot = 2;
+           // currentObservable.SetActive(true);
         }
 
         else if (item.id == 3)

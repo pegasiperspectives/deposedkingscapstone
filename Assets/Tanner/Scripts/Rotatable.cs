@@ -16,7 +16,6 @@ public class Rotatable : MonoBehaviour
     public InventoryManager inventoryManager;
     public GameObject journalOverlay;
     public InventoryItemController iic;
-    public GameObject currentPivot;
 
 
     void Awake()
@@ -31,6 +30,7 @@ public class Rotatable : MonoBehaviour
         Debug.Log("it should be setting up rotation stuff rn");
         this.pressed.Enable();
         this.axis.Enable();
+        this.pressed.performed += _ => { StartCoroutine(Rotate());};
         //this.pressed.canceled += _ => { iic.rotateNow = false; };
         this.axis.performed += context => { rotation = context.ReadValue<Vector2>(); };
         iic.currentObservable.SetActive(true);
