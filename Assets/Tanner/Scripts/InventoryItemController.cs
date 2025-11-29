@@ -31,7 +31,7 @@ public class InventoryItemController : MonoBehaviour
     public float deltaRotationX;                        // Mouse delta rotation values
     public float deltaRotationY;
 
-    public GameObject currentObservable;                // Reference to the currently observable object being inspected
+    public static GameObject currentObservable;                // Reference to the currently observable object being inspected
     public Vector2 originalSize;                        // Original size of the inventory UI (used to restore after resizing)
 
     private RectTransform hideInv;                       // Reference to RectTransform of the inventory panel
@@ -220,24 +220,24 @@ public class InventoryItemController : MonoBehaviour
         if (item.id == 1)
         {
             InventoryManager.Instance.ObservableObject1.SetActive(true);
-           // InventoryManager.Instance.ObservableObject2.SetActive(false);
+            InventoryManager.Instance.ObservableObject2.SetActive(false);
             currentObservable = InventoryManager.Instance.ObservableObject1;
             InventoryManager.currentlyInspecting = true;
             Debug.Log("object 1 is " + currentObservable + "and is active");
             rotateNow = true;
-           // currentObservable.SetActive(true);
+            // currentObservable.SetActive(true);
 
         }
 
         else if (item.id == 2)
         {
             InventoryManager.Instance.ObservableObject2.SetActive(true);
-           // InventoryManager.Instance.ObservableObject1.SetActive(false);
+            InventoryManager.Instance.ObservableObject1.SetActive(false);
             currentObservable = InventoryManager.Instance.ObservableObject2;
             InventoryManager.currentlyInspecting = true;
             Debug.Log("object 1 is " + currentObservable + "and is active");
             rotateNow = true;
-           // currentObservable.SetActive(true);
+            // currentObservable.SetActive(true);
         }
 
         else if (item.id == 3)

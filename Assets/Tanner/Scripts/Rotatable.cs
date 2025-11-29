@@ -28,17 +28,21 @@ public class Rotatable : MonoBehaviour
     {
         inventoryManager = InventoryManager.Instance;                                               // Cache reference to the InventoryManager
         Debug.Log("it should be setting up rotation stuff rn");
-        this.pressed.Enable();
-        this.axis.Enable();
-        this.pressed.performed += _ => { StartCoroutine(Rotate());};
+
         //this.pressed.canceled += _ => { iic.rotateNow = false; };
-        this.axis.performed += context => { rotation = context.ReadValue<Vector2>(); };
-        iic.currentObservable.SetActive(true);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        InventoryItemController.currentObservable.SetActive(true);
+
+        this.pressed.Enable();
+        this.axis.Enable();
+        this.pressed.performed += _ => { this.StartCoroutine(this.Rotate()); };
+        this.axis.performed += context => { rotation = context.ReadValue<Vector2>(); };
+
         // Debug.Log("rotatable script is running"); this runs, so why isn't the other stuff running?
         Debug.Log("rotateNow is " + iic.rotateNow);
         Debug.Log("currently inspecting equals " + InventoryManager.currentlyInspecting.ToString());
@@ -46,21 +50,19 @@ public class Rotatable : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab) && InventoryManager.currentlyInspecting == true)
         {
             iic.CloseInspect();
-            //iic.currentObservable.SetActive(false);
+            InventoryItemController.currentObservable.SetActive(false);
             iic.rotateNow = false;
         }
     }
 
     private IEnumerator Rotate()
     {
-
-        iic.currentObservable.SetActive(true);
         while (iic.rotateNow && InventoryManager.currentlyInspecting == true)
         {
             Debug.Log("it should be rotating rn");
             this.rotation *= objectRotationSpeed;
-            transform.Rotate(Vector3.up, rotation.x, Space.World);
-            transform.Rotate(Vector3.right, rotation.y, Space.World);
+            this.transform.Rotate(Vector3.up, rotation.x, Space.World);
+            this.transform.Rotate(Vector3.right, rotation.y, Space.World);
             yield return null;
 
         }
