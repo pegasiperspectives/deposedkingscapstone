@@ -225,7 +225,7 @@ public class InventoryItemController : MonoBehaviour
             InventoryManager.Instance.ObservableObject4.SetActive(false);
             InventoryManager.Instance.ObservableObject5.SetActive(false);
             InventoryManager.Instance.ObservableObject6.SetActive(false);
-            InventoryManager.Instance.ObservableObject7.SetActive(true);
+            InventoryManager.Instance.ObservableObject7.SetActive(false);
             InventoryManager.Instance.ObservableObject8.SetActive(false);
             InventoryManager.Instance.ObservableObject9.SetActive(false);
 
@@ -245,7 +245,7 @@ public class InventoryItemController : MonoBehaviour
             InventoryManager.Instance.ObservableObject4.SetActive(false);
             InventoryManager.Instance.ObservableObject5.SetActive(false);
             InventoryManager.Instance.ObservableObject6.SetActive(false);
-            InventoryManager.Instance.ObservableObject7.SetActive(true);
+            InventoryManager.Instance.ObservableObject7.SetActive(false);
             InventoryManager.Instance.ObservableObject8.SetActive(false);
             InventoryManager.Instance.ObservableObject9.SetActive(false);
 
@@ -264,7 +264,7 @@ public class InventoryItemController : MonoBehaviour
             InventoryManager.Instance.ObservableObject4.SetActive(false);
             InventoryManager.Instance.ObservableObject5.SetActive(false);
             InventoryManager.Instance.ObservableObject6.SetActive(false);
-            InventoryManager.Instance.ObservableObject7.SetActive(true);
+            InventoryManager.Instance.ObservableObject7.SetActive(false);
             InventoryManager.Instance.ObservableObject8.SetActive(false);
             InventoryManager.Instance.ObservableObject9.SetActive(false);
             InventoryManager.currentlyInspecting = true;
