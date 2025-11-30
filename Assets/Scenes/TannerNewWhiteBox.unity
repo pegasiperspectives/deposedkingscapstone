@@ -4969,6 +4969,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1740180375}
+    - target: {fileID: 8292983412076870369, guid: ba5c1a1bb506e3548b55d6d2f6499a19, type: 3}
+      propertyPath: pickUpCrosshair
+      value: 
+      objectReference: {fileID: 5854377891357197432}
+    - target: {fileID: 8292983412076870369, guid: ba5c1a1bb506e3548b55d6d2f6499a19, type: 3}
+      propertyPath: defaultCrossHair
+      value: 
+      objectReference: {fileID: 2099608734}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5408,6 +5416,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1740180375}
+    - target: {fileID: 7330974265468201588, guid: f23196794983293499948da4c0841c0a, type: 3}
+      propertyPath: pickUpCrosshair
+      value: 
+      objectReference: {fileID: 5854377891357197432}
+    - target: {fileID: 7330974265468201588, guid: f23196794983293499948da4c0841c0a, type: 3}
+      propertyPath: defaultCrossHair
+      value: 
+      objectReference: {fileID: 2099608734}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7438,6 +7454,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1740180375}
+    - target: {fileID: 5613586144880795335, guid: e1b49278c9746c347a6ec6b887974ff2, type: 3}
+      propertyPath: pickUpCrosshair
+      value: 
+      objectReference: {fileID: 5854377891357197432}
+    - target: {fileID: 5613586144880795335, guid: e1b49278c9746c347a6ec6b887974ff2, type: 3}
+      propertyPath: defaultCrossHair
+      value: 
+      objectReference: {fileID: 2099608734}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11199,6 +11223,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1740180375}
+    - target: {fileID: 7330974265468201588, guid: ce7150a0b8aef9849bd322703a6e8a20, type: 3}
+      propertyPath: pickUpCrosshair
+      value: 
+      objectReference: {fileID: 5854377891357197432}
+    - target: {fileID: 7330974265468201588, guid: ce7150a0b8aef9849bd322703a6e8a20, type: 3}
+      propertyPath: defaultCrossHair
+      value: 
+      objectReference: {fileID: 2099608734}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15181,6 +15213,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1740180375}
+    - target: {fileID: 8292983412076870369, guid: 263a953c4d2fb9f43a11c7554e2a9d30, type: 3}
+      propertyPath: pickUpCrosshair
+      value: 
+      objectReference: {fileID: 5854377891357197432}
+    - target: {fileID: 8292983412076870369, guid: 263a953c4d2fb9f43a11c7554e2a9d30, type: 3}
+      propertyPath: defaultCrossHair
+      value: 
+      objectReference: {fileID: 2099608734}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19540,6 +19580,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1740180375}
+    - target: {fileID: 8292983412076870369, guid: dc73224030ce3674880585b59db99018, type: 3}
+      propertyPath: pickUpCrosshair
+      value: 
+      objectReference: {fileID: 5854377891357197432}
+    - target: {fileID: 8292983412076870369, guid: dc73224030ce3674880585b59db99018, type: 3}
+      propertyPath: defaultCrossHair
+      value: 
+      objectReference: {fileID: 2099608734}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24883,6 +24931,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1740180375}
+    - target: {fileID: 7591527157358485953, guid: f115ac1644c134d4ab5b7fd154923aa3, type: 3}
+      propertyPath: pickUpCrosshair
+      value: 
+      objectReference: {fileID: 5854377891357197432}
+    - target: {fileID: 7591527157358485953, guid: f115ac1644c134d4ab5b7fd154923aa3, type: 3}
+      propertyPath: defaultCrossHair
+      value: 
+      objectReference: {fileID: 2099608734}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31588,6 +31644,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1740180375}
+    - target: {fileID: 7330974265468201588, guid: 29bf9e3be74eb844784e280aedb6d3b8, type: 3}
+      propertyPath: pickUpCrosshair
+      value: 
+      objectReference: {fileID: 5854377891357197432}
+    - target: {fileID: 7330974265468201588, guid: 29bf9e3be74eb844784e280aedb6d3b8, type: 3}
+      propertyPath: defaultCrossHair
+      value: 
+      objectReference: {fileID: 2099608734}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32154,6 +32218,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1740180375}
+    - target: {fileID: 7330974265468201588, guid: 8bf3e8bc33925b54ca1997fdc41dfba6, type: 3}
+      propertyPath: pickUpCrosshair
+      value: 
+      objectReference: {fileID: 5854377891357197432}
+    - target: {fileID: 7330974265468201588, guid: 8bf3e8bc33925b54ca1997fdc41dfba6, type: 3}
+      propertyPath: defaultCrossHair
+      value: 
+      objectReference: {fileID: 2099608734}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35691,6 +35763,113 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1905830368}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!224 &1943620274301810884 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+  m_PrefabInstance: {fileID: 2936509050733048075}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2936509050733048075
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1852453506}
+    m_Modifications:
+    - target: {fileID: 1230810250630409293, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_Name
+      value: PickUpCrosshair
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -47.294228
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271879988174080446, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+--- !u!1 &5854377891357197432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1230810250630409293, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
+  m_PrefabInstance: {fileID: 2936509050733048075}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6637168056498891418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35785,7 +35964,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6094603026795883099, guid: 49d2cd2a9102e794084cd4e0fea830da, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1943620274301810884}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49d2cd2a9102e794084cd4e0fea830da, type: 3}
 --- !u!1660057539 &9223372036854775807
