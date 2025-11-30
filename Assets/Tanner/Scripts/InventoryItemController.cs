@@ -217,10 +217,18 @@ public class InventoryItemController : MonoBehaviour
         InventoryManager.Instance.obscamera.gameObject.SetActive(true);     // Enable the observation camera
 
         // Activate the corresponding observable object based on item ID
-        if (item.id == 1)
+        if (item.id == 1) //gold
         {
             InventoryManager.Instance.ObservableObject1.SetActive(true);
             InventoryManager.Instance.ObservableObject2.SetActive(false);
+            InventoryManager.Instance.ObservableObject3.SetActive(false);
+            InventoryManager.Instance.ObservableObject4.SetActive(false);
+            InventoryManager.Instance.ObservableObject5.SetActive(false);
+            InventoryManager.Instance.ObservableObject6.SetActive(false);
+            InventoryManager.Instance.ObservableObject7.SetActive(true);
+            InventoryManager.Instance.ObservableObject8.SetActive(false);
+            InventoryManager.Instance.ObservableObject9.SetActive(false);
+
             currentObservable = InventoryManager.Instance.ObservableObject1;
             InventoryManager.currentlyInspecting = true;
             Debug.Log("object 1 is " + currentObservable + "and is active");
@@ -229,10 +237,18 @@ public class InventoryItemController : MonoBehaviour
 
         }
 
-        else if (item.id == 2)
+        else if (item.id == 2) //modern
         {
             InventoryManager.Instance.ObservableObject2.SetActive(true);
             InventoryManager.Instance.ObservableObject1.SetActive(false);
+            InventoryManager.Instance.ObservableObject3.SetActive(false);
+            InventoryManager.Instance.ObservableObject4.SetActive(false);
+            InventoryManager.Instance.ObservableObject5.SetActive(false);
+            InventoryManager.Instance.ObservableObject6.SetActive(false);
+            InventoryManager.Instance.ObservableObject7.SetActive(true);
+            InventoryManager.Instance.ObservableObject8.SetActive(false);
+            InventoryManager.Instance.ObservableObject9.SetActive(false);
+
             currentObservable = InventoryManager.Instance.ObservableObject2;
             InventoryManager.currentlyInspecting = true;
             Debug.Log("object 1 is " + currentObservable + "and is active");
@@ -240,49 +256,146 @@ public class InventoryItemController : MonoBehaviour
             // currentObservable.SetActive(true);
         }
 
-        else if (item.id == 3)
+        else if (item.id == 3) //recycled
         {
             InventoryManager.Instance.ObservableObject3.SetActive(true);
+            InventoryManager.Instance.ObservableObject2.SetActive(false);
+            InventoryManager.Instance.ObservableObject1.SetActive(false);
+            InventoryManager.Instance.ObservableObject4.SetActive(false);
+            InventoryManager.Instance.ObservableObject5.SetActive(false);
+            InventoryManager.Instance.ObservableObject6.SetActive(false);
+            InventoryManager.Instance.ObservableObject7.SetActive(true);
+            InventoryManager.Instance.ObservableObject8.SetActive(false);
+            InventoryManager.Instance.ObservableObject9.SetActive(false);
+            InventoryManager.currentlyInspecting = true;
+
             currentObservable = InventoryManager.Instance.ObservableObject3;
+            Debug.Log("object 1 is " + currentObservable + "and is active");
+            rotateNow = true;
         }
 
-        else if (item.id == 4)
+        else if (item.id == 4) //fern
         {
             InventoryManager.Instance.ObservableObject4.SetActive(true);
+
+            InventoryManager.Instance.ObservableObject2.SetActive(false);
+            InventoryManager.Instance.ObservableObject1.SetActive(false);
+            InventoryManager.Instance.ObservableObject3.SetActive(false);
+            InventoryManager.Instance.ObservableObject5.SetActive(false);
+            InventoryManager.Instance.ObservableObject6.SetActive(false);
+            InventoryManager.Instance.ObservableObject7.SetActive(false);
+            InventoryManager.Instance.ObservableObject8.SetActive(false);
+            InventoryManager.Instance.ObservableObject9.SetActive(false);
+
+            InventoryManager.currentlyInspecting = true;
+
+
             currentObservable = InventoryManager.Instance.ObservableObject4;
+            Debug.Log("object 1 is " + currentObservable + "and is active");
+            rotateNow = true;
         }
 
-        else if (item.id == 5)
+        else if (item.id == 5) //roses
         {
+            InventoryManager.Instance.ObservableObject4.SetActive(false);
+            InventoryManager.Instance.ObservableObject2.SetActive(false);
+            InventoryManager.Instance.ObservableObject1.SetActive(false);
+            InventoryManager.Instance.ObservableObject3.SetActive(false);
+
             InventoryManager.Instance.ObservableObject5.SetActive(true);
+
+            InventoryManager.Instance.ObservableObject6.SetActive(false);
+            InventoryManager.Instance.ObservableObject7.SetActive(false);
+            InventoryManager.Instance.ObservableObject8.SetActive(false);
+            InventoryManager.Instance.ObservableObject9.SetActive(false);
+
+            InventoryManager.currentlyInspecting = true;
+
             currentObservable = InventoryManager.Instance.ObservableObject5;
+            Debug.Log("object 1 is " + currentObservable + "and is active");
+            rotateNow = true;
         }
 
-        else if (item.id == 6)
+        else if (item.id == 6) //tulips
         {
+            InventoryManager.Instance.ObservableObject4.SetActive(false);
+            InventoryManager.Instance.ObservableObject2.SetActive(false);
+            InventoryManager.Instance.ObservableObject1.SetActive(false);
+            InventoryManager.Instance.ObservableObject3.SetActive(false);
+            InventoryManager.Instance.ObservableObject5.SetActive(false);
+
             InventoryManager.Instance.ObservableObject6.SetActive(true);
+
+            InventoryManager.Instance.ObservableObject7.SetActive(false);
+            InventoryManager.Instance.ObservableObject8.SetActive(false);
+            InventoryManager.Instance.ObservableObject9.SetActive(false);
             currentObservable = InventoryManager.Instance.ObservableObject6;
+            InventoryManager.currentlyInspecting = true;
+
+            Debug.Log("object 1 is " + currentObservable + "and is active");
+            rotateNow = true;
         }
 
-        else if (item.id == 7)
+        else if (item.id == 7) //orchids
         {
+            InventoryManager.Instance.ObservableObject4.SetActive(false);
+            InventoryManager.Instance.ObservableObject2.SetActive(false);
+            InventoryManager.Instance.ObservableObject1.SetActive(false);
+            InventoryManager.Instance.ObservableObject3.SetActive(false);
+            InventoryManager.Instance.ObservableObject5.SetActive(false);
+            InventoryManager.Instance.ObservableObject6.SetActive(false);
+
             InventoryManager.Instance.ObservableObject7.SetActive(true);
+
+            InventoryManager.Instance.ObservableObject8.SetActive(false);
+            InventoryManager.Instance.ObservableObject9.SetActive(false);
+            InventoryManager.currentlyInspecting = true;
+
             currentObservable = InventoryManager.Instance.ObservableObject7;
+            Debug.Log("object 1 is " + currentObservable + "and is active");
+            rotateNow = true;
         }
 
         else if (item.id == 8)
         {
+            InventoryManager.Instance.ObservableObject4.SetActive(false);
+            InventoryManager.Instance.ObservableObject2.SetActive(false);
+            InventoryManager.Instance.ObservableObject1.SetActive(false);
+            InventoryManager.Instance.ObservableObject3.SetActive(false);
+            InventoryManager.Instance.ObservableObject5.SetActive(false);
+            InventoryManager.Instance.ObservableObject6.SetActive(false);
+            InventoryManager.Instance.ObservableObject7.SetActive(false);
+
             InventoryManager.Instance.ObservableObject8.SetActive(true);
+
+            InventoryManager.Instance.ObservableObject9.SetActive(false);
+            InventoryManager.currentlyInspecting = true;
+
             currentObservable = InventoryManager.Instance.ObservableObject8;
             Debug.LogError("currentObservable is NULL on " + gameObject.name);
+            Debug.Log("object 1 is " + currentObservable + "and is active");
+            rotateNow = true;
             return;
         }
 
         else if (item.id == 9)
         {
+            InventoryManager.Instance.ObservableObject4.SetActive(false);
+            InventoryManager.Instance.ObservableObject2.SetActive(false);
+            InventoryManager.Instance.ObservableObject1.SetActive(false);
+            InventoryManager.Instance.ObservableObject3.SetActive(false);
+            InventoryManager.Instance.ObservableObject5.SetActive(false);
+            InventoryManager.Instance.ObservableObject6.SetActive(false);
+            InventoryManager.Instance.ObservableObject7.SetActive(false);
+            InventoryManager.Instance.ObservableObject8.SetActive(false);
+
             InventoryManager.Instance.ObservableObject9.SetActive(true);
+            InventoryManager.currentlyInspecting = true;
+
             currentObservable = InventoryManager.Instance.ObservableObject9;
             Debug.LogError("currentObservable is NULL on " + gameObject.name);
+            Debug.Log("object 1 is " + currentObservable + "and is active");
+            rotateNow = true;
             return;
         }
         else
