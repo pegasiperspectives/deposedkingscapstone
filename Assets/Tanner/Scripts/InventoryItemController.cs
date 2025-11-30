@@ -77,16 +77,6 @@ public class InventoryItemController : MonoBehaviour
     void Update()
     {
 
-        // If left mouse button is held down while inspecting, rotate object
-        /*   if (Input.GetMouseButtonDown(0))
-           {
-               InspectingWithMouse();
-
-               //Debug.Log("it should be calling inspecting with mouse rn");
-           } */
-
-        // If pressing Tab while inspecting, exit inspection mode
-
     }
 
 
@@ -217,9 +207,10 @@ public class InventoryItemController : MonoBehaviour
         InventoryManager.Instance.obscamera.gameObject.SetActive(true);     // Enable the observation camera
 
         // Activate the corresponding observable object based on item ID
-        if (item.id == 1) //gold
+        if (item.id == 1) //gold - works
         {
             InventoryManager.Instance.ObservableObject1.SetActive(true);
+
             InventoryManager.Instance.ObservableObject2.SetActive(false);
             InventoryManager.Instance.ObservableObject3.SetActive(false);
             InventoryManager.Instance.ObservableObject4.SetActive(false);
@@ -237,9 +228,10 @@ public class InventoryItemController : MonoBehaviour
 
         }
 
-        else if (item.id == 2) //modern
+        else if (item.id == 2) //modern - goes to orchids for some reason
         {
             InventoryManager.Instance.ObservableObject2.SetActive(true);
+
             InventoryManager.Instance.ObservableObject1.SetActive(false);
             InventoryManager.Instance.ObservableObject3.SetActive(false);
             InventoryManager.Instance.ObservableObject4.SetActive(false);
@@ -256,9 +248,10 @@ public class InventoryItemController : MonoBehaviour
             // currentObservable.SetActive(true);
         }
 
-        else if (item.id == 3) //recycled
+        else if (item.id == 3) //recycled - goes to fern for some reason
         {
             InventoryManager.Instance.ObservableObject3.SetActive(true);
+
             InventoryManager.Instance.ObservableObject2.SetActive(false);
             InventoryManager.Instance.ObservableObject1.SetActive(false);
             InventoryManager.Instance.ObservableObject4.SetActive(false);
@@ -274,7 +267,7 @@ public class InventoryItemController : MonoBehaviour
             rotateNow = true;
         }
 
-        else if (item.id == 4) //fern
+        else if (item.id == 4) //fern - works
         {
             InventoryManager.Instance.ObservableObject4.SetActive(true);
 
@@ -295,15 +288,14 @@ public class InventoryItemController : MonoBehaviour
             rotateNow = true;
         }
 
-        else if (item.id == 5) //roses
+        else if (item.id == 5) //roses - works
         {
+            InventoryManager.Instance.ObservableObject5.SetActive(true);
+
             InventoryManager.Instance.ObservableObject4.SetActive(false);
             InventoryManager.Instance.ObservableObject2.SetActive(false);
             InventoryManager.Instance.ObservableObject1.SetActive(false);
             InventoryManager.Instance.ObservableObject3.SetActive(false);
-
-            InventoryManager.Instance.ObservableObject5.SetActive(true);
-
             InventoryManager.Instance.ObservableObject6.SetActive(false);
             InventoryManager.Instance.ObservableObject7.SetActive(false);
             InventoryManager.Instance.ObservableObject8.SetActive(false);
@@ -316,41 +308,39 @@ public class InventoryItemController : MonoBehaviour
             rotateNow = true;
         }
 
-        else if (item.id == 6) //tulips
+        else if (item.id == 6) //tulips - works
         {
+            InventoryManager.Instance.ObservableObject6.SetActive(true);
+
             InventoryManager.Instance.ObservableObject4.SetActive(false);
             InventoryManager.Instance.ObservableObject2.SetActive(false);
             InventoryManager.Instance.ObservableObject1.SetActive(false);
             InventoryManager.Instance.ObservableObject3.SetActive(false);
             InventoryManager.Instance.ObservableObject5.SetActive(false);
-
-            InventoryManager.Instance.ObservableObject6.SetActive(true);
-
             InventoryManager.Instance.ObservableObject7.SetActive(false);
             InventoryManager.Instance.ObservableObject8.SetActive(false);
             InventoryManager.Instance.ObservableObject9.SetActive(false);
+
             currentObservable = InventoryManager.Instance.ObservableObject6;
             InventoryManager.currentlyInspecting = true;
-
             Debug.Log("object 1 is " + currentObservable + "and is active");
             rotateNow = true;
         }
 
-        else if (item.id == 7) //orchids
+        else if (item.id == 7) //orchids - won't spin
         {
+            InventoryManager.Instance.ObservableObject7.SetActive(true);
+
             InventoryManager.Instance.ObservableObject4.SetActive(false);
             InventoryManager.Instance.ObservableObject2.SetActive(false);
             InventoryManager.Instance.ObservableObject1.SetActive(false);
             InventoryManager.Instance.ObservableObject3.SetActive(false);
             InventoryManager.Instance.ObservableObject5.SetActive(false);
             InventoryManager.Instance.ObservableObject6.SetActive(false);
-
-            InventoryManager.Instance.ObservableObject7.SetActive(true);
-
             InventoryManager.Instance.ObservableObject8.SetActive(false);
             InventoryManager.Instance.ObservableObject9.SetActive(false);
-            InventoryManager.currentlyInspecting = true;
 
+            InventoryManager.currentlyInspecting = true;
             currentObservable = InventoryManager.Instance.ObservableObject7;
             Debug.Log("object 1 is " + currentObservable + "and is active");
             rotateNow = true;
@@ -400,39 +390,11 @@ public class InventoryItemController : MonoBehaviour
         }
         else
         {
-            //currentObservable = null;
-            currentObservable = InventoryManager.Instance.ObservableObject1;
+            currentObservable = null;
+            //currentObservable = InventoryManager.Instance.ObservableObject1;
         }
 
     }
-
-
-    // Rotate the inspected object based on mouse movement
-    /*  public void InspectingWithMouse()
-      {
-
-          if (currentObservable == null)
-          {
-              Debug.LogError("currentObservable IS NULL on object: " + gameObject.name);
-          }
-          else
-          {
-              Debug.Log("currentObservable IS VALID: " + currentObservable.name);
-          }
-
-          Debug.Log("inspecting currently is" + InventoryManager.currentlyInspecting);
-          InventoryManager.currentlyInspecting = true;
-
-          //Debug.Log("Inspectingwithmouse");
-          if (InventoryManager.currentlyInspecting == true)
-          {
-              Cursor.lockState = CursorLockMode.None;
-              Cursor.visible = true;
-          }
-      } */
-
-
-
 
 
     // Resize or restore the inventory canvas to hide/show
@@ -459,7 +421,18 @@ public class InventoryItemController : MonoBehaviour
 
         inventoryManager.crosshairCanvas.SetActive(true);
 
-        //currentObservable.SetActive(false);                                                     // Hide the currently observable object 
+        InventoryManager.Instance.ObservableObject1.SetActive(false);
+        InventoryManager.Instance.ObservableObject2.SetActive(false);
+        InventoryManager.Instance.ObservableObject3.SetActive(false);
+        InventoryManager.Instance.ObservableObject4.SetActive(false);
+        InventoryManager.Instance.ObservableObject5.SetActive(false);
+        InventoryManager.Instance.ObservableObject6.SetActive(false);
+        InventoryManager.Instance.ObservableObject7.SetActive(false);
+        InventoryManager.Instance.ObservableObject8.SetActive(false);
+        InventoryManager.Instance.ObservableObject9.SetActive(false);
+
+
+        currentObservable.SetActive(false);                                                     // Hide the currently observable object 
         fpscontrollerScript.canMove = true;                                                     // Allow player movement again
 
         rotateNow = false;
