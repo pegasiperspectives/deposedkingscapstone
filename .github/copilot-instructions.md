@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg, pointTwo, pointThree, pointnegTwo, pointnegThree, interact, player
 - Active game object:
-  - Name: Item8Tulips
+  - Name: Place/Talk6
   - Tag: Untagged
   - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
