@@ -40,7 +40,7 @@ public class Rotatable : MonoBehaviour
 
         this.pressed.Enable();
         this.axis.Enable();
-        this.pressed.performed += _ => { this.StartCoroutine(this.Rotate()); };
+        this.pressed.performed += _ => { this.Rotate(); };
         this.axis.performed += context => { rotation = context.ReadValue<Vector2>(); };
 
         // Debug.Log("rotatable script is running"); this runs, so why isn't the other stuff running?
@@ -55,7 +55,7 @@ public class Rotatable : MonoBehaviour
         }
     }
 
-    private IEnumerator Rotate()
+    public void Rotate()
     {
         while (iic.rotateNow && InventoryManager.currentlyInspecting == true)
         {
@@ -63,8 +63,6 @@ public class Rotatable : MonoBehaviour
             this.rotation *= objectRotationSpeed;
             this.transform.Rotate(Vector3.up, rotation.x, Space.World);
             this.transform.Rotate(Vector3.right, rotation.y, Space.World);
-            yield return null;
-
         }
     }
 
