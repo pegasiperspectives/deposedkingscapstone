@@ -24,8 +24,10 @@ public class Characters : MonoBehaviour
 
     public Camera camera;
     private RaycastHit hit;
-    [SerializeField] private GameObject inventory;  // Inventory UI (to check if open)
+    [SerializeField] public InventoryManager inventory;  // Inventory UI (to check if open)
 
+    private FPSController fpscontrollerScript;      // Reference to player controller
+    private int opened = 0;
 
 
     //public Transform playerTransform; // Assign in the inspector
@@ -39,23 +41,30 @@ public class Characters : MonoBehaviour
         defaultCrosshair.SetActive(true);
         speechCrosshair.SetActive(false);
         camera = Camera.main;                                       // Use the main camera for raycasting
+        fpscontrollerScript = player.GetComponent<FPSController>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (inventory.activeInHierarchy == false && Input.GetKeyDown(KeyCode.Tab))
+     /*   if (inventory.inventory.activeInHierarchy == false && Input.GetKeyDown(KeyCode.Tab))
         {
-            Debug.Log("should be opening inventory");
-            inventory.SetActive(true);
+            Debug.Log("should be opening inventory " + opened + " times");
+            inventory.inventory.SetActive(true);
+            opened++;
         }
-        
+
         /* else if (inventory.activeInHierarchy == true && Input.GetKeyDown(KeyCode.Tab))
         {
             Debug.Log("should be closing inventory");
             inventory.SetActive(false);
         } */
+
+        if (dialogueManager.self.activeInHierarchy == true)
+        {
+            fpscontrollerScript.canMove = false;
+        }
 
         //        Debug.Log(crosshairMouse);
         //if (playerTransform == null || targetTransform == null) return; // Check for valid transforms

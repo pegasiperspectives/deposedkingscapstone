@@ -12743,7 +12743,7 @@ PrefabInstance:
     - target: {fileID: 1457205623367284271, guid: 54b1daddd263c8c4485d32653500bf40, type: 3}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 434830228}
+      objectReference: {fileID: 391597838}
     - target: {fileID: 1457205623367284271, guid: 54b1daddd263c8c4485d32653500bf40, type: 3}
       propertyPath: canvasCrosshair
       value: 
@@ -22023,7 +22023,7 @@ PrefabInstance:
     - target: {fileID: 2520573193002310300, guid: 7f50e01326ef71845b04db46cbacfada, type: 3}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 434830228}
+      objectReference: {fileID: 391597838}
     - target: {fileID: 2520573193002310300, guid: 7f50e01326ef71845b04db46cbacfada, type: 3}
       propertyPath: canvasCrosshair
       value: 
