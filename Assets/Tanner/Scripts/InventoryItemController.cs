@@ -207,7 +207,7 @@ public class InventoryItemController : MonoBehaviour
         InventoryManager.Instance.obscamera.gameObject.SetActive(true);     // Enable the observation camera
 
         // Activate the corresponding observable object based on item ID
-        if (item.id == 1) //gold - works
+        if (item.id == 1) //gold - works but now turns into the recycled coffin
         {
             InventoryManager.Instance.ObservableObject1.SetActive(true);
 
@@ -390,8 +390,10 @@ public class InventoryItemController : MonoBehaviour
         }
         else
         {
+            Debug.Log("hi currentobservable is false now and so is rotate now yay");
             currentObservable = null;
             //currentObservable = InventoryManager.Instance.ObservableObject1;
+            rotateNow = false;
         }
 
     }
@@ -431,8 +433,9 @@ public class InventoryItemController : MonoBehaviour
         InventoryManager.Instance.ObservableObject8.SetActive(false);
         InventoryManager.Instance.ObservableObject9.SetActive(false);
 
+        currentObservable = null;
 
-        currentObservable.SetActive(false);                                                     // Hide the currently observable object 
+        //currentObservable.SetActive(false);                                                     // Hide the currently observable object 
         fpscontrollerScript.canMove = true;                                                     // Allow player movement again
 
         rotateNow = false;
