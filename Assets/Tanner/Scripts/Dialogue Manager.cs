@@ -49,6 +49,8 @@ public class DialogueUI : MonoBehaviour
 
     [SerializeField] private float focusDuration = 0.5f;
 
+    public GameObject speech1;
+
     #region Dialogue Arrays - Topher Code
     // All possible dialogue lines that can be shown based on items
 
@@ -127,6 +129,8 @@ public class DialogueUI : MonoBehaviour
         character1 = lady.GetComponent<Characters>();
         character2 = gardener.GetComponent<Characters>();
         controller = player.GetComponent<CharacterController>();
+
+        speech1.SetActive(false);
     }
 
     // Update is called once per frame
@@ -135,24 +139,20 @@ public class DialogueUI : MonoBehaviour
         // Debug log when pressing E away from lady
         if (Input.GetMouseButtonDown(0) && Characters.isAtLady != true && Characters.isAtGardener != true && InventoryManager.currentlyInspecting != true)
         {
-            Debug.Log("you're clicking E but it's not registering you're at the any character");
+            Debug.Log("you're clicking on a character but it's not registering you're at the any character");
+        }
+
+        if ((Characters.isAtLady == true || Characters.isAtGardener == true) && inventory.activeInHierarchy == false)
+        {
+            inventory.SetActive(true);
+            speech1.SetActive(true);
         }
 
         // Open dialogue on click when player is at lady and both dialogue & inventory are closed
         if (self.activeInHierarchy == false && inventory.activeInHierarchy == false && Input.GetMouseButtonDown(0) && (Characters.isAtLady == true || Characters.isAtGardener == true)) //added self check so multiple objects arent made
         {
-            self.SetActive(true);
-            //speechCrosshair.SetActive(false);                             // Show dialogue UI
-            SetDialogueText(allDialogue[60], textLabel, 60);         // Show first line
-            objNum = -1;                                             // Resets objNum so no dialogue is activated from Next() 
+            inventory.SetActive(true);
 
-            //Debug.Log("triggered dialogue box");
-
-            //Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
-            //speechCrosshair.SetActive(false);
-            //defaultCrosshair.SetActive(false);
-            Cursor.lockState = CursorLockMode.None;             // Unlock mouse cursor for UI interaction
-            Cursor.visible = true;
 
 
             if (Characters.isAtLady == true && Characters.isAtGardener == false)
@@ -349,8 +349,22 @@ public class DialogueUI : MonoBehaviour
 
     }
     // Called when a button is clicked to show dialogue related to that item
-    private void OnItemShown(Item item)
+    public void OnItemShown(Item item)
     {
+        self.SetActive(true);
+        inventory.SetActive(false);
+        speech1.SetActive(false);
+        //speechCrosshair.SetActive(false);                             // Show dialogue UI
+        SetDialogueText(allDialogue[60], textLabel, 60);         // Show first line
+        objNum = -1;                                             // Resets objNum so no dialogue is activated from Next() 
+
+        //Debug.Log("triggered dialogue box");
+
+        //Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
+        //speechCrosshair.SetActive(false);
+        //defaultCrosshair.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;             // Unlock mouse cursor for UI interaction
+        Cursor.visible = true;
         onNext = 1; // ensures that activating Next() will play the 2nd line of dialogue
 
         if (Characters.isAtGardener == true)
@@ -1386,17 +1400,17 @@ public class DialogueUI : MonoBehaviour
         }
     }
 
-        private void DialogueComplete() // currently just resets onNext to zero; can be used to bring the inventory menu back up once dialogue finishes.
-        {
-            onNext = 0;
-            SetDialogueText(allDialogue[60], textLabel, 60); // sets the textbox to blank
-        }
-
-        public void CheckForExit()
-        {
-            wantstoexit = true;
-        }
+    private void DialogueComplete() // currently just resets onNext to zero; can be used to bring the inventory menu back up once dialogue finishes.
+    {
+        onNext = 0;
+        SetDialogueText(allDialogue[60], textLabel, 60); // sets the textbox to blank
     }
+
+    public void CheckForExit()
+    {
+        wantstoexit = true;
+    }
+}
 
 
 
