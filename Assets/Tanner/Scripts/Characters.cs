@@ -9,6 +9,7 @@ public class Characters : MonoBehaviour
 
     public GameObject canvasCrosshair;
     public GameObject defaultCrosshair;
+    public GameObject grabby;
 
     public GameObject speechCrosshair;
     public bool isAtCharacter = false;                   // Flag to indicate if the player is currently in range of this character (the lady)
@@ -20,8 +21,7 @@ public class Characters : MonoBehaviour
     //private float raycastDistance = 1f;
 
     public Camera camera;
-    private RaycastHit hit2;                     // Stores info about raycast hits
-
+    private RaycastHit hit;
 
 
     //public Transform playerTransform; // Assign in the inspector
@@ -61,11 +61,14 @@ public class Characters : MonoBehaviour
         //    isAtLady = false;
         //}
 
-        if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit2, Mathf.Max(5)))
+        if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
         {
-            Debug.Log("triggering speech bubble now yayy...");
-            speechCrosshair.SetActive(true);
-            defaultCrosshair.SetActive(false);
+            if (hit.collider.CompareTag("character"))
+            {
+                Debug.Log("triggering speech bubble now yayy...");
+                speechCrosshair.SetActive(true);
+                defaultCrosshair.SetActive(false);
+            }
         }
         else
         {

@@ -15,6 +15,7 @@ public class ItemPickUp : MonoBehaviour
     public GameObject pickUpCrosshair;
 
     public bool currentlyPickingUp = false;
+    private RaycastHit hit;
 
 
 
@@ -46,11 +47,14 @@ public class ItemPickUp : MonoBehaviour
         //Vector3 origin = camera.transform.position;
         //Vector3 direction
 
-        if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit1, Mathf.Max(5)))
+        if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
         {
-            //Debug.Log("triggering crosshair grabby hand");
-            pickUpCrosshair.SetActive(true);
-            defaultCrossHair.SetActive(false);
+            if (hit.collider.CompareTag("InteractiveObject"))
+            {
+                //Debug.Log("triggering crosshair grabby hand");
+                pickUpCrosshair.SetActive(true);
+                defaultCrossHair.SetActive(false);
+            }
         }
         else
         {

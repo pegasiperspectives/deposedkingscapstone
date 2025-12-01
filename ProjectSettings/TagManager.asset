@@ -9,6 +9,7 @@ TagManager:
   - Object2
   - Lady Filigree
   - InteractiveObject
+  - character
   layers:
   - Default
   - TransparentFX
