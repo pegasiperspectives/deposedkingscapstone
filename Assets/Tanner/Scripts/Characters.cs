@@ -18,6 +18,8 @@ public class Characters : MonoBehaviour
 
     public static bool isAtLady = false;
     [SerializeField] private GameObject player;     // Reference to player (not used in final logic here, but serialized for flexibility)
+
+    public DialogueUI dialogueManager;
     //private float raycastDistance = 1f;
 
     public Camera camera;
@@ -43,6 +45,14 @@ public class Characters : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (inventory.activeInHierarchy == false && Input.GetKeyDown(KeyCode.Tab))
+        {
+            inventory.SetActive(true);
+        }
+        else if (inventory.activeInHierarchy == true && Input.GetKeyDown(KeyCode.Tab))
+        {
+            inventory.SetActive(false);
+        }
 
         //        Debug.Log(crosshairMouse);
         //if (playerTransform == null || targetTransform == null) return; // Check for valid transforms

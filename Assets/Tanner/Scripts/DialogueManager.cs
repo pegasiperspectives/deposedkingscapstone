@@ -37,6 +37,7 @@ public class DialogueUI : MonoBehaviour
 
     public PlaceObjects placeObjects;               // Controls placement state
     [SerializeField] private GameObject inventory;  // Inventory UI (to check if open)
+    public InventoryManager inventoryManager;
 
     //added
     private CharacterController controller;
@@ -146,13 +147,14 @@ public class DialogueUI : MonoBehaviour
 
         if ((Characters.isAtLady == true || Characters.isAtGardener == true) && inventory.activeInHierarchy == false && self.activeInHierarchy == false)
         {
-            inventory.SetActive(true);
             speech1.SetActive(true);
         }
 
         // Open dialogue on click when player is at lady and both dialogue & inventory are closed
         if (self.activeInHierarchy == false && inventory.activeInHierarchy == false && Input.GetMouseButtonDown(0) && (Characters.isAtLady == true || Characters.isAtGardener == true)) //added self check so multiple objects arent made
         {
+            inventoryManager.CursorOn();
+            self.SetActive(true);
 
             if (Characters.isAtLady == true && Characters.isAtGardener == false)
             {
@@ -350,7 +352,6 @@ public class DialogueUI : MonoBehaviour
     // Called when a button is clicked to show dialogue related to that item
     public void OnItemShown(Item item)
     {
-        self.SetActive(true);
         CurrentlyInDialogue = true;
         inventory.SetActive(false);
         speech1.SetActive(false);

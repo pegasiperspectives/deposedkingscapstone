@@ -12749,6 +12749,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1288998643}
     - target: {fileID: 1457205623367284271, guid: 54b1daddd263c8c4485d32653500bf40, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 2051402351}
+    - target: {fileID: 1457205623367284271, guid: 54b1daddd263c8c4485d32653500bf40, type: 3}
       propertyPath: speechCrosshair
       value: 
       objectReference: {fileID: 1349151342}
@@ -22024,6 +22028,10 @@ PrefabInstance:
       propertyPath: canvasCrosshair
       value: 
       objectReference: {fileID: 1288998643}
+    - target: {fileID: 2520573193002310300, guid: 7f50e01326ef71845b04db46cbacfada, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 2051402351}
     - target: {fileID: 2520573193002310300, guid: 7f50e01326ef71845b04db46cbacfada, type: 3}
       propertyPath: defaultCrosshair
       value: 
@@ -34194,7 +34202,7 @@ PrefabInstance:
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 1320286120}
+      objectReference: {fileID: 434830228}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: playerView
       value: 
@@ -34219,6 +34227,10 @@ PrefabInstance:
       propertyPath: defaultCrosshair
       value: 
       objectReference: {fileID: 2099608734}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: inventoryManager
+      value: 
+      objectReference: {fileID: 391597838}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: memoDialogue.Array.size
       value: 1
@@ -34676,6 +34688,11 @@ PrefabInstance:
     - target: {fileID: 4568718136382763264, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908681840381153951, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: m_text
+      value: Press tab to open inventory and present an object. Then left click to
+        advance dialogue.
       objectReference: {fileID: 0}
     - target: {fileID: 6266472223120318796, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: m_TargetGraphic

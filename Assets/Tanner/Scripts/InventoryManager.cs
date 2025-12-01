@@ -142,8 +142,8 @@ public class InventoryManager : MonoBehaviour
             placeObjects.canPlace = false;
         }
 
-        // Open or close the inventory with the E key (when not inspecting)
-        if (Input.GetKeyDown(KeyCode.Tab) && currentlyInspecting == false && dialogueManager.CurrentlyInDialogue == false) //Open/close inventory
+        // Open or close the inventory with the tab key (when not inspecting)
+        if (Input.GetKeyDown(KeyCode.Tab) && currentlyInspecting == false) //Open/close inventory
         {
 
             // If inventory is closed and no special placement modes are active
@@ -345,6 +345,11 @@ public class InventoryManager : MonoBehaviour
     {
         noteOpen = !noteOpen;
         note.SetActive(noteOpen);
+    }
+
+    public void ToggleInventory()
+    {
+        inventory.SetActive(true);
     }
 }
 
