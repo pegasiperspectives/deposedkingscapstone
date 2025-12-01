@@ -4338,7 +4338,7 @@ MonoBehaviour:
         m_MethodName: OnItemShown
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 4b54b08a84e869c4abe4a2d65c6702f1, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: fd85f68ce935d6b4d90f114ac82b27f8, type: 2}
           m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -4906,7 +4906,7 @@ MonoBehaviour:
         m_MethodName: OnItemShown
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 4b54b08a84e869c4abe4a2d65c6702f1, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 305b5816b6d30f74898275921a5bc416, type: 2}
           m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -6940,7 +6940,7 @@ MonoBehaviour:
         m_MethodName: OnItemShown
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 4b54b08a84e869c4abe4a2d65c6702f1, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: e885631dc9da3f44da1345e0f7eba8bc, type: 2}
           m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -8466,7 +8466,7 @@ MonoBehaviour:
         m_MethodName: OnItemShown
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 4b54b08a84e869c4abe4a2d65c6702f1, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 3170e67bd7ac9bc4f8b3a3465146f514, type: 2}
           m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -33267,7 +33267,7 @@ MonoBehaviour:
         m_MethodName: OnItemShown
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 4b54b08a84e869c4abe4a2d65c6702f1, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: bda0103ce463fda40847fe664e3b3b37, type: 2}
           m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
