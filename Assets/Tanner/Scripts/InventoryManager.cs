@@ -171,7 +171,9 @@ public class InventoryManager : MonoBehaviour
                 fpscontrollerScript.canMove = true;     // Allow movement
                 FPSController.canPickUp = true;         // Re-enable pickup
            
-            } else if (inventory.activeInHierarchy == false && dialogue.activeInHierarchy == true)
+            } 
+
+            if (dialogue.activeInHierarchy == true)
             {
                 CursorOn();
             }
