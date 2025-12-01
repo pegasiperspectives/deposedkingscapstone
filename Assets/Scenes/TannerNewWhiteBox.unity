@@ -12740,6 +12740,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1288998643}
     - target: {fileID: 1457205623367284271, guid: 54b1daddd263c8c4485d32653500bf40, type: 3}
+      propertyPath: speechCrosshair
+      value: 
+      objectReference: {fileID: 1349151342}
+    - target: {fileID: 1457205623367284271, guid: 54b1daddd263c8c4485d32653500bf40, type: 3}
       propertyPath: defaultCrosshair
       value: 
       objectReference: {fileID: 2099608734}
@@ -21946,6 +21950,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338442470}
   m_CullTransparentMesh: 1
+--- !u!1 &1349151342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5024305414617765809, guid: 9dc849950ce826e44b11be8781ae87a7, type: 3}
+  m_PrefabInstance: {fileID: 8495491229654602683}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1353411165
 PrefabInstance:
   m_ObjectHideFlags: 0

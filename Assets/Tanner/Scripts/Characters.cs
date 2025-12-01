@@ -72,6 +72,7 @@ public class Characters : MonoBehaviour
         }
         else
         {
+            Debug.Log("making speech cross hair go bye bye");
             speechCrosshair.SetActive(false);
             defaultCrosshair.SetActive(true);
         }
