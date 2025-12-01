@@ -49,6 +49,8 @@ public class DialogueUI : MonoBehaviour
 
     [SerializeField] private float focusDuration = 0.5f;
 
+    public bool CurrentlyInDialogue = false;
+
     public GameObject speech1;
 
     #region Dialogue Arrays - Topher Code
@@ -352,6 +354,7 @@ public class DialogueUI : MonoBehaviour
     public void OnItemShown(Item item)
     {
         self.SetActive(true);
+        CurrentlyInDialogue = true;
         inventory.SetActive(false);
         speech1.SetActive(false);
         //speechCrosshair.SetActive(false);                             // Show dialogue UI

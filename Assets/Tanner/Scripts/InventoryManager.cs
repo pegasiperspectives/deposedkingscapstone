@@ -80,6 +80,8 @@ public class InventoryManager : MonoBehaviour
 
     public bool inventoryOpen = false;
 
+    public DialogueUI dialogueManager;
+
     // Audio for item pickup
     private AudioSource audioSource;
     public AudioClip pickupsound;
@@ -141,7 +143,7 @@ public class InventoryManager : MonoBehaviour
         }
 
         // Open or close the inventory with the E key (when not inspecting)
-        if (Input.GetKeyDown(KeyCode.Tab) && currentlyInspecting == false) //Open/close inventory
+        if (Input.GetKeyDown(KeyCode.Tab) && currentlyInspecting == false && dialogueManager.CurrentlyInDialogue == false) //Open/close inventory
         {
 
             // If inventory is closed and no special placement modes are active
