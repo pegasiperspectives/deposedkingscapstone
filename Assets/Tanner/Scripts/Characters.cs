@@ -22,6 +22,8 @@ public class Characters : MonoBehaviour
 
     public Camera camera;
     private RaycastHit hit;
+    [SerializeField] private GameObject inventory;  // Inventory UI (to check if open)
+
 
 
     //public Transform playerTransform; // Assign in the inspector
@@ -65,9 +67,16 @@ public class Characters : MonoBehaviour
         {
             if (hit.collider.CompareTag("character"))
             {
-                Debug.Log("triggering speech bubble now yayy...");
+                //Debug.Log("triggering speech bubble now yayy...");
                 speechCrosshair.SetActive(true);
                 defaultCrosshair.SetActive(false);
+
+                if (speechCrosshair.activeInHierarchy == true && (isAtLady == true || isAtGardener == true) && Input.GetMouseButtonDown(0))
+                {
+                    inventory.SetActive(true);
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                }
             }
         }
         else

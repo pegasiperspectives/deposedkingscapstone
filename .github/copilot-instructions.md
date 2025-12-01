@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg, pointTwo, pointThree, pointnegTwo, pointnegThree, interact, player
 - Active game object:
-  - Name: Dialogue Box
-  - Tag: Untagged
+  - Name: Gardener
+  - Tag: character
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

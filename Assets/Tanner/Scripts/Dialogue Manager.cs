@@ -142,7 +142,7 @@ public class DialogueUI : MonoBehaviour
             Debug.Log("you're clicking on a character but it's not registering you're at the any character");
         }
 
-        if ((Characters.isAtLady == true || Characters.isAtGardener == true) && inventory.activeInHierarchy == false)
+        if ((Characters.isAtLady == true || Characters.isAtGardener == true) && inventory.activeInHierarchy == false && self.activeInHierarchy == false)
         {
             inventory.SetActive(true);
             speech1.SetActive(true);

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8263059786563284843}
   m_Layer: 0
   m_Name: LadyFiligree
-  m_TagString: Untagged
+  m_TagString: character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,14 +106,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334e8202bd00b2f488fd767ac9c0c534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasCrosshair: {fileID: 0}
   defaultCrosshair: {fileID: 0}
-  speechCrosshair: {fileID: 0}
+  grabby: {fileID: 0}
+  speechCrosshair: {fileID: 5024305414617765809, guid: 9dc849950ce826e44b11be8781ae87a7, type: 3}
   isAtCharacter: 0
-  isAtGardener: 0
-  speechTexture: {fileID: 21300000, guid: a975fe6764516a747b2246e7ff612f17, type: 3}
-  isAtLady: 0
   player: {fileID: 0}
-  crosshairMouse: {fileID: 0}
+  camera: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!54 &2155010638430937946
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -12737,6 +12737,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1740180375}
     - target: {fileID: 1457205623367284271, guid: 54b1daddd263c8c4485d32653500bf40, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 434830228}
+    - target: {fileID: 1457205623367284271, guid: 54b1daddd263c8c4485d32653500bf40, type: 3}
       propertyPath: canvasCrosshair
       value: 
       objectReference: {fileID: 1288998643}
@@ -12755,10 +12759,6 @@ PrefabInstance:
     - target: {fileID: 8293194409420571521, guid: 54b1daddd263c8c4485d32653500bf40, type: 3}
       propertyPath: m_Name
       value: Gardener
-      objectReference: {fileID: 0}
-    - target: {fileID: 8293194409420571521, guid: 54b1daddd263c8c4485d32653500bf40, type: 3}
-      propertyPath: m_TagString
-      value: character
       objectReference: {fileID: 0}
     - target: {fileID: 8725819869146444377, guid: 54b1daddd263c8c4485d32653500bf40, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22013,13 +22013,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1740180375}
     - target: {fileID: 2520573193002310300, guid: 7f50e01326ef71845b04db46cbacfada, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 434830228}
+    - target: {fileID: 2520573193002310300, guid: 7f50e01326ef71845b04db46cbacfada, type: 3}
       propertyPath: canvasCrosshair
       value: 
       objectReference: {fileID: 1288998643}
-    - target: {fileID: 2520573193002310300, guid: 7f50e01326ef71845b04db46cbacfada, type: 3}
-      propertyPath: speechCrosshair
-      value: 
-      objectReference: {fileID: 5024305414617765809, guid: 9dc849950ce826e44b11be8781ae87a7, type: 3}
     - target: {fileID: 2520573193002310300, guid: 7f50e01326ef71845b04db46cbacfada, type: 3}
       propertyPath: defaultCrosshair
       value: 
@@ -22067,10 +22067,6 @@ PrefabInstance:
     - target: {fileID: 7660943196971808738, guid: 7f50e01326ef71845b04db46cbacfada, type: 3}
       propertyPath: m_Name
       value: LadyFiligree
-      objectReference: {fileID: 0}
-    - target: {fileID: 7660943196971808738, guid: 7f50e01326ef71845b04db46cbacfada, type: 3}
-      propertyPath: m_TagString
-      value: character
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
