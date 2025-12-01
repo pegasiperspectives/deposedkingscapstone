@@ -170,19 +170,21 @@ public class InventoryManager : MonoBehaviour
                 CursorOff();                         // Unlock cursor  
                 fpscontrollerScript.canMove = true;     // Allow movement
                 FPSController.canPickUp = true;         // Re-enable pickup
-           
-            } 
+
+            }
 
             if (dialogue.activeInHierarchy == true)
             {
                 CursorOn();
-            }
+            } 
         }
     }
 
     // Rebuild inventory UI list based on Items list
     public void ListItems()
     {
+        dialogueManager.speechBubbles.transform.GetChild(0).gameObject.SetActive(true);
+
         // Clear any existing UI entries
         //   foreach (Transform item in ItemContent)
         //  {
@@ -198,30 +200,35 @@ public class InventoryManager : MonoBehaviour
                 Item2.SetActive(true);
                 var itemController = Item2.GetComponentInChildren<InventoryItemController>();
                 itemController.AddItem(item);
+                dialogueManager.speechBubbles.transform.GetChild(1).gameObject.SetActive(true);
             }
             else if (item.id == 2) //modern coffin
             {
                 Item3.SetActive(true);
                 var itemController = Item3.GetComponentInChildren<InventoryItemController>();
                 itemController.AddItem(item);
+                dialogueManager.speechBubbles.transform.GetChild(2).gameObject.SetActive(true);
             }
             else if (item.id == 3) //recycled coffin
             {
                 Item4.SetActive(true);
                 var itemController = Item4.GetComponentInChildren<InventoryItemController>();
                 itemController.AddItem(item);
+                dialogueManager.speechBubbles.transform.GetChild(3).gameObject.SetActive(true);
             }
             else if (item.id == 4) //fern
             {
                 Item5.SetActive(true);
                 var itemController = Item5.GetComponentInChildren<InventoryItemController>();
                 itemController.AddItem(item);
+                dialogueManager.speechBubbles.transform.GetChild(4).gameObject.SetActive(true);
             }
             else if (item.id == 5) //roses
             {
                 Item6.SetActive(true);
                 var itemController = Item6.GetComponentInChildren<InventoryItemController>();
                 itemController.AddItem(item);
+                dialogueManager.speechBubbles.transform.GetChild(5).gameObject.SetActive(true);
             }
             else if (item.id == 6)
             {
@@ -234,6 +241,9 @@ public class InventoryManager : MonoBehaviour
                 Item7.SetActive(true);
                 var itemController = Item7.GetComponentInChildren<InventoryItemController>();
                 itemController.AddItem(item);
+            }
+            else if (item.id == 10)
+            {
             }
 
             //    GameObject obj = Instantiate(InventoryItem, ItemContent);

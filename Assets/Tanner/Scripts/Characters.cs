@@ -28,6 +28,7 @@ public class Characters : MonoBehaviour
 
     private FPSController fpscontrollerScript;      // Reference to player controller
     private int opened = 0;
+    public GameObject speechBubbles;
 
 
     //public Transform playerTransform; // Assign in the inspector
@@ -48,18 +49,18 @@ public class Characters : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     /*   if (inventory.inventory.activeInHierarchy == false && Input.GetKeyDown(KeyCode.Tab))
-        {
-            Debug.Log("should be opening inventory " + opened + " times");
-            inventory.inventory.SetActive(true);
-            opened++;
-        }
+        /*   if (inventory.inventory.activeInHierarchy == false && Input.GetKeyDown(KeyCode.Tab))
+           {
+               Debug.Log("should be opening inventory " + opened + " times");
+               inventory.inventory.SetActive(true);
+               opened++;
+           }
 
-        /* else if (inventory.activeInHierarchy == true && Input.GetKeyDown(KeyCode.Tab))
-        {
-            Debug.Log("should be closing inventory");
-            inventory.SetActive(false);
-        } */
+           /* else if (inventory.activeInHierarchy == true && Input.GetKeyDown(KeyCode.Tab))
+           {
+               Debug.Log("should be closing inventory");
+               inventory.SetActive(false);
+           } */
 
         if (dialogueManager.self.activeInHierarchy == true)
         {
@@ -105,6 +106,7 @@ public class Characters : MonoBehaviour
             //Debug.Log("making speech cross hair go bye bye");
             speechCrosshair.SetActive(false);
             defaultCrosshair.SetActive(true);
+            //speechBubbles.SetActive(false);
         }
     }
 
@@ -127,6 +129,15 @@ public class Characters : MonoBehaviour
 
         }
     }
+
+  /*  private void OnTriggerExit(Collider other)
+    {
+        // If the object entering has the Player tag, mark that were at the lady
+        if (other.CompareTag("Player"))
+        {
+            speechBubbles.SetActive(false);
+        }
+    } */
 
 
 }

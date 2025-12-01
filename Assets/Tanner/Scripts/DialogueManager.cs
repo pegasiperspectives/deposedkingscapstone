@@ -52,7 +52,7 @@ public class DialogueUI : MonoBehaviour
 
     public bool CurrentlyInDialogue = false;
 
-    public GameObject speech1;
+    public GameObject speechBubbles;
 
     #region Dialogue Arrays - Topher Code
     // All possible dialogue lines that can be shown based on items
@@ -133,7 +133,7 @@ public class DialogueUI : MonoBehaviour
         character2 = gardener.GetComponent<Characters>();
         controller = player.GetComponent<CharacterController>();
 
-        speech1.SetActive(false);
+        speechBubbles.SetActive(false);
     }
 
     // Update is called once per frame
@@ -147,7 +147,12 @@ public class DialogueUI : MonoBehaviour
 
         if ((Characters.isAtLady == true || Characters.isAtGardener == true) && inventory.activeInHierarchy == false && self.activeInHierarchy == false)
         {
-            speech1.SetActive(true);
+            speechBubbles.SetActive(true);
+
+            for (int i = 0; i < 6; i++)
+            {
+                speechBubbles.transform.GetChild(i).gameObject.SetActive(false);
+            }
         }
 
         // Open dialogue on click when player is at lady and both dialogue & inventory are closed
@@ -180,7 +185,7 @@ public class DialogueUI : MonoBehaviour
             }
 
             //tanner addition
-            ShowInventoryItemButtons();                         // Show item buttons based on inventory
+            //ShowInventoryItemButtons();                         // Show item buttons based on inventory
 
             // Stop player movement and placement
             placeObjects.canPlace = false;
@@ -198,6 +203,7 @@ public class DialogueUI : MonoBehaviour
         else if (wantstoexit == true && self.activeInHierarchy)
         {
             closeDialogue();
+            speechBubbles.SetActive(false);
             //speechCrosshair.SetActive(false);
             //defaultCrosshair.SetActive(true);
             Debug.Log("exited dialogue box");
@@ -354,10 +360,11 @@ public class DialogueUI : MonoBehaviour
     {
         CurrentlyInDialogue = true;
         inventory.SetActive(false);
-        speech1.SetActive(false);
         //speechCrosshair.SetActive(false);                             // Show dialogue UI
         SetDialogueText(allDialogue[60], textLabel, 60);         // Show first line
-        objNum = -1;                                             // Resets objNum so no dialogue is activated from Next() 
+        objNum = -1;
+        // Resets objNum so no dialogue is activated from Next() 
+
 
         //Debug.Log("triggered dialogue box");
 
