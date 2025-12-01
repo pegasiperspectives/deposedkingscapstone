@@ -153,9 +153,6 @@ public class DialogueUI : MonoBehaviour
         // Open dialogue on click when player is at lady and both dialogue & inventory are closed
         if (self.activeInHierarchy == false && inventory.activeInHierarchy == false && Input.GetMouseButtonDown(0) && (Characters.isAtLady == true || Characters.isAtGardener == true)) //added self check so multiple objects arent made
         {
-            inventory.SetActive(true);
-
-
 
             if (Characters.isAtLady == true && Characters.isAtGardener == false)
             {
