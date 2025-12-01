@@ -47,12 +47,15 @@ public class Characters : MonoBehaviour
     {
         if (inventory.activeInHierarchy == false && Input.GetKeyDown(KeyCode.Tab))
         {
+            Debug.Log("should be opening inventory");
             inventory.SetActive(true);
         }
-        else if (inventory.activeInHierarchy == true && Input.GetKeyDown(KeyCode.Tab))
+        
+        /* else if (inventory.activeInHierarchy == true && Input.GetKeyDown(KeyCode.Tab))
         {
+            Debug.Log("should be closing inventory");
             inventory.SetActive(false);
-        }
+        } */
 
         //        Debug.Log(crosshairMouse);
         //if (playerTransform == null || targetTransform == null) return; // Check for valid transforms
@@ -83,7 +86,6 @@ public class Characters : MonoBehaviour
 
                 if (speechCrosshair.activeInHierarchy == true && (isAtLady == true || isAtGardener == true) && Input.GetMouseButtonDown(0))
                 {
-                    inventory.SetActive(true);
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
                 }
