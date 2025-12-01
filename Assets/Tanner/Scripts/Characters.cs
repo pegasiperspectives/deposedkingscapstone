@@ -97,12 +97,5 @@ public class Characters : MonoBehaviour
         }
     }
 
-    /*  private void OnTriggerExit(Collider other)
-      {
-          speechCrosshair.SetActive(false);
-          defaultCrosshair.SetActive(true);
-          // If the object entering has the Player tag, mark that were at the lady
-
-      } */
 
 }

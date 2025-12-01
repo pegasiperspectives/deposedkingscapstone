@@ -4921,6 +4921,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PortraitLady
       objectReference: {fileID: 0}
+    - target: {fileID: 3847348763963495525, guid: ba5c1a1bb506e3548b55d6d2f6499a19, type: 3}
+      propertyPath: m_TagString
+      value: InteractiveObject
+      objectReference: {fileID: 0}
     - target: {fileID: 6770186693829750800, guid: ba5c1a1bb506e3548b55d6d2f6499a19, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.723042
@@ -5367,6 +5371,10 @@ PrefabInstance:
     - target: {fileID: 2752988674237083507, guid: f23196794983293499948da4c0841c0a, type: 3}
       propertyPath: m_Name
       value: TulipBoquet
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752988674237083507, guid: f23196794983293499948da4c0841c0a, type: 3}
+      propertyPath: m_TagString
+      value: InteractiveObject
       objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: f23196794983293499948da4c0841c0a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7440,6 +7448,10 @@ PrefabInstance:
     - target: {fileID: 5516414860214326888, guid: e1b49278c9746c347a6ec6b887974ff2, type: 3}
       propertyPath: m_Name
       value: Example3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516414860214326888, guid: e1b49278c9746c347a6ec6b887974ff2, type: 3}
+      propertyPath: m_TagString
+      value: InteractiveObject
       objectReference: {fileID: 0}
     - target: {fileID: 5613586144880795335, guid: e1b49278c9746c347a6ec6b887974ff2, type: 3}
       propertyPath: camera
@@ -11180,6 +11192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OrchidBoquet
       objectReference: {fileID: 0}
+    - target: {fileID: 2752988674237083507, guid: ce7150a0b8aef9849bd322703a6e8a20, type: 3}
+      propertyPath: m_TagString
+      value: InteractiveObject
+      objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: ce7150a0b8aef9849bd322703a6e8a20, type: 3}
       propertyPath: m_LocalPosition.x
       value: -44.219196
@@ -12734,6 +12750,10 @@ PrefabInstance:
     - target: {fileID: 8293194409420571521, guid: 54b1daddd263c8c4485d32653500bf40, type: 3}
       propertyPath: m_Name
       value: Gardener
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293194409420571521, guid: 54b1daddd263c8c4485d32653500bf40, type: 3}
+      propertyPath: m_TagString
+      value: character
       objectReference: {fileID: 0}
     - target: {fileID: 8725819869146444377, guid: 54b1daddd263c8c4485d32653500bf40, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15169,6 +15189,10 @@ PrefabInstance:
     - target: {fileID: 3847348763963495525, guid: 263a953c4d2fb9f43a11c7554e2a9d30, type: 3}
       propertyPath: m_Name
       value: Example2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847348763963495525, guid: 263a953c4d2fb9f43a11c7554e2a9d30, type: 3}
+      propertyPath: m_TagString
+      value: InteractiveObject
       objectReference: {fileID: 0}
     - target: {fileID: 6770186693829750800, guid: 263a953c4d2fb9f43a11c7554e2a9d30, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19537,6 +19561,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PortraitChild
       objectReference: {fileID: 0}
+    - target: {fileID: 3847348763963495525, guid: dc73224030ce3674880585b59db99018, type: 3}
+      propertyPath: m_TagString
+      value: InteractiveObject
+      objectReference: {fileID: 0}
     - target: {fileID: 6770186693829750800, guid: dc73224030ce3674880585b59db99018, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.776958
@@ -21993,6 +22021,10 @@ PrefabInstance:
     - target: {fileID: 7660943196971808738, guid: 7f50e01326ef71845b04db46cbacfada, type: 3}
       propertyPath: m_Name
       value: LadyFiligree
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660943196971808738, guid: 7f50e01326ef71845b04db46cbacfada, type: 3}
+      propertyPath: m_TagString
+      value: character
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24931,6 +24963,10 @@ PrefabInstance:
     - target: {fileID: 5607173197253113890, guid: f115ac1644c134d4ab5b7fd154923aa3, type: 3}
       propertyPath: m_Name
       value: Example1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607173197253113890, guid: f115ac1644c134d4ab5b7fd154923aa3, type: 3}
+      propertyPath: m_TagString
+      value: InteractiveObject
       objectReference: {fileID: 0}
     - target: {fileID: 7591527157358485953, guid: f115ac1644c134d4ab5b7fd154923aa3, type: 3}
       propertyPath: camera
@@ -31605,6 +31641,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoseBoquet
       objectReference: {fileID: 0}
+    - target: {fileID: 2752988674237083507, guid: 29bf9e3be74eb844784e280aedb6d3b8, type: 3}
+      propertyPath: m_TagString
+      value: InteractiveObject
+      objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: 29bf9e3be74eb844784e280aedb6d3b8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -45.219196
@@ -32178,6 +32218,10 @@ PrefabInstance:
     - target: {fileID: 2752988674237083507, guid: 8bf3e8bc33925b54ca1997fdc41dfba6, type: 3}
       propertyPath: m_Name
       value: FernBoquet
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752988674237083507, guid: 8bf3e8bc33925b54ca1997fdc41dfba6, type: 3}
+      propertyPath: m_TagString
+      value: InteractiveObject
       objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: 8bf3e8bc33925b54ca1997fdc41dfba6, type: 3}
       propertyPath: m_LocalPosition.x
