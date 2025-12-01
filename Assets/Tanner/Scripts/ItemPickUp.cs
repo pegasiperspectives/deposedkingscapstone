@@ -9,7 +9,7 @@ public class ItemPickUp : MonoBehaviour
     public GameObject player;                   // Reference to the player
     private FPSController fpscontrollerScript;  // To check movement/pickup states
     public Camera camera;                       // Camera used to raycast
-    private RaycastHit hit;                     // Stores info about raycast hits
+    private RaycastHit hit1;                     // Stores info about raycast hits
 
     public GameObject defaultCrossHair;
     public GameObject pickUpCrosshair;
@@ -42,13 +42,13 @@ public class ItemPickUp : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log("currentlyPickingUp is" + currentlyPickingUp);
+        //Debug.Log("currentlyPickingUp is" + currentlyPickingUp);
         //Vector3 origin = camera.transform.position;
         //Vector3 direction
 
-        if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
+        if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit1, Mathf.Max(5)))
         {
-            Debug.Log("triggering crosshair grabby hand");
+            //Debug.Log("triggering crosshair grabby hand");
             pickUpCrosshair.SetActive(true);
             defaultCrossHair.SetActive(false);
         }
@@ -66,7 +66,7 @@ public class ItemPickUp : MonoBehaviour
         if (FPSController.canPickUp == true)
         {
             // Perform a raycast from the camera forward to check if we are looking at this item
-            if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
+            if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit1, Mathf.Max(5)))
             {
                 pickUpCrosshair.SetActive(true);
                 defaultCrossHair.SetActive(false);

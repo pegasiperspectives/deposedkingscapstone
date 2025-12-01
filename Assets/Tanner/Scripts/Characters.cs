@@ -14,15 +14,13 @@ public class Characters : MonoBehaviour
     public bool isAtCharacter = false;                   // Flag to indicate if the player is currently in range of this character (the lady)
 
     public static bool isAtGardener = false;
-    public Sprite speechTexture;
 
     public static bool isAtLady = false;
     [SerializeField] private GameObject player;     // Reference to player (not used in final logic here, but serialized for flexibility)
     //private float raycastDistance = 1f;
-    public Sprite crosshairMouse;
 
     public Camera camera;
-    private RaycastHit hit;                     // Stores info about raycast hits
+    private RaycastHit hit2;                     // Stores info about raycast hits
 
 
 
@@ -63,8 +61,9 @@ public class Characters : MonoBehaviour
         //    isAtLady = false;
         //}
 
-        if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
+        if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit2, Mathf.Max(5)))
         {
+            Debug.Log("triggering speech bubble now yayy...");
             speechCrosshair.SetActive(true);
             defaultCrosshair.SetActive(false);
         }
