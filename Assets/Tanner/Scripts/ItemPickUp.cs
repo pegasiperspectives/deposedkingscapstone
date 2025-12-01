@@ -48,6 +48,7 @@ public class ItemPickUp : MonoBehaviour
 
         if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
         {
+            Debug.Log("triggering crosshair grabby hand");
             pickUpCrosshair.SetActive(true);
             defaultCrossHair.SetActive(false);
         }
