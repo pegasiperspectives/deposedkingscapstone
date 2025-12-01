@@ -224,6 +224,7 @@ public class InventoryItemController : MonoBehaviour
             InventoryManager.currentlyInspecting = true;
             Debug.Log("object 1 is " + currentObservable + "and is active");
             rotateNow = true;
+            return;
             // currentObservable.SetActive(true);
 
         }
@@ -245,6 +246,7 @@ public class InventoryItemController : MonoBehaviour
             InventoryManager.currentlyInspecting = true;
             Debug.Log("object 1 is " + currentObservable + "and is active");
             rotateNow = true;
+            return;
             // currentObservable.SetActive(true);
         }
 
@@ -265,6 +267,7 @@ public class InventoryItemController : MonoBehaviour
             currentObservable = InventoryManager.Instance.ObservableObject3;
             Debug.Log("object 1 is " + currentObservable + "and is active");
             rotateNow = true;
+            return;
         }
 
         else if (item.id == 4) //fern - works
@@ -286,6 +289,7 @@ public class InventoryItemController : MonoBehaviour
             currentObservable = InventoryManager.Instance.ObservableObject4;
             Debug.Log("object 1 is " + currentObservable + "and is active");
             rotateNow = true;
+            return;
         }
 
         else if (item.id == 5) //roses - works
@@ -306,6 +310,7 @@ public class InventoryItemController : MonoBehaviour
             currentObservable = InventoryManager.Instance.ObservableObject5;
             Debug.Log("object 1 is " + currentObservable + "and is active");
             rotateNow = true;
+            return;
         }
 
         else if (item.id == 6) //tulips - works
@@ -325,6 +330,7 @@ public class InventoryItemController : MonoBehaviour
             InventoryManager.currentlyInspecting = true;
             Debug.Log("object 1 is " + currentObservable + "and is active");
             rotateNow = true;
+            return;
         }
 
         else if (item.id == 7) //orchids - won't spin
@@ -344,6 +350,7 @@ public class InventoryItemController : MonoBehaviour
             currentObservable = InventoryManager.Instance.ObservableObject7;
             Debug.Log("object 1 is " + currentObservable + "and is active");
             rotateNow = true;
+            return;
         }
 
         else if (item.id == 8)
@@ -394,6 +401,7 @@ public class InventoryItemController : MonoBehaviour
             currentObservable = null;
             //currentObservable = InventoryManager.Instance.ObservableObject1;
             rotateNow = false;
+            return;
         }
 
     }

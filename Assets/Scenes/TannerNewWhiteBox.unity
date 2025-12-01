@@ -5630,7 +5630,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   objectRotationSpeed: 0.5
   inventoryManager: {fileID: 391597838}
-  iic: {fileID: 946483109}
+  iic: {fileID: 1541679494}
 --- !u!1001 &391597837
 PrefabInstance:
   m_ObjectHideFlags: 0
