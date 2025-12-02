@@ -133,7 +133,7 @@ public class InventoryItemController : MonoBehaviour
 
 
         // Set a flag in PlaceObjects depending on item ID
-        if (item.id == 1)
+        else if (item.itemName.Equals("Solid Gold Coffin") && item.id != 2)
         {
             var placer = placeObjects;
             PlaceObjects.placeIsExample1 = true;
@@ -149,7 +149,7 @@ public class InventoryItemController : MonoBehaviour
             Debug.Log("can place gold coffin");
             RemoveItem();
         }
-        else if (item.id == 2)
+        else if (item.id == 2) //it keeps triggering this when it should trigger the first if
         {
             var placer = placeObjects;
             PlaceObjects.placeIsExample2 = true;
@@ -181,7 +181,7 @@ public class InventoryItemController : MonoBehaviour
             PlaceObjects.placeIsLadyPort = false;
             PlaceObjects.placeIsChildPort = false;
 
-            Debug.Log("can place gold coffin");
+            Debug.Log("can place recycled coffin");
 
             RemoveItem();
         }

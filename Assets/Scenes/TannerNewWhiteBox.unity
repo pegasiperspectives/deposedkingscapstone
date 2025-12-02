@@ -6919,7 +6919,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 412628495}
+      - m_Target: {fileID: 1640558264}
         m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
         m_MethodName: UseItem
         m_Mode: 1
@@ -25259,7 +25259,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1503672634}
+      - m_Target: {fileID: 1640558264}
         m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
         m_MethodName: UseItem
         m_Mode: 1
@@ -26655,7 +26655,7 @@ MonoBehaviour:
   sensitivity: 10
   checkthis: 0
   invResized: 0
-  placeobj: {fileID: 5607173197253113890, guid: f115ac1644c134d4ab5b7fd154923aa3, type: 3}
+  placeobj: {fileID: 9024604980585513504, guid: d3baa7dd76b9c8b4683d544d1b89ab44, type: 3}
   deltaRotationX: 0
   deltaRotationY: 0
   originalSize: {x: 0, y: 0}
@@ -26727,7 +26727,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1613815740}
+      - m_Target: {fileID: 1640558264}
         m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
         m_MethodName: UseItem
         m_Mode: 1
