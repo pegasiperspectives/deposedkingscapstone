@@ -47,6 +47,9 @@ public class InventoryItemController : MonoBehaviour
     //this is started when inventory is opened on each inventory button
 
 
+    //add a reference to place objects?
+    public PlaceObjects po;
+
 
 
     void Awake()
@@ -73,8 +76,6 @@ public class InventoryItemController : MonoBehaviour
         InventoryManager.Instance.ObservableObject7.SetActive(false);
         InventoryManager.Instance.ObservableObject8.SetActive(false);
         InventoryManager.Instance.ObservableObject9.SetActive(false);
-
-
     }
 
     void Update()
@@ -136,16 +137,53 @@ public class InventoryItemController : MonoBehaviour
         {
             var placer = placeObjects;
             PlaceObjects.placeIsExample1 = true;
+
+            PlaceObjects.placeIsExample2 = false;
+            PlaceObjects.placeIsExample3 = false;
+            PlaceObjects.placeIsFern = false;
+            PlaceObjects.placeIsRoses = false;
+            PlaceObjects.placeIsOrchids = false;
+            PlaceObjects.placeIsTulips = false;
+            PlaceObjects.placeIsLadyPort = false;
+            PlaceObjects.placeIsChildPort = false;
+            Debug.Log("can place gold coffin");
+            RemoveItem();
         }
         else if (item.id == 2)
         {
             var placer = placeObjects;
             PlaceObjects.placeIsExample2 = true;
+
+            PlaceObjects.placeIsExample1 = false;
+            PlaceObjects.placeIsExample3 = false;
+            PlaceObjects.placeIsFern = false;
+            PlaceObjects.placeIsRoses = false;
+            PlaceObjects.placeIsOrchids = false;
+            PlaceObjects.placeIsTulips = false;
+            PlaceObjects.placeIsLadyPort = false;
+            PlaceObjects.placeIsChildPort = false;
+
+            Debug.Log("can place modern coffin");
+
+            RemoveItem();
         }
         else if (item.id == 3)
         {
             var placer = placeObjects;
             PlaceObjects.placeIsExample3 = true;
+
+            PlaceObjects.placeIsExample2 = false;
+            PlaceObjects.placeIsExample1 = false;
+            PlaceObjects.placeIsFern = false;
+            PlaceObjects.placeIsRoses = false;
+            PlaceObjects.placeIsOrchids = false;
+            PlaceObjects.placeIsTulips = false;
+            PlaceObjects.placeIsLadyPort = false;
+            PlaceObjects.placeIsChildPort = false;
+
+            Debug.Log("can place gold coffin");
+
+            RemoveItem();
         }
         else if (item.id == 4)
         {
@@ -175,7 +213,7 @@ public class InventoryItemController : MonoBehaviour
         else if (item.id == 9)
         {
             var placer = placeObjects;
-            PlaceObjects.placeIsChildPort = true;
+            PlaceObjects.placeIsChildPort = true; //do these ever get turned into false? yes, in placeobjects
         }
         RemoveItem();   // Remove item after using
 

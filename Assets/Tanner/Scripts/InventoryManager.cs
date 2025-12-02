@@ -276,13 +276,13 @@ public class InventoryManager : MonoBehaviour
     }
 
     // Clean up UI entries (called when closing inventory)
-    /*  public void CleanItems() //gets rid of duplicates when reopening inventory
+    public void CleanItems() //gets rid of duplicates when reopening inventory
       {
           foreach (Transform item in ItemContent)
           {
               Destroy(item.gameObject);
           }
-      }*/
+      }
 
     // When pressing the close inventory button in UI
     public void CloseInventoryButton()
