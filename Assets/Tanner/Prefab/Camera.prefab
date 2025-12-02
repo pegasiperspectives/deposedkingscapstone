@@ -110,20 +110,20 @@ MonoBehaviour:
   ghostexample1: {fileID: 1195342533548262356, guid: f6cc48d87aece614a9d81e066adbb5de, type: 3}
   placedexaple1: {fileID: 5607173197253113890, guid: f115ac1644c134d4ab5b7fd154923aa3, type: 3}
   ghostexample2: {fileID: 2300230582184706676, guid: 5f84b453522ce60468d8e448832702b7, type: 3}
-  placedexaple2: {fileID: 0}
-  ghostexample3: {fileID: 0}
-  placedexaple3: {fileID: 0}
-  fernobj: {fileID: 0}
-  ghostflowers: {fileID: 0}
-  rosesobj: {fileID: 0}
-  tulipsobj: {fileID: 0}
-  orchidsobj: {fileID: 0}
-  ghostPort: {fileID: 0}
-  ladyPortObj: {fileID: 0}
-  childPortObj: {fileID: 0}
+  placedexaple2: {fileID: 3847348763963495525, guid: 263a953c4d2fb9f43a11c7554e2a9d30, type: 3}
+  ghostexample3: {fileID: 2300230582184706676, guid: 5f84b453522ce60468d8e448832702b7, type: 3}
+  placedexaple3: {fileID: 5516414860214326888, guid: e1b49278c9746c347a6ec6b887974ff2, type: 3}
+  fernobj: {fileID: 2752988674237083507, guid: 8bf3e8bc33925b54ca1997fdc41dfba6, type: 3}
+  ghostflowers: {fileID: 1430849306629373611, guid: 08a7a3d4a5e60a84eb7eca4eea280171, type: 3}
+  rosesobj: {fileID: 2752988674237083507, guid: 29bf9e3be74eb844784e280aedb6d3b8, type: 3}
+  tulipsobj: {fileID: 2752988674237083507, guid: f23196794983293499948da4c0841c0a, type: 3}
+  orchidsobj: {fileID: 2752988674237083507, guid: ce7150a0b8aef9849bd322703a6e8a20, type: 3}
+  ghostPort: {fileID: 1430849306629373611, guid: 2dd02bce778c2ce408507912d535dc66, type: 3}
+  ladyPortObj: {fileID: 3847348763963495525, guid: ba5c1a1bb506e3548b55d6d2f6499a19, type: 3}
+  childPortObj: {fileID: 3847348763963495525, guid: dc73224030ce3674880585b59db99018, type: 3}
   canPlace: 0
-  placesound: {fileID: 0}
-  pickupsound: {fileID: 0}
+  placesound: {fileID: 8300000, guid: a5132e29325597641a942e2071eaaf39, type: 3}
+  pickupsound: {fileID: 8300000, guid: 272f04901c6bc564bb81042b870672af, type: 3}
 --- !u!114 &-4907817396749933577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,11 +160,11 @@ MonoBehaviour:
   m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
-  m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2

@@ -87,6 +87,13 @@ public class InventoryManager : MonoBehaviour
     public AudioClip pickupsound;
     [SerializeField] private Camera camobj;     // Camera that holds the audio source
 
+
+
+    public void Start()
+    {
+        
+    }
+
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.None;             // Unlock mouse cursor for UI interaction
@@ -177,6 +184,11 @@ public class InventoryManager : MonoBehaviour
             {
                 CursorOn();
             } 
+        }
+
+        foreach (Item item in Items)
+        {
+            Debug.Log("items in list include : " + item.name);
         }
     }
 

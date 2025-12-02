@@ -75,6 +75,7 @@ public class ItemPickUp : MonoBehaviour
                 pickUpCrosshair.SetActive(true);
                 defaultCrossHair.SetActive(false);
                 Pickup();   // If ray hits, pick up the item
+                Debug.Log("picked up item: " + Item);
             }
 
         }

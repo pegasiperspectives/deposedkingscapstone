@@ -7,11 +7,11 @@ public class whatever : MonoBehaviour
     {
         InventoryItemController[] arrayOfIICs = FindObjectsByType<InventoryItemController>(FindObjectsInactive.Include, FindObjectsSortMode.None); 
 
-        Debug.Log("heyyyyyyyy everyone");
+    /*    Debug.Log("heyyyyyyyy everyone");
         foreach (InventoryItemController i in arrayOfIICs)
         {
             Debug.Log("inventory item controller on object : " + i.gameObject.name);
-        }
+        } */
     }
 
     // Update is called once per frame

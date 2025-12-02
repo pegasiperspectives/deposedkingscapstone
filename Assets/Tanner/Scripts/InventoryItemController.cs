@@ -112,6 +112,7 @@ public class InventoryItemController : MonoBehaviour
     public void RemoveItem() //removing from inventory list; not to be accessed again
     {
         InventoryManager.Instance.Remove(item);     // Remove from manager
+        Debug.Log("removed item: " + item.name);
 
         CloseInventory();                           // Close inventory UI
 
