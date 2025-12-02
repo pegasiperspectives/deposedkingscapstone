@@ -153,10 +153,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 11400000, guid: 21e46cb247cfef74b8ec0338fd5fdf12, type: 2}
-  player: {fileID: 0}
+  player: {fileID: 4804562069283523973, guid: b16f93c40fe827d4285afcd0f633eb34, type: 3}
   camera: {fileID: 0}
-  defaultCrossHair: {fileID: 0}
-  pickUpCrosshair: {fileID: 0}
+  defaultCrossHair: {fileID: 1860819497707478034, guid: 74c64945a6303804982f718f5150b36d, type: 3}
+  pickUpCrosshair: {fileID: 3299536207590311770, guid: b0050c775a4c9ee4dbcc9cedd661f8d3, type: 3}
   currentlyPickingUp: 0
 --- !u!65 &3206221714164961857
 BoxCollider:

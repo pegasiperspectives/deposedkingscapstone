@@ -25,7 +25,7 @@ public class ItemPickUp : MonoBehaviour
     private void Awake()
     {
 
-        fpscontrollerScript = player.GetComponent<FPSController>(); // Get the FPSController on the player
+       // fpscontrollerScript = player.GetComponent<FPSController>(); // Get the FPSController on the player
         camera = Camera.main;                                       // Use the main camera for raycasting
 
         //placeobjects = cameraobj.GetComponent<PlaceObjects>();
