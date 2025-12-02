@@ -1306,7 +1306,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
-  inspectText: {fileID: 0}
+  inspectText: {fileID: 240690171}
 --- !u!114 &96683639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8415,7 +8415,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
-  inspectText: {fileID: 0}
+  inspectText: {fileID: 240690171}
 --- !u!114 &511598924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15538,7 +15538,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
-  inspectText: {fileID: 0}
+  inspectText: {fileID: 240690171}
 --- !u!114 &946483110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20450,6 +20450,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1905830368}
   m_LocalEulerAnglesHint: {x: 0, y: -22.914, z: 0}
+--- !u!1 &1235737112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1235737113}
+  - component: {fileID: 1235737114}
+  m_Layer: 0
+  m_Name: FindScripts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1235737113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235737112}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -31.75, y: 35, z: 6}
+  m_LocalScale: {x: 10.1, y: 1, z: 7.9}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1235737114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235737112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a2822ea4ff2a0448e85b03a56f19d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::whatever
 --- !u!1 &1246111569
 GameObject:
   m_ObjectHideFlags: 0
@@ -25983,7 +26027,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
-  inspectText: {fileID: 0}
+  inspectText: {fileID: 240690171}
 --- !u!114 &1541679495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26328,7 +26372,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
-  inspectText: {fileID: 0}
+  inspectText: {fileID: 240690171}
 --- !u!114 &1602791212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33539,7 +33583,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
-  inspectText: {fileID: 0}
+  inspectText: {fileID: 240690171}
 --- !u!114 &1969438853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33734,7 +33778,7 @@ MonoBehaviour:
   rotateNow: 0
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
-  inspectText: {fileID: 0}
+  inspectText: {fileID: 240690171}
 --- !u!114 &1977803051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37838,6 +37882,7 @@ SceneRoots:
   - {fileID: 499247334}
   - {fileID: 99084915}
   - {fileID: 990505830}
+  - {fileID: 1235737113}
   - {fileID: 987046089}
   - {fileID: 827584141}
   - {fileID: 484018690}

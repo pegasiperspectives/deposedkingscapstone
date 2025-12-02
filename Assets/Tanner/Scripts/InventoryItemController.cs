@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class InventoryItemController : MonoBehaviour
 {
@@ -199,6 +200,12 @@ public class InventoryItemController : MonoBehaviour
         journalOverlay.SetActive(true);
         inspectText.SetActive(true);
 
+        if (inspectText == null)
+        {
+            Debug.LogError("TextMeshProUGUI component not found on this GameObject!");
+            return; // Prevent NullReferenceException
+        }
+
 
         //        Debug.Log("Clicked item: " + item.itemName + " (ID: " + item.id + ")");
         inventory.SetActive(false);
@@ -223,6 +230,8 @@ public class InventoryItemController : MonoBehaviour
             InventoryManager.Instance.ObservableObject8.SetActive(false);
             InventoryManager.Instance.ObservableObject9.SetActive(false);
 
+            inspectText.GetComponent<TextMeshProUGUI>().text = "Solid Gold Casket";
+
             currentObservable = InventoryManager.Instance.ObservableObject1;
             InventoryManager.currentlyInspecting = true;
             Debug.Log("object 1 is " + currentObservable + "and is active");
@@ -244,6 +253,8 @@ public class InventoryItemController : MonoBehaviour
             InventoryManager.Instance.ObservableObject7.SetActive(false);
             InventoryManager.Instance.ObservableObject8.SetActive(false);
             InventoryManager.Instance.ObservableObject9.SetActive(false);
+
+            inspectText.GetComponent<TextMeshProUGUI>().text = "Modern Casket";
 
             currentObservable = InventoryManager.Instance.ObservableObject2;
             InventoryManager.currentlyInspecting = true;
@@ -267,6 +278,8 @@ public class InventoryItemController : MonoBehaviour
             InventoryManager.Instance.ObservableObject9.SetActive(false);
             InventoryManager.currentlyInspecting = true;
 
+            inspectText.GetComponent<TextMeshProUGUI>().text = "Recycled Casket";
+
             currentObservable = InventoryManager.Instance.ObservableObject3;
             Debug.Log("object 1 is " + currentObservable + "and is active");
             rotateNow = true;
@@ -287,6 +300,8 @@ public class InventoryItemController : MonoBehaviour
             InventoryManager.Instance.ObservableObject9.SetActive(false);
 
             InventoryManager.currentlyInspecting = true;
+
+            inspectText.GetComponent<TextMeshProUGUI>().text = "Fern Bouquet";
 
 
             currentObservable = InventoryManager.Instance.ObservableObject4;
@@ -310,6 +325,8 @@ public class InventoryItemController : MonoBehaviour
 
             InventoryManager.currentlyInspecting = true;
 
+            inspectText.GetComponent<TextMeshProUGUI>().text = "Rose Bouquet";
+
             currentObservable = InventoryManager.Instance.ObservableObject5;
             Debug.Log("object 1 is " + currentObservable + "and is active");
             rotateNow = true;
@@ -328,6 +345,8 @@ public class InventoryItemController : MonoBehaviour
             InventoryManager.Instance.ObservableObject7.SetActive(false);
             InventoryManager.Instance.ObservableObject8.SetActive(false);
             InventoryManager.Instance.ObservableObject9.SetActive(false);
+
+            inspectText.GetComponent<TextMeshProUGUI>().text = "Tulip Bouquet";
 
             currentObservable = InventoryManager.Instance.ObservableObject6;
             InventoryManager.currentlyInspecting = true;
@@ -348,6 +367,8 @@ public class InventoryItemController : MonoBehaviour
             InventoryManager.Instance.ObservableObject6.SetActive(false);
             InventoryManager.Instance.ObservableObject8.SetActive(false);
             InventoryManager.Instance.ObservableObject9.SetActive(false);
+
+            inspectText.GetComponent<TextMeshProUGUI>().text = "Orchid Bouquet";
 
             InventoryManager.currentlyInspecting = true;
             currentObservable = InventoryManager.Instance.ObservableObject7;
@@ -452,6 +473,7 @@ public class InventoryItemController : MonoBehaviour
         rotateNow = false;
 
         journalOverlay.SetActive(false);
+        inspectText.SetActive(false);
         InventoryManager.Instance.obscamera.Close();
         InventoryManager.Instance.obscamera.gameObject.SetActive(false);     // Enable the observation camera
                                                                              // Close observation camera
