@@ -8,7 +8,7 @@ public class PlaceCurrentItem : MonoBehaviour
     public GameObject placeobj;                         // Placeholder for an object that might be placed
     public GameObject ghostObject;            // Preview/ghost object for placement
 
-    public bool placeThis = true;
+    public bool placeThis = false;
     public bool canPlace;   // Global flag: can we currently place?
 
     // Audio
@@ -29,15 +29,12 @@ public class PlaceCurrentItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    public void PlaceItem()
-    {
         if (placeThis)
         {
+            Debug.Log("placeThis is true");
             if (canPlace)
             {
+                Debug.Log("canPlace is true");
                 RaycastHit hit;
 
                 if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
@@ -47,6 +44,7 @@ public class PlaceCurrentItem : MonoBehaviour
                     if (Input.GetMouseButtonDown(0))
                     {
                         Instantiate(placeobj, ghostObject.transform.position, ghostObject.transform.rotation);
+                        Debug.Log("should've placed an object");
 
                         ghostObject.SetActive(false);
                         placeThis = false;
@@ -63,5 +61,10 @@ public class PlaceCurrentItem : MonoBehaviour
                 ghostObject.SetActive(false);
             }
         }
+    }
+
+    public void PlaceItem()
+    {
+        placeThis = true;
     }
 }

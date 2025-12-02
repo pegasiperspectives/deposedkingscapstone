@@ -6162,6 +6162,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2080768338}
     - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
+      propertyPath: placeItem
+      value: 
+      objectReference: {fileID: 1613815744}
+    - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
       propertyPath: ItemContent
       value: 
       objectReference: {fileID: 2142916316}

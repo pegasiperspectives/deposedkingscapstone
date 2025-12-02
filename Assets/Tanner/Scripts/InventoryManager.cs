@@ -34,6 +34,7 @@ public class InventoryManager : MonoBehaviour
     // Player control and placement references
     private FPSController fpscontrollerScript;
     public PlaceObjects placeObjects;
+    public PlaceCurrentItem placeItem;
 
 
     public ObsCamera obscamera;                                     // Reference to camera used for inspecting objects
@@ -142,11 +143,13 @@ public class InventoryManager : MonoBehaviour
         if (inventory.activeInHierarchy == false && dialogue.activeInHierarchy == false)
         {
             placeObjects.canPlace = true;
+            placeItem.canPlace = true;
         }
         // If either inventory or dialogue is open, prevent placing objects
         else if (inventory.activeInHierarchy == true || dialogue.activeInHierarchy == true)
         {
             placeObjects.canPlace = false;
+            placeItem.canPlace = false;
         }
 
         // Open or close the inventory with the tab key (when not inspecting)
@@ -158,6 +161,7 @@ public class InventoryManager : MonoBehaviour
             {
                 // Open inventory
                 placeObjects.canPlace = true;
+                placeItem.canPlace = true;
                 inventoryOpen = true;
 
                 inventory.SetActive(true);
@@ -171,6 +175,7 @@ public class InventoryManager : MonoBehaviour
             else if (inventory.activeInHierarchy == true)
             {
                 placeObjects.canPlace = false;
+                placeItem.canPlace = false;
                 inventoryOpen = false;
                 inventory.SetActive(false);
                 //CleanItems();                           // Clear UI objects
@@ -344,6 +349,7 @@ public class InventoryManager : MonoBehaviour
     public void turnoffinventorygorplace()
     {
         placeObjects.canPlace = true;
+        placeItem.canPlace = true;
     }
 
 
