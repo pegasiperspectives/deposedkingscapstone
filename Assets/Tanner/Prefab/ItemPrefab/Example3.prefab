@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8511988689100388516}
   m_Layer: 10
   m_Name: Example3
-  m_TagString: Untagged
+  m_TagString: InteractiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,8 +61,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 11400000, guid: 305b5816b6d30f74898275921a5bc416, type: 2}
-  player: {fileID: 4804562069283523973, guid: b16f93c40fe827d4285afcd0f633eb34, type: 3}
-  camera: {fileID: 560475564824892734, guid: d3baa7dd76b9c8b4683d544d1b89ab44, type: 3}
+  player: {fileID: 0}
+  camera: {fileID: 0}
+  defaultCrossHair: {fileID: 0}
+  pickUpCrosshair: {fileID: 0}
+  currentlyPickingUp: 0
 --- !u!65 &8511988689100388516
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -145,7 +148,7 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8506826713946391736, guid: 1e2b76edc39e51c45a79ed3f84598801, type: 3}
-      propertyPath: m_Materials.Array.data[1]
+      propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: 98a097d6d4ee6824b8edf57c1ecc1633, type: 2}
     m_RemovedComponents: []
