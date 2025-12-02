@@ -522,7 +522,8 @@ public class InventoryItemController : MonoBehaviour
         InventoryManager.currentlyInspecting = false;
         //return;
 
-        inventoryManager.placeObjects.canPlace = true;                                          // Re-enable placement functionality
+        inventoryManager.placeObjects.canPlace = true;   
+        inventoryManager.placeItem.canPlace = true;                                       // Re-enable placement functionality
 
         inventory.SetActive(true);                                                              // Reactivate inventory UI and refresh list
         inventoryManager.ListItems();

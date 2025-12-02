@@ -8,7 +8,7 @@ public class PlaceCurrentItem : MonoBehaviour
     public GameObject placeobj;                         // Placeholder for an object that might be placed
     public GameObject ghostObject;            // Preview/ghost object for placement
 
-    public bool placeThis = false;
+    public static bool placeThis = false;
     public bool canPlace;   // Global flag: can we currently place?
 
     // Audio
