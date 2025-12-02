@@ -9,7 +9,7 @@ public class PlaceCurrentItem : MonoBehaviour
     public GameObject ghostObject;            // Preview/ghost object for placement
 
     public static bool placeThis = false;
-    public bool canPlace;   // Global flag: can we currently place?
+    public bool canPlace = false;   // Global flag: can we currently place?
 
     // Audio
     private AudioSource audioSource;
@@ -31,9 +31,10 @@ public class PlaceCurrentItem : MonoBehaviour
     {
         if (placeThis)
         {
-            Debug.Log("placeThis is true");
+            Debug.Log("placeThis is true and canPlace is " + canPlace);
             if (canPlace)
             {
+                inventoryManager.turnoffinventoryforplace();
                 Debug.Log("canPlace is true");
                 RaycastHit hit;
 
@@ -60,11 +61,34 @@ public class PlaceCurrentItem : MonoBehaviour
             {
                 ghostObject.SetActive(false);
             }
+
+            InventoryManager.Instance.Remove(item);     // Remove from manager
+            Debug.Log("removed item: " + item.name);
+
+            if (InventoryManager.Instance != null)
+            {
+                InventoryManager.Instance.CloseInventoryButton();
+                InventoryManager.Instance.TurnoffInv(); // optional if you need that too
+            }
         }
     }
 
     public void PlaceItem()
     {
         placeThis = true;
+        canPlace = true;
+
+        if (placeObjects == null)
+        {
+            GameObject player = GameObject.Find("Player");
+            if (player != null)
+            {
+                Transform camTransform = player.transform.Find("Camera");
+                if (camTransform != null)
+                {
+                    placeObjects = camTransform.GetComponent<PlaceObjects>();
+                }
+            }
+        }
     }
 }
