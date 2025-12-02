@@ -102,6 +102,11 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] string[] hisMajestyDialogueG = { };             //His Majesty
     [SerializeField] string[] hisMajestyDialogueL = { };
 
+    [SerializeField] string[] introDialoguePart1G = { };            // Character Introduction Dialogue Script
+    [SerializeField] string[] introDialoguePart2G = { };
+    [SerializeField] string[] introDialoguePart1L = { };
+    [SerializeField] string[] introDialoguePart2L = { };
+
 
     [SerializeField] public string[] allDialogue = { };
 
@@ -627,7 +632,47 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(memoDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext >= 2)
+                else if (onNext == 2)
+                {
+                    SetDialogueText(memoDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 3)
+                {
+                    SetDialogueText(memoDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 4)
+                {
+                    SetDialogueText(memoDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 5)
+                {
+                    SetDialogueText(memoDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 6)
+                {
+                    SetDialogueText(memoDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 7)
+                {
+                    SetDialogueText(memoDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 8)
+                {
+                    SetDialogueText(memoDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 9)
+                {
+                    SetDialogueText(memoDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 10)
                 {
                     DialogueComplete();
                 }
@@ -800,7 +845,32 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(brokenFiligreeCrestDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext >= 1)
+                else if(onNext == 1)
+                {
+                    SetDialogueText(brokenFiligreeCrestDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(brokenFiligreeCrestDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 3)
+                {
+                    SetDialogueText(brokenFiligreeCrestDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 4)
+                {
+                    SetDialogueText(brokenFiligreeCrestDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 5)
+                {
+                    SetDialogueText(brokenFiligreeCrestDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 6)
                 {
                     DialogueComplete();
                 }
@@ -814,7 +884,32 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(boxofBugsDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext >= 1)
+                else if(onNext == 1)
+                {
+                    SetDialogueText(boxofBugsDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(boxofBugsDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 3)
+                {
+                    SetDialogueText(boxofBugsDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 4)
+                {
+                    SetDialogueText(boxofBugsDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 5)
+                {
+                    SetDialogueText(boxofBugsDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 6)
                 {
                     DialogueComplete();
                 }
@@ -828,7 +923,12 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(wovenShawlDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext >= 1)
+                else if (onNext == 1)
+                {
+                    SetDialogueText(wovenShawlDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 2)
                 {
                     DialogueComplete();
                 }
@@ -870,7 +970,17 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(strippedGobletDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext >= 1)
+                else if (onNext == 1)
+                {
+                    SetDialogueText(strippedGobletDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(strippedGobletDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 3)
                 {
                     DialogueComplete();
                 }
@@ -889,7 +999,27 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(portraitofLadyDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext >= 2)
+                else if (onNext == 2)
+                {
+                    SetDialogueText(portraitofLadyDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 3)
+                {
+                    SetDialogueText(portraitofLadyDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 4)
+                {
+                    SetDialogueText(portraitofLadyDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 5)
+                {
+                    SetDialogueText(portraitofLadyDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 6)
                 {
                     DialogueComplete();
                 }
@@ -903,7 +1033,17 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(portraitofKingDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext >= 1)
+                else if (onNext == 1)
+                {
+                    SetDialogueText(portraitofKingDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(portraitofKingDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 3)
                 {
                     DialogueComplete();
                 }
@@ -922,7 +1062,22 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(portraitofChildDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext >= 2)
+                else if (onNext == 2)
+                {
+                    SetDialogueText(portraitofChildDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 3)
+                {
+                    SetDialogueText(portraitofChildDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 4)
+                {
+                    SetDialogueText(portraitofChildDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 5)
                 {
                     DialogueComplete();
                 }
@@ -978,7 +1133,12 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(hisMajestyDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext >= 1)
+                else if (onNext == 1)
+                {
+                    SetDialogueText(hisMajestyDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 2)
                 {
                     DialogueComplete();
                 }
@@ -998,7 +1158,37 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(memoDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext >= 1)
+                else if (onNext == 1)
+                {
+                    SetDialogueText(memoDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(memoDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 3)
+                {
+                    SetDialogueText(memoDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 4)
+                {
+                    SetDialogueText(memoDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 5)
+                {
+                    SetDialogueText(memoDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 6)
+                {
+                    SetDialogueText(memoDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 7)
                 {
                     DialogueComplete();
                 }
@@ -1171,7 +1361,27 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(brokenFiligreeCrestDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext >= 1)
+                else if (onNext == 1)
+                {
+                    SetDialogueText(brokenFiligreeCrestDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(brokenFiligreeCrestDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 3)
+                {
+                    SetDialogueText(brokenFiligreeCrestDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 5)
+                {
+                    SetDialogueText(brokenFiligreeCrestDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 6)
                 {
                     DialogueComplete();
                 }
@@ -1185,7 +1395,32 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(boxofBugsDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext >= 1)
+                else if (onNext == 1)
+                {
+                    SetDialogueText(boxofBugsDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(boxofBugsDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 3)
+                {
+                    SetDialogueText(boxofBugsDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 4)
+                {
+                    SetDialogueText(boxofBugsDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 5)
+                {
+                    SetDialogueText(boxofBugsDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 6)
                 {
                     DialogueComplete();
                 }
@@ -1213,7 +1448,17 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(halfKnitQuiltDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext >= 1)
+                else if (onNext == 1)
+                {
+                    SetDialogueText(halfKnitQuiltDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(halfKnitQuiltDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 3)
                 {
                     DialogueComplete();
                 }
@@ -1227,7 +1472,17 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(filigreeKeepLedgerDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext >= 1)
+                else if (onNext == 1)
+                {
+                    SetDialogueText(filigreeKeepLedgerDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(filigreeKeepLedgerDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 3)
                 {
                     DialogueComplete();
                 }
@@ -1241,7 +1496,27 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(strippedGobletDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext >= 1)
+                else if (onNext == 1)
+                {
+                    SetDialogueText(strippedGobletDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(strippedGobletDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 3)
+                {
+                    SetDialogueText(strippedGobletDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 4)
+                {
+                    SetDialogueText(strippedGobletDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 5)
                 {
                     DialogueComplete();
                 }
@@ -1255,7 +1530,32 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(portraitofLadyDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext >= 1)
+                else if(onNext == 1)
+                {
+                    SetDialogueText(portraitofLadyDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 2)
+                {
+                    SetDialogueText(portraitofLadyDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 3)
+                {
+                    SetDialogueText(portraitofLadyDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 4)
+                {
+                    SetDialogueText(portraitofLadyDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 5)
+                {
+                    SetDialogueText(portraitofLadyDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 6)
                 {
                     DialogueComplete();
                 }
@@ -1274,7 +1574,17 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(portraitofKingDialogueL[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext >= 2)
+                else if (onNext == 2)
+                {
+                    SetDialogueText(portraitofKingDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext == 3)
+                {
+                    SetDialogueText(portraitofKingDialogueL[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 4)
                 {
                     DialogueComplete();
                 }
@@ -1399,7 +1709,12 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(hisMajestyDialogueG[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext >= 1)
+                else if (onNext == 1)
+                {
+                    SetDialogueText(hisMajestyDialogueG[onNext], textLabel, onNext);
+                    onNext++;
+                }
+                else if (onNext >= 2)
                 {
                     DialogueComplete();
                 }

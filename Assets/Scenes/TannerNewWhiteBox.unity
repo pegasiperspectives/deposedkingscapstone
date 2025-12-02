@@ -34878,11 +34878,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: memoDialogueG.Array.size
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: memoDialogueL.Array.size
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'memoDialogue.Array.data[0]'
@@ -34897,12 +34897,81 @@ PrefabInstance:
       value: '"I can''t read."'
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'memoDialogueG.Array.data[2]'
+      value: '"Oh. Dang." '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'memoDialogueG.Array.data[3]'
+      value: '"It''s a note from my boss."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'memoDialogueG.Array.data[4]'
+      value: '"...Do you do this a lot?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'memoDialogueG.Array.data[5]'
+      value: '"Help people, I mean."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'memoDialogueG.Array.data[6]'
+      value: '"Sure. But normally I''m not talking to anyone who knew the dead guy."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'memoDialogueG.Array.data[7]'
+      value: '"I kinda prefer it this way, though."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'memoDialogueG.Array.data[8]'
+      value: '"Still, it''s important to honor the dead."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'memoDialogueG.Array.data[9]'
+      value: You nod.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'memoDialogueL.Array.data[0]'
+      value: She takes a solid minute to read the memo, her eyes narrowing as she
+        does.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'memoDialogueL.Array.data[1]'
       value: '"What in the world?"'
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
-      propertyPath: boxofBugsDialogueG.Array.size
+      propertyPath: 'memoDialogueL.Array.data[2]'
+      value: '"Yeah. He''s really on my ass."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'memoDialogueL.Array.data[3]'
+      value: '"..."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'memoDialogueL.Array.data[4]'
+      value: '"I suppose so."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'memoDialogueL.Array.data[5]'
+      value: '"You really think you should listen?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'memoDialogueL.Array.data[6]'
+      value: You shrug.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: rustyKeyDialogueG.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: rustyKeyDialogueL.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: boxofBugsDialogueG.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: boxofBugsDialogueL.Array.size
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: fernBoquetDialogueG.Array.size
@@ -34913,12 +34982,60 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: hisMajestyDialogueG.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: hisMajestyDialogueL.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: introDialoguePart1G.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: introDialoguePart1L.Array.size
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: introDialoguePart2G.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: introDialoguePart2L.Array.size
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: roseBoquetDialogueG.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: roseBoquetDialogueL.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: wovenShawlDialogueG.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: wovenShawlDialogueL.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: quartersKeyDialogueG.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: quartersKeyDialogueL.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'rustyKeyDialogueG.Array.data[0]'
+      value: ' "I think that''s the key to the dungeons..."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'rustyKeyDialogueL.Array.data[0]'
+      value: '"Used that to get to me, huh?"'
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: tulipBoquetDialogueG.Array.size
@@ -34929,8 +35046,66 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: woodenPlankDialogueG.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: woodenPlankDialogueL.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'boxofBugsDialogueG.Array.data[0]'
-      value: my bugs
+      value: '"Oh, you''ve found them! I was missing my little friends, here."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'boxofBugsDialogueG.Array.data[1]'
+      value: '"Fan of these beetles, huh?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'boxofBugsDialogueG.Array.data[2]'
+      value: '"Well. They''re very pretty."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'boxofBugsDialogueG.Array.data[3]'
+      value: '"I''d dig them up sometimes, all curled up and lifeless."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'boxofBugsDialogueG.Array.data[4]'
+      value: '"They always looked lonely."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'boxofBugsDialogueG.Array.data[5]'
+      value: '"I feel for them, I guess."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'boxofBugsDialogueL.Array.data[0]'
+      value: She looks at you incredulously.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'boxofBugsDialogueL.Array.data[1]'
+      value: '"You''re finding all sorts of nasty little things to show me, aren''t
+        you?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'boxofBugsDialogueL.Array.data[2]'
+      value: '"So, uh, was this something of Charles''s?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'boxofBugsDialogueL.Array.data[3]'
+      value: '"No."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'boxofBugsDialogueL.Array.data[4]'
+      value: '"Have you asked the groundskeeper? This awful collection seems like
+        something he''d put together."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'boxofBugsDialogueL.Array.data[5]'
+      value: '"He mostly kept to himself, but when I did speak to him..."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'boxofBugsDialogueL.Array.data[6]'
+      value: '"He is strange, is all."'
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: modernCasketDialogueG.Array.size
@@ -34975,6 +35150,197 @@ PrefabInstance:
       value: '"Decorate Charles''s funeral with a fern."'
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: halfKnitQuiltDialogueG.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: halfKnitQuiltDialogueL.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'hisMajestyDialogueG.Array.data[0]'
+      value: '"His Majesty..."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'hisMajestyDialogueG.Array.data[1]'
+      value: '"If you want to bring him to his coffin, we can start the service."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'hisMajestyDialogueL.Array.data[0]'
+      value: '"Charles."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'hisMajestyDialogueL.Array.data[1]'
+      value: '"He''s really dead, isn''t he?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1G.Array.data[0]'
+      value: After you check the door, a man's panicked voice calls out.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1G.Array.data[1]'
+      value: '"No one here!"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1G.Array.data[2]'
+      value: '"..."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1G.Array.data[3]'
+      value: '"...Hello?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1G.Array.data[4]'
+      value: '"Oh, no no no."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1G.Array.data[5]'
+      value: There's a clattering noise from inside the room. Then some staggered
+        footsteps approaching the door.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1G.Array.data[6]'
+      value: '"I''m so sorry. I don''t mean anything by being here. I''ll leave!
+        I''ll leave and I won''t come back!"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1G.Array.data[7]'
+      value: '"Woah, woah. I''m not kicking you out."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1G.Array.data[8]'
+      value: '"What? Really?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1G.Array.data[9]'
+      value: His voice relaxes slightly, but he's clearly still a ball of tension
+        on the other side of the door.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[0]'
+      value: As you approach the door, a woman's voice croaks out from the other
+        side, tinny through the metal.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[1]'
+      value: '"Thought you swine weren''t coming back for me."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[2]'
+      value: Another person. So much for the castle being empty.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[3]'
+      value: '"Uh, hello. Are you... stuck?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[4]'
+      value: The door is silent for a moment.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[5]'
+      value: '"A looter, huh?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[6]'
+      value: '"They''ll have taken everything of value already."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[7]'
+      value: '"No, no. I''m here to help the king."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[8]'
+      value: She laughs incredulously. Whoever she is, she's throwing her head back.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[9]'
+      value: '"Darling, that stain is long gone."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2G.Array.data[0]'
+      value: '"Um."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2G.Array.data[1]'
+      value: The man stares at you, terror in his eyes.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2G.Array.data[2]'
+      value: '"Oh. My bad. I haven''t talked to a human in forever. I''m not as scary
+        as I look!"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2G.Array.data[3]'
+      value: You put on as friendly of a voice as you can manage.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2G.Array.data[4]'
+      value: '"I''m Dour. I work for a funeral service. I''m here to give the king
+        the honor he never recieved after he was killed."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2G.Array.data[5]'
+      value: '"Okay."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2G.Array.data[6]'
+      value: He blinks at you, dumbfounded.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2G.Array.data[7]'
+      value: '"Are you an angel?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2G.Array.data[8]'
+      value: '"Sort of. Just doin'' my job."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2G.Array.data[9]'
+      value: '"Okay... that''s nice."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[0]'
+      value: '"You failed to mention that you''re a walking ghoul."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[1]'
+      value: '"Yeah. I kinda already went over this with the guy upstairs."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[2]'
+      value: '"There''s someone else here?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[3]'
+      value: '"Yeah. This short, anxious man had locked himself in the servant''s
+        quarters."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[4]'
+      value: '"That groundskeeper?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[5]'
+      value: '"I think that''s right."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[6]'
+      value: '"And he failed to come let me out of this hole?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[7]'
+      value: '"He didn''t seem to know you were here. At least he didn''t tell me."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[8]'
+      value: '"He never was very sharp."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[9]'
+      value: '"Okay. Uh."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'roseBoquetDialogueG.Array.data[0]'
       value: '"Hm."'
       objectReference: {fileID: 0}
@@ -34995,20 +35361,213 @@ PrefabInstance:
       value: '"Precious little things."'
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'wovenShawlDialogueG.Array.data[0]'
+      value: '"This is my Tallis."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'wovenShawlDialogueG.Array.data[1]'
+      value: '"I have to pray privately. But, uh, I make it work."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'wovenShawlDialogueL.Array.data[0]'
+      value: '"Isn''t this the groundskeepers?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1G.Array.data[10]'
+      value: '"No. Definitely not. I just didn''t expect anyone to still be here."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1G.Array.data[11]'
+      value: '"I''m sorry. I just didn''t have anywhere else to go!"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1G.Array.data[12]'
+      value: '"Are you a friend of King Filigree''s? I''m here to help him."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1G.Array.data[13]'
+      value: '"Help him?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1G.Array.data[14]'
+      value: His voice relaxes completely, like he'd been desperately waiting to
+        hear you say those words.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1G.Array.data[15]'
+      value: '"Oh, I''m so so so sorry. Come in, come in!"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[10]'
+      value: '"You misunderstand. I work for a funeral service."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[11]'
+      value: Again, the door is silent. When it speaks next there is a dry suspicion
+        in its voice.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[12]'
+      value: '"Noted."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[13]'
+      value: '"Why don''t you let me out of here so I can take a look at you?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[14]'
+      value: '"I''m... not really meant to interfere with the living."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[15]'
+      value: '"Excuse me?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[16]'
+      value: '"You''ve already interfered, and I''d prefer not to finish rotting
+        away in this cell."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[17]'
+      value: '"Go ahead and let me out."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[18]'
+      value: You sigh.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart1L.Array.data[19]'
+      value: Maybe this woman knows something about the king. Might as well ask her
+        about some of the things you've found.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2G.Array.data[10]'
+      value: '"As long as you''re here to help His Majesty."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2G.Array.data[11]'
+      value: '"I- I''ve been praying for his soul ever since this place was... um,
+        sieged."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2G.Array.data[12]'
+      value: '"Ah."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2G.Array.data[13]'
+      value: '"Well, since you''re here... do you mind telling me what the king would
+        have liked for his funeral? I''ve got some things to ask you about."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2G.Array.data[14]'
+      value: '"Yes. Of course. I''ll help where I can."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2G.Array.data[15]'
+      value: '"I knew His Majesty pretty well, for what it''s worth."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[10]'
+      value: '"So are you some kind of spirit?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[11]'
+      value: '"Sort of. But I''m just here to honor the king. Boss''s orders."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[12]'
+      value: '"Why in the world would you be doing that?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[13]'
+      value: '"He was a very important man. Did you know him?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[14]'
+      value: '"Yes."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[15]'
+      value: '"He was my husband."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[16]'
+      value: '"Oh."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[17]'
+      value: '"You are giving him the honor of a funeral?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[18]'
+      value: '"That''s... what I''m here for."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[19]'
+      value: '"I cheered when the Boulsheas finally snapped his neck. The man doesn''t
+        deserve shit."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[20]'
+      value: '"..."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[21]'
+      value: '"I thought I''d die in this cell thanks to Charles."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[22]'
+      value: '"...Just doin'' my job."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[23]'
+      value: '"You should not."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[24]'
+      value: You drum your fingers uncomfortably on your journal.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[25]'
+      value: '"Do you mind if I just ask you about some things around the castle?
+        I need to learn about your husband, one way or another."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[26]'
+      value: She rolls her eyes so hard her head bobs with the motion.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[27]'
+      value: '"Fine. I assume I cannot stop you, spirit."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'introDialoguePart2L.Array.data[28]'
+      value: '"Just pay attention to what I say about Charles, and consider what
+        you are doing here."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: portraitofKingDialogueG.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: portraitofKingDialogueL.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: portraitofLadyDialogueG.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: portraitofLadyDialogueL.Array.size
-      value: 1
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'quartersKeyDialogueG.Array.data[0]'
+      value: '"Yep. That''ll get you to the second floor through the servant''s quarter''s."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'quartersKeyDialogueL.Array.data[0]'
+      value: '"Is that the key to the second floor?"'
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: recycledCoffinDialogueG.Array.size
@@ -35020,6 +35579,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: solidGoldCasketDialogue.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: strippedGobletDialogueG.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: strippedGobletDialogueL.Array.size
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
@@ -35049,6 +35616,14 @@ PrefabInstance:
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'tulipBoquetDialogueL.Array.data[2]'
       value: '"Guess that was for nothing, huh?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'woodenPlankDialogueG.Array.data[0]'
+      value: ' "You could probably use that to get across a gap."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'woodenPlankDialogueL.Array.data[0]'
+      value: ' "That was blocking me in? Hopefully you can find some use for it."'
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'modernCasketDialogueG.Array.data[0]'
@@ -35101,7 +35676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: portraitofChildDialogueG.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: portraitofChildDialogueL.Array.size
@@ -35116,28 +35691,102 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'halfKnitQuiltDialogueG.Array.data[0]'
+      value: '"Oh. I think this is one of Her Majesty''s."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'halfKnitQuiltDialogueL.Array.data[0]'
+      value: '"My mother taught me to sew."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'halfKnitQuiltDialogueL.Array.data[1]'
+      value: '"One of the last things I have of her."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'halfKnitQuiltDialogueL.Array.data[2]'
+      value: '"Too bad Charles locked me in a cold little cell before I finished
+        this piece."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'portraitofKingDialogueG.Array.data[0]'
-      value: sad!
+      value: '"Oh."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofKingDialogueG.Array.data[1]'
+      value: '"Heh. People were really mad at His Majesty towards the end, there."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofKingDialogueG.Array.data[2]'
+      value: '"..."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofKingDialogueG.Array.data[3]'
+      value: '"I don''t think this will work in the service."'
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'portraitofKingDialogueL.Array.data[0]'
-      value: '"I remember this one."'
+      value: The Lady snorts with laughter.
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'portraitofKingDialogueL.Array.data[1]'
+      value: '"I remember this one."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofKingDialogueL.Array.data[2]'
       value: '"Looks a lot better this way."'
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofKingDialogueL.Array.data[3]'
+      value: '"The man really loved looking at himself. I don''t think he could look
+        past his face being torn asunder."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'portraitofLadyDialogueG.Array.data[0]'
-      value: '"The Lady."'
+      value: '"Her Majesty."'
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'portraitofLadyDialogueG.Array.data[1]'
-      value: '"I always felt a bit sorely for her..."'
+      value: '"I-"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofLadyDialogueG.Array.data[2]'
+      value: '"It''s a shame about what happened to her."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofLadyDialogueG.Array.data[3]'
+      value: '"Yeah?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofLadyDialogueG.Array.data[4]'
+      value: '"Well. It''s not like we talked a lot."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofLadyDialogueG.Array.data[5]'
+      value: '"But, uh. I don''t think she... did that to the prince."'
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'portraitofLadyDialogueL.Array.data[0]'
-      value: '"Hm. Surprised Charles never lit fire to this."'
+      value: '"This... is quite old."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofLadyDialogueL.Array.data[1]'
+      value: '"Feels like I was just a girl when I was wed to Charles."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofLadyDialogueL.Array.data[2]'
+      value: '"You know, in our youth, we actually grew to be fond of each other."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofLadyDialogueL.Array.data[3]'
+      value: '"I think he found me funny."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofLadyDialogueL.Array.data[4]'
+      value: '"Anyway."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofLadyDialogueL.Array.data[5]'
+      value: '"Surprised Charles never lit fire to this."'
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'recycledCoffinDialogueG.Array.data[0]'
@@ -35188,13 +35837,66 @@ PrefabInstance:
       value: Charles would love it. He always had a taste for ostentatious trash.
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'strippedGobletDialogueG.Array.data[0]'
+      value: '"Ah, His Majesty''s goblet!"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'strippedGobletDialogueG.Array.data[1]'
+      value: '"He drank with lots of fine folk over the years, but he gave us common
+        folk a spot at his table many times."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'strippedGobletDialogueG.Array.data[2]'
+      value: '"He really was very gracious."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'strippedGobletDialogueL.Array.data[0]'
+      value: '"Charles''s goblet."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'strippedGobletDialogueL.Array.data[1]'
+      value: '"This thing was almost always full."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'strippedGobletDialogueL.Array.data[2]'
+      value: '"I always found hosting banquets exhausting. Rubbing elbows with women
+        who never had anything interesting to say."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'strippedGobletDialogueL.Array.data[3]'
+      value: '"Charles never got tired of it, though. I''ll give him that."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'strippedGobletDialogueL.Array.data[4]'
+      value: '"Wish he''d had any interest in attending to his other responsibilities."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: filigreeKeepLedgerDialogueG.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: filigreeKeepLedgerDialogueL.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'portraitofChildDialogueG.Array.data[0]'
       value: '"Oh... the prince."'
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'portraitofChildDialogueG.Array.data[1]'
-      value: '"It feels like quite a while since his passing. May his memory be a
-        blessing."'
+      value: '"May his memory be a blessing."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofChildDialogueG.Array.data[2]'
+      value: '"His Majesty was deeply struck by his loss."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofChildDialogueG.Array.data[3]'
+      value: '"My home..."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'portraitofChildDialogueG.Array.data[4]'
+      value: '"Or- the keep never really recovered after that."'
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'portraitofChildDialogueL.Array.data[0]'
@@ -35258,6 +35960,14 @@ PrefabInstance:
       value: '"Charles would love it. He always had a taste for ostentatious trash."'
       objectReference: {fileID: 0}
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: brokenFiligreeCrestDialogueG.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: brokenFiligreeCrestDialogueL.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'portraitofChildDialogueL.Array.data[10]'
       value: '"And then our gracious king told me I had killed him. Black magicks,
         that sort of thing."'
@@ -35265,6 +35975,64 @@ PrefabInstance:
     - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: 'portraitofChildDialogueL.Array.data[11]'
       value: '"I hope Charles never finds rest."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'filigreeKeepLedgerDialogueG.Array.data[0]'
+      value: '"Ah. I never had anything to do with the bookeeping."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'filigreeKeepLedgerDialogueL.Array.data[0]'
+      value: '"I kept the records in here."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'filigreeKeepLedgerDialogueL.Array.data[1]'
+      value: '"Sometimes it felt like I was the only one holding this place together."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'filigreeKeepLedgerDialogueL.Array.data[2]'
+      value: '"I don''t know why Charles is getting this funeral service, and not
+        me."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'brokenFiligreeCrestDialogueG.Array.data[0]'
+      value: '"They must''ve done that when they broke into the castle."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'brokenFiligreeCrestDialogueG.Array.data[1]'
+      value: '"The Boulshea''s knights, I mean."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'brokenFiligreeCrestDialogueG.Array.data[2]'
+      value: '"His Majesty didn''t seem that concerned about them, but..."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'brokenFiligreeCrestDialogueG.Array.data[3]'
+      value: '"Well. You can see the red banners."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'brokenFiligreeCrestDialogueL.Array.data[0]'
+      value: ' Bored She inspects the shattered crest with disinterest.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'brokenFiligreeCrestDialogueL.Array.data[1]'
+      value: '"He ruled for twenty long years, you know."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'brokenFiligreeCrestDialogueL.Array.data[2]'
+      value: '"Poor Charles lost interest when times got tough, though."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'brokenFiligreeCrestDialogueL.Array.data[3]'
+      value: '"Food was low for the peasants. Enemies were breathing down our neck
+        with troops."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'brokenFiligreeCrestDialogueL.Array.data[4]'
+      value: '"But Charles just wanted to pretend things were fine."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676594812203147298, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
+      propertyPath: 'brokenFiligreeCrestDialogueL.Array.data[5]'
+      value: '"He''s made a mockery of his lineage."'
       objectReference: {fileID: 0}
     - target: {fileID: 1948824343752832282, guid: 3fffff87a7c95c345b9a68e39def842b, type: 3}
       propertyPath: m_AnchoredPosition.x
