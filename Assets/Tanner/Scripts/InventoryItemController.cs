@@ -41,6 +41,7 @@ public class InventoryItemController : MonoBehaviour
     public bool rotateNow = false;
     public Vector2 rotation;
     public GameObject journalOverlay;
+    public GameObject inspectText;
 
     //this is started when inventory is opened on each inventory button
 
@@ -60,6 +61,7 @@ public class InventoryItemController : MonoBehaviour
         originalSize = hideInv.sizeDelta;                                                           // Store original size of inventory panel
         inventoryManager = InventoryManager.Instance;                                               // Cache reference to the InventoryManager
         journalOverlay.SetActive(false);
+        inspectText.SetActive(false);
 
         InventoryManager.Instance.ObservableObject1.SetActive(false);
         InventoryManager.Instance.ObservableObject2.SetActive(false);
@@ -195,6 +197,7 @@ public class InventoryItemController : MonoBehaviour
         fpscontrollerScript.canMove = false;    // stop player movement
         FPSController.canPickUp = false;
         journalOverlay.SetActive(true);
+        inspectText.SetActive(true);
 
 
         //        Debug.Log("Clicked item: " + item.itemName + " (ID: " + item.id + ")");
