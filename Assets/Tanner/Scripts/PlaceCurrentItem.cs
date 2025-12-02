@@ -4,7 +4,6 @@ public class PlaceCurrentItem : MonoBehaviour
 {
     public Item item;                                   // Reference to the actual item this controller represents
     public InventoryManager inventoryManager;           // Reference to the InventoryManager
-    public PlaceObjects placeObjects;                   // Reference to the PlaceObjects script (handles placing objects in world)
     public GameObject placeobj;                         // Placeholder for an object that might be placed
     public GameObject ghostObject;            // Preview/ghost object for placement
 
@@ -15,6 +14,7 @@ public class PlaceCurrentItem : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip placesound;
     public AudioClip pickupsound;
+    Transform cam;
 
 
 
@@ -23,6 +23,8 @@ public class PlaceCurrentItem : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();  // Grab AudioSource on this object
+        cam = Camera.main.transform;
+
 
     }
 
@@ -38,8 +40,9 @@ public class PlaceCurrentItem : MonoBehaviour
                 Debug.Log("canPlace is true");
                 RaycastHit hit;
 
-                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Max(5)))
+                if (Physics.Raycast(cam.position, cam.TransformDirection(Vector3.forward), out hit, 5f))
                 {
+                    Debug.Log("place raycast is running");
                     ghostObject.SetActive(true);
                     ghostObject.transform.position = hit.point;
                     if (Input.GetMouseButtonDown(0))
@@ -54,7 +57,8 @@ public class PlaceCurrentItem : MonoBehaviour
                 }
                 else//dont show the ghost object if cant see where itll be placed
                 {
-                    ghostObject.SetActive(false);
+                    //ghostObject.SetActive(false);
+                    Debug.Log("place raycast never runs");
                 }
             }
             else
@@ -77,18 +81,5 @@ public class PlaceCurrentItem : MonoBehaviour
     {
         placeThis = true;
         canPlace = true;
-
-        if (placeObjects == null)
-        {
-            GameObject player = GameObject.Find("Player");
-            if (player != null)
-            {
-                Transform camTransform = player.transform.Find("Camera");
-                if (camTransform != null)
-                {
-                    placeObjects = camTransform.GetComponent<PlaceObjects>();
-                }
-            }
-        }
     }
 }
