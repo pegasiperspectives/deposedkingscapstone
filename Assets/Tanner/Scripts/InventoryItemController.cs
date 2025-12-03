@@ -48,7 +48,7 @@ public class InventoryItemController : MonoBehaviour
 
 
     //add a reference to place objects?
-    public PlaceObjects po;
+    public PlacementManager po;
 
 
 
@@ -524,7 +524,7 @@ public class InventoryItemController : MonoBehaviour
         //return;
 
         inventoryManager.placeObjects.canPlace = true;   
-        inventoryManager.placeItem.canPlace = true;                                       // Re-enable placement functionality
+        po.canPlace = true;                                       // Re-enable placement functionality
 
         inventory.SetActive(true);                                                              // Reactivate inventory UI and refresh list
         inventoryManager.ListItems();

@@ -795,7 +795,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!114 &64710194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2770,7 +2770,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!114 &185443384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3085,7 +3085,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!114 &215739276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3698,7 +3698,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!114 &233275621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5761,6 +5761,7 @@ Transform:
   - {fileID: 1852453506}
   - {fileID: 1901885921}
   - {fileID: 1858818125}
+  - {fileID: 769892943}
   - {fileID: 2051402346}
   - {fileID: 434830229}
   - {fileID: 585317574}
@@ -6164,7 +6165,7 @@ PrefabInstance:
     - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
       propertyPath: placeItem
       value: 
-      objectReference: {fileID: 1613815744}
+      objectReference: {fileID: 769892944}
     - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
       propertyPath: ItemContent
       value: 
@@ -6878,7 +6879,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!114 &412628496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8849,7 +8850,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!114 &541490047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10207,7 +10208,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!114 &652394081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10442,7 +10443,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!114 &664626010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12019,7 +12020,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!114 &755067135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12241,6 +12242,55 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &769892942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 769892943}
+  - component: {fileID: 769892944}
+  m_Layer: 0
+  m_Name: PlacementManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &769892943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769892942}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.6, y: -7.52, z: -24.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 353201902}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &769892944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769892942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929d2cdb3904b224c9eb1a887fcfdc7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlacementManager
+  currentPlacingObject: {fileID: 0}
+  currentGhostObject: {fileID: 0}
+  placesound: {fileID: 8300000, guid: a5132e29325597641a942e2071eaaf39, type: 3}
+  pickupsound: {fileID: 8300000, guid: 272f04901c6bc564bb81042b870672af, type: 3}
+  canPlace: 0
 --- !u!1 &773653072
 GameObject:
   m_ObjectHideFlags: 0
@@ -16668,7 +16718,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!114 &991899172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18400,7 +18450,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!114 &1076927107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21582,7 +21632,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!114 &1299759758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22606,7 +22656,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!114 &1338442473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25218,7 +25268,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!114 &1503672635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25775,11 +25825,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f115ac1644c134d4ab5b7fd154923aa3, type: 3}
---- !u!1 &1530557545 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5607173197253113890, guid: f115ac1644c134d4ab5b7fd154923aa3, type: 3}
-  m_PrefabInstance: {fileID: 1530557544}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1534228572
 GameObject:
   m_ObjectHideFlags: 0
@@ -26777,13 +26822,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlaceCurrentItem
   item: {fileID: 11400000, guid: 3170e67bd7ac9bc4f8b3a3465146f514, type: 2}
   inventoryManager: {fileID: 391597838}
-  placeObjects: {fileID: 1740180374}
-  placeobj: {fileID: 1530557545}
-  ghostObject: {fileID: 497937345}
-  placeThis: 0
-  canPlace: 0
+  placeobj: {fileID: 5607173197253113890, guid: f115ac1644c134d4ab5b7fd154923aa3, type: 3}
+  ghostObject: {fileID: 2300230582184706676, guid: 5f84b453522ce60468d8e448832702b7, type: 3}
   placesound: {fileID: 8300000, guid: a5132e29325597641a942e2071eaaf39, type: 3}
   pickupsound: {fileID: 8300000, guid: 272f04901c6bc564bb81042b870672af, type: 3}
+  PlacementManager: {fileID: 0}
 --- !u!1001 &1618185539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27000,7 +27043,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!114 &1634541826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27360,7 +27403,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!1 &1643103499
 GameObject:
   m_ObjectHideFlags: 0
@@ -29046,7 +29089,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!114 &1750616812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29472,7 +29515,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!114 &1767661820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31356,7 +31399,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!114 &1879822776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32867,7 +32910,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   journalOverlay: {fileID: 163274179}
   inspectText: {fileID: 240690171}
-  po: {fileID: 1740180374}
+  po: {fileID: 0}
 --- !u!114 &1938400672
 MonoBehaviour:
   m_ObjectHideFlags: 0
