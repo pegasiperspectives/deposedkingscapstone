@@ -114,7 +114,7 @@ public class InspectManager : MonoBehaviour
             } else if (currentObservable.name == "pivot9")
             {
                 inspectText.GetComponent<TextMeshProUGUI>().text = "Portrait of Child";
-            } else if (currentObservable.name == "pivot9")
+            } else if (currentObservable.name == "pivot10")
             {
                 inspectText.GetComponent<TextMeshProUGUI>().text = "Portrait of King";
             }
