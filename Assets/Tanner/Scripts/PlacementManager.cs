@@ -7,6 +7,7 @@ public class PlacementManager : MonoBehaviour
 
     public GameObject currentPlacingObject = null;
     public GameObject currentGhostObject = null;
+    public bool currentTypeIs2d = false;
     Transform cam;
 
     public AudioSource audioSource;
@@ -26,7 +27,7 @@ public class PlacementManager : MonoBehaviour
     {
         if (canPlace == true && placeThis == true)
         {
-            if (currentGhostObject != null && currentPlacingObject != null)
+            if (currentPlacingObject != null)
             {
                 RaycastHit hit;
 
@@ -43,6 +44,7 @@ public class PlacementManager : MonoBehaviour
                 if (Physics.Raycast(cam.position, cam.forward, out hit, 5f))
                 {
                     Debug.Log("place raycast is running and ghostObject should be seen");
+
 
                     currentGhostObject.transform.position = hit.point;
 
@@ -79,10 +81,11 @@ public class PlacementManager : MonoBehaviour
 
 
 
-    public void SetObjectComponents(GameObject placer, GameObject ghost)
+    public void SetObjectComponents(GameObject placer, GameObject ghost, bool is2d)
     {
         currentPlacingObject = placer;
         currentGhostObject = ghost;
+        currentTypeIs2d = is2d;
     }
 
 }

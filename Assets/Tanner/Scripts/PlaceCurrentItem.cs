@@ -15,6 +15,8 @@ public class PlaceCurrentItem : MonoBehaviour
 
     public PlacementManager placementManager;
 
+    public bool is2D = false;
+
 
 
 
@@ -38,7 +40,7 @@ public class PlaceCurrentItem : MonoBehaviour
         Debug.Log("place object is " + placeobj.ToString());
         PlacementManager.placeThis = true;
         placementManager.canPlace = true;
-        placementManager.SetObjectComponents(placeobj, ghostObject);
+        placementManager.SetObjectComponents(placeobj, ghostObject, is2D);
         InventoryManager.Instance.CloseInventoryButton();
         InventoryManager.Instance.TurnoffInv();
     }

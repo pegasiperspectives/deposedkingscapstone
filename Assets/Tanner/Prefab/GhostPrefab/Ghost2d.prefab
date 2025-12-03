@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2187315498437055102}
   m_Layer: 0
-  m_Name: GhostPort
+  m_Name: Ghost2d
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2187315498437055102
 Transform:
   m_ObjectHideFlags: 0
@@ -24,15 +24,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430849306629373611}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.122899, y: 0, z: 29.679184}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.12886475, y: -0.52100116, z: -0.0799291, w: 0.83997804}
+  m_LocalPosition: {x: -13.314403, y: 0, z: 30.570908}
+  m_LocalScale: {x: 0.037595686, y: 0.037595686, z: 0.037595686}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1935630088959854177}
   - {fileID: 7363296471618211449}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -17.444, y: -63.619, z: 0}
 --- !u!1 &2896208390361637156
 GameObject:
   m_ObjectHideFlags: 0
