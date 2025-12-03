@@ -9,9 +9,6 @@ public class KeyDoorController : MonoBehaviour
     [SerializeField] private string openAnimationName = "DoorOpen";
     [SerializeField] private string closeAnimationName = "DoorClose";
 
-    [SerializeField] private int timeToShowUI = 1;
-    [SerializeField] private GameObject showDoorLockedUI = null;
-
     [SerializeField] private Keyinv _keyInventory = null;
 
     [SerializeField] private int waitTimer = 1;
@@ -31,39 +28,24 @@ public class KeyDoorController : MonoBehaviour
 
     public void PlayAnimation()
     {
-        if (_keyInventory.hasKeyOne)
+        if (!doorOpen && !pauseInteraction)
         {
-            if (!doorOpen && !pauseInteraction)
-            {
-                //doorAnim.Play(openAnimationName, 0, 0.0f);
-                //transform.Rotate(0, 90, 0);
-                StartCoroutine(RotateDoor(-136, 1f));
-                doorOpen = true;
-                StartCoroutine(PauseDoorInteraction());
-            }
-            else if (doorOpen && !pauseInteraction)
-            {
-                //doorAnim.Play(closeAnimationName, 0, 0.0f);
-                //transform.Rotate(0, -90, 0);
-                StartCoroutine(RotateDoor(-46, 1f));
-                doorOpen = false;
-                StartCoroutine(PauseDoorInteraction());
-            }
-            Debug.Log("www");
+            //doorAnim.Play(openAnimationName, 0, 0.0f);
+            //transform.Rotate(0, 90, 0);
+            StartCoroutine(RotateDoor(-136, 1f));
+            doorOpen = true;
+            StartCoroutine(PauseDoorInteraction());
         }
-        else
+        else if (doorOpen && !pauseInteraction)
         {
-            StartCoroutine(ShowDoorLocked());
+            //doorAnim.Play(closeAnimationName, 0, 0.0f);
+            //transform.Rotate(0, -90, 0);
+            StartCoroutine(RotateDoor(-46, 1f));
+            doorOpen = false;
+            StartCoroutine(PauseDoorInteraction());
         }
+        Debug.Log("www");
     }
-
-    IEnumerator ShowDoorLocked()
-    {
-        showDoorLockedUI.SetActive(true);
-        yield return new WaitForSeconds(timeToShowUI);
-        showDoorLockedUI.SetActive(false);
-    }
-
 
 
     private IEnumerator RotateDoor(float targetAngle, float duration)

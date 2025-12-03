@@ -15,6 +15,11 @@ public class InventoryManager : MonoBehaviour
 
     public InventoryItemController iic;                             // Reference to individual item controllers (used when listing items)
 
+    public bool rKeyCollected = false;
+    public bool sKeyCollected = false;
+
+    public bool kingCollected = false;
+
 
 
 
@@ -326,12 +331,14 @@ public class InventoryManager : MonoBehaviour
                 Item18.SetActive(true);
                 var itemController = Item18.GetComponentInChildren<InventoryItemController>();
                 dialogueManager.speechBubbles.transform.GetChild(17).gameObject.SetActive(true);
+                rKeyCollected = true;
             }
             else if (item.id == 19) //quarter key
             {
                 Item19.SetActive(true);
                 var itemController = Item19.GetComponentInChildren<InventoryItemController>();
                 dialogueManager.speechBubbles.transform.GetChild(19).gameObject.SetActive(true);
+                sKeyCollected = true;
             }
             else if (item.id == 20) //plank
             {
@@ -344,6 +351,7 @@ public class InventoryManager : MonoBehaviour
                 Item21.SetActive(true);
                 var itemController = Item21.GetComponentInChildren<InventoryItemController>();
                 dialogueManager.speechBubbles.transform.GetChild(20).gameObject.SetActive(true);
+                kingCollected = true;
             }
 
 
