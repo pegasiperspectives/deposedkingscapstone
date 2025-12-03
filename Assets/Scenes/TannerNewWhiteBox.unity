@@ -2648,7 +2648,7 @@ GameObject:
   - component: {fileID: 185443386}
   - component: {fileID: 185443385}
   - component: {fileID: 185443384}
-  - component: {fileID: 185443383}
+  - component: {fileID: 185443387}
   m_Layer: 5
   m_Name: Place/Talk7
   m_TagString: Untagged
@@ -2675,53 +2675,6 @@ RectTransform:
   m_AnchoredPosition: {x: -46.2, y: -150}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &185443383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 185443381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9fea98ce98cc8c479f289fd7a866941, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryItemController
-  item: {fileID: 11400000, guid: c805882f43d11544cb459ecb24e9cd71, type: 2}
-  inventoryManager: {fileID: 391597838}
-  DialogueManager: {fileID: 2051402351}
-  placeObjects: {fileID: 1740180374}
-  sensitivity: 10
-  checkthis: 0
-  invResized: 0
-  placeobj: {fileID: 2752988674237083507, guid: ce7150a0b8aef9849bd322703a6e8a20, type: 3}
-  deltaRotationX: 0
-  deltaRotationY: 0
-  originalSize: {x: 0, y: 0}
-  inventory: {fileID: 7014041543385319168, guid: 3bc10807d987e6b45a325d26261cccf0, type: 3}
-  pressed:
-    m_Name: Pressed
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 75877b5f-c048-4ccb-96b7-66c901a25ff9
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  axis:
-    m_Name: Axis
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 696c1462-4de5-499b-8fba-9b393e957ed2
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  rotateNow: 0
-  rotation: {x: 0, y: 0}
-  journalOverlay: {fileID: 163274179}
-  inspectText: {fileID: 240690171}
-  po: {fileID: 0}
 --- !u!114 &185443384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2766,9 +2719,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 185443383}
-        m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
-        m_MethodName: UseItem
+      - m_Target: {fileID: 185443387}
+        m_TargetAssemblyTypeName: PlaceCurrentItem, Assembly-CSharp
+        m_MethodName: PlaceItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2840,6 +2793,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185443381}
   m_CullTransparentMesh: 1
+--- !u!114 &185443387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185443381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85da9cbe4db3d94bbe235abd6869430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlaceCurrentItem
+  item: {fileID: 11400000, guid: c805882f43d11544cb459ecb24e9cd71, type: 2}
+  inventoryManager: {fileID: 391597838}
+  placeobj: {fileID: 2752988674237083507, guid: ce7150a0b8aef9849bd322703a6e8a20, type: 3}
+  ghostObject: {fileID: 461109426}
+  placesound: {fileID: 8300000, guid: a5132e29325597641a942e2071eaaf39, type: 3}
+  pickupsound: {fileID: 8300000, guid: 272f04901c6bc564bb81042b870672af, type: 3}
+  placementManager: {fileID: 769892944}
 --- !u!1 &189061381
 GameObject:
   m_ObjectHideFlags: 0
@@ -3576,7 +3548,7 @@ GameObject:
   - component: {fileID: 233275623}
   - component: {fileID: 233275622}
   - component: {fileID: 233275621}
-  - component: {fileID: 233275620}
+  - component: {fileID: 233275624}
   m_Layer: 5
   m_Name: Place/Talk17
   m_TagString: Untagged
@@ -3603,53 +3575,6 @@ RectTransform:
   m_AnchoredPosition: {x: -50.1, y: -156.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &233275620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233275618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9fea98ce98cc8c479f289fd7a866941, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryItemController
-  item: {fileID: 11400000, guid: 769b48f4cc5d76d45972ee7fe84fa5c8, type: 2}
-  inventoryManager: {fileID: 391597838}
-  DialogueManager: {fileID: 2051402351}
-  placeObjects: {fileID: 1740180374}
-  sensitivity: 10
-  checkthis: 0
-  invResized: 0
-  placeobj: {fileID: 5607173197253113890, guid: 4e90db9eb828a7a47b01cfb2243f2216, type: 3}
-  deltaRotationX: 0
-  deltaRotationY: 0
-  originalSize: {x: 0, y: 0}
-  inventory: {fileID: 7014041543385319168, guid: 3bc10807d987e6b45a325d26261cccf0, type: 3}
-  pressed:
-    m_Name: Pressed
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 287a1278-fa52-4e54-b8e1-4050514b2d40
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  axis:
-    m_Name: Axis
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 07e7cadd-af0e-4bc1-a8ea-e6a2fd7f43d3
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  rotateNow: 0
-  rotation: {x: 0, y: 0}
-  journalOverlay: {fileID: 163274179}
-  inspectText: {fileID: 240690171}
-  po: {fileID: 0}
 --- !u!114 &233275621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3694,9 +3619,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 233275620}
-        m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
-        m_MethodName: UseItem
+      - m_Target: {fileID: 233275624}
+        m_TargetAssemblyTypeName: PlaceCurrentItem, Assembly-CSharp
+        m_MethodName: PlaceItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3768,6 +3693,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233275618}
   m_CullTransparentMesh: 1
+--- !u!114 &233275624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233275618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85da9cbe4db3d94bbe235abd6869430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlaceCurrentItem
+  item: {fileID: 11400000, guid: 769b48f4cc5d76d45972ee7fe84fa5c8, type: 2}
+  inventoryManager: {fileID: 391597838}
+  placeobj: {fileID: 3847348763963495525, guid: dc73224030ce3674880585b59db99018, type: 3}
+  ghostObject: {fileID: 1293309072}
+  placesound: {fileID: 8300000, guid: a5132e29325597641a942e2071eaaf39, type: 3}
+  pickupsound: {fileID: 8300000, guid: 272f04901c6bc564bb81042b870672af, type: 3}
+  placementManager: {fileID: 769892944}
 --- !u!1 &238988371
 GameObject:
   m_ObjectHideFlags: 0
@@ -5284,15 +5228,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6770186693829750800, guid: ba5c1a1bb506e3548b55d6d2f6499a19, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.723042
+      value: -14.13
       objectReference: {fileID: 0}
     - target: {fileID: 6770186693829750800, guid: ba5c1a1bb506e3548b55d6d2f6499a19, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.785173
+      value: 0.00000047683716
       objectReference: {fileID: 0}
     - target: {fileID: 6770186693829750800, guid: ba5c1a1bb506e3548b55d6d2f6499a19, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28
+      value: 36.703293
       objectReference: {fileID: 0}
     - target: {fileID: 6770186693829750800, guid: ba5c1a1bb506e3548b55d6d2f6499a19, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5733,15 +5677,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: f23196794983293499948da4c0841c0a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -45.969193
+      value: -1.59
       objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: f23196794983293499948da4c0841c0a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.860001
+      value: 0.00000047683716
       objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: f23196794983293499948da4c0841c0a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 35.26757
+      value: 36.703293
       objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: f23196794983293499948da4c0841c0a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6758,7 +6702,7 @@ GameObject:
   - component: {fileID: 412628498}
   - component: {fileID: 412628497}
   - component: {fileID: 412628496}
-  - component: {fileID: 412628495}
+  - component: {fileID: 412628499}
   m_Layer: 5
   m_Name: Place/Talk4
   m_TagString: Untagged
@@ -6785,53 +6729,6 @@ RectTransform:
   m_AnchoredPosition: {x: -38.9, y: -154.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &412628495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 412628493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9fea98ce98cc8c479f289fd7a866941, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryItemController
-  item: {fileID: 11400000, guid: 305b5816b6d30f74898275921a5bc416, type: 2}
-  inventoryManager: {fileID: 391597838}
-  DialogueManager: {fileID: 2051402351}
-  placeObjects: {fileID: 1740180374}
-  sensitivity: 10
-  checkthis: 0
-  invResized: 0
-  placeobj: {fileID: 5516414860214326888, guid: e1b49278c9746c347a6ec6b887974ff2, type: 3}
-  deltaRotationX: 0
-  deltaRotationY: 0
-  originalSize: {x: 0, y: 0}
-  inventory: {fileID: 7014041543385319168, guid: 3bc10807d987e6b45a325d26261cccf0, type: 3}
-  pressed:
-    m_Name: Pressed
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 4b2097cd-2d8e-4d11-8233-fb268e4014cc
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  axis:
-    m_Name: Axis
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: a760e5ef-4be9-4cd8-8edf-54b219c2e377
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  rotateNow: 0
-  rotation: {x: 0, y: 0}
-  journalOverlay: {fileID: 163274179}
-  inspectText: {fileID: 240690171}
-  po: {fileID: 0}
 --- !u!114 &412628496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6876,9 +6773,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
-        m_MethodName: UseItem
+      - m_Target: {fileID: 412628499}
+        m_TargetAssemblyTypeName: PlaceCurrentItem, Assembly-CSharp
+        m_MethodName: PlaceItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6950,6 +6847,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412628493}
   m_CullTransparentMesh: 1
+--- !u!114 &412628499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412628493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85da9cbe4db3d94bbe235abd6869430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlaceCurrentItem
+  item: {fileID: 11400000, guid: 305b5816b6d30f74898275921a5bc416, type: 2}
+  inventoryManager: {fileID: 391597838}
+  placeobj: {fileID: 5516414860214326888, guid: e1b49278c9746c347a6ec6b887974ff2, type: 3}
+  ghostObject: {fileID: 72854188}
+  placesound: {fileID: 8300000, guid: a5132e29325597641a942e2071eaaf39, type: 3}
+  pickupsound: {fileID: 8300000, guid: 272f04901c6bc564bb81042b870672af, type: 3}
+  placementManager: {fileID: 769892944}
 --- !u!1 &413709245
 GameObject:
   m_ObjectHideFlags: 0
@@ -10087,7 +10003,7 @@ GameObject:
   - component: {fileID: 652394083}
   - component: {fileID: 652394082}
   - component: {fileID: 652394081}
-  - component: {fileID: 652394080}
+  - component: {fileID: 652394084}
   m_Layer: 5
   m_Name: Place/Talk5
   m_TagString: Untagged
@@ -10114,53 +10030,6 @@ RectTransform:
   m_AnchoredPosition: {x: -46.6, y: -153.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &652394080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 652394078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9fea98ce98cc8c479f289fd7a866941, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryItemController
-  item: {fileID: 11400000, guid: fd85f68ce935d6b4d90f114ac82b27f8, type: 2}
-  inventoryManager: {fileID: 391597838}
-  DialogueManager: {fileID: 2051402351}
-  placeObjects: {fileID: 1740180374}
-  sensitivity: 10
-  checkthis: 0
-  invResized: 0
-  placeobj: {fileID: 2752988674237083507, guid: 8bf3e8bc33925b54ca1997fdc41dfba6, type: 3}
-  deltaRotationX: 0
-  deltaRotationY: 0
-  originalSize: {x: 0, y: 0}
-  inventory: {fileID: 7014041543385319168, guid: 3bc10807d987e6b45a325d26261cccf0, type: 3}
-  pressed:
-    m_Name: Pressed
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: da88f98e-ff5b-47d5-a2fd-d1d626288ed1
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  axis:
-    m_Name: Axis
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: e1484ed8-ea48-4a1d-b00d-f987697bbbee
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  rotateNow: 0
-  rotation: {x: 0, y: 0}
-  journalOverlay: {fileID: 163274179}
-  inspectText: {fileID: 240690171}
-  po: {fileID: 0}
 --- !u!114 &652394081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10205,9 +10074,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 652394080}
-        m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
-        m_MethodName: UseItem
+      - m_Target: {fileID: 652394084}
+        m_TargetAssemblyTypeName: PlaceCurrentItem, Assembly-CSharp
+        m_MethodName: PlaceItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10279,6 +10148,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 652394078}
   m_CullTransparentMesh: 1
+--- !u!114 &652394084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652394078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85da9cbe4db3d94bbe235abd6869430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlaceCurrentItem
+  item: {fileID: 11400000, guid: fd85f68ce935d6b4d90f114ac82b27f8, type: 2}
+  inventoryManager: {fileID: 391597838}
+  placeobj: {fileID: 2752988674237083507, guid: 8bf3e8bc33925b54ca1997fdc41dfba6, type: 3}
+  ghostObject: {fileID: 461109426}
+  placesound: {fileID: 8300000, guid: a5132e29325597641a942e2071eaaf39, type: 3}
+  pickupsound: {fileID: 8300000, guid: 272f04901c6bc564bb81042b870672af, type: 3}
+  placementManager: {fileID: 769892944}
 --- !u!1 &656726794
 GameObject:
   m_ObjectHideFlags: 0
@@ -11828,15 +11716,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: ce7150a0b8aef9849bd322703a6e8a20, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -44.219196
+      value: -3.49
       objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: ce7150a0b8aef9849bd322703a6e8a20, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.860001
+      value: 0.00000047683716
       objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: ce7150a0b8aef9849bd322703a6e8a20, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 36.26757
+      value: 33.1
       objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: ce7150a0b8aef9849bd322703a6e8a20, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11899,7 +11787,7 @@ GameObject:
   - component: {fileID: 755067137}
   - component: {fileID: 755067136}
   - component: {fileID: 755067135}
-  - component: {fileID: 755067134}
+  - component: {fileID: 755067138}
   m_Layer: 5
   m_Name: Place/Talk8
   m_TagString: Untagged
@@ -11926,53 +11814,6 @@ RectTransform:
   m_AnchoredPosition: {x: -27.28, y: -150}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &755067134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755067132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9fea98ce98cc8c479f289fd7a866941, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryItemController
-  item: {fileID: 11400000, guid: 01c59dd3352b8ec41bd5d16bb09c1375, type: 2}
-  inventoryManager: {fileID: 391597838}
-  DialogueManager: {fileID: 2051402351}
-  placeObjects: {fileID: 1740180374}
-  sensitivity: 10
-  checkthis: 0
-  invResized: 0
-  placeobj: {fileID: 2752988674237083507, guid: f23196794983293499948da4c0841c0a, type: 3}
-  deltaRotationX: 0
-  deltaRotationY: 0
-  originalSize: {x: 0, y: 0}
-  inventory: {fileID: 7014041543385319168, guid: 3bc10807d987e6b45a325d26261cccf0, type: 3}
-  pressed:
-    m_Name: Pressed
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 7894deab-1213-44e0-95aa-08446d8d4ea4
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  axis:
-    m_Name: Axis
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 9cd3b331-b469-44eb-bb30-d1c676c1ff52
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  rotateNow: 0
-  rotation: {x: 0, y: 0}
-  journalOverlay: {fileID: 163274179}
-  inspectText: {fileID: 240690171}
-  po: {fileID: 0}
 --- !u!114 &755067135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12017,9 +11858,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 755067134}
-        m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
-        m_MethodName: UseItem
+      - m_Target: {fileID: 755067138}
+        m_TargetAssemblyTypeName: PlaceCurrentItem, Assembly-CSharp
+        m_MethodName: PlaceItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12091,6 +11932,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755067132}
   m_CullTransparentMesh: 1
+--- !u!114 &755067138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755067132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85da9cbe4db3d94bbe235abd6869430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlaceCurrentItem
+  item: {fileID: 11400000, guid: 01c59dd3352b8ec41bd5d16bb09c1375, type: 2}
+  inventoryManager: {fileID: 391597838}
+  placeobj: {fileID: 2752988674237083507, guid: f23196794983293499948da4c0841c0a, type: 3}
+  ghostObject: {fileID: 461109426}
+  placesound: {fileID: 8300000, guid: a5132e29325597641a942e2071eaaf39, type: 3}
+  pickupsound: {fileID: 8300000, guid: 272f04901c6bc564bb81042b870672af, type: 3}
+  placementManager: {fileID: 769892944}
 --- !u!1 &766508619
 GameObject:
   m_ObjectHideFlags: 0
@@ -20301,19 +20161,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6770186693829750800, guid: dc73224030ce3674880585b59db99018, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.776958
+      value: -12.43
       objectReference: {fileID: 0}
     - target: {fileID: 6770186693829750800, guid: dc73224030ce3674880585b59db99018, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.785173
+      value: 0.00000047683716
       objectReference: {fileID: 0}
     - target: {fileID: 6770186693829750800, guid: dc73224030ce3674880585b59db99018, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 29.501953
+      value: 34.09
       objectReference: {fileID: 0}
     - target: {fileID: 6770186693829750800, guid: dc73224030ce3674880585b59db99018, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6770186693829750800, guid: dc73224030ce3674880585b59db99018, type: 3}
       propertyPath: m_LocalRotation.x
@@ -20321,7 +20181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6770186693829750800, guid: dc73224030ce3674880585b59db99018, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6770186693829750800, guid: dc73224030ce3674880585b59db99018, type: 3}
       propertyPath: m_LocalRotation.z
@@ -20333,7 +20193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6770186693829750800, guid: dc73224030ce3674880585b59db99018, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6770186693829750800, guid: dc73224030ce3674880585b59db99018, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -22531,7 +22391,7 @@ GameObject:
   - component: {fileID: 1338442475}
   - component: {fileID: 1338442474}
   - component: {fileID: 1338442473}
-  - component: {fileID: 1338442472}
+  - component: {fileID: 1338442476}
   m_Layer: 5
   m_Name: Place/Talk6
   m_TagString: Untagged
@@ -22558,53 +22418,6 @@ RectTransform:
   m_AnchoredPosition: {x: -35.3, y: -153.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1338442472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1338442470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9fea98ce98cc8c479f289fd7a866941, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryItemController
-  item: {fileID: 11400000, guid: e885631dc9da3f44da1345e0f7eba8bc, type: 2}
-  inventoryManager: {fileID: 391597838}
-  DialogueManager: {fileID: 2051402351}
-  placeObjects: {fileID: 1740180374}
-  sensitivity: 10
-  checkthis: 0
-  invResized: 0
-  placeobj: {fileID: 2752988674237083507, guid: 29bf9e3be74eb844784e280aedb6d3b8, type: 3}
-  deltaRotationX: 0
-  deltaRotationY: 0
-  originalSize: {x: 0, y: 0}
-  inventory: {fileID: 7014041543385319168, guid: 3bc10807d987e6b45a325d26261cccf0, type: 3}
-  pressed:
-    m_Name: Pressed
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 6d80bd67-50da-47c3-8d94-32466ea2f1b0
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  axis:
-    m_Name: Axis
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 1942314b-6d78-44d5-9cff-53958ba4e4c3
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  rotateNow: 0
-  rotation: {x: 0, y: 0}
-  journalOverlay: {fileID: 163274179}
-  inspectText: {fileID: 240690171}
-  po: {fileID: 0}
 --- !u!114 &1338442473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22649,9 +22462,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1338442472}
-        m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
-        m_MethodName: UseItem
+      - m_Target: {fileID: 1338442476}
+        m_TargetAssemblyTypeName: PlaceCurrentItem, Assembly-CSharp
+        m_MethodName: PlaceItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22723,6 +22536,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338442470}
   m_CullTransparentMesh: 1
+--- !u!114 &1338442476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338442470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85da9cbe4db3d94bbe235abd6869430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlaceCurrentItem
+  item: {fileID: 11400000, guid: e885631dc9da3f44da1345e0f7eba8bc, type: 2}
+  inventoryManager: {fileID: 391597838}
+  placeobj: {fileID: 2752988674237083507, guid: 29bf9e3be74eb844784e280aedb6d3b8, type: 3}
+  ghostObject: {fileID: 461109426}
+  placesound: {fileID: 8300000, guid: a5132e29325597641a942e2071eaaf39, type: 3}
+  pickupsound: {fileID: 8300000, guid: 272f04901c6bc564bb81042b870672af, type: 3}
+  placementManager: {fileID: 769892944}
 --- !u!1 &1349151342 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5024305414617765809, guid: 9dc849950ce826e44b11be8781ae87a7, type: 3}
@@ -23817,7 +23649,7 @@ GameObject:
   - component: {fileID: 1412917279}
   - component: {fileID: 1412917278}
   m_Layer: 5
-  m_Name: Item17
+  m_Name: Item17Child
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32400,15 +32232,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: 29bf9e3be74eb844784e280aedb6d3b8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -45.219196
+      value: -3.49
       objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: 29bf9e3be74eb844784e280aedb6d3b8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.86
+      value: 0.00000047683716
       objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: 29bf9e3be74eb844784e280aedb6d3b8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 41.51757
+      value: 34.79
       objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: 29bf9e3be74eb844784e280aedb6d3b8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -32770,7 +32602,7 @@ GameObject:
   - component: {fileID: 1938400674}
   - component: {fileID: 1938400673}
   - component: {fileID: 1938400672}
-  - component: {fileID: 1938400671}
+  - component: {fileID: 1938400675}
   m_Layer: 5
   m_Name: Place/Talk15
   m_TagString: Untagged
@@ -32797,53 +32629,6 @@ RectTransform:
   m_AnchoredPosition: {x: -42.7, y: -163}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1938400671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938400669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9fea98ce98cc8c479f289fd7a866941, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryItemController
-  item: {fileID: 11400000, guid: 21e46cb247cfef74b8ec0338fd5fdf12, type: 2}
-  inventoryManager: {fileID: 391597838}
-  DialogueManager: {fileID: 2051402351}
-  placeObjects: {fileID: 1740180374}
-  sensitivity: 10
-  checkthis: 0
-  invResized: 0
-  placeobj: {fileID: 5607173197253113890, guid: 4e90db9eb828a7a47b01cfb2243f2216, type: 3}
-  deltaRotationX: 0
-  deltaRotationY: 0
-  originalSize: {x: 0, y: 0}
-  inventory: {fileID: 7014041543385319168, guid: 3bc10807d987e6b45a325d26261cccf0, type: 3}
-  pressed:
-    m_Name: Pressed
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 840a871f-b5ca-4b2c-9863-fed8ef7fc457
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  axis:
-    m_Name: Axis
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 98173d76-1d76-42a3-8d8d-77d504079f0c
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  rotateNow: 0
-  rotation: {x: 0, y: 0}
-  journalOverlay: {fileID: 163274179}
-  inspectText: {fileID: 240690171}
-  po: {fileID: 0}
 --- !u!114 &1938400672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32888,9 +32673,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1938400671}
-        m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
-        m_MethodName: UseItem
+      - m_Target: {fileID: 1938400675}
+        m_TargetAssemblyTypeName: PlaceCurrentItem, Assembly-CSharp
+        m_MethodName: PlaceItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32962,6 +32747,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938400669}
   m_CullTransparentMesh: 1
+--- !u!114 &1938400675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938400669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85da9cbe4db3d94bbe235abd6869430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlaceCurrentItem
+  item: {fileID: 11400000, guid: 21e46cb247cfef74b8ec0338fd5fdf12, type: 2}
+  inventoryManager: {fileID: 391597838}
+  placeobj: {fileID: 3847348763963495525, guid: ba5c1a1bb506e3548b55d6d2f6499a19, type: 3}
+  ghostObject: {fileID: 1293309072}
+  placesound: {fileID: 8300000, guid: a5132e29325597641a942e2071eaaf39, type: 3}
+  pickupsound: {fileID: 8300000, guid: 272f04901c6bc564bb81042b870672af, type: 3}
+  placementManager: {fileID: 769892944}
 --- !u!1001 &1946158773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32976,15 +32780,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: 8bf3e8bc33925b54ca1997fdc41dfba6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -50.469196
+      value: -3.53
       objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: 8bf3e8bc33925b54ca1997fdc41dfba6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.610001
+      value: 0.00000047683716
       objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: 8bf3e8bc33925b54ca1997fdc41dfba6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 33.01757
+      value: 38.44
       objectReference: {fileID: 0}
     - target: {fileID: 5686828680585573642, guid: 8bf3e8bc33925b54ca1997fdc41dfba6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -37150,7 +36954,7 @@ GameObject:
   - component: {fileID: 2098683771}
   - component: {fileID: 2098683770}
   m_Layer: 5
-  m_Name: Item15
+  m_Name: Item15Lady
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

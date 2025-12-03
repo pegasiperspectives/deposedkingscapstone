@@ -188,7 +188,7 @@ public class InventoryManager : MonoBehaviour
             if (dialogue.activeInHierarchy == true)
             {
                 CursorOn();
-            } 
+            }
         }
 
         foreach (Item item in Items)
@@ -216,14 +216,14 @@ public class InventoryManager : MonoBehaviour
             {
                 Item2.SetActive(true);
                 var itemController = Item2.GetComponentInChildren<InventoryItemController>();
-//                itemController.AddItem(item);
+                //                itemController.AddItem(item);
                 dialogueManager.speechBubbles.transform.GetChild(1).gameObject.SetActive(true);
             }
             else if (item.id == 2) //modern coffin
             {
                 Item3.SetActive(true);
                 var itemController = Item3.GetComponentInChildren<InventoryItemController>();
-//                itemController.AddItem(item);
+                //                itemController.AddItem(item);
                 dialogueManager.speechBubbles.transform.GetChild(2).gameObject.SetActive(true);
             }
             else if (item.id == 3) //recycled coffin
@@ -259,8 +259,21 @@ public class InventoryManager : MonoBehaviour
                 var itemController = Item7.GetComponentInChildren<InventoryItemController>();
                 itemController.AddItem(item);
             }
+            else if (item.id == 8)
+            {
+                Item15.SetActive(true);
+                var itemController = Item15.GetComponentInChildren<InventoryItemController>();
+                //                itemController.AddItem(item);
+            }
+            else if (item.id == 9)
+            {
+                Item17.SetActive(true);
+                var itemController = Item17.GetComponentInChildren<InventoryItemController>();
+                // itemController.AddItem(item);
+            }
             else if (item.id == 10)
             {
+
             }
 
             //    GameObject obj = Instantiate(InventoryItem, ItemContent);
@@ -282,12 +295,12 @@ public class InventoryManager : MonoBehaviour
 
     // Clean up UI entries (called when closing inventory)
     public void CleanItems() //gets rid of duplicates when reopening inventory
-      {
-          foreach (Transform item in ItemContent)
-          {
-              Destroy(item.gameObject);
-          }
-      }
+    {
+        foreach (Transform item in ItemContent)
+        {
+            Destroy(item.gameObject);
+        }
+    }
 
     // When pressing the close inventory button in UI
     public void CloseInventoryButton()
@@ -335,15 +348,15 @@ public class InventoryManager : MonoBehaviour
     }
 
     // Updates InventoryItems array and rebinds data
- /*   public void SetInventoryItems()
-    {
-        InventoryItems = ItemContent.GetComponentsInChildren<InventoryItemController>();
+    /*   public void SetInventoryItems()
+       {
+           InventoryItems = ItemContent.GetComponentsInChildren<InventoryItemController>();
 
-        for (int i = 0; i < Items.Count; i++)
-        {
-            InventoryItems[i].AddItem(Items[i]);
-        }
-    } */
+           for (int i = 0; i < Items.Count; i++)
+           {
+               InventoryItems[i].AddItem(Items[i]);
+           }
+       } */
 
     // Turns off inventory in case you need to switch to placement mode
     public void turnoffinventoryforplace()
