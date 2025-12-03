@@ -120,6 +120,9 @@ public class InspectManager : MonoBehaviour
             } else if (currentObservable.name == "pivot11")
             {
                 inspectText.GetComponent<TextMeshProUGUI>().text = "Broken Filigree Crest";
+            } else if (currentObservable.name == "pivot12")
+            {
+                inspectText.GetComponent<TextMeshProUGUI>().text = "Box of Bugs";
             }
 
 
