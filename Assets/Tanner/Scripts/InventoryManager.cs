@@ -325,7 +325,7 @@ public class InventoryManager : MonoBehaviour
             {
                 Item18.SetActive(true);
                 var itemController = Item18.GetComponentInChildren<InventoryItemController>();
-                dialogueManager.speechBubbles.transform.GetChild(18).gameObject.SetActive(true);
+                dialogueManager.speechBubbles.transform.GetChild(17).gameObject.SetActive(true);
             }
             else if (item.id == 19) //quarter key
             {

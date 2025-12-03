@@ -108,34 +108,48 @@ public class InspectManager : MonoBehaviour
             else if (currentObservable.name == "pivot7")
             {
                 inspectText.GetComponent<TextMeshProUGUI>().text = "Orchid Bouquet";
-            } else if (currentObservable.name == "pivot8")
+            }
+            else if (currentObservable.name == "pivot8")
             {
                 inspectText.GetComponent<TextMeshProUGUI>().text = "Portrait of Lady";
-            } else if (currentObservable.name == "pivot9")
+            }
+            else if (currentObservable.name == "pivot9")
             {
                 inspectText.GetComponent<TextMeshProUGUI>().text = "Portrait of Child";
-            } else if (currentObservable.name == "pivot10")
+            }
+            else if (currentObservable.name == "pivot10")
             {
                 inspectText.GetComponent<TextMeshProUGUI>().text = "Portrait of King";
-            } else if (currentObservable.name == "pivot11")
+            }
+            else if (currentObservable.name == "pivot11")
             {
                 inspectText.GetComponent<TextMeshProUGUI>().text = "Broken Filigree Crest";
-            } else if (currentObservable.name == "pivot12")
+            }
+            else if (currentObservable.name == "pivot12")
             {
                 inspectText.GetComponent<TextMeshProUGUI>().text = "Box of Bugs";
-            } else if (currentObservable.name == "pivot13")
+            }
+            else if (currentObservable.name == "pivot13")
             {
                 inspectText.GetComponent<TextMeshProUGUI>().text = "Woven Shawl";
-            } else if (currentObservable.name == "pivot14")
+            }
+            else if (currentObservable.name == "pivot14")
             {
                 inspectText.GetComponent<TextMeshProUGUI>().text = "Half-Knit Quilt";
-            } else if (currentObservable.name == "pivot15")
+            }
+            else if (currentObservable.name == "pivot15")
             {
                 inspectText.GetComponent<TextMeshProUGUI>().text = "Filigree Keep Ledger";
-            } else if (currentObservable.name == "pivot16")
+            }
+            else if (currentObservable.name == "pivot16")
             {
                 inspectText.GetComponent<TextMeshProUGUI>().text = "Stripped Goblet";
-            } else if (currentObservable.name == "pivot20")
+            }
+            else if (currentObservable.name == "pivot17")
+            {
+                inspectText.GetComponent<TextMeshProUGUI>().text = "Rusty Key";
+            }
+            else if (currentObservable.name == "pivot20")
             {
                 inspectText.GetComponent<TextMeshProUGUI>().text = "His Majesty";
             }

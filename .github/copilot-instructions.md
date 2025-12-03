@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg, pointTwo, pointThree, pointnegTwo, pointnegThree, interact, player
 - Active game object:
-  - Name: RustyKey
+  - Name: KEYDOOR
   - Tag: InteractiveObject
   - Layer: interact
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
