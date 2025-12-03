@@ -135,6 +135,9 @@ public class InspectManager : MonoBehaviour
             } else if (currentObservable.name == "pivot16")
             {
                 inspectText.GetComponent<TextMeshProUGUI>().text = "Stripped Goblet";
+            } else if (currentObservable.name == "pivot20")
+            {
+                inspectText.GetComponent<TextMeshProUGUI>().text = "His Majesty";
             }
 
 

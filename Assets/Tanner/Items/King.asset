@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: King
   m_EditorClassIdentifier: 
   id: 21
-  itemName: King
+  itemName: His Majesty
   value: 21
   icon: {fileID: 21300000, guid: ce8189075aa09084f85c22bfdb0d63f5, type: 3}

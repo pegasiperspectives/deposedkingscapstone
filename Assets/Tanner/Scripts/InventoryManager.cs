@@ -343,7 +343,7 @@ public class InventoryManager : MonoBehaviour
             {
                 Item21.SetActive(true);
                 var itemController = Item21.GetComponentInChildren<InventoryItemController>();
-                dialogueManager.speechBubbles.transform.GetChild(21).gameObject.SetActive(true);
+                dialogueManager.speechBubbles.transform.GetChild(20).gameObject.SetActive(true);
             }
 
 
