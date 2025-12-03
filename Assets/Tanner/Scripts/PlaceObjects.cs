@@ -45,6 +45,7 @@ public class PlaceObjects : MonoBehaviour
     public static bool placeIsChildPort = false;
      public GameObject kingPortraitObj;
      public GameObject crest;
+     public GameObject ghostCrest;
 
 
 
