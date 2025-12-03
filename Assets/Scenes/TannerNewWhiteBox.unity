@@ -25262,9 +25262,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1640558264}
-        m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
-        m_MethodName: UseItem
+      - m_Target: {fileID: 1503672638}
+        m_TargetAssemblyTypeName: PlaceCurrentItem, Assembly-CSharp
+        m_MethodName: PlaceItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25349,12 +25349,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlaceCurrentItem
   item: {fileID: 11400000, guid: bda0103ce463fda40847fe664e3b3b37, type: 2}
-  inventoryManager: {fileID: 0}
-  placeobj: {fileID: 0}
-  ghostObject: {fileID: 0}
-  placesound: {fileID: 0}
-  pickupsound: {fileID: 0}
-  placementManager: {fileID: 0}
+  inventoryManager: {fileID: 391597838}
+  placeobj: {fileID: 3847348763963495525, guid: 263a953c4d2fb9f43a11c7554e2a9d30, type: 3}
+  ghostObject: {fileID: 497937345}
+  placesound: {fileID: 8300000, guid: a5132e29325597641a942e2071eaaf39, type: 3}
+  pickupsound: {fileID: 8300000, guid: 272f04901c6bc564bb81042b870672af, type: 3}
+  placementManager: {fileID: 769892944}
 --- !u!1 &1515102413
 GameObject:
   m_ObjectHideFlags: 0
@@ -26791,7 +26791,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 3170e67bd7ac9bc4f8b3a3465146f514, type: 2}
   inventoryManager: {fileID: 391597838}
   placeobj: {fileID: 5607173197253113890, guid: f115ac1644c134d4ab5b7fd154923aa3, type: 3}
-  ghostObject: {fileID: 2300230582184706676, guid: 5f84b453522ce60468d8e448832702b7, type: 3}
+  ghostObject: {fileID: 1195342533548262356, guid: f6cc48d87aece614a9d81e066adbb5de, type: 3}
   placesound: {fileID: 8300000, guid: a5132e29325597641a942e2071eaaf39, type: 3}
   pickupsound: {fileID: 8300000, guid: 272f04901c6bc564bb81042b870672af, type: 3}
   placementManager: {fileID: 769892944}
