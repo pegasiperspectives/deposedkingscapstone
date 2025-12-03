@@ -17310,6 +17310,7 @@ GameObject:
   - component: {fileID: 991899174}
   - component: {fileID: 991899173}
   - component: {fileID: 991899172}
+  - component: {fileID: 991899175}
   m_Layer: 5
   m_Name: Place/Talk9
   m_TagString: Untagged
@@ -17380,9 +17381,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
-        m_MethodName: UseItem
+      - m_Target: {fileID: 991899175}
+        m_TargetAssemblyTypeName: PlaceCurrentItem, Assembly-CSharp
+        m_MethodName: PlaceItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17454,6 +17455,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991899169}
   m_CullTransparentMesh: 1
+--- !u!114 &991899175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991899169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85da9cbe4db3d94bbe235abd6869430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlaceCurrentItem
+  item: {fileID: 11400000, guid: 10ce9989c0c94ca49adad7d75c35928d, type: 2}
+  inventoryManager: {fileID: 391597838}
+  placeobj: {fileID: 6751971863832207888}
+  ghostObject: {fileID: 0}
+  placesound: {fileID: 8300000, guid: a5132e29325597641a942e2071eaaf39, type: 3}
+  pickupsound: {fileID: 8300000, guid: 272f04901c6bc564bb81042b870672af, type: 3}
+  placementManager: {fileID: 769892944}
 --- !u!1 &1009159914
 GameObject:
   m_ObjectHideFlags: 0
@@ -30365,6 +30385,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 3347023539161138122, guid: b16f93c40fe827d4285afcd0f633eb34, type: 3}
+      propertyPath: crest
+      value: 
+      objectReference: {fileID: 4802998331663581524, guid: 3ae0b2e6c04c35145857030f2c6d1417, type: 3}
     - target: {fileID: 3347023539161138122, guid: b16f93c40fe827d4285afcd0f633eb34, type: 3}
       propertyPath: canPlace
       value: 0
