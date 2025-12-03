@@ -230,21 +230,21 @@ public class InventoryManager : MonoBehaviour
             {
                 Item4.SetActive(true);
                 var itemController = Item4.GetComponentInChildren<InventoryItemController>();
-//                itemController.AddItem(item);
+                //                itemController.AddItem(item);
                 dialogueManager.speechBubbles.transform.GetChild(3).gameObject.SetActive(true);
             }
             else if (item.id == 4) //fern
             {
                 Item5.SetActive(true);
                 var itemController = Item5.GetComponentInChildren<InventoryItemController>();
-               // itemController.AddItem(item);
+                // itemController.AddItem(item);
                 dialogueManager.speechBubbles.transform.GetChild(4).gameObject.SetActive(true);
             }
             else if (item.id == 5) //roses
             {
                 Item6.SetActive(true);
                 var itemController = Item6.GetComponentInChildren<InventoryItemController>();
-               // itemController.AddItem(item);
+                // itemController.AddItem(item);
                 dialogueManager.speechBubbles.transform.GetChild(5).gameObject.SetActive(true);
             }
             else if (item.id == 6)
@@ -252,14 +252,14 @@ public class InventoryManager : MonoBehaviour
                 Item8.SetActive(true);
                 var itemController = Item8.GetComponentInChildren<InventoryItemController>();
                 dialogueManager.speechBubbles.transform.GetChild(6).gameObject.SetActive(true);
-              //  itemController.AddItem(item);
+                //  itemController.AddItem(item);
             }
             else if (item.id == 7)
             {
                 Item7.SetActive(true);
                 var itemController = Item7.GetComponentInChildren<InventoryItemController>();
                 dialogueManager.speechBubbles.transform.GetChild(7).gameObject.SetActive(true);
-               // itemController.AddItem(item);
+                // itemController.AddItem(item);
             }
             else if (item.id == 8)
             {
@@ -277,23 +277,75 @@ public class InventoryManager : MonoBehaviour
             }
             else if (item.id == 10)
             {
-
-            } else if (item.id == 11)
+                // this is the memo, it starts active already.
+            }
+            else if (item.id == 11)
             {
                 Item16.SetActive(true);
                 var itemController = Item16.GetComponentInChildren<InventoryItemController>();
                 dialogueManager.speechBubbles.transform.GetChild(16).gameObject.SetActive(true);
-            } else if (item.id == 12)
+            }
+            else if (item.id == 12)
             {
                 Item9.SetActive(true);
                 var itemController = Item9.GetComponentInChildren<InventoryItemController>();
                 dialogueManager.speechBubbles.transform.GetChild(9).gameObject.SetActive(true);
-            } else if (item.id == 13)
+            }
+            else if (item.id == 13)
             {
                 Item10.SetActive(true);
                 var itemController = Item10.GetComponentInChildren<InventoryItemController>();
                 dialogueManager.speechBubbles.transform.GetChild(10).gameObject.SetActive(true);
             }
+            else if (item.id == 14)
+            {
+                Item11.SetActive(true);
+                var itemController = Item11.GetComponentInChildren<InventoryItemController>();
+                dialogueManager.speechBubbles.transform.GetChild(11).gameObject.SetActive(true);
+            }
+            else if (item.id == 15)
+            {
+                Item12.SetActive(true);
+                var itemController = Item12.GetComponentInChildren<InventoryItemController>();
+                dialogueManager.speechBubbles.transform.GetChild(12).gameObject.SetActive(true);
+            }
+            else if (item.id == 16)
+            {
+                Item13.SetActive(true);
+                var itemController = Item13.GetComponentInChildren<InventoryItemController>();
+                dialogueManager.speechBubbles.transform.GetChild(13).gameObject.SetActive(true);
+            }
+            else if (item.id == 17)
+            {
+                Item14.SetActive(true);
+                var itemController = Item14.GetComponentInChildren<InventoryItemController>();
+                dialogueManager.speechBubbles.transform.GetChild(14).gameObject.SetActive(true);
+            }
+            else if (item.id == 18)
+            {
+                Item18.SetActive(true);
+                var itemController = Item18.GetComponentInChildren<InventoryItemController>();
+                dialogueManager.speechBubbles.transform.GetChild(18).gameObject.SetActive(true);
+            }
+            else if (item.id == 19)
+            {
+                Item19.SetActive(true);
+                var itemController = Item19.GetComponentInChildren<InventoryItemController>();
+                dialogueManager.speechBubbles.transform.GetChild(19).gameObject.SetActive(true);
+            }
+            else if (item.id == 20)
+            {
+                Item20.SetActive(true);
+                var itemController = Item20.GetComponentInChildren<InventoryItemController>();
+                dialogueManager.speechBubbles.transform.GetChild(20).gameObject.SetActive(true);
+            }
+            else if (item.id == 21)
+            {
+                Item21.SetActive(true);
+                var itemController = Item21.GetComponentInChildren<InventoryItemController>();
+                dialogueManager.speechBubbles.transform.GetChild(21).gameObject.SetActive(true);
+            }
+
 
 
             //    GameObject obj = Instantiate(InventoryItem, ItemContent);
