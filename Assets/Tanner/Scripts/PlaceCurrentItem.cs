@@ -13,7 +13,7 @@ public class PlaceCurrentItem : MonoBehaviour
     public AudioClip pickupsound;
     Transform cam;
 
-    public PlacementManager PlacementManager;
+    public PlacementManager placementManager;
 
 
 
@@ -37,8 +37,8 @@ public class PlaceCurrentItem : MonoBehaviour
     {
         Debug.Log("place object is " + placeobj.ToString());
         PlacementManager.placeThis = true;
-        PlacementManager.canPlace = true;
-        PlacementManager.SetObjectComponents(placeobj, ghostObject);
+        placementManager.canPlace = true;
+        placementManager.SetObjectComponents(placeobj, ghostObject);
         InventoryManager.Instance.CloseInventoryButton();
         InventoryManager.Instance.TurnoffInv();
     }

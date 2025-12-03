@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg, pointTwo, pointThree, pointnegTwo, pointnegThree, interact, player
 - Active game object:
-  - Name: InventoryManager
-  - Tag: Untagged
-  - Layer: Default
+  - Name: Example1
+  - Tag: InteractiveObject
+  - Layer: pointThree
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

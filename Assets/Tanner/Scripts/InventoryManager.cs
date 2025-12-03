@@ -277,7 +277,7 @@ public class InventoryManager : MonoBehaviour
             //itemController.AddItem(item);
         }
         // Refresh array of InventoryItemControllers
-        SetInventoryItems();
+        //SetInventoryItems();
     }
 
     // Clean up UI entries (called when closing inventory)
@@ -335,7 +335,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     // Updates InventoryItems array and rebinds data
-    public void SetInventoryItems()
+ /*   public void SetInventoryItems()
     {
         InventoryItems = ItemContent.GetComponentsInChildren<InventoryItemController>();
 
@@ -343,7 +343,7 @@ public class InventoryManager : MonoBehaviour
         {
             InventoryItems[i].AddItem(Items[i]);
         }
-    }
+    } */
 
     // Turns off inventory in case you need to switch to placement mode
     public void turnoffinventoryforplace()

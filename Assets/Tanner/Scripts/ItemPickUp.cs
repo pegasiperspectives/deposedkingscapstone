@@ -25,7 +25,7 @@ public class ItemPickUp : MonoBehaviour
     private void Awake()
     {
 
-       // fpscontrollerScript = player.GetComponent<FPSController>(); // Get the FPSController on the player
+        // fpscontrollerScript = player.GetComponent<FPSController>(); // Get the FPSController on the player
         camera = Camera.main;                                       // Use the main camera for raycasting
 
         //placeobjects = cameraobj.GetComponent<PlaceObjects>();
@@ -34,13 +34,29 @@ public class ItemPickUp : MonoBehaviour
     }
 
     // Handles picking up the item
+   /* void Pickup()
+    {
+        /*  currentlyPickingUp = true;
+          InventoryManager.Instance.playpickupsound();    // Play pickup sound effect through InventoryManager
+          InventoryManager.Instance.Add(Item);            // Add item to the InventoryManager list
+          Destroy(gameObject);                            // Destroy the pickup object in the scene
+          Debug.Log("should be destroying " + gameObject);
+    } */
+
     void Pickup()
     {
+        if (currentlyPickingUp) return; // prevent duplicates
         currentlyPickingUp = true;
-        InventoryManager.Instance.playpickupsound();    // Play pickup sound effect through InventoryManager
-        InventoryManager.Instance.Add(Item);            // Add item to the InventoryManager list
-        Destroy(gameObject);                            // Destroy the pickup object in the scene
+
+        InventoryManager.Instance.playpickupsound();
+        InventoryManager.Instance.Add(Item); // add item to inventory
+
+        gameObject.SetActive(false); // hide immediately
+        Destroy(gameObject, 0.1f);   // destroy safely after a tiny delay
+        Debug.Log("Picked up and destroying: " + gameObject.name);
     }
+
+
     private void Update()
     {
         //Debug.Log("currentlyPickingUp is" + currentlyPickingUp);

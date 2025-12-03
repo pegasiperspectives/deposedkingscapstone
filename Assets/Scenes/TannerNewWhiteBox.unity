@@ -12288,6 +12288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlacementManager
   currentPlacingObject: {fileID: 0}
   currentGhostObject: {fileID: 0}
+  audioSource: {fileID: 1740180377}
   placesound: {fileID: 8300000, guid: a5132e29325597641a942e2071eaaf39, type: 3}
   pickupsound: {fileID: 8300000, guid: 272f04901c6bc564bb81042b870672af, type: 3}
   canPlace: 0
@@ -26826,7 +26827,7 @@ MonoBehaviour:
   ghostObject: {fileID: 2300230582184706676, guid: 5f84b453522ce60468d8e448832702b7, type: 3}
   placesound: {fileID: 8300000, guid: a5132e29325597641a942e2071eaaf39, type: 3}
   pickupsound: {fileID: 8300000, guid: 272f04901c6bc564bb81042b870672af, type: 3}
-  PlacementManager: {fileID: 0}
+  placementManager: {fileID: 769892944}
 --- !u!1001 &1618185539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29004,6 +29005,11 @@ MonoBehaviour:
     m_Bits: 4096
   excluseLayerName: 
   openDoorKey: 323
+--- !u!82 &1740180377 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4827339777926276493, guid: b16f93c40fe827d4285afcd0f633eb34, type: 3}
+  m_PrefabInstance: {fileID: 1740180370}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1750616809
 GameObject:
   m_ObjectHideFlags: 0
