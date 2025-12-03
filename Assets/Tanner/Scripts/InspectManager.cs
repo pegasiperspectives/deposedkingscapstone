@@ -123,6 +123,9 @@ public class InspectManager : MonoBehaviour
             } else if (currentObservable.name == "pivot12")
             {
                 inspectText.GetComponent<TextMeshProUGUI>().text = "Box of Bugs";
+            } else if (currentObservable.name == "pivot13")
+            {
+                inspectText.GetComponent<TextMeshProUGUI>().text = "Woven Shawl";
             }
 
 
