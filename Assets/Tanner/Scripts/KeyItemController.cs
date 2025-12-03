@@ -5,6 +5,7 @@ public class KeyItemController : MonoBehaviour
 {
     [SerializeField] private bool oneDoor = false;
     [SerializeField] private bool oneKey = false;
+    [SerializeField] private bool twoKey = false;
     [SerializeField] private bool oneKing = false;
 
     [SerializeField] private Keyinv _keyInventory = null;
@@ -33,6 +34,10 @@ public class KeyItemController : MonoBehaviour
         else if (oneKing)
         {
             _keyInventory.hasKing = true;
+            gameObject.SetActive(false);
+        } else if (twoKey)
+        {
+            _keyInventory.hasKeyTwo = true;
             gameObject.SetActive(false);
         }
     }
