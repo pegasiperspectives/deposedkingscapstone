@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg, pointTwo, pointThree, pointnegTwo, pointnegThree, interact, player
 - Active game object:
-  - Name: GhostC
+  - Name: FiligreeCrest
   - Tag: InteractiveObject
-  - Layer: pointThree
+  - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
