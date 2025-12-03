@@ -247,99 +247,99 @@ public class InventoryManager : MonoBehaviour
                 // itemController.AddItem(item);
                 dialogueManager.speechBubbles.transform.GetChild(5).gameObject.SetActive(true);
             }
-            else if (item.id == 6)
+            else if (item.id == 6) //tulips
             {
                 Item8.SetActive(true);
                 var itemController = Item8.GetComponentInChildren<InventoryItemController>();
-                dialogueManager.speechBubbles.transform.GetChild(6).gameObject.SetActive(true);
+                dialogueManager.speechBubbles.transform.GetChild(7).gameObject.SetActive(true);
                 //  itemController.AddItem(item);
             }
-            else if (item.id == 7)
+            else if (item.id == 7) //orchids
             {
                 Item7.SetActive(true);
                 var itemController = Item7.GetComponentInChildren<InventoryItemController>();
-                dialogueManager.speechBubbles.transform.GetChild(7).gameObject.SetActive(true);
+                dialogueManager.speechBubbles.transform.GetChild(6).gameObject.SetActive(true);
                 // itemController.AddItem(item);
             }
-            else if (item.id == 8)
+            else if (item.id == 8) //lady
             {
                 Item15.SetActive(true);
                 var itemController = Item15.GetComponentInChildren<InventoryItemController>();
-                dialogueManager.speechBubbles.transform.GetChild(15).gameObject.SetActive(true);
+                dialogueManager.speechBubbles.transform.GetChild(14).gameObject.SetActive(true);
                 //                itemController.AddItem(item);
             }
-            else if (item.id == 9)
+            else if (item.id == 9) //child
             {
                 Item17.SetActive(true);
                 var itemController = Item17.GetComponentInChildren<InventoryItemController>();
-                dialogueManager.speechBubbles.transform.GetChild(17).gameObject.SetActive(true);
+                dialogueManager.speechBubbles.transform.GetChild(16).gameObject.SetActive(true);
                 // itemController.AddItem(item);
             }
-            else if (item.id == 10)
+            else if (item.id == 10) //memo
             {
                 // this is the memo, it starts active already.
             }
-            else if (item.id == 11)
+            else if (item.id == 11) //king portrait
             {
                 Item16.SetActive(true);
                 var itemController = Item16.GetComponentInChildren<InventoryItemController>();
-                dialogueManager.speechBubbles.transform.GetChild(16).gameObject.SetActive(true);
+                dialogueManager.speechBubbles.transform.GetChild(15).gameObject.SetActive(true);
             }
-            else if (item.id == 12)
+            else if (item.id == 12) //crest
             {
                 Item9.SetActive(true);
                 var itemController = Item9.GetComponentInChildren<InventoryItemController>();
-                dialogueManager.speechBubbles.transform.GetChild(9).gameObject.SetActive(true);
+                dialogueManager.speechBubbles.transform.GetChild(8).gameObject.SetActive(true);
             }
-            else if (item.id == 13)
+            else if (item.id == 13) //box of bugs
             {
                 Item10.SetActive(true);
                 var itemController = Item10.GetComponentInChildren<InventoryItemController>();
-                dialogueManager.speechBubbles.transform.GetChild(10).gameObject.SetActive(true);
+                dialogueManager.speechBubbles.transform.GetChild(9).gameObject.SetActive(true);
             }
-            else if (item.id == 14)
+            else if (item.id == 14) //tallis
             {
                 Item11.SetActive(true);
                 var itemController = Item11.GetComponentInChildren<InventoryItemController>();
-                dialogueManager.speechBubbles.transform.GetChild(11).gameObject.SetActive(true);
+                dialogueManager.speechBubbles.transform.GetChild(10).gameObject.SetActive(true);
             }
-            else if (item.id == 15)
+            else if (item.id == 15) //quilt
             {
                 Item12.SetActive(true);
                 var itemController = Item12.GetComponentInChildren<InventoryItemController>();
-                dialogueManager.speechBubbles.transform.GetChild(12).gameObject.SetActive(true);
+                dialogueManager.speechBubbles.transform.GetChild(11).gameObject.SetActive(true);
             }
-            else if (item.id == 16)
+            else if (item.id == 16) //ledger
             {
                 Item13.SetActive(true);
                 var itemController = Item13.GetComponentInChildren<InventoryItemController>();
-                dialogueManager.speechBubbles.transform.GetChild(13).gameObject.SetActive(true);
+                dialogueManager.speechBubbles.transform.GetChild(12).gameObject.SetActive(true);
             }
-            else if (item.id == 17)
+            else if (item.id == 17) //goblet
             {
                 Item14.SetActive(true);
                 var itemController = Item14.GetComponentInChildren<InventoryItemController>();
-                dialogueManager.speechBubbles.transform.GetChild(14).gameObject.SetActive(true);
+                dialogueManager.speechBubbles.transform.GetChild(13).gameObject.SetActive(true);
             }
-            else if (item.id == 18)
+            else if (item.id == 18) //rusty key
             {
                 Item18.SetActive(true);
                 var itemController = Item18.GetComponentInChildren<InventoryItemController>();
                 dialogueManager.speechBubbles.transform.GetChild(18).gameObject.SetActive(true);
             }
-            else if (item.id == 19)
+            else if (item.id == 19) //quarter key
             {
                 Item19.SetActive(true);
                 var itemController = Item19.GetComponentInChildren<InventoryItemController>();
                 dialogueManager.speechBubbles.transform.GetChild(19).gameObject.SetActive(true);
             }
-            else if (item.id == 20)
+            else if (item.id == 20) //plank
             {
                 Item20.SetActive(true);
                 var itemController = Item20.GetComponentInChildren<InventoryItemController>();
                 dialogueManager.speechBubbles.transform.GetChild(20).gameObject.SetActive(true);
             }
-            else if (item.id == 21)
+            else if (item.id == 21) //king
             {
                 Item21.SetActive(true);
                 var itemController = Item21.GetComponentInChildren<InventoryItemController>();
