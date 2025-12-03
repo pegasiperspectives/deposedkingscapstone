@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg, pointTwo, pointThree, pointnegTwo, pointnegThree, interact, player
 - Active game object:
-  - Name: ObservableObject10
-  - Tag: Object2
-  - Layer: pointThree
+  - Name: Speech16
+  - Tag: Untagged
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
