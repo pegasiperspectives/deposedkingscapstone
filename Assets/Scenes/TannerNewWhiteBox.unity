@@ -1219,7 +1219,7 @@ GameObject:
   - component: {fileID: 96683641}
   - component: {fileID: 96683640}
   - component: {fileID: 96683639}
-  - component: {fileID: 96683638}
+  - component: {fileID: 96683642}
   m_Layer: 5
   m_Name: Inspect
   m_TagString: Untagged
@@ -1246,69 +1246,6 @@ RectTransform:
   m_AnchoredPosition: {x: 43.13, y: -146.45}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &96683638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96683636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9fea98ce98cc8c479f289fd7a866941, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryItemController
-  item: {fileID: 11400000, guid: 3170e67bd7ac9bc4f8b3a3465146f514, type: 2}
-  inventoryManager: {fileID: 391597838}
-  DialogueManager: {fileID: 2051402351}
-  placeObjects: {fileID: 1740180374}
-  sensitivity: 10
-  checkthis: 0
-  invResized: 0
-  placeobj: {fileID: 2080768334}
-  deltaRotationX: 0
-  deltaRotationY: 0
-  originalSize: {x: 0, y: 0}
-  inventory: {fileID: 434830228}
-  pressed:
-    m_Name: Pressed
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 1ce0209c-17b6-4a81-bf95-b98a868659da
-    m_Processors: 
-    m_Interactions: Press
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 637b4837-ff4f-477f-b936-4ce378ea8b24
-      m_Path: <Mouse>/leftButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Pressed
-      m_Flags: 0
-    m_Flags: 0
-  axis:
-    m_Name: Axis
-    m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: c23a47fd-3f8f-42b4-a93f-4720527e53e8
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 14bba3a8-6160-4311-8dc1-638cb85d9cdf
-      m_Path: <Mouse>/delta
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Axis
-      m_Flags: 0
-    m_Flags: 0
-  rotateNow: 0
-  rotation: {x: 0, y: 0}
-  journalOverlay: {fileID: 163274179}
-  inspectText: {fileID: 240690171}
-  po: {fileID: 0}
 --- !u!114 &96683639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1353,8 +1290,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 96683638}
-        m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
+      - m_Target: {fileID: 96683642}
+        m_TargetAssemblyTypeName: InspectCurrentItem, Assembly-CSharp
         m_MethodName: InspectItem
         m_Mode: 1
         m_Arguments:
@@ -1403,6 +1340,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96683636}
   m_CullTransparentMesh: 1
+--- !u!114 &96683642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96683636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e5f8d4e8ec2444fbd096c86df3a086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InspectCurrentItem
+  currentObservable: {fileID: 1683666770}
+  iM: {fileID: 1429132923}
 --- !u!1 &98693154
 GameObject:
   m_ObjectHideFlags: 0
@@ -5762,6 +5713,7 @@ Transform:
   - {fileID: 1901885921}
   - {fileID: 1858818125}
   - {fileID: 769892943}
+  - {fileID: 1429132922}
   - {fileID: 2051402346}
   - {fileID: 434830229}
   - {fileID: 585317574}
@@ -6033,7 +5985,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   objectRotationSpeed: 0.5
   inventoryManager: {fileID: 391597838}
-  iic: {fileID: 1541679494}
+  iM: {fileID: 0}
 --- !u!1001 &391597837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6057,7 +6009,7 @@ PrefabInstance:
     - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
       propertyPath: note
       value: 
-      objectReference: {fileID: 2025251818}
+      objectReference: {fileID: 585317573}
     - target: {fileID: 4734856720386213942, guid: 7628c4785e16c5f43a2fe179b35f5f47, type: 3}
       propertyPath: Item1
       value: 
@@ -6924,7 +6876,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1640558264}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
         m_MethodName: UseItem
         m_Mode: 1
@@ -11412,7 +11364,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   objectRotationSpeed: 0.5
   inventoryManager: {fileID: 391597838}
-  iic: {fileID: 1602791211}
+  iM: {fileID: 0}
 --- !u!1 &724516257
 GameObject:
   m_ObjectHideFlags: 0
@@ -13151,7 +13103,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   objectRotationSpeed: 0.5
   inventoryManager: {fileID: 391597838}
-  iic: {fileID: 511598923}
+  iM: {fileID: 0}
 --- !u!1 &812722083
 GameObject:
   m_ObjectHideFlags: 0
@@ -16189,7 +16141,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   objectRotationSpeed: 0.5
   inventoryManager: {fileID: 391597838}
-  iic: {fileID: 946483109}
+  iM: {fileID: 0}
 --- !u!1 &987046085
 GameObject:
   m_ObjectHideFlags: 0
@@ -19086,7 +19038,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   objectRotationSpeed: 0.5
   inventoryManager: {fileID: 391597838}
-  iic: {fileID: 1541679494}
+  iM: {fileID: 0}
 --- !u!1 &1109899457
 GameObject:
   m_ObjectHideFlags: 0
@@ -24282,6 +24234,62 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425094467}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1429132921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1429132922}
+  - component: {fileID: 1429132923}
+  m_Layer: 0
+  m_Name: InspectManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1429132922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429132921}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.6, y: -7.52, z: -24.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 353201902}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1429132923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429132921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8579ab2b462d6484ea7baff29c6cf0b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InspectManager
+  self: {fileID: 1429132921}
+  originalSize: {x: 0, y: 0}
+  crosshairCanvas: {fileID: 1288998643}
+  currentObservable: {fileID: 0}
+  rotateNow: 0
+  invResized: 0
+  journalOverlay: {fileID: 163274179}
+  inspectText: {fileID: 240690171}
+  inventory: {fileID: 434830228}
+  inventoryManager: {fileID: 391597838}
+  po: {fileID: 769892944}
+  obs: {fileID: 2080768334}
 --- !u!1 &1433872488
 GameObject:
   m_ObjectHideFlags: 0
@@ -27204,7 +27212,6 @@ GameObject:
   - component: {fileID: 1640558262}
   - component: {fileID: 1640558261}
   - component: {fileID: 1640558263}
-  - component: {fileID: 1640558264}
   m_Layer: 5
   m_Name: Place/Talk
   m_TagString: Untagged
@@ -27325,53 +27332,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1640558264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1640558259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9fea98ce98cc8c479f289fd7a866941, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryItemController
-  item: {fileID: 0}
-  inventoryManager: {fileID: 391597838}
-  DialogueManager: {fileID: 0}
-  placeObjects: {fileID: 1740180374}
-  sensitivity: 10
-  checkthis: 0
-  invResized: 0
-  placeobj: {fileID: 0}
-  deltaRotationX: 0
-  deltaRotationY: 0
-  originalSize: {x: 0, y: 0}
-  inventory: {fileID: 1320286120}
-  pressed:
-    m_Name: Pressed
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: f45e9f68-60ef-4ef5-ac06-941e5cf8a844
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  axis:
-    m_Name: Axis
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 733e5382-2c41-49aa-b562-5f5ace77b874
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  rotateNow: 0
-  rotation: {x: 0, y: 0}
-  journalOverlay: {fileID: 163274179}
-  inspectText: {fileID: 240690171}
-  po: {fileID: 0}
 --- !u!1 &1643103499
 GameObject:
   m_ObjectHideFlags: 0
@@ -28418,7 +28378,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   objectRotationSpeed: 0.5
   inventoryManager: {fileID: 391597838}
-  iic: {fileID: 96683638}
+  iM: {fileID: 1429132923}
 --- !u!1 &1697888338
 GameObject:
   m_ObjectHideFlags: 0
@@ -30158,7 +30118,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   objectRotationSpeed: 0.5
   inventoryManager: {fileID: 391597838}
-  iic: {fileID: 1969438852}
+  iM: {fileID: 1429132923}
 --- !u!1 &1824774324
 GameObject:
   m_ObjectHideFlags: 0
@@ -33520,7 +33480,7 @@ GameObject:
   - component: {fileID: 1969438855}
   - component: {fileID: 1969438854}
   - component: {fileID: 1969438853}
-  - component: {fileID: 1969438852}
+  - component: {fileID: 1969438856}
   m_Layer: 5
   m_Name: Inspect3
   m_TagString: Untagged
@@ -33547,69 +33507,6 @@ RectTransform:
   m_AnchoredPosition: {x: 54.16, y: -146.45}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1969438852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1969438850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9fea98ce98cc8c479f289fd7a866941, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryItemController
-  item: {fileID: 11400000, guid: bda0103ce463fda40847fe664e3b3b37, type: 2}
-  inventoryManager: {fileID: 391597838}
-  DialogueManager: {fileID: 2051402351}
-  placeObjects: {fileID: 1740180374}
-  sensitivity: 10
-  checkthis: 0
-  invResized: 0
-  placeobj: {fileID: 2080768334}
-  deltaRotationX: 0
-  deltaRotationY: 0
-  originalSize: {x: 0, y: 0}
-  inventory: {fileID: 434830228}
-  pressed:
-    m_Name: Pressed
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 1ce0209c-17b6-4a81-bf95-b98a868659da
-    m_Processors: 
-    m_Interactions: Press
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 637b4837-ff4f-477f-b936-4ce378ea8b24
-      m_Path: <Mouse>/leftButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Pressed
-      m_Flags: 0
-    m_Flags: 0
-  axis:
-    m_Name: Axis
-    m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: c23a47fd-3f8f-42b4-a93f-4720527e53e8
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 14bba3a8-6160-4311-8dc1-638cb85d9cdf
-      m_Path: <Mouse>/delta
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Axis
-      m_Flags: 0
-    m_Flags: 0
-  rotateNow: 0
-  rotation: {x: 0, y: 0}
-  journalOverlay: {fileID: 163274179}
-  inspectText: {fileID: 240690171}
-  po: {fileID: 0}
 --- !u!114 &1969438853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33654,8 +33551,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1969438852}
-        m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
+      - m_Target: {fileID: 1969438856}
+        m_TargetAssemblyTypeName: InspectCurrentItem, Assembly-CSharp
         m_MethodName: InspectItem
         m_Mode: 1
         m_Arguments:
@@ -33704,6 +33601,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969438850}
   m_CullTransparentMesh: 1
+--- !u!114 &1969438856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969438850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e5f8d4e8ec2444fbd096c86df3a086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InspectCurrentItem
+  currentObservable: {fileID: 1823690111}
+  iM: {fileID: 1429132923}
 --- !u!1 &1977803048
 GameObject:
   m_ObjectHideFlags: 0
@@ -37038,7 +36949,16 @@ MonoBehaviour:
   sensitivity: 3
   modelScaleFactor: 5.5
   self: {fileID: 2080768334}
+  originalSize: {x: 0, y: 0}
   crosshairCanvas: {fileID: 1288998643}
+  currentObservable: {fileID: 0}
+  rotateNow: 0
+  invResized: 0
+  journalOverlay: {fileID: 163274179}
+  inspectText: {fileID: 240690171}
+  inventory: {fileID: 434830228}
+  inventoryManager: {fileID: 391597838}
+  po: {fileID: 769892944}
 --- !u!1 &2089915340
 GameObject:
   m_ObjectHideFlags: 0
@@ -37492,7 +37412,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   objectRotationSpeed: 0.5
   inventoryManager: {fileID: 391597838}
-  iic: {fileID: 1977803050}
+  iM: {fileID: 0}
 --- !u!1 &2142916315
 GameObject:
   m_ObjectHideFlags: 0

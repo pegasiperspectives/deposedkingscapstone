@@ -15,12 +15,31 @@ public class ObsCamera : MonoBehaviour
     private Vector3 originalScale; // To store the original scale of the model
 
     [SerializeField] public GameObject self;
+    public Vector2 originalSize;                        // Original size of the inventory UI (used to restore after resizing)
+
     public GameObject crosshairCanvas;
+
+    public GameObject currentObservable;
+    private RectTransform hideInv;                       // Reference to RectTransform of the inventory panel
+
+
+    public bool rotateNow = false;
+    public bool invResized = false;
+    private FPSController fpscontrollerScript;          // Reference to the player�s movement controller
+    public GameObject journalOverlay;
+    public GameObject inspectText;
+    [SerializeField] private GameObject inventory;      // Reference to the inventory UI GameObject
+    public InventoryManager inventoryManager;
+    public PlacementManager po;
+
+
 
     void Update()
     {
-        if (Input.GetMouseButton(0) && (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y")  != 0)) {
-            if (model == null) {
+        if (Input.GetMouseButton(0) && (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0))
+        {
+            if (model == null)
+            {
                 return;
             }
 
@@ -28,10 +47,15 @@ public class ObsCamera : MonoBehaviour
             rigRot = rig.rotation;
             ObjectRotation();
             crosshairCanvas.SetActive(false);
-        } 
+        }
+
+        Debug.Log("current obsrevable is " + currentObservable);
+
+
     }
 
-    public void ObjectRotation() {
+    public void ObjectRotation()
+    {
         float yRot = Input.GetAxis("Mouse X") * sensitivity;
         float xRot = Input.GetAxis("Mouse Y") * sensitivity;
 
@@ -40,9 +64,9 @@ public class ObsCamera : MonoBehaviour
 
         model.rotation = modelRot;
         rig.rotation = rigRot;
-    } 
+    }
 
-     public void Close()
+    public void Close()
     {
         //model.localScale = originalScale; // Reset to original scale
         //Destroy(model.gameObject);
@@ -54,8 +78,9 @@ public class ObsCamera : MonoBehaviour
 
     public void Start()
     {
-        
+
     }
 
+   
 
 }

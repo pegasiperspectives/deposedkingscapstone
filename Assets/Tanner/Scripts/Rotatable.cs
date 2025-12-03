@@ -10,7 +10,7 @@ public class Rotatable : MonoBehaviour
     public Vector2 rotation;
     public float objectRotationSpeed = .5f;
     public InventoryManager inventoryManager;
-    public InventoryItemController iic;
+    public InspectManager iM;
 
     private Coroutine rotateRoutine;
 
@@ -51,14 +51,14 @@ public class Rotatable : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab) && InventoryManager.currentlyInspecting)
         {
             StopRotating();
-            iic.CloseInspect();
-            iic.rotateNow = false;
+            iM.CloseInspect();
+            iM.rotateNow = false;
         }
     }
 
     private IEnumerator Rotate()
     {
-        while (iic.rotateNow && InventoryManager.currentlyInspecting)
+        while (iM.rotateNow && InventoryManager.currentlyInspecting)
         {
             rotation *= objectRotationSpeed;
             transform.Rotate(Vector3.up, rotation.x, Space.World);

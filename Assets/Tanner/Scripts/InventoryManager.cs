@@ -92,7 +92,7 @@ public class InventoryManager : MonoBehaviour
 
     public void Start()
     {
-        
+        noteOpen = false;
     }
 
     private void Awake()
@@ -216,14 +216,14 @@ public class InventoryManager : MonoBehaviour
             {
                 Item2.SetActive(true);
                 var itemController = Item2.GetComponentInChildren<InventoryItemController>();
-                itemController.AddItem(item);
+//                itemController.AddItem(item);
                 dialogueManager.speechBubbles.transform.GetChild(1).gameObject.SetActive(true);
             }
             else if (item.id == 2) //modern coffin
             {
                 Item3.SetActive(true);
                 var itemController = Item3.GetComponentInChildren<InventoryItemController>();
-                itemController.AddItem(item);
+//                itemController.AddItem(item);
                 dialogueManager.speechBubbles.transform.GetChild(2).gameObject.SetActive(true);
             }
             else if (item.id == 3) //recycled coffin
