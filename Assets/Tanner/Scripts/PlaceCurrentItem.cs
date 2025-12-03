@@ -31,50 +31,59 @@ public class PlaceCurrentItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (placeThis)
+        //Debug.Log("can place is " + canPlace);
+
+        if (!placeThis) return;
+
+
+        Debug.Log("placeThis is true and canPlace is " + canPlace);
+        if (canPlace)
         {
-            Debug.Log("placeThis is true and canPlace is " + canPlace);
-            if (canPlace)
-            {
-                inventoryManager.turnoffinventoryforplace();
-                Debug.Log("canPlace is true");
-                RaycastHit hit;
+            InventoryManager.Instance.CloseInventoryButton();
+            InventoryManager.Instance.TurnoffInv();
 
-                if (Physics.Raycast(cam.position, cam.TransformDirection(Vector3.forward), out hit, 5f))
+            Debug.Log("canPlace is true");
+            RaycastHit hit;
+
+            if (Physics.Raycast(cam.position, cam.TransformDirection(Vector3.forward), out hit, 5f))
+            {
+                Debug.Log("place raycast is running");
+                ghostObject.SetActive(true);
+                ghostObject.transform.position = hit.point;
+                if (Input.GetMouseButtonDown(0))
                 {
-                    Debug.Log("place raycast is running");
-                    ghostObject.SetActive(true);
-                    ghostObject.transform.position = hit.point;
-                    if (Input.GetMouseButtonDown(0))
-                    {
-                        Instantiate(placeobj, ghostObject.transform.position, ghostObject.transform.rotation);
-                        Debug.Log("should've placed an object");
+                    Instantiate(placeobj, ghostObject.transform.position, ghostObject.transform.rotation);
+                    Debug.Log("should've placed an object");
 
-                        ghostObject.SetActive(false);
-                        placeThis = false;
-                        audioSource.PlayOneShot(placesound);
-                    }
+                    ghostObject.SetActive(false);
+                    placeThis = false;
+                    canPlace = false;
+
+                    audioSource.PlayOneShot(placesound);
+                    Debug.Log("removed item: " + item.name);
+
                 }
-                else//dont show the ghost object if cant see where itll be placed
-                {
-                    //ghostObject.SetActive(false);
-                    Debug.Log("place raycast never runs");
-                }
-            }
-            else
-            {
-                ghostObject.SetActive(false);
-            }
+                //InventoryManager.Instance.Remove(item);     // Remove from manager
 
-            InventoryManager.Instance.Remove(item);     // Remove from manager
-            Debug.Log("removed item: " + item.name);
-
-            if (InventoryManager.Instance != null)
+            }
+            else//dont show the ghost object if cant see where itll be placed
             {
-                InventoryManager.Instance.CloseInventoryButton();
-                InventoryManager.Instance.TurnoffInv(); // optional if you need that too
+                //ghostObject.SetActive(false);
+                Debug.Log("place raycast never runs");
             }
         }
+        else
+        {
+            ghostObject.SetActive(false);
+        }
+
+
+        /*  if (InventoryManager.Instance != null)
+          {
+              InventoryManager.Instance.CloseInventoryButton();
+              InventoryManager.Instance.TurnoffInv(); // optional if you need that too
+          } */
+
     }
 
     public void PlaceItem()
