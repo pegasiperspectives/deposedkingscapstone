@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85e2ceba874ddb84198179cb7946813e, type: 3}
-  m_Name: Goblet
+  m_Name: Q Key
   m_EditorClassIdentifier: 
-  id: 17
-  itemName: Goblet
-  value: 17
-  icon: {fileID: 21300000, guid: e93fc74e6a1572e4fb3459cfe1830bd2, type: 3}
+  id: 19
+  itemName: Quarter Key
+  value: 19
+  icon: {fileID: 21300000, guid: 06479e130e599cf4fb68a2dffa6c21da, type: 3}
