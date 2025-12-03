@@ -22567,11 +22567,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334083035}
   m_CullTransparentMesh: 1
---- !u!1 &1337464143 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3847348763963495525, guid: 263a953c4d2fb9f43a11c7554e2a9d30, type: 3}
-  m_PrefabInstance: {fileID: 963346613}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1338442470
 GameObject:
   m_ObjectHideFlags: 0
@@ -25196,7 +25191,7 @@ GameObject:
   - component: {fileID: 1503672637}
   - component: {fileID: 1503672636}
   - component: {fileID: 1503672635}
-  - component: {fileID: 1503672634}
+  - component: {fileID: 1503672638}
   m_Layer: 5
   m_Name: Place/Talk3
   m_TagString: Untagged
@@ -25223,53 +25218,6 @@ RectTransform:
   m_AnchoredPosition: {x: -14.4, y: -146.45}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1503672634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503672632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9fea98ce98cc8c479f289fd7a866941, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryItemController
-  item: {fileID: 11400000, guid: bda0103ce463fda40847fe664e3b3b37, type: 2}
-  inventoryManager: {fileID: 391597838}
-  DialogueManager: {fileID: 2051402351}
-  placeObjects: {fileID: 1740180374}
-  sensitivity: 10
-  checkthis: 0
-  invResized: 0
-  placeobj: {fileID: 1337464143}
-  deltaRotationX: 0
-  deltaRotationY: 0
-  originalSize: {x: 0, y: 0}
-  inventory: {fileID: 7014041543385319168, guid: 3bc10807d987e6b45a325d26261cccf0, type: 3}
-  pressed:
-    m_Name: Pressed
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 153de40a-d50f-4140-b788-50e63511393c
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  axis:
-    m_Name: Axis
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 5e94a3dc-d20f-4495-a972-1decfadef493
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  rotateNow: 0
-  rotation: {x: 0, y: 0}
-  journalOverlay: {fileID: 163274179}
-  inspectText: {fileID: 240690171}
-  po: {fileID: 0}
 --- !u!114 &1503672635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25388,6 +25336,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1503672632}
   m_CullTransparentMesh: 1
+--- !u!114 &1503672638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503672632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85da9cbe4db3d94bbe235abd6869430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlaceCurrentItem
+  item: {fileID: 11400000, guid: bda0103ce463fda40847fe664e3b3b37, type: 2}
+  inventoryManager: {fileID: 0}
+  placeobj: {fileID: 0}
+  ghostObject: {fileID: 0}
+  placesound: {fileID: 0}
+  pickupsound: {fileID: 0}
+  placementManager: {fileID: 0}
 --- !u!1 &1515102413
 GameObject:
   m_ObjectHideFlags: 0
