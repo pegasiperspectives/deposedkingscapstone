@@ -89,6 +89,34 @@ public class InspectManager : MonoBehaviour
             {
                 inspectText.GetComponent<TextMeshProUGUI>().text = "Modern Casket";
             }
+            else if (currentObservable.name == "pivot3")
+            {
+                inspectText.GetComponent<TextMeshProUGUI>().text = "Recycled Coffin";
+            }
+            else if (currentObservable.name == "pivot4")
+            {
+                inspectText.GetComponent<TextMeshProUGUI>().text = "Fern Bouquet";
+            }
+            else if (currentObservable.name == "pivot5")
+            {
+                inspectText.GetComponent<TextMeshProUGUI>().text = "Rose Bouquet";
+            }
+            else if (currentObservable.name == "pivot6")
+            {
+                inspectText.GetComponent<TextMeshProUGUI>().text = "Tulip Bouquet";
+            }
+            else if (currentObservable.name == "pivot7")
+            {
+                inspectText.GetComponent<TextMeshProUGUI>().text = "Orchid Bouquet";
+            } else if (currentObservable.name == "pivot8")
+            {
+                inspectText.GetComponent<TextMeshProUGUI>().text = "Portrait of Lady";
+            } else if (currentObservable.name == "pivot9")
+            {
+                inspectText.GetComponent<TextMeshProUGUI>().text = "Portrait of Child";
+            }
+
+
 
             inspectText.SetActive(true);
 
