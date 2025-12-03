@@ -11195,7 +11195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlaceCurrentItem
   item: {fileID: 11400000, guid: 92a832607dbfc6b4e8f364b75e061dd6, type: 2}
   inventoryManager: {fileID: 391597838}
-  placeobj: {fileID: 3847348765637530730}
+  placeobj: {fileID: 6751971862377314255, guid: 8d7e2a8704538604785b321894ede73c, type: 3}
   ghostObject: {fileID: 1293309072}
   placesound: {fileID: 8300000, guid: a5132e29325597641a942e2071eaaf39, type: 3}
   pickupsound: {fileID: 8300000, guid: 272f04901c6bc564bb81042b870672af, type: 3}
@@ -30558,6 +30558,10 @@ PrefabInstance:
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3347023539161138122, guid: b16f93c40fe827d4285afcd0f633eb34, type: 3}
+      propertyPath: canPlace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347023539161138122, guid: b16f93c40fe827d4285afcd0f633eb34, type: 3}
       propertyPath: ghostPort
       value: 
       objectReference: {fileID: 1293309072}
@@ -30577,6 +30581,10 @@ PrefabInstance:
       propertyPath: ghostexample3
       value: 
       objectReference: {fileID: 72854188}
+    - target: {fileID: 3347023539161138122, guid: b16f93c40fe827d4285afcd0f633eb34, type: 3}
+      propertyPath: kingPortraitObj
+      value: 
+      objectReference: {fileID: 6751971862377314255, guid: 8d7e2a8704538604785b321894ede73c, type: 3}
     - target: {fileID: 4804562069283523973, guid: b16f93c40fe827d4285afcd0f633eb34, type: 3}
       propertyPath: m_Name
       value: Player
@@ -39614,11 +39622,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d7e2a8704538604785b321894ede73c, type: 3}
---- !u!1 &3847348765637530730 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6751971862377314255, guid: 8d7e2a8704538604785b321894ede73c, type: 3}
-  m_PrefabInstance: {fileID: 2503729906993573011}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4990950667616620122
 PrefabInstance:
   m_ObjectHideFlags: 0

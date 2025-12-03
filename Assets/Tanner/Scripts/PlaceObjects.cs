@@ -43,6 +43,7 @@ public class PlaceObjects : MonoBehaviour
 
     public GameObject childPortObj;
     public static bool placeIsChildPort = false;
+     public GameObject kingPortraitObj;
 
 
 
