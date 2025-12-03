@@ -278,6 +278,11 @@ public class InventoryManager : MonoBehaviour
             else if (item.id == 10)
             {
 
+            } else if (item.id == 11)
+            {
+                Item16.SetActive(true);
+                var itemController = Item16.GetComponentInChildren<InventoryItemController>();
+                dialogueManager.speechBubbles.transform.GetChild(16).gameObject.SetActive(true);
             }
 
             //    GameObject obj = Instantiate(InventoryItem, ItemContent);
