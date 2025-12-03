@@ -132,6 +132,9 @@ public class InspectManager : MonoBehaviour
             } else if (currentObservable.name == "pivot15")
             {
                 inspectText.GetComponent<TextMeshProUGUI>().text = "Filigree Keep Ledger";
+            } else if (currentObservable.name == "pivot16")
+            {
+                inspectText.GetComponent<TextMeshProUGUI>().text = "Stripped Goblet";
             }
 
 
