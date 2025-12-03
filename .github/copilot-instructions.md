@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg, pointTwo, pointThree, pointnegTwo, pointnegThree, interact, player
 - Active game object:
-  - Name: Place/Talk10
-  - Tag: Untagged
-  - Layer: UI
+  - Name: PortraitKing
+  - Tag: InteractiveObject
+  - Layer: pointThree
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

@@ -17469,7 +17469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlaceCurrentItem
   item: {fileID: 11400000, guid: 10ce9989c0c94ca49adad7d75c35928d, type: 2}
   inventoryManager: {fileID: 391597838}
-  placeobj: {fileID: 6751971863832207888}
+  placeobj: {fileID: 4802998331663581524, guid: 3ae0b2e6c04c35145857030f2c6d1417, type: 3}
   ghostObject: {fileID: 0}
   placesound: {fileID: 8300000, guid: a5132e29325597641a942e2071eaaf39, type: 3}
   pickupsound: {fileID: 8300000, guid: 272f04901c6bc564bb81042b870672af, type: 3}
