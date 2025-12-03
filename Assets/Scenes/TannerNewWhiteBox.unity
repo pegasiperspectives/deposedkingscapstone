@@ -2321,6 +2321,9 @@ MonoBehaviour:
   needsServantKey: 0
   _keyInventory: {fileID: 1844101368}
   inventoryM: {fileID: 0}
+  doorObject: {fileID: 0}
+  timeToShowUI: 1
+  showDoorLockedUI: {fileID: 0}
 --- !u!65 &147959612
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7837,6 +7840,9 @@ MonoBehaviour:
   needsServantKey: 0
   _keyInventory: {fileID: 1844101368}
   inventoryM: {fileID: 0}
+  doorObject: {fileID: 0}
+  timeToShowUI: 1
+  showDoorLockedUI: {fileID: 0}
 --- !u!212 &425388715
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -40980,6 +40986,10 @@ PrefabInstance:
       value: COAdoor
       objectReference: {fileID: 0}
     - target: {fileID: 2685230873591514239, guid: 406e22ed9b09fd04a8b226f92bfc59fd, type: 3}
+      propertyPath: doorObject
+      value: 
+      objectReference: {fileID: 5260914330727230775}
+    - target: {fileID: 2685230873591514239, guid: 406e22ed9b09fd04a8b226f92bfc59fd, type: 3}
       propertyPath: inventoryM
       value: 
       objectReference: {fileID: 391597838}
@@ -40987,6 +40997,14 @@ PrefabInstance:
       propertyPath: _keyInventory
       value: 
       objectReference: {fileID: 1844101368}
+    - target: {fileID: 2685230873591514239, guid: 406e22ed9b09fd04a8b226f92bfc59fd, type: 3}
+      propertyPath: needsRustyKey
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685230873591514239, guid: 406e22ed9b09fd04a8b226f92bfc59fd, type: 3}
+      propertyPath: canAlreadyOpen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5277689382369933592, guid: 406e22ed9b09fd04a8b226f92bfc59fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.416006
@@ -41166,22 +41184,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2505076324583857752, guid: adefd65188b1c5b449152c986a040102, type: 3}
-      propertyPath: inventoryM
-      value: 
-      objectReference: {fileID: 391597838}
-    - target: {fileID: 2505076324583857752, guid: adefd65188b1c5b449152c986a040102, type: 3}
-      propertyPath: _keyInventory
-      value: 
-      objectReference: {fileID: 1844101368}
-    - target: {fileID: 5620016757387585010, guid: adefd65188b1c5b449152c986a040102, type: 3}
-      propertyPath: _keyInventory
-      value: 
-      objectReference: {fileID: 1844101368}
-    - target: {fileID: 0}
-      propertyPath: _keyInventory
-      value: 
-      objectReference: {fileID: 1844101368}
     - target: {fileID: 1670606858344080460, guid: adefd65188b1c5b449152c986a040102, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.72999
@@ -41226,11 +41228,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: NRKdoor
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
+    - target: {fileID: 2505076324583857752, guid: adefd65188b1c5b449152c986a040102, type: 3}
       propertyPath: inventoryM
       value: 
       objectReference: {fileID: 391597838}
-    - target: {fileID: 0}
+    - target: {fileID: 2505076324583857752, guid: adefd65188b1c5b449152c986a040102, type: 3}
+      propertyPath: _keyInventory
+      value: 
+      objectReference: {fileID: 1844101368}
+    - target: {fileID: 5620016757387585010, guid: adefd65188b1c5b449152c986a040102, type: 3}
       propertyPath: _keyInventory
       value: 
       objectReference: {fileID: 1844101368}
@@ -41520,14 +41526,6 @@ PrefabInstance:
       propertyPath: _keyInventory
       value: 
       objectReference: {fileID: 1844101368}
-    - target: {fileID: 6019729961051373714, guid: e4eb1e73292888b4a8aac9d7ae1c77f2, type: 3}
-      propertyPath: needsRustyKey
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6019729961051373714, guid: e4eb1e73292888b4a8aac9d7ae1c77f2, type: 3}
-      propertyPath: needsServantKey
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6428419311883887302, guid: e4eb1e73292888b4a8aac9d7ae1c77f2, type: 3}
       propertyPath: m_Name
       value: NSKdoor
@@ -41665,6 +41663,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeef53d8afbb3bd4688dc0abebe96268, type: 3}
+--- !u!114 &5260914330727230775 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6912397387552016141, guid: 406e22ed9b09fd04a8b226f92bfc59fd, type: 3}
+  m_PrefabInstance: {fileID: 2804529587994107012}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51eba716397d482458a6b05e14f6561f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KeyDoorController
 --- !u!1001 &5410259133419740230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42082,6 +42091,9 @@ MonoBehaviour:
   needsServantKey: 0
   _keyInventory: {fileID: 1844101368}
   inventoryM: {fileID: 0}
+  doorObject: {fileID: 0}
+  timeToShowUI: 1
+  showDoorLockedUI: {fileID: 0}
 --- !u!1001 &8415285879580252614
 PrefabInstance:
   m_ObjectHideFlags: 0

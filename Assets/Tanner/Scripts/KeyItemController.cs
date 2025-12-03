@@ -14,14 +14,14 @@ public class KeyItemController : MonoBehaviour
 
     public InventoryManager inventoryM;
 
-    private KeyDoorController doorObject;
+    public KeyDoorController doorObject;
 
     [SerializeField] private int timeToShowUI = 1;
     [SerializeField] private GameObject showDoorLockedUI = null;
 
     private void Start()
     {
-        if (canAlreadyOpen)
+        if (canAlreadyOpen == true)
         {
             doorObject = GetComponent<KeyDoorController>();
         }
