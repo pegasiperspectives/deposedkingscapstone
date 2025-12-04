@@ -516,106 +516,127 @@ public class DialogueUI : MonoBehaviour
             // Call the dialogue options here for the name of the object
             if (item.itemName.Contains("Memo"))                              //ITEMS 0, 8-13, 15, and 17-20 NEED IMPLEMENTED
             {
+                character1.SpriteChanger(0);
                 SetDialogueText(memoDialogueL[0], textLabel, 0);
                 objNum = 0;
             }
             else if (item.itemName.Contains("Solid Gold Coffin"))
             {
+                character1.SpriteChanger(3);
                 SetDialogueText(solidGoldCasketDialogueL[0], textLabel, 0);
                 objNum = 1;
             }
             else if (item.itemName.Contains("Modern Coffin"))
             {
+                character1.SpriteChanger(3);
                 SetDialogueText(modernCasketDialogueL[0], textLabel, 0);
                 objNum = 2;
             }
             else if (item.itemName.Contains("Recycled Coffin"))
             {
+                character1.SpriteChanger(1);
                 SetDialogueText(recycledCoffinDialogueL[0], textLabel, 0);
                 objNum = 3;
             }
             else if (item.itemName.Contains("Fern"))
             {
+                character1.SpriteChanger(3);
                 SetDialogueText(fernBoquetDialogueL[0], textLabel, 0);
                 objNum = 4;
             }
             else if (item.itemName.Contains("Roses"))
             {
+                character1.SpriteChanger(1);
                 SetDialogueText(roseBoquetDialogueL[0], textLabel, 0);
                 objNum = 5;
             }
             else if (item.itemName.Contains("Orchids"))
             {
+                character1.SpriteChanger(0);
                 SetDialogueText(orchidBoquetDialogueL[0], textLabel, 0);
                 objNum = 6;
             }
             else if (item.itemName.Contains("Tulips"))
             {
+                character1.SpriteChanger(0);
                 SetDialogueText(tulipBoquetDialogueL[0], textLabel, 0);
                 objNum = 7;
             }
             else if (item.itemName.Contains("Broken Filigree Crest"))
             {
+                character1.SpriteChanger(0);
                 SetDialogueText(brokenFiligreeCrestDialogueL[0], textLabel, 0);
                 objNum = 8;
             }
             else if (item.itemName.Contains("Box of Bugs"))
             {
+                character1.SpriteChanger(3);
                 SetDialogueText(boxofBugsDialogueL[0], textLabel, 0);
                 objNum = 9;
             }
             else if (item.itemName.Contains("Woven Shawl"))
             {
+                character1.SpriteChanger(0);
                 SetDialogueText(wovenShawlDialogueL[0], textLabel, 0);
                 objNum = 10;
             }
             else if (item.itemName.Contains("Half-Knit Quilt"))
             {
+                character1.SpriteChanger(0);
                 SetDialogueText(halfKnitQuiltDialogueL[0], textLabel, 0);
                 objNum = 11;
             }
             else if (item.itemName.Contains("Filigree Keep Ledger"))
             {
+                character1.SpriteChanger(0);
                 SetDialogueText(filigreeKeepLedgerDialogueL[0], textLabel, 0);
                 objNum = 12;
             }
             else if (item.itemName.Contains("Stripped Goblet"))
             {
+                character1.SpriteChanger(0);
                 SetDialogueText(strippedGobletDialogueL[0], textLabel, 0);
                 objNum = 13;
             }
             else if (item.itemName.Contains("Lady Portrait"))
             {
+                character1.SpriteChanger(5);
                 SetDialogueText(portraitofLadyDialogueL[0], textLabel, 0);
                 objNum = 14;
             }
             else if (item.itemName.Contains("King Portrait"))
             {
+                character1.SpriteChanger(1);
                 SetDialogueText(portraitofKingDialogueL[0], textLabel, 0);
                 objNum = 15;
             }
             else if (item.itemName.Contains("Child Portrait"))
             {
+                character1.SpriteChanger(4);
                 SetDialogueText(portraitofChildDialogueL[0], textLabel, 0);
                 objNum = 16;
             }
             else if (item.itemName.Contains("Rusty Key"))
             {
+                character1.SpriteChanger(0);
                 SetDialogueText(rustyKeyDialogueL[0], textLabel, 0);
                 objNum = 17;
             }
             else if (item.itemName.Contains("Quarter's Key"))
             {
+                character1.SpriteChanger(0);
                 SetDialogueText(quartersKeyDialogueL[0], textLabel, 0);
                 objNum = 18;
             }
             else if (item.itemName.Contains("Wooden Plank"))
             {
+                character1.SpriteChanger(2);
                 SetDialogueText(woodenPlankDialogueL[0], textLabel, 0);
                 objNum = 19;
             }
             else if (item.itemName.Contains("His Majesty"))
             {
+                character1.SpriteChanger(5);
                 SetDialogueText(hisMajestyDialogueL[0], textLabel, 0);
                 objNum = 20;
             }
@@ -1286,7 +1307,7 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
-                        character2.SpriteChanger(4);
+                        character2.SpriteChanger(0);
                         SetDialogueText(hisMajestyDialogueG[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1313,6 +1334,7 @@ public class DialogueUI : MonoBehaviour
             {
                 if (onNext == 0)
                 {
+                    character1.SpriteChanger(3);
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
@@ -1333,6 +1355,7 @@ public class DialogueUI : MonoBehaviour
                 }
                 else if (onNext == 4)
                 {
+                    character1.SpriteChanger(4);
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
@@ -1363,6 +1386,7 @@ public class DialogueUI : MonoBehaviour
                 }
                 else if (onNext == 10)
                 {
+                    character1.SpriteChanger(0);
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
@@ -1373,6 +1397,7 @@ public class DialogueUI : MonoBehaviour
                 }
                 else if (onNext == 12)
                 {
+                    character1.SpriteChanger(3);
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
@@ -1398,6 +1423,7 @@ public class DialogueUI : MonoBehaviour
                 }
                 else if (onNext == 17)
                 {
+                    character1.SpriteChanger(0);
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
@@ -1443,6 +1469,7 @@ public class DialogueUI : MonoBehaviour
                 }
                 else if (onNext == 26)
                 {
+                    character1.SpriteChanger(2);
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
@@ -1453,6 +1480,7 @@ public class DialogueUI : MonoBehaviour
                 }
                 else if (onNext == 28)
                 {
+                    character1.SpriteChanger(0);
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
@@ -1470,11 +1498,13 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(memoDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 1)
                     {
+                        character1.SpriteChanger(3);
                         SetDialogueText(memoDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1490,11 +1520,13 @@ public class DialogueUI : MonoBehaviour
                     }
                     else if (onNext == 4)
                     {
+                        character1.SpriteChanger(2);
                         SetDialogueText(memoDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 5)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(memoDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1515,11 +1547,13 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(3);
                         SetDialogueText(solidGoldCasketDialogueL[onNext], textLabel, onNext); // plays line number of dialogue equal to onNext
                         onNext++;
                     }
                     else if (onNext == 1)
                     {
+                        character1.SpriteChanger(1);
                         SetDialogueText(solidGoldCasketDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1534,6 +1568,7 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(3);
                         SetDialogueText(modernCasketDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1559,6 +1594,7 @@ public class DialogueUI : MonoBehaviour
                     }
                     else if (onNext == 5)
                     {
+                        character1.SpriteChanger(2);
                         SetDialogueText(modernCasketDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1573,6 +1609,7 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(1);
                         SetDialogueText(recycledCoffinDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1587,16 +1624,19 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(3);
                         SetDialogueText(fernBoquetDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 1)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(fernBoquetDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 2)
                     {
+                        character1.SpriteChanger(1);
                         SetDialogueText(fernBoquetDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1611,16 +1651,19 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(1);
                         SetDialogueText(roseBoquetDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 1)
                     {
+                        character1.SpriteChanger(2);
                         SetDialogueText(roseBoquetDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 2)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(roseBoquetDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1635,6 +1678,7 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(orchidBoquetDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1649,16 +1693,19 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(tulipBoquetDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 1)
                     {
+                        character1.SpriteChanger(4);
                         SetDialogueText(tulipBoquetDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 2)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(tulipBoquetDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1673,6 +1720,7 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(brokenFiligreeCrestDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1693,6 +1741,7 @@ public class DialogueUI : MonoBehaviour
                     }
                     else if (onNext == 5)
                     {
+                        character1.SpriteChanger(4);
                         SetDialogueText(brokenFiligreeCrestDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1707,6 +1756,7 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(3);
                         SetDialogueText(boxofBugsDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1722,11 +1772,13 @@ public class DialogueUI : MonoBehaviour
                     }
                     else if (onNext == 3)
                     {
+                        character1.SpriteChanger(4);
                         SetDialogueText(boxofBugsDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 4)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(boxofBugsDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1746,6 +1798,7 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(wovenShawlDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1760,6 +1813,7 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(halfKnitQuiltDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1784,16 +1838,19 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(filigreeKeepLedgerDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 1)
                     {
+                        character1.SpriteChanger(4);
                         SetDialogueText(filigreeKeepLedgerDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 2)
                     {
+                        character1.SpriteChanger(3);
                         SetDialogueText(filigreeKeepLedgerDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1808,26 +1865,31 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(strippedGobletDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 1)
                     {
+                        character1.SpriteChanger(1);
                         SetDialogueText(strippedGobletDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 2)
                     {
+                        character1.SpriteChanger(2);
                         SetDialogueText(strippedGobletDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 3)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(strippedGobletDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 4)
                     {
+                        character1.SpriteChanger(3);
                         SetDialogueText(strippedGobletDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1842,11 +1904,13 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(5);
                         SetDialogueText(portraitofLadyDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 1)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(portraitofLadyDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1857,16 +1921,19 @@ public class DialogueUI : MonoBehaviour
                     }
                     else if (onNext == 3)
                     {
+                        character1.SpriteChanger(1);
                         SetDialogueText(portraitofLadyDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 4)
                     {
+                        character1.SpriteChanger(4);
                         SetDialogueText(portraitofLadyDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 5)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(portraitofLadyDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1881,6 +1948,7 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(1);
                         SetDialogueText(portraitofKingDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1896,6 +1964,7 @@ public class DialogueUI : MonoBehaviour
                     }
                     else if (onNext == 3)
                     {
+                        character1.SpriteChanger(2);
                         SetDialogueText(portraitofKingDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1910,6 +1979,7 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(4);
                         SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1920,11 +1990,13 @@ public class DialogueUI : MonoBehaviour
                     }
                     else if (onNext == 2)
                     {
+                        character1.SpriteChanger(4);
                         SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 3)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1950,6 +2022,7 @@ public class DialogueUI : MonoBehaviour
                     }
                     else if (onNext == 8)
                     {
+                        character1.SpriteChanger(5);
                         SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1960,6 +2033,7 @@ public class DialogueUI : MonoBehaviour
                     }
                     else if (onNext == 10)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1979,6 +2053,7 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(rustyKeyDialogueG[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1993,6 +2068,7 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(quartersKeyDialogueG[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -2007,6 +2083,7 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(2);
                         SetDialogueText(woodenPlankDialogueG[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -2021,11 +2098,13 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        character1.SpriteChanger(5);
                         SetDialogueText(hisMajestyDialogueG[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 1)
                     {
+                        character1.SpriteChanger(0);
                         SetDialogueText(hisMajestyDialogueG[onNext], textLabel, onNext);
                         onNext++;
                     }
