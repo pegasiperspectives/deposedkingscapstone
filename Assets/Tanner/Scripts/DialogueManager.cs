@@ -59,6 +59,7 @@ public class DialogueUI : MonoBehaviour
     [Header("Dialogue Trackers")]
     public bool metG = false; //Have you met the groundskeeper?
     public bool metL = false; //Have you met the Lady?
+    public int textColorIndex = 0; // 0 is white, 1 is green, 2 is blue - used when text is printed in the dialogue box
 
     [Header("Dialogue Arrays")] // header to split the dialogue in the inspector
     // Separate item dialogue arrays - organized in the same order as the Item Sheet google sheet / Inventory page
@@ -255,8 +256,18 @@ public class DialogueUI : MonoBehaviour
             charIndex = Mathf.FloorToInt(t);
             charIndex = Mathf.Clamp(charIndex, 0, textToType.Length);
 
-                textLabel.color = Color.white; // NEEDS TO CHANGE TO ACCOMODATE TEXT COLORS WITH NEW DIALOGUE SYSTEM
-            
+            if(textColorIndex == 1)
+            {
+                textLabel.color = Color.green;
+            }
+            else if(textColorIndex == 2)
+            {
+                textLabel.color = Color.blue;
+            }
+            else
+            {
+                textLabel.color = Color.white;
+            }            
 
             textLabel.text = textToType.Substring(0, charIndex);
 
@@ -380,6 +391,8 @@ public class DialogueUI : MonoBehaviour
 
         if (Characters.isAtGardener == true)
         {
+            textColorIndex = 1; // Starts all Hayem dialogue as green
+
             // Call the dialogue options here for the name of the object
             if (item.itemName.Contains("Memo"))                              
             {
@@ -513,6 +526,8 @@ public class DialogueUI : MonoBehaviour
 
         else if (Characters.isAtLady == true)
         {
+            textColorIndex = 2; // Starts all Lady Dialogue as blue
+
             // Call the dialogue options here for the name of the object
             if (item.itemName.Contains("Memo"))                              //ITEMS 0, 8-13, 15, and 17-20 NEED IMPLEMENTED
             {
@@ -661,16 +676,19 @@ public class DialogueUI : MonoBehaviour
         {
             Debug.Log("Next while on gardener was clicked");
 
-            if (metG == false)
+            // 2nd Part of Hayem's introductory dialogue
+            if (metG == false) 
             {
                 if (onNext == 0)
                 {
+                    textColorIndex = 1;
                     character2.SpriteChanger(2);
                     SetDialogueText(introDialoguePart2G[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 1)
                 {
+                    textColorIndex = 0;
                     SetDialogueText(introDialoguePart2G[onNext], textLabel, onNext);
                     onNext++;
                 }
@@ -691,28 +709,33 @@ public class DialogueUI : MonoBehaviour
                 }
                 else if (onNext == 5)
                 {
+                    textColorIndex = 1;
                     character2.SpriteChanger(4);
                     SetDialogueText(introDialoguePart2G[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 6)
                 {
+                    textColorIndex = 0;
                     SetDialogueText(introDialoguePart2G[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 7)
                 {
+                    textColorIndex = 1;
                     character2.SpriteChanger(2);
                     SetDialogueText(introDialoguePart2G[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 8)
                 {
+                    textColorIndex = 0;
                     SetDialogueText(introDialoguePart2G[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 9)
                 {
+                    textColorIndex = 1;
                     character2.SpriteChanger(0);
                     SetDialogueText(introDialoguePart2G[onNext], textLabel, onNext);
                     onNext++;
@@ -730,6 +753,7 @@ public class DialogueUI : MonoBehaviour
                 }
                 else if (onNext == 12)
                 {
+                    textColorIndex = 0;
                     SetDialogueText(introDialoguePart2G[onNext], textLabel, onNext);
                     onNext++;
                 }
@@ -740,6 +764,7 @@ public class DialogueUI : MonoBehaviour
                 }
                 else if (onNext == 14)
                 {
+                    textColorIndex = 1;
                     character2.SpriteChanger(0);
                     SetDialogueText(introDialoguePart2G[onNext], textLabel, onNext);
                     onNext++;
@@ -755,13 +780,15 @@ public class DialogueUI : MonoBehaviour
                     DialogueComplete();
                 }
             }
-            else{
+            else
+            {
                 #region Groundskeeper Dialogue Next
                 // memo
                 if (objNum == 0)
                 {
                     if (onNext == 0)
                     {
+                        textColorIndex = 1;
                         character2.SpriteChanger(0);
                         SetDialogueText(memoDialogueG[onNext], textLabel, onNext);
                         onNext++;
@@ -774,6 +801,7 @@ public class DialogueUI : MonoBehaviour
                     }
                     else if (onNext == 2)
                     {
+                        textColorIndex = 0;
                         SetDialogueText(memoDialogueG[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -784,6 +812,7 @@ public class DialogueUI : MonoBehaviour
                     }
                     else if (onNext == 4)
                     {
+                        textColorIndex = 1;
                         character2.SpriteChanger(0);
                         SetDialogueText(memoDialogueG[onNext], textLabel, onNext);
                         onNext++;
@@ -795,6 +824,7 @@ public class DialogueUI : MonoBehaviour
                     }
                     else if (onNext == 6)
                     {
+                        textColorIndex = 0;
                         SetDialogueText(memoDialogueG[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -805,11 +835,13 @@ public class DialogueUI : MonoBehaviour
                     }
                     else if (onNext == 8)
                     {
+                        textColorIndex = 1;
                         SetDialogueText(memoDialogueG[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 9)
                     {
+                        textColorIndex = 0;
                         SetDialogueText(memoDialogueG[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -939,6 +971,7 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        textColorIndex = 1;
                         character2.SpriteChanger(5);
                         SetDialogueText(orchidBoquetDialogueG[onNext], textLabel, onNext);
                         onNext++;
@@ -951,11 +984,13 @@ public class DialogueUI : MonoBehaviour
                     }
                     else if (onNext == 2)
                     {
+                        textColorIndex = 0;
                         SetDialogueText(orchidBoquetDialogueG[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 3)
                     {
+                        textColorIndex = 1;
                         character2.SpriteChanger(1);
                         SetDialogueText(orchidBoquetDialogueG[onNext], textLabel, onNext);
                         onNext++;
@@ -1035,17 +1070,20 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        textColorIndex = 1;
                         character2.SpriteChanger(1);
                         SetDialogueText(boxofBugsDialogueG[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 1)
                     {
+                        textColorIndex = 0;
                         SetDialogueText(boxofBugsDialogueG[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 2)
                     {
+                        textColorIndex = 1;
                         character2.SpriteChanger(0);
                         SetDialogueText(boxofBugsDialogueG[onNext], textLabel, onNext);
                         onNext++;
@@ -1158,6 +1196,7 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        textColorIndex = 1;
                         character2.SpriteChanger(4);
                         SetDialogueText(portraitofLadyDialogueG[onNext], textLabel, onNext);
                         onNext++;
@@ -1169,17 +1208,19 @@ public class DialogueUI : MonoBehaviour
                     }
                     else if (onNext == 2)
                     {
-                        
+
                         SetDialogueText(portraitofLadyDialogueG[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 3)
                     {
+                        textColorIndex = 0;
                         SetDialogueText(portraitofLadyDialogueG[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 4)
                     {
+                        textColorIndex = 1;
                         character2.SpriteChanger(5);
                         SetDialogueText(portraitofLadyDialogueG[onNext], textLabel, onNext);
                         onNext++;
@@ -1324,90 +1365,107 @@ public class DialogueUI : MonoBehaviour
                 #endregion
             }
         }
-        
-        
+
+
         //queen's dialogue
         else if (Characters.isAtGardener != true && Characters.isAtLady == true)
         {
             Debug.Log("Next while on queen was clicked");
-            if (metL == false)
+
+            // 2nd Part of Lady F's Introductory Dialogue
+            if (metL == false) 
             {
                 if (onNext == 0)
                 {
+                    textColorIndex = 2;
                     character1.SpriteChanger(3);
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 1)
                 {
+                    textColorIndex = 0;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 2)
                 {
+                    textColorIndex = 2;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 3)
                 {
+                    textColorIndex = 0;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 4)
                 {
+                    textColorIndex = 2;
                     character1.SpriteChanger(4);
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 5)
                 {
+                    textColorIndex = 0;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 6)
                 {
+                    textColorIndex = 2;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 7)
                 {
+                    textColorIndex = 0;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 8)
                 {
+                    textColorIndex = 2;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 9)
                 {
+                    textColorIndex = 0;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 10)
                 {
+                    textColorIndex = 2;
                     character1.SpriteChanger(0);
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 11)
                 {
+                    textColorIndex = 0;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 12)
                 {
+                    textColorIndex = 2;
                     character1.SpriteChanger(3);
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 13)
                 {
+                    textColorIndex = 0;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 14)
                 {
+                    textColorIndex = 2;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
@@ -1418,47 +1476,56 @@ public class DialogueUI : MonoBehaviour
                 }
                 else if (onNext == 16)
                 {
+                    textColorIndex = 0;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 17)
                 {
+                    textColorIndex = 2;
                     character1.SpriteChanger(0);
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 18)
                 {
+                    textColorIndex = 0;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 19)
                 {
+                    textColorIndex = 2;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 20)
                 {
+                    textColorIndex = 0;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 21)
                 {
+                    textColorIndex = 2;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 22)
                 {
+                    textColorIndex = 0;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 23)
                 {
+                    textColorIndex = 2;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
                 else if (onNext == 24)
                 {
+                    textColorIndex = 0;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
@@ -1475,6 +1542,7 @@ public class DialogueUI : MonoBehaviour
                 }
                 else if (onNext == 27)
                 {
+                    textColorIndex = 2;
                     SetDialogueText(introDialoguePart2L[onNext], textLabel, onNext);
                     onNext++;
                 }
@@ -1498,23 +1566,27 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        textColorIndex = 0;
                         character1.SpriteChanger(0);
                         SetDialogueText(memoDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 1)
                     {
+                        textColorIndex = 2;
                         character1.SpriteChanger(3);
                         SetDialogueText(memoDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 2)
                     {
+                        textColorIndex = 0;
                         SetDialogueText(memoDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 3)
                     {
+                        textColorIndex = 2;
                         SetDialogueText(memoDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1532,6 +1604,7 @@ public class DialogueUI : MonoBehaviour
                     }
                     else if (onNext == 6)
                     {
+                        textColorIndex = 0;
                         SetDialogueText(memoDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1568,27 +1641,32 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        textColorIndex = 2;
                         character1.SpriteChanger(3);
                         SetDialogueText(modernCasketDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 1)
                     {
+                        textColorIndex = 0;
                         SetDialogueText(modernCasketDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 2)
                     {
+                        textColorIndex = 2;
                         SetDialogueText(modernCasketDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 3)
                     {
+                        textColorIndex = 0;
                         SetDialogueText(modernCasketDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 4)
                     {
+                        textColorIndex = 2;
                         SetDialogueText(modernCasketDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1720,12 +1798,14 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        textColorIndex = 0;
                         character1.SpriteChanger(0);
                         SetDialogueText(brokenFiligreeCrestDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 1)
                     {
+                        textColorIndex = 2;
                         SetDialogueText(brokenFiligreeCrestDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1756,22 +1836,26 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        textColorIndex = 0;
                         character1.SpriteChanger(3);
                         SetDialogueText(boxofBugsDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 1)
                     {
+                        textColorIndex = 2;
                         SetDialogueText(boxofBugsDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 2)
                     {
+                        textColorIndex = 0;
                         SetDialogueText(boxofBugsDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 3)
                     {
+                        textColorIndex = 2;
                         character1.SpriteChanger(4);
                         SetDialogueText(boxofBugsDialogueL[onNext], textLabel, onNext);
                         onNext++;
@@ -1948,12 +2032,14 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        textColorIndex = 0;
                         character1.SpriteChanger(1);
                         SetDialogueText(portraitofKingDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 1)
                     {
+                        textColorIndex = 2;
                         SetDialogueText(portraitofKingDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -1979,34 +2065,40 @@ public class DialogueUI : MonoBehaviour
                 {
                     if (onNext == 0)
                     {
+                        textColorIndex = 2;
                         character1.SpriteChanger(4);
                         SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 1)
                     {
+                        textColorIndex = 0;
                         SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 2)
                     {
+
                         character1.SpriteChanger(4);
                         SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 3)
                     {
+                        textColorIndex = 2;
                         character1.SpriteChanger(0);
                         SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 4)
                     {
+                        textColorIndex = 0;
                         SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
                     else if (onNext == 5)
                     {
+                        textColorIndex = 2;
                         SetDialogueText(portraitofChildDialogueL[onNext], textLabel, onNext);
                         onNext++;
                     }
@@ -2114,6 +2206,227 @@ public class DialogueUI : MonoBehaviour
                     }
                 }
                 #endregion
+            }
+        }
+
+        // NEED TO MAKE THIS DIALOGUE CODE PLAY AT THE FIRST FLOOR DOOR TO THE SERVANT'S QUARTER'S
+        else if (metG == false) 
+        {
+            if (onNext == 0)
+            {
+                textColorIndex = 0;
+                SetDialogueText(introDialoguePart1G[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 1)
+            {
+                textColorIndex = 1;
+                SetDialogueText(introDialoguePart1G[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 2)
+            {
+                SetDialogueText(introDialoguePart1G[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 3)
+            {
+                textColorIndex = 0;
+                SetDialogueText(introDialoguePart1G[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 4)
+            {
+                SetDialogueText(introDialoguePart1G[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 5)
+            {
+                textColorIndex = 0;
+                SetDialogueText(introDialoguePart1G[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 6)
+            {
+                textColorIndex = 1;
+                SetDialogueText(introDialoguePart1G[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 7)
+            {
+                textColorIndex = 0;
+                SetDialogueText(introDialoguePart1G[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 8)
+            {
+                textColorIndex = 1;
+                SetDialogueText(introDialoguePart1G[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 9)
+            {
+                textColorIndex = 0;
+                SetDialogueText(introDialoguePart1G[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 10)
+            {
+                SetDialogueText(introDialoguePart1G[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 11)
+            {
+                textColorIndex = 1;
+                SetDialogueText(introDialoguePart1G[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 12)
+            {
+                textColorIndex = 0;
+                SetDialogueText(introDialoguePart1G[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 13)
+            {
+                textColorIndex = 1;
+                SetDialogueText(introDialoguePart1G[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 14)
+            {
+                textColorIndex = 0;
+                SetDialogueText(introDialoguePart1G[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 15)
+            {
+                textColorIndex = 1;
+                SetDialogueText(introDialoguePart1G[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext >= 16)
+            {
+                metG = true;
+                DialogueComplete();
+            }
+        }
+        // NEED TO MAKE THIS DIALOGUE CODE PLAY AT THE LADY'S DUNGEON DOOR BEFORE YOU GRAB THE PLANK
+        else {
+            if (onNext == 0)
+            {
+                textColorIndex = 0;
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 1)
+            {
+                textColorIndex = 2;
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 2)
+            {
+                textColorIndex = 0;
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 3)
+            {
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 4)
+            {
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 5)
+            {
+                textColorIndex = 2;
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 6)
+            {
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 7)
+            {
+                textColorIndex = 0;
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 8)
+            {
+                textColorIndex = 2;
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 9)
+            {
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 10)
+            {
+                textColorIndex = 0;
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 11)
+            {
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 12)
+            {
+                textColorIndex = 2;
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 13)
+            {
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 14)
+            {
+                textColorIndex = 0;
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 15)
+            {
+                textColorIndex = 2;
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 16)
+            {
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 17)
+            {
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 18)
+            {
+                textColorIndex = 0;
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext == 19)
+            {
+                SetDialogueText(introDialoguePart1L[onNext], textLabel, onNext);
+                onNext++;
+            }
+            else if (onNext >= 20)
+            {
+                DialogueComplete();
             }
         }
     }
