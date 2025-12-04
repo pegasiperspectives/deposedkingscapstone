@@ -337,14 +337,14 @@ public class InventoryManager : MonoBehaviour
             {
                 Item19.SetActive(true);
                 var itemController = Item19.GetComponentInChildren<InventoryItemController>();
-                dialogueManager.speechBubbles.transform.GetChild(19).gameObject.SetActive(true);
+                dialogueManager.speechBubbles.transform.GetChild(18).gameObject.SetActive(true);
                 sKeyCollected = true;
             }
             else if (item.id == 20) //plank
             {
                 Item20.SetActive(true);
                 var itemController = Item20.GetComponentInChildren<InventoryItemController>();
-                dialogueManager.speechBubbles.transform.GetChild(20).gameObject.SetActive(true);
+                dialogueManager.speechBubbles.transform.GetChild(19).gameObject.SetActive(true);
             }
             else if (item.id == 21) //king
             {
