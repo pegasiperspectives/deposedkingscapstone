@@ -151,6 +151,9 @@ public class InspectManager : MonoBehaviour
             } else if (currentObservable.name == "pivot18")
             {
                 inspectText.GetComponent<TextMeshProUGUI>().text = "Quarter's Key";
+            } else if (currentObservable.name == "pivot19")
+            {
+                inspectText.GetComponent<TextMeshProUGUI>().text = "Suspiciously Long Wooden Plank";
             }
             else if (currentObservable.name == "pivot20")
             {

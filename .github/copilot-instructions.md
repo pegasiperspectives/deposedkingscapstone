@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, point, pointneg, pointTwo, pointThree, pointnegTwo, pointnegThree, interact, player
 - Active game object:
-  - Name: Inspect19
-  - Tag: Untagged
-  - Layer: UI
+  - Name: ObservableObjectPlank
+  - Tag: Object1
+  - Layer: pointThree
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
