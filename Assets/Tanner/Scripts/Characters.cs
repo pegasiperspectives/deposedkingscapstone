@@ -30,6 +30,9 @@ public class Characters : MonoBehaviour
     private int opened = 0;
     public GameObject speechBubbles;
 
+    [SerializeField] Sprite[] characterSprites;
+    private Sprite currentSprite;
+
 
     //public Transform playerTransform; // Assign in the inspector
     //public Transform targetTransform;
@@ -128,6 +131,13 @@ public class Characters : MonoBehaviour
             }
 
         }
+    }
+
+    public void SpriteChanger(int spriteNumber)
+    {
+        currentSprite = characterSprites[spriteNumber];
+
+        gameObject.GetComponent<SpriteRenderer>().sprite = currentSprite;
     }
 
   /*  private void OnTriggerExit(Collider other)

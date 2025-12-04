@@ -268,6 +268,7 @@ public class InspectManager : MonoBehaviour
 
         journalOverlay.SetActive(false);
         inspectText.SetActive(false);
+        inspectTextDescription.SetActive(false);
         InventoryManager.Instance.obscamera.Close();
         InventoryManager.Instance.obscamera.gameObject.SetActive(false);     // Enable the observation camera
                                                                              // Close observation camera
