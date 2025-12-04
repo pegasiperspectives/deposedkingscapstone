@@ -80,6 +80,7 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] string[] boxofBugsDialogueG = { };              //Box of Bugs
     [SerializeField] string[] boxofBugsDialogueL = { };
     [SerializeField] string[] wovenShawlDialogueG = { };             //Woven Shawl
+    public bool wovenShawlShownG = false;                       // have you shown the shawl to the groundskeeper?
     [SerializeField] string[] wovenShawlDialogueL = { };
     [SerializeField] string[] halfKnitQuiltDialogueG = { };          //Half-Knit Quilt
     [SerializeField] string[] halfKnitQuiltDialogueL = { };
@@ -199,7 +200,7 @@ public class DialogueUI : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButtonDown(0) && self.activeInHierarchy)   // this activates when clicking on a new item, displaying the Next() dialogue of the previous item first.
+        if (Input.GetMouseButtonDown(0) && self.activeInHierarchy)   // this activates when clicking on a new item, PROBLEM: displaying the Next() dialogue of the previous item first.
         {
             Next();
             Debug.Log("Registering mouse click; should change line now");
@@ -251,14 +252,8 @@ public class DialogueUI : MonoBehaviour
             charIndex = Mathf.FloorToInt(t);
             charIndex = Mathf.Clamp(charIndex, 0, textToType.Length);
 
-            if (index == 9 || index == 11 || index == 25 || index == 32 || index == 34 || index == 49)
-            {
-                textLabel.color = Color.purple;
-            }
-            else
-            {
-                textLabel.color = Color.white;
-            }
+                textLabel.color = Color.white; // NEEDS TO CHANGE TO ACCOMODATE TEXT COLORS WITH NEW DIALOGUE SYSTEM
+            
 
             textLabel.text = textToType.Substring(0, charIndex);
 
@@ -383,7 +378,7 @@ public class DialogueUI : MonoBehaviour
         if (Characters.isAtGardener == true)
         {
             // Call the dialogue options here for the name of the object
-            if (item.itemName.Contains("Memo"))                              //ITEMS 0, 8-13, 15, and 17-20 NEED IMPLEMENTED
+            if (item.itemName.Contains("Memo"))                              
             {
                 SetDialogueText(memoDialogueG[0], textLabel, 0);
                 objNum = 0;
@@ -435,6 +430,8 @@ public class DialogueUI : MonoBehaviour
             }
             else if (item.itemName.Contains("Woven Shawl"))
             {
+                wovenShawlShownG = true;
+
                 SetDialogueText(wovenShawlDialogueG[0], textLabel, 0);
                 objNum = 10;
             }
@@ -918,6 +915,8 @@ public class DialogueUI : MonoBehaviour
             // woven shawl
             if (objNum == 10)
             {
+
+
                 if (onNext == 0)
                 {
                     SetDialogueText(wovenShawlDialogueG[onNext], textLabel, onNext);

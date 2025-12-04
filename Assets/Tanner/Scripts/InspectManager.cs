@@ -19,12 +19,42 @@ public class InspectManager : MonoBehaviour
     private FPSController fpscontrollerScript;          // Reference to the player�s movement controller
     public GameObject journalOverlay;
     public GameObject inspectText;
+    public GameObject inspectTextDescription;
     [SerializeField] private GameObject inventory;      // Reference to the inventory UI GameObject
     public InventoryManager inventoryManager;
     public PlacementManager po;
 
     public GameObject obs;
 
+    #region Inspect Text Arrays - Topher Code
+    // All possible inspect text that can be shown based on items
+
+    [Header("Inspect Text Arrays")] // header to split the dialogue in the inspector
+    // Separate item text arrays - organized in the same order as the Item Sheet google sheet / Inventory page
+    [SerializeField] string[] memoText = { };                   //Memo
+    [SerializeField] string[] solidGoldCasketText = { };        //Solid Gold Casket
+    [SerializeField] string[] modernCasketText = { };           //Modern Casket
+    [SerializeField] string[] recycledCoffinText = { };         //Recycled Coffin
+    [SerializeField] string[] fernBoquetText = { };             //Fern Boquet
+    [SerializeField] string[] roseBoquetText = { };             //Rose Boquet
+    [SerializeField] string[] orchidBoquetText = { };           //Orchid Boquet
+    [SerializeField] string[] tulipBoquetText = { };             //Tulip Boquet
+    [SerializeField] string[] brokenFiligreeCrestText = { };    //Broken Filigree Crest
+    [SerializeField] string[] boxofBugsText = { };              //Box of Bugs
+    [SerializeField] string[] wovenShawlText = { };             //Woven Shawl
+    [SerializeField] string[] halfKnitQuiltText = { };          //Half-Knit Quilt
+    [SerializeField] string[] filigreeKeepLedgerText = { };     //Filigree Keep Ledger
+    [SerializeField] string[] strippedGobletText = { };         //Stripped Goblet
+    [SerializeField] string[] portraitofLadyText = { };         //Portrait of Lady
+    [SerializeField] string[] portraitofKingText = { };         //Portrait of King
+    [SerializeField] string[] portraitofChildText = { };        //Portrait of Child
+    [SerializeField] string[] rustyKeyText = { };               //Rusty Key
+    [SerializeField] string[] quartersKeyText = { };            //Quarter's Key
+    [SerializeField] string[] woodenPlankText = { };            //Suspiciously Long Wooden Plank
+    [SerializeField] string[] hisMajestyText = { };             //His Majesty
+
+
+    #endregion
 
     public void Start()
     {
@@ -35,6 +65,7 @@ public class InspectManager : MonoBehaviour
         inventoryManager = InventoryManager.Instance;                                               // Cache reference to the InventoryManager
         journalOverlay.SetActive(false);
         inspectText.SetActive(false);
+        inspectTextDescription.SetActive(false);
     }
     public void SetCurrentObservable(GameObject inspectThis)
     {
@@ -82,89 +113,118 @@ public class InspectManager : MonoBehaviour
 
             if (currentObservable.name == "pivot1")
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "Solid Gold Casket";
+                inspectText.GetComponent<TextMeshProUGUI>().text = solidGoldCasketText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = solidGoldCasketText[1];
                 Debug.Log("it's running the currentObservable if");
             }
             else if (currentObservable.name == "pivot2")
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "Modern Casket";
+                inspectText.GetComponent<TextMeshProUGUI>().text = modernCasketText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = modernCasketText[1];
             }
             else if (currentObservable.name == "pivot3")
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "Recycled Coffin";
+                inspectText.GetComponent<TextMeshProUGUI>().text = recycledCoffinText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = recycledCoffinText[1];
             }
             else if (currentObservable.name == "pivot4")
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "Fern Bouquet";
+                inspectText.GetComponent<TextMeshProUGUI>().text = fernBoquetText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = fernBoquetText[1];
             }
             else if (currentObservable.name == "pivot5")
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "Rose Bouquet";
+                inspectText.GetComponent<TextMeshProUGUI>().text = roseBoquetText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = roseBoquetText[1];
             }
-            else if (currentObservable.name == "pivot6")
+            else if (currentObservable.name == "pivot6") // tulips
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "Tulip Bouquet";
+                inspectText.GetComponent<TextMeshProUGUI>().text = tulipBoquetText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = tulipBoquetText[1];
             }
-            else if (currentObservable.name == "pivot7")
+            else if (currentObservable.name == "pivot7") // orchids
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "Orchid Bouquet";
+                inspectText.GetComponent<TextMeshProUGUI>().text = orchidBoquetText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = orchidBoquetText[1];
             }
-            else if (currentObservable.name == "pivot8")
+            else if (currentObservable.name == "pivot8") //lady p
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "Portrait of Lady";
+                inspectText.GetComponent<TextMeshProUGUI>().text = portraitofLadyText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = portraitofLadyText[1];
+
             }
-            else if (currentObservable.name == "pivot9")
+            else if (currentObservable.name == "pivot9") //child p
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "Portrait of Child";
+                inspectText.GetComponent<TextMeshProUGUI>().text = portraitofChildText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = portraitofChildText[1];
             }
-            else if (currentObservable.name == "pivot10")
+            else if (currentObservable.name == "pivot10") // king p
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "Portrait of King";
+                inspectText.GetComponent<TextMeshProUGUI>().text = portraitofKingText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = portraitofKingText[1];
             }
-            else if (currentObservable.name == "pivot11")
+            else if (currentObservable.name == "pivot11") // broken crest
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "Broken Filigree Crest";
+                inspectText.GetComponent<TextMeshProUGUI>().text = brokenFiligreeCrestText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = brokenFiligreeCrestText[1];
             }
-            else if (currentObservable.name == "pivot12")
+            else if (currentObservable.name == "pivot12") // bugs
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "Box of Bugs";
+                inspectText.GetComponent<TextMeshProUGUI>().text = boxofBugsText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = boxofBugsText[1];
             }
-            else if (currentObservable.name == "pivot13")
+            else if (currentObservable.name == "pivot13") // tallis
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "Woven Shawl";
+                inspectText.GetComponent<TextMeshProUGUI>().text = wovenShawlText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = wovenShawlText[1];
+
             }
-            else if (currentObservable.name == "pivot14")
+            else if (currentObservable.name == "pivot14") // quilt
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "Half-Knit Quilt";
+                inspectText.GetComponent<TextMeshProUGUI>().text = halfKnitQuiltText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = halfKnitQuiltText[1];
             }
-            else if (currentObservable.name == "pivot15")
+            else if (currentObservable.name == "pivot15") // ledger
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "Filigree Keep Ledger";
+                inspectText.GetComponent<TextMeshProUGUI>().text = filigreeKeepLedgerText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = filigreeKeepLedgerText[1];
             }
-            else if (currentObservable.name == "pivot16")
+            else if (currentObservable.name == "pivot16") // goblet
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "Stripped Goblet";
+                inspectText.GetComponent<TextMeshProUGUI>().text = strippedGobletText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = strippedGobletText[1];
             }
-            else if (currentObservable.name == "pivot17")
+            else if (currentObservable.name == "pivot17") // rusty key
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "Rusty Key";
-            } else if (currentObservable.name == "pivot18")
+                inspectText.GetComponent<TextMeshProUGUI>().text = rustyKeyText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = rustyKeyText[1];
+            } else if (currentObservable.name == "pivot18") // quarters key
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "Quarter's Key";
-            } else if (currentObservable.name == "pivot19")
+                inspectText.GetComponent<TextMeshProUGUI>().text = quartersKeyText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = quartersKeyText[1];
+            } else if (currentObservable.name == "pivot19") // plank
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "Suspiciously Long Wooden Plank";
+                inspectText.GetComponent<TextMeshProUGUI>().text = woodenPlankText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = woodenPlankText[1];
             }
-            else if (currentObservable.name == "pivot20")
+            else if (currentObservable.name == "pivot20") // his majesty
             {
-                inspectText.GetComponent<TextMeshProUGUI>().text = "His Majesty";
+                inspectText.GetComponent<TextMeshProUGUI>().text = hisMajestyText[0];
+                inspectTextDescription.GetComponent<TextMeshProUGUI>().text = hisMajestyText[1];
             } 
 
 
 
             inspectText.SetActive(true);
+            inspectTextDescription.SetActive(true);
 
             if (inspectText == null)
+            {
+                Debug.LogError("TextMeshProUGUI component not found on this GameObject!");
+                return; // Prevent NullReferenceException
+            }
+
+            if (inspectTextDescription == null)
             {
                 Debug.LogError("TextMeshProUGUI component not found on this GameObject!");
                 return; // Prevent NullReferenceException
