@@ -204,7 +204,7 @@ public class DialogueUI : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButtonDown(0) && self.activeInHierarchy)   // this activates when clicking on a new item, PROBLEM: displaying the Next() dialogue of the previous item first.
+        if (Input.GetMouseButtonDown(0) && self.activeInHierarchy && !inventory.activeInHierarchy)   // this activates when clicking anywhere as long as the inventory is closed
         {
             Next();
             Debug.Log("Registering mouse click; should change line now");
@@ -376,6 +376,7 @@ public class DialogueUI : MonoBehaviour
         inventory.SetActive(false);
         //speechCrosshair.SetActive(false);                             // Show dialogue UI
         SetDialogueText(allDialogue[60], textLabel, 60);         // Show first line
+        onNext = 0;
         objNum = -1;
         // Resets objNum so no dialogue is activated from Next() 
 
@@ -387,141 +388,99 @@ public class DialogueUI : MonoBehaviour
         //defaultCrosshair.SetActive(false);
         Cursor.lockState = CursorLockMode.None;             // Unlock mouse cursor for UI interaction
         Cursor.visible = true;
-        onNext = 1; // ensures that activating Next() will play the 2nd line of dialogue
 
         if (Characters.isAtGardener == true)
         {
             textColorIndex = 1; // Starts all Hayem dialogue as green
 
+
             // Call the dialogue options here for the name of the object
             if (item.itemName.Contains("Memo"))                              
             {
-                character2.SpriteChanger(2);
-                SetDialogueText(memoDialogueG[0], textLabel, 0);
                 objNum = 0;
             }
             else if (item.itemName.Contains("Solid Gold Coffin"))
             {
-                character2.SpriteChanger(2);
-                SetDialogueText(solidGoldCasketDialogueG[0], textLabel, 0);
                 objNum = 1;
             }
             else if (item.itemName.Contains("Modern Coffin"))
             {
-                character2.SpriteChanger(3);
-                SetDialogueText(modernCasketDialogueG[0], textLabel, 0);
                 objNum = 2;
             }
             else if (item.itemName.Contains("Recycled Coffin"))
             {
-                character2.SpriteChanger(0);
-                SetDialogueText(recycledCoffinDialogueG[0], textLabel, 0);
                 objNum = 3;
             }
             else if (item.itemName.Contains("Fern"))
             {
-                character2.SpriteChanger(1);
-                SetDialogueText(fernBoquetDialogueG[0], textLabel, 0);
                 objNum = 4;
             }
             else if (item.itemName.Contains("Roses"))
             {
-                character2.SpriteChanger(4);
-                SetDialogueText(roseBoquetDialogueG[0], textLabel, 0);
                 objNum = 5;
             }
             else if (item.itemName.Contains("Orchids"))
             {
-                character2.SpriteChanger(5);
-                SetDialogueText(orchidBoquetDialogueG[0], textLabel, 0);
                 objNum = 6;
             }
             else if (item.itemName.Contains("Tulips"))
             {
-                character2.SpriteChanger(0);
-                SetDialogueText(tulipBoquetDialogueG[0], textLabel, 0);
                 objNum = 7;
             }
             else if (item.itemName.Contains("Broken Filigree Crest"))
             {
-                character2.SpriteChanger(3);
-                SetDialogueText(brokenFiligreeCrestDialogueG[0], textLabel, 0);
                 objNum = 8;
             }
             else if (item.itemName.Contains("Box of Bugs"))
             {
-                character2.SpriteChanger(1);
-                SetDialogueText(boxofBugsDialogueG[0], textLabel, 0);
                 objNum = 9;
             }
             else if (item.itemName.Contains("Woven Shawl"))
             {
-                character2.SpriteChanger(0);
                 wovenShawlShownG = true;
-
-                SetDialogueText(wovenShawlDialogueG[0], textLabel, 0);
                 objNum = 10;
             }
             else if (item.itemName.Contains("Half-Knit Quilt"))
             {
-                character2.SpriteChanger(0);
-                SetDialogueText(halfKnitQuiltDialogueG[0], textLabel, 0);
                 objNum = 11;
             }
             else if (item.itemName.Contains("Filigree Keep Ledger"))
             {
-                character2.SpriteChanger(5);
-                SetDialogueText(filigreeKeepLedgerDialogueG[0], textLabel, 0);
                 objNum = 12;
             }
             else if (item.itemName.Contains("Stripped Goblet"))
             {
-                character2.SpriteChanger(1);
-                SetDialogueText(strippedGobletDialogueG[0], textLabel, 0);
                 objNum = 13;
             }
             else if (item.itemName.Contains("Lady Portrait"))
             {
-                character2.SpriteChanger(4);
-                SetDialogueText(portraitofLadyDialogueG[0], textLabel, 0);
                 objNum = 14;
             }
             else if (item.itemName.Contains("King Portrait"))
             {
-                character2.SpriteChanger(2);
-                SetDialogueText(portraitofKingDialogueG[0], textLabel, 0);
                 objNum = 15;
             }
             else if (item.itemName.Contains("Child Portrait"))
             {
-                character2.SpriteChanger(3);
-                SetDialogueText(portraitofChildDialogueG[0], textLabel, 0);
                 objNum = 16;
             }
             else if (item.itemName.Contains("Rusty Key"))
             {
-                character2.SpriteChanger(2);
-                SetDialogueText(rustyKeyDialogueG[0], textLabel, 0);
                 objNum = 17;
             }
             else if (item.itemName.Contains("Quarter's Key"))
             {
-                character2.SpriteChanger(4);
-                SetDialogueText(quartersKeyDialogueG[0], textLabel, 0);
                 objNum = 18;
             }
             else if (item.itemName.Contains("Wooden Plank"))
             {
-                character2.SpriteChanger(3);
-                SetDialogueText(woodenPlankDialogueG[0], textLabel, 0);
                 objNum = 19;
             }
             else if (item.itemName.Contains("His Majesty"))
             {
-                character2.SpriteChanger(4);
-                SetDialogueText(hisMajestyDialogueG[0], textLabel, 0);
                 objNum = 20;
             }
+            Next(); // Actually plays 1st line of dialogue
         }
 
         else if (Characters.isAtLady == true)
@@ -529,132 +488,91 @@ public class DialogueUI : MonoBehaviour
             textColorIndex = 2; // Starts all Lady Dialogue as blue
 
             // Call the dialogue options here for the name of the object
-            if (item.itemName.Contains("Memo"))                              //ITEMS 0, 8-13, 15, and 17-20 NEED IMPLEMENTED
+            if (item.itemName.Contains("Memo"))                              
             {
-                character1.SpriteChanger(0);
-                SetDialogueText(memoDialogueL[0], textLabel, 0);
                 objNum = 0;
             }
             else if (item.itemName.Contains("Solid Gold Coffin"))
             {
-                character1.SpriteChanger(3);
-                SetDialogueText(solidGoldCasketDialogueL[0], textLabel, 0);
                 objNum = 1;
             }
             else if (item.itemName.Contains("Modern Coffin"))
             {
-                character1.SpriteChanger(3);
-                SetDialogueText(modernCasketDialogueL[0], textLabel, 0);
                 objNum = 2;
             }
             else if (item.itemName.Contains("Recycled Coffin"))
             {
-                character1.SpriteChanger(1);
-                SetDialogueText(recycledCoffinDialogueL[0], textLabel, 0);
                 objNum = 3;
             }
             else if (item.itemName.Contains("Fern"))
             {
-                character1.SpriteChanger(3);
-                SetDialogueText(fernBoquetDialogueL[0], textLabel, 0);
                 objNum = 4;
             }
             else if (item.itemName.Contains("Roses"))
             {
-                character1.SpriteChanger(1);
-                SetDialogueText(roseBoquetDialogueL[0], textLabel, 0);
                 objNum = 5;
             }
             else if (item.itemName.Contains("Orchids"))
             {
-                character1.SpriteChanger(0);
-                SetDialogueText(orchidBoquetDialogueL[0], textLabel, 0);
                 objNum = 6;
             }
             else if (item.itemName.Contains("Tulips"))
             {
-                character1.SpriteChanger(0);
-                SetDialogueText(tulipBoquetDialogueL[0], textLabel, 0);
                 objNum = 7;
             }
             else if (item.itemName.Contains("Broken Filigree Crest"))
             {
-                character1.SpriteChanger(0);
-                SetDialogueText(brokenFiligreeCrestDialogueL[0], textLabel, 0);
                 objNum = 8;
             }
             else if (item.itemName.Contains("Box of Bugs"))
             {
-                character1.SpriteChanger(3);
-                SetDialogueText(boxofBugsDialogueL[0], textLabel, 0);
                 objNum = 9;
             }
             else if (item.itemName.Contains("Woven Shawl"))
             {
-                character1.SpriteChanger(0);
-                SetDialogueText(wovenShawlDialogueL[0], textLabel, 0);
                 objNum = 10;
             }
             else if (item.itemName.Contains("Half-Knit Quilt"))
             {
-                character1.SpriteChanger(0);
-                SetDialogueText(halfKnitQuiltDialogueL[0], textLabel, 0);
                 objNum = 11;
             }
             else if (item.itemName.Contains("Filigree Keep Ledger"))
             {
-                character1.SpriteChanger(0);
-                SetDialogueText(filigreeKeepLedgerDialogueL[0], textLabel, 0);
                 objNum = 12;
             }
             else if (item.itemName.Contains("Stripped Goblet"))
             {
-                character1.SpriteChanger(0);
-                SetDialogueText(strippedGobletDialogueL[0], textLabel, 0);
                 objNum = 13;
             }
             else if (item.itemName.Contains("Lady Portrait"))
             {
-                character1.SpriteChanger(5);
-                SetDialogueText(portraitofLadyDialogueL[0], textLabel, 0);
                 objNum = 14;
             }
             else if (item.itemName.Contains("King Portrait"))
             {
-                character1.SpriteChanger(1);
-                SetDialogueText(portraitofKingDialogueL[0], textLabel, 0);
                 objNum = 15;
             }
             else if (item.itemName.Contains("Child Portrait"))
             {
-                character1.SpriteChanger(4);
-                SetDialogueText(portraitofChildDialogueL[0], textLabel, 0);
                 objNum = 16;
             }
             else if (item.itemName.Contains("Rusty Key"))
             {
-                character1.SpriteChanger(0);
-                SetDialogueText(rustyKeyDialogueL[0], textLabel, 0);
                 objNum = 17;
             }
             else if (item.itemName.Contains("Quarter's Key"))
             {
-                character1.SpriteChanger(0);
-                SetDialogueText(quartersKeyDialogueL[0], textLabel, 0);
                 objNum = 18;
             }
             else if (item.itemName.Contains("Wooden Plank"))
             {
-                character1.SpriteChanger(2);
-                SetDialogueText(woodenPlankDialogueL[0], textLabel, 0);
                 objNum = 19;
             }
             else if (item.itemName.Contains("His Majesty"))
             {
-                character1.SpriteChanger(5);
-                SetDialogueText(hisMajestyDialogueL[0], textLabel, 0);
                 objNum = 20;
             }
+            Next(); // Actually plays 1st line of dialogue
         }
     }
 
@@ -774,7 +692,14 @@ public class DialogueUI : MonoBehaviour
                     SetDialogueText(introDialoguePart2G[onNext], textLabel, onNext);
                     onNext++;
                 }
-                else if (onNext >= 16)
+                else if(onNext == 16) // TEMP INSTRUCTION STEP
+                {
+                    metG = true;
+                    textColorIndex = 0;
+                    SetDialogueText("[Press TAB to show him items from your inventory!]", textLabel, onNext);           // Wretched TEMPORARY instruction text
+                    onNext++;
+                }
+                else if (onNext >= 17)
                 {
                     metG = true;
                     DialogueComplete();
