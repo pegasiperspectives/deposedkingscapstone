@@ -26,7 +26,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.791, y: 0, z: 0}
-  m_LocalScale: {x: 0.46000004, y: 0.46, z: 0.46000007}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4041919104182986415}
@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 4041919104182986415}
   - component: {fileID: 1399227210712113650}
   - component: {fileID: 1215950978710058003}
-  - component: {fileID: 5548680529699972648}
   m_Layer: 9
   m_Name: WoodenPlank (1)
   m_TagString: Untagged
@@ -59,9 +58,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2153343545331017389}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12886466, y: 0.52100307, z: 0.079929456, w: 0.83997685}
-  m_LocalPosition: {x: -0.06, y: -0.34, z: 0.54}
-  m_LocalScale: {x: 23.16421, y: 0.87108696, z: 3.11413}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.4755054, y: -0.00000047683716, z: 27.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2187315498437055102}
@@ -122,24 +121,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5548680529699972648
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2153343545331017389}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
